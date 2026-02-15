@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord - Carr&eacute; Magique Turf</title>
+    <title>R2-C2 Classement - Carr&eacute; Magique Turf</title>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QETD2M15"></script>
@@ -142,83 +142,112 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 </style>
 </head>
 <body>
-    
+    <a href="reunion_R2.html" class="back-button">&larr; Retour R2</a>
     <div class="container">
 
-        <div class="header-index">
-            <div class="logo-section">
-                <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
-                <input type="date" class="date-picker" value="2026-02-15" onchange="window.location.href='../'+this.value+'/index.html'">
-            </div>
-            <div class="title-section">
-                <h1 class="title">Tableau de Bord</h1>
-                <p class="subtitle">Sunday 15 february 2026</p>
+        <div class="header">
+            <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
+            <h1 class="course-title">R2-C2 - PRIX DES COURSES DE REDON</h1>
+            <div class="course-info"><div class="info-badge">&#128336; 10:00</div><div class="info-badge">&#127943; MONTE</div><div class="info-badge">&#128207; 2800m</div><div class="info-badge">&#128176; 20000€</div><div class="info-badge">&#127942; 13 partants</div></div>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="participants_R2C2.html" class="nav-btn">&#128206; Participants</a>
+            <a href="course_R2C2.html" class="nav-btn active">&#128202; Classement</a>
+            <a href="formules_R2C2.html" class="nav-btn">&#11088; Recommandation</a>
+        </div>
+        <div class="main-section">
+            <h2 class="section-title">&#128202; CLASSEMENT - COTES SG (F9+F1)</h2>
+            <table>
+                <thead>
+                    <tr><th>Rang</th><th>N&deg;</th><th>Score</th><th>&Eacute;volution</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="alerte-vert">
+                        <td>1</td><td><strong>5</strong></td><td>1.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>VERT</strong></td><td>Favori solide</td>
+                    </tr>
+                    <tr class="alerte-vert">
+                        <td>2</td><td><strong>3</strong></td><td>2.3</td>
+                        <td>+0.0%</td><td>→</td><td><strong>VERT</strong></td><td>Favori solide</td>
+                    </tr>
+                    <tr class="alerte-vert">
+                        <td>3</td><td><strong>9</strong></td><td>2.7</td>
+                        <td>+0.0%</td><td>→</td><td><strong>VERT</strong></td><td>Favori solide</td>
+                    </tr>
+                    <tr class="alerte-jaune">
+                        <td>4</td><td><strong>10</strong></td><td>4.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>JAUNE</strong></td><td>Outsider serieux</td>
+                    </tr>
+                    <tr class="alerte-jaune">
+                        <td>5</td><td><strong>8</strong></td><td>5.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>JAUNE</strong></td><td>Outsider serieux</td>
+                    </tr>
+                    <tr class="alerte-jaune">
+                        <td>6</td><td><strong>7</strong></td><td>6.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>JAUNE</strong></td><td>Outsider serieux</td>
+                    </tr>
+                    <tr class="alerte-orange">
+                        <td>7</td><td><strong>12</strong></td><td>7.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td>
+                    </tr>
+                    <tr class="alerte-orange">
+                        <td>8</td><td><strong>2</strong></td><td>8.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td>
+                    </tr>
+                    <tr class="alerte-orange">
+                        <td>9</td><td><strong>13</strong></td><td>9.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td>
+                    </tr>
+                    <tr class="alerte-orange">
+                        <td>10</td><td><strong>6</strong></td><td>10.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td>
+                    </tr>
+                    <tr class="alerte-rouge">
+                        <td>11</td><td><strong>1</strong></td><td>11.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>ROUGE</strong></td><td>Risque</td>
+                    </tr>
+                    <tr class="alerte-rouge">
+                        <td>12</td><td><strong>11</strong></td><td>12.0</td>
+                        <td>+0.0%</td><td>→</td><td><strong>ROUGE</strong></td><td>Risque</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="main-section">
+            <h2 class="section-title">&#127919; RECOMMANDATIONS</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card base">
+                    <div class="reco-title">BASE SOLIDE (3 chevaux)</div>
+                    <div class="reco-numbers">5 - 3 - 9</div>
+                </div>
+                <div class="recommendation-card top5">
+                    <div class="reco-title">TOP 5 RECOMMAND&Eacute;</div>
+                    <div class="reco-numbers">5 - 3 - 9 - 10 - 8</div>
+                </div>
+                <div class="recommendation-card top8">
+                    <div class="reco-title">TOP 8 OPTIMAL</div>
+                    <div class="reco-numbers">5 - 3 - 9 - 10 - 8 - 7 - 12 - 2</div>
+                </div>
+                <div class="recommendation-card outsiders">
+                    <div class="reco-title">OUTSIDERS</div>
+                    <div class="reco-numbers">7 - 12 - 2</div>
+                </div>
+                <div class="recommendation-card pieges">
+                    <div class="reco-title">PI&Egrave;GES &Agrave; &Eacute;VITER</div>
+                    <div class="reco-numbers">1 - 11</div>
+                </div>
             </div>
         </div>
-        <div class="reunions-grid">
-            <div class="reunion-card" onclick="window.location.href='reunion_R1.html'">
-                <div class="reunion-number">R1</div>
-                <div class="reunion-name">Reunion 1</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">10 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R2.html'">
-                <div class="reunion-number">R2</div>
-                <div class="reunion-name">Reunion 2</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">7 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R3.html'">
-                <div class="reunion-number">R3</div>
-                <div class="reunion-name">Reunion 3</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">4 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R4.html'">
-                <div class="reunion-number">R4</div>
-                <div class="reunion-name">Reunion 4</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R5.html'">
-                <div class="reunion-number">R5</div>
-                <div class="reunion-name">Reunion 5</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">1 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R6.html'">
-                <div class="reunion-number">R6</div>
-                <div class="reunion-name">Reunion 6</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">2 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R7.html'">
-                <div class="reunion-number">R7</div>
-                <div class="reunion-name">Reunion 7</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R8.html'">
-                <div class="reunion-number">R8</div>
-                <div class="reunion-name">Reunion 8</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">7 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
+
+        <div class="main-section">
+            <h2 class="section-title">&#128214; L&Eacute;GENDE DES ALERTES</h2>
+            <div class="legend">
+                <div class="legend-item"><div class="legend-color" style="background:#C6EFCE;"></div><div class="legend-text"><strong>VERT</strong><br>Valeur s&ucirc;re</div></div>
+                <div class="legend-item"><div class="legend-color" style="background:#FFEB9C;"></div><div class="legend-text"><strong>JAUNE</strong><br>Outsider s&eacute;rieux</div></div>
+                <div class="legend-item"><div class="legend-color" style="background:#FFC7CE;"></div><div class="legend-text"><strong>ORANGE</strong><br>A surveiller</div></div>
+                <div class="legend-item"><div class="legend-color" style="background:#FF6B6B;"></div><div class="legend-text"><strong>ROUGE</strong><br>Pi&egrave;ge potentiel</div></div>
             </div>
         </div>
     </div>
