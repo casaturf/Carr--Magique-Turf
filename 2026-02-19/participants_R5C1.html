@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord - Carr&eacute; Magique Turf</title>
+    <title>R5-C1 Participants - Carr&eacute; Magique Turf</title>
     <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -132,60 +132,85 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 </style>
 </head>
 <body>
-    
+    <a href="reunion_R5.html" class="back-button">&larr; Retour R5</a>
     <div class="container">
 
-        <div class="header-index">
-            <div class="logo-section">
-                <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
-                <input type="date" class="date-picker" value="2026-02-19" onchange="window.location.href='../'+this.value+'/index.html'">
-            </div>
-            <div class="title-section">
-                <h1 class="title">Tableau de Bord</h1>
-                <p class="subtitle">Thursday 19 february 2026</p>
-            </div>
+        <div class="header">
+            <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
+            <h1 class="course-title">R5-C1 - PRIX DE NAUCELLES</h1>
+            <div class="course-info"><div class="info-badge">&#128336; 15:32</div><div class="info-badge">&#127943; ATTELE</div><div class="info-badge">&#128207; 2750m</div><div class="info-badge">&#128176; 23000€</div><div class="info-badge">&#127942; 12 partants</div></div>
         </div>
-        <div class="reunions-grid">
-            <div class="reunion-card" onclick="window.location.href='reunion_R1.html'">
-                <div class="reunion-number">R1</div>
-                <div class="reunion-name">VINCENNES</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R3.html'">
-                <div class="reunion-number">R3</div>
-                <div class="reunion-name">STRAUBING</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">5 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R4.html'">
-                <div class="reunion-number">R4</div>
-                <div class="reunion-name">CHANTILLY</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R5.html'">
-                <div class="reunion-number">R5</div>
-                <div class="reunion-name">LA CEPIERE</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R7.html'">
-                <div class="reunion-number">R7</div>
-                <div class="reunion-name">GULFSTREAM PARK</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">2 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
+        
+        <div class="nav-buttons">
+            <a href="participants_R5C1.html" class="nav-btn active">&#128206; Participants</a>
+            <a href="course_R5C1.html" class="nav-btn">&#128202; Classement</a>
+            <a href="formules_R5C1.html" class="nav-btn">&#11088; Recommandation</a>
+        </div>
+        <div class="main-section">
+            <h2 class="section-title">&#128206; PARTICIPANTS</h2>
+            <table>
+                <thead>
+                    <tr><th>N&deg;</th><th>Cheval</th><th>Jockey</th><th>Entra&icirc;neur</th><th>Musique</th><th>Cote</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>MARQUIS MARANDAIS</td>
+                        <td>M. CRIADO</td>
+                        <td>F. MARTY</td>
+                        <td style="font-size:11px;">(25)4a1aDa2a1a7a8a6aDa</td>
+                        <td><strong>4.8</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>MILLENIUM BOND</td>
+                        <td>C. GAZENGEL</td>
+                        <td>C. GAZENGEL</td>
+                        <td style="font-size:11px;">9a1a(25)7a3a2a2a</td>
+                        <td><strong>9.7</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>MEMORY STAR ELGE</td>
+                        <td>B. GOETZ</td>
+                        <td>B. GOETZ</td>
+                        <td style="font-size:11px;">4a2aDa(25)3a8a3a3a2a(24)</td>
+                        <td><strong>3.2</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>6</strong></td>
+                        <td>MISTER DU CHOQUEL</td>
+                        <td>M. GERGOUIL</td>
+                        <td>J. FOIN</td>
+                        <td style="font-size:11px;">(25)6a8a(24)6a5a5a1a1a6a</td>
+                        <td><strong>9.7</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>7</strong></td>
+                        <td>MINIE CAUSSANEL</td>
+                        <td>B. VANACKER</td>
+                        <td>B. VANACKER</td>
+                        <td style="font-size:11px;">1a(25)3aDm3a3a5a8a0a9a</td>
+                        <td><strong>9.7</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>8</strong></td>
+                        <td>MARIE BLACK</td>
+                        <td>A. OMRANI</td>
+                        <td>Y. HENRY</td>
+                        <td style="font-size:11px;">(25)1a1a1a4a0a4a3a</td>
+                        <td><strong>9.7</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>12</strong></td>
+                        <td>MATIN D'AVRIL</td>
+                        <td>Y. VIDAL</td>
+                        <td>Y. VIDAL</td>
+                        <td style="font-size:11px;">2a3a(25)1a</td>
+                        <td><strong>4.8</strong></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
