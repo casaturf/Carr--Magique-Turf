@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord - Carr&eacute; Magique Turf</title>
+    <title>R1-C1 Participants - Carr&eacute; Magique Turf</title>
     <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -132,76 +132,93 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 </style>
 </head>
 <body>
-    
+    <a href="reunion_R1.html" class="back-button">&larr; Retour R1</a>
     <div class="container">
 
-        <div class="header-index">
-            <div class="logo-section">
-                <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
-                <input type="date" class="date-picker" value="2026-02-20" onchange="window.location.href='../'+this.value+'/index.html'">
-            </div>
-            <div class="title-section">
-                <h1 class="title">Tableau de Bord</h1>
-                <p class="subtitle">Friday 20 february 2026</p>
-            </div>
+        <div class="header">
+            <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
+            <h1 class="course-title">R1-C1 - PRIX DE SAINT-CALAIS</h1>
+            <div class="course-info"><div class="info-badge">&#128336; 15:03</div><div class="info-badge">&#127943; ATTELE</div><div class="info-badge">&#128207; 2850m</div><div class="info-badge">&#128176; 12000€</div><div class="info-badge">&#127942; 14 partants</div></div>
         </div>
-        <div class="reunions-grid">
-            <div class="reunion-card" onclick="window.location.href='reunion_R1.html'">
-                <div class="reunion-number">R1</div>
-                <div class="reunion-name">VINCENNES</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R2.html'">
-                <div class="reunion-number">R2</div>
-                <div class="reunion-name">PAU</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R3.html'">
-                <div class="reunion-number">R3</div>
-                <div class="reunion-name">GELSENKIRCHEN</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">4 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R4.html'">
-                <div class="reunion-number">R4</div>
-                <div class="reunion-name">CHANTILLY</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R5.html'">
-                <div class="reunion-number">R5</div>
-                <div class="reunion-name">CAGNES/MER</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R6.html'">
-                <div class="reunion-number">R6</div>
-                <div class="reunion-name">MEYDAN (E.A.U)</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R7.html'">
-                <div class="reunion-number">R7</div>
-                <div class="reunion-name">SANTIAGO</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">6 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
-                </div>
-            </div>
+        
+        <div class="nav-buttons">
+            <a href="participants_R1C1.html" class="nav-btn active">&#128206; Participants</a>
+            <a href="course_R1C1.html" class="nav-btn">&#128202; Classement</a>
+            <a href="formules_R1C1.html" class="nav-btn">&#11088; Recommandation</a>
+        </div>
+        <div class="main-section">
+            <h2 class="section-title">&#128206; PARTICIPANTS</h2>
+            <table>
+                <thead>
+                    <tr><th>N&deg;</th><th>Cheval</th><th>Jockey</th><th>Entra&icirc;neur</th><th>Musique</th><th>Cote</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>JUDIE DE TOUCHYVON</td>
+                        <td>Mme AUDREY MENAGER</td>
+                        <td>A. MENAGER</td>
+                        <td style="font-size:11px;">4a4a(25)3a3a2a3a1a3a8a</td>
+                        <td><strong>14.0</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>IN THE SUMMERTIME</td>
+                        <td>Mlle L. LIZEE</td>
+                        <td>Jules LEROULLEY</td>
+                        <td style="font-size:11px;">4a1a(25)DmDa1aDm3mDmDa</td>
+                        <td><strong>8.8</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>IT'S ME DIESCHOOT</td>
+                        <td>E. VAN DEN BERGH</td>
+                        <td>Mme I. HUYGENS-DE WITTE</td>
+                        <td style="font-size:11px;">1a(25)5a6m5a5a4a4a7m6m</td>
+                        <td><strong>44.0</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>8</strong></td>
+                        <td>JULES DES CHAMPS</td>
+                        <td>T. PERRIER</td>
+                        <td>L.M. DAVID</td>
+                        <td style="font-size:11px;">4a4a(25)Da6a1m3a7aDaDa</td>
+                        <td><strong>3.6</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>9</strong></td>
+                        <td>INDUCTIF</td>
+                        <td>S. LABOUTIQUE</td>
+                        <td>L. CANNAERT</td>
+                        <td style="font-size:11px;">2aDa(25)Da2a7a6aDa1a6a</td>
+                        <td><strong>3.6</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>10</strong></td>
+                        <td>HORACE DU VIVIER</td>
+                        <td>Mme P. CAVANIE</td>
+                        <td>J.F. VALLETTE</td>
+                        <td style="font-size:11px;">Da8a3a3a4a(25)Dm5aDa2a</td>
+                        <td><strong>14.0</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>11</strong></td>
+                        <td>JEEP DES CHARRONS</td>
+                        <td>A. UNTERREINER</td>
+                        <td>A. UNTERREINER</td>
+                        <td style="font-size:11px;">2a4a(25)2a7a3a4a9mDaDa</td>
+                        <td><strong>7.3</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>12</strong></td>
+                        <td>JALNA GIRL</td>
+                        <td>A. RAFFIN</td>
+                        <td>Y. DREUX</td>
+                        <td style="font-size:11px;">4a(25)2a6aDa3a0a6a4a1a</td>
+                        <td><strong>5.5</strong></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

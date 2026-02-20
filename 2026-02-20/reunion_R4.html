@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord - Carr&eacute; Magique Turf</title>
+    <title>R4 - CHANTILLY - Carr&eacute; Magique Turf</title>
     <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -132,74 +132,117 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 </style>
 </head>
 <body>
-    
+    <a href="index.html" class="back-button">&larr; Retour</a>
     <div class="container">
 
-        <div class="header-index">
-            <div class="logo-section">
-                <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
-                <input type="date" class="date-picker" value="2026-02-20" onchange="window.location.href='../'+this.value+'/index.html'">
-            </div>
-            <div class="title-section">
-                <h1 class="title">Tableau de Bord</h1>
-                <p class="subtitle">Friday 20 february 2026</p>
-            </div>
+        <div class="header">
+            <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
+            <h1 class="course-title">R4 - CHANTILLY</h1>
+            <p style="color: #C8A882;">8 courses</p>
         </div>
-        <div class="reunions-grid">
-            <div class="reunion-card" onclick="window.location.href='reunion_R1.html'">
-                <div class="reunion-number">R1</div>
-                <div class="reunion-name">VINCENNES</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
+        <div class="courses-list">
+            <div class="course-card" onclick="window.location.href='participants_R4C1.html'">
+                <div class="course-header">
+                    <div class="course-number">R4-C1</div>
+                    <div class="course-time">&#128336; 12:26</div>
+                </div>
+                <div class="course-card-title">PRIX DE LA ROUTE DES SANGLIERS</div>
+                <div class="course-details">
+                    <div class="detail-badge discipline">&#127943; PLAT</div>
+                    <div class="detail-badge prize">&#128176; 17300€</div>
+                    <div class="detail-badge distance">&#128207; 1600m</div>
+                    <div class="detail-badge runners">&#127942; 11 partants</div>
                 </div>
             </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R2.html'">
-                <div class="reunion-number">R2</div>
-                <div class="reunion-name">PAU</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
+            <div class="course-card" onclick="window.location.href='participants_R4C2.html'">
+                <div class="course-header">
+                    <div class="course-number">R4-C2</div>
+                    <div class="course-time">&#128336; 13:00</div>
+                </div>
+                <div class="course-card-title">PRIX DE LA ROUTE DU MILIEU</div>
+                <div class="course-details">
+                    <div class="detail-badge discipline">&#127943; PLAT</div>
+                    <div class="detail-badge prize">&#128176; 20200€</div>
+                    <div class="detail-badge distance">&#128207; 1600m</div>
+                    <div class="detail-badge runners">&#127942; 11 partants</div>
                 </div>
             </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R3.html'">
-                <div class="reunion-number">R3</div>
-                <div class="reunion-name">GELSENKIRCHEN</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">4 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
+            <div class="course-card" onclick="window.location.href='participants_R4C3.html'">
+                <div class="course-header">
+                    <div class="course-number">R4-C3</div>
+                    <div class="course-time">&#128336; 13:35</div>
+                </div>
+                <div class="course-card-title">PRIX DU CARREFOUR DE CONSTANTINE</div>
+                <div class="course-details">
+                    <div class="detail-badge discipline">&#127943; PLAT</div>
+                    <div class="detail-badge prize">&#128176; 24700€</div>
+                    <div class="detail-badge distance">&#128207; 1300m</div>
+                    <div class="detail-badge runners">&#127942; 13 partants</div>
                 </div>
             </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R4.html'">
-                <div class="reunion-number">R4</div>
-                <div class="reunion-name">CHANTILLY</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
+            <div class="course-card" onclick="window.location.href='participants_R4C4.html'">
+                <div class="course-header">
+                    <div class="course-number">R4-C4</div>
+                    <div class="course-time">&#128336; 14:10</div>
+                </div>
+                <div class="course-card-title">PRIX DU PARC LAVERSIN</div>
+                <div class="course-details">
+                    <div class="detail-badge discipline">&#127943; PLAT</div>
+                    <div class="detail-badge prize">&#128176; 24700€</div>
+                    <div class="detail-badge distance">&#128207; 1300m</div>
+                    <div class="detail-badge runners">&#127942; 11 partants</div>
                 </div>
             </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R5.html'">
-                <div class="reunion-number">R5</div>
-                <div class="reunion-name">CAGNES/MER</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
+            <div class="course-card" onclick="window.location.href='participants_R4C5.html'">
+                <div class="course-header">
+                    <div class="course-number">R4-C5</div>
+                    <div class="course-time">&#128336; 14:45</div>
+                </div>
+                <div class="course-card-title">PRIX DE LA PIERRE DE RHUIS</div>
+                <div class="course-details">
+                    <div class="detail-badge discipline">&#127943; PLAT</div>
+                    <div class="detail-badge prize">&#128176; 16500€</div>
+                    <div class="detail-badge distance">&#128207; 1900m</div>
+                    <div class="detail-badge runners">&#127942; 14 partants</div>
                 </div>
             </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R6.html'">
-                <div class="reunion-number">R6</div>
-                <div class="reunion-name">MEYDAN (E.A.U)</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">8 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
+            <div class="course-card" onclick="window.location.href='participants_R4C6.html'">
+                <div class="course-header">
+                    <div class="course-number">R4-C6</div>
+                    <div class="course-time">&#128336; 15:20</div>
+                </div>
+                <div class="course-card-title">PRIX DE LA ROUTE DU BLANC FOSSE</div>
+                <div class="course-details">
+                    <div class="detail-badge discipline">&#127943; PLAT</div>
+                    <div class="detail-badge prize">&#128176; 22100€</div>
+                    <div class="detail-badge distance">&#128207; 1600m</div>
+                    <div class="detail-badge runners">&#127942; 12 partants</div>
                 </div>
             </div>
-            <div class="reunion-card" onclick="window.location.href='reunion_R7.html'">
-                <div class="reunion-number">R7</div>
-                <div class="reunion-name">SANTIAGO</div>
-                <div class="reunion-courses">
-                    <span class="courses-badge">6 courses</span>
-                    <span>Cliquez pour voir les d&eacute;tails</span>
+            <div class="course-card" onclick="window.location.href='participants_R4C7.html'">
+                <div class="course-header">
+                    <div class="course-number">R4-C7</div>
+                    <div class="course-time">&#128336; 15:55</div>
+                </div>
+                <div class="course-card-title">PRIX DE LA ROUTE NEUVE DES SABLONS</div>
+                <div class="course-details">
+                    <div class="detail-badge discipline">&#127943; PLAT</div>
+                    <div class="detail-badge prize">&#128176; 28800€</div>
+                    <div class="detail-badge distance">&#128207; 1600m</div>
+                    <div class="detail-badge runners">&#127942; 12 partants</div>
+                </div>
+            </div>
+            <div class="course-card" onclick="window.location.href='participants_R4C8.html'">
+                <div class="course-header">
+                    <div class="course-number">R4-C8</div>
+                    <div class="course-time">&#128336; 16:30</div>
+                </div>
+                <div class="course-card-title">PRIX DU CHENE DES TROIS FRERES</div>
+                <div class="course-details">
+                    <div class="detail-badge discipline">&#127943; PLAT</div>
+                    <div class="detail-badge prize">&#128176; 24000€</div>
+                    <div class="detail-badge distance">&#128207; 1900m</div>
+                    <div class="detail-badge runners">&#127942; 13 partants</div>
                 </div>
             </div>
         </div>
