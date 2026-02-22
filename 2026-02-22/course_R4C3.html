@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R4-C3 Classement - Carr&eacute; Magique Turf</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QETD2M15"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-11QETD2M15');
+    </script>
+    
     <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -147,27 +157,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             <a href="formules_R4C3.html" class="nav-btn">&#11088; Recommandation</a>
         </div>
         <div class="main-section">
-            <h2 class="section-title">&#128202; CLASSEMENT - MISES SG</h2>
+            <h2 class="section-title">&#128202; CLASSEMENT - CARRE MAGIQUE TURF (F9 FUSION)</h2>
             <table>
                 <thead>
-                    <tr><th>Rang</th><th>N&deg;</th><th>Cheval</th><th>Mises</th><th>%</th><th>&Eacute;vol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th></tr>
+                    <tr><th>Rang</th><th>N&deg;</th><th>Cheval</th><th>Fr&eacute;q.</th><th>Rg SG</th><th>Rg Mises</th><th>Alerte</th></tr>
                 </thead>
                 <tbody>
-                    <tr class="alerte-vert">
-                        <td>1</td><td><strong>1</strong></td><td>LESTER</td>
-                        <td>3</td><td>50.0%</td><td>+0.0%</td>
-                        <td>→</td><td><strong>VERT</strong></td><td>FAVORI - Valeur sure</td>
-                    </tr>
-                    <tr class="alerte-vert">
-                        <td>2</td><td><strong>2</strong></td><td>LARMENAY</td>
-                        <td>2</td><td>33.3%</td><td>+0.0%</td>
-                        <td>→</td><td><strong>VERT</strong></td><td>Tres joue - Confiance</td>
-                    </tr>
-                    <tr class="alerte-vert">
-                        <td>3</td><td><strong>5</strong></td><td>L'UNE BRUNE</td>
-                        <td>1</td><td>16.7%</td><td>+0.0%</td>
-                        <td>→</td><td><strong>VERT</strong></td><td>Tres joue - Confiance</td>
-                    </tr>
+                        <tr class="alerte-blanc">
+                            <td>1</td><td><strong>1</strong></td><td>1</td>
+                            <td>+0.0%</td><td>→</td><td>VERT</td><td><strong>Favori solide</strong></td>
+                        </tr>
+                        <tr class="alerte-blanc">
+                            <td>2</td><td><strong>2</strong></td><td>2</td>
+                            <td>+0.0%</td><td>→</td><td>VERT</td><td><strong>Favori solide</strong></td>
+                        </tr>
+                        <tr class="alerte-blanc">
+                            <td>3</td><td><strong>5</strong></td><td>3</td>
+                            <td>+0.0%</td><td>→</td><td>VERT</td><td><strong>Favori solide</strong></td>
+                        </tr>
                 </tbody>
             </table>
         </div>
@@ -176,24 +183,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             <h2 class="section-title">&#127919; RECOMMANDATIONS</h2>
             <div class="recommendations-grid">
                 <div class="recommendation-card base">
-                    <div class="reco-title">&#11088; TOP 3 - FAVORIS</div>
+                    <div class="reco-title">BASE SOLIDE (3 chevaux)</div>
                     <div class="reco-numbers">1 - 2 - 5</div>
                 </div>
                 <div class="recommendation-card top5">
-                    <div class="reco-title">&#11088; TOP 5</div>
+                    <div class="reco-title">TOP 5 RECOMMAND&Eacute;</div>
                     <div class="reco-numbers">1 - 2 - 5</div>
                 </div>
                 <div class="recommendation-card top8">
-                    <div class="reco-title">&#11088; TOP 8 - SELECTION</div>
+                    <div class="reco-title">TOP 8 OPTIMAL</div>
                     <div class="reco-numbers">1 - 2 - 5</div>
                 </div>
                 <div class="recommendation-card outsiders">
-                    <div class="reco-title">&#9888; OUTSIDERS A SURVEILLER</div>
+                    <div class="reco-title">OUTSIDERS A SURVEILLER</div>
                     <div class="reco-numbers"></div>
                 </div>
                 <div class="recommendation-card pieges">
-                    <div class="reco-title">&#10060; PI&Egrave;GES &Agrave; &Eacute;VITER</div>
-                    <div class="reco-numbers"></div>
+                    <div class="reco-title">PI&Egrave;GES &Agrave; &Eacute;VITER</div>
+                    <div class="reco-numbers">N/A</div>
                 </div>
             </div>
         </div>
@@ -201,10 +208,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         <div class="main-section">
             <h2 class="section-title">&#128214; L&Eacute;GENDE DES ALERTES</h2>
             <div class="legend">
-                <div class="legend-item"><div class="legend-color" style="background:#C6EFCE;"></div><div class="legend-text"><strong>VERT</strong><br>Favori - Valeur s&ucirc;re</div></div>
-                <div class="legend-item"><div class="legend-color" style="background:#FFEB9C;"></div><div class="legend-text"><strong>JAUNE</strong><br>Outsider du TOP 8</div></div>
-                <div class="legend-item"><div class="legend-color" style="background:#FFC7CE;"></div><div class="legend-text"><strong>ORANGE</strong><br>Outsider &agrave; surveiller</div></div>
-                <div class="legend-item"><div class="legend-color" style="background:#FF6B6B;"></div><div class="legend-text"><strong>ROUGE</strong><br>Pi&egrave;ge &agrave; &eacute;viter</div></div>
+                <div class="legend-item"><div class="legend-color" style="background:#C6EFCE;"></div><div class="legend-text"><strong>VERT</strong><br>Favoris solides</div></div>
+                <div class="legend-item"><div class="legend-color" style="background:#FFEB9C;"></div><div class="legend-text"><strong>JAUNE</strong><br>Outsiders s&eacute;rieux</div></div>
+                <div class="legend-item"><div class="legend-color" style="background:#FFC7CE;"></div><div class="legend-text"><strong>ORANGE</strong><br>Outsiders &agrave; surveiller</div></div>
+                <div class="legend-item"><div class="legend-color" style="background:#FF6B6B;"></div><div class="legend-text"><strong>ROUGE</strong><br>Risques</div></div>
+                <div class="legend-item"><div class="legend-color" style="background:#2A2A2A;"></div><div class="legend-text"><strong>BLANC</strong><br>Peu probables</div></div>
             </div>
         </div>
     </div>
