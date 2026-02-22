@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<script>
-var today = new Date();
-var yyyy = today.getFullYear();
-var mm = String(today.getMonth() + 1).padStart(2, '0');
-var dd = String(today.getDate()).padStart(2, '0');
-var dateStr = yyyy + '-' + mm + '-' + dd;
-var fallback = '2026-02-22/index.html';
-fetch(dateStr + '/index.html', {method: 'HEAD'})
-  .then(function(r) {
-    if (r.ok) { window.location.href = dateStr + '/index.html'; }
-    else { window.location.href = fallback; }
-  })
-  .catch(function() { window.location.href = fallback; });
-</script>
-<noscript><meta http-equiv="refresh" content="0;url=2026-02-22/index.html"></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carré Magique Turf - Redirection...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000000;
+            color: #00B4D8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        .loader {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body><p>Redirection en cours...</p></body>
+<body>
+    <div class="loader">
+        <p>🏇 Chargement de Carré Magique Turf...</p>
+        <p style="font-size: 16px; color: #C8A882;">Redirection vers la page du jour...</p>
+    </div>
+    <script>
+        // Obtenir la date du jour au format YYYY-MM-DD
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        const dateStr = year + '-' + month + '-' + day;
+        
+        // Liste des dates disponibles (du plus récent au plus ancien)
+        const availableDates = ["2026-02-22", "2026-02-21", "2026-02-20", "2026-02-19", "2026-02-18", "2026-02-17", "2026-02-16", "2026-02-15", "2026-02-14", "2026-02-13", "2026-02-12", "2026-02-11", "2026-02-10", "2026-02-09"];
+        
+        // Trouver la date la plus proche (aujourd'hui ou la plus récente disponible)
+        let targetDate = dateStr;
+        if (!availableDates.includes(dateStr)) {
+            // Si la date du jour n'existe pas, prendre la plus récente
+            targetDate = availableDates[0];
+        }
+        
+        // Rediriger vers la page du jour
+        window.location.href = targetDate + '/index.html';
+    </script>
+</body>
 </html>
