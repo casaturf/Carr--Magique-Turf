@@ -8,7 +8,7 @@ var yyyy = today.getFullYear();
 var mm = String(today.getMonth() + 1).padStart(2, '0');
 var dd = String(today.getDate()).padStart(2, '0');
 var dateStr = yyyy + '-' + mm + '-' + dd;
-var fallback = '2026-02-21/index.html';
+var fallback = '2026-02-22/index.html';
 fetch(dateStr + '/index.html', {method: 'HEAD'})
   .then(function(r) {
     if (r.ok) { window.location.href = dateStr + '/index.html'; }
@@ -16,7 +16,7 @@ fetch(dateStr + '/index.html', {method: 'HEAD'})
   })
   .catch(function() { window.location.href = fallback; });
 </script>
-<noscript><meta http-equiv="refresh" content="0;url=2026-02-21/index.html"></noscript>
+<noscript><meta http-equiv="refresh" content="0;url=2026-02-22/index.html"></noscript>
 </head>
 <body><p>Redirection en cours...</p></body>
 </html>
