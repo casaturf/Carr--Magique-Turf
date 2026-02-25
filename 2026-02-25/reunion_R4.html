@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tableau de Bord - Carr&eacute; Magique Turf</title>
+<title>R4 - CAGNES/MER - Carr&eacute; Magique Turf</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 0; margin: 0; }
@@ -77,74 +77,117 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 </style>
 </head>
 <body>
-
+<a href="index.html" class="back-button">&larr; Retour</a>
 <div class="container">
 
-    <div class="header-index">
-        <div class="logo-section">
-            <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
-            <input type="date" class="date-picker" value="2026-02-25" onchange="window.location.href='../'+this.value+'/index.html'">
-        </div>
-        <div class="title-section">
-            <h1 class="title">Tableau de Bord</h1>
-            <p class="subtitle">Wednesday 25 february 2026</p>
-        </div>
+    <div class="header">
+        <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
+        <h1 class="course-title">R4 - CAGNES/MER</h1>
+        <p style="color: #C8A882;">8 courses</p>
     </div>
-    <div class="reunions-grid">
-        <div class="reunion-card" onclick="window.location.href='reunion_R1.html'">
-            <div class="reunion-number">R1</div>
-            <div class="reunion-name">VINCENNES</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">8 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
+    <div class="courses-list">
+        <div class="course-card" onclick="window.location.href='participants_R4C1.html'">
+            <div class="course-header">
+                <div class="course-number">R4-C1</div>
+                <div class="course-time">&#128336; 15:32</div>
+            </div>
+            <div class="course-card-title">PRIX D'ENTREVAUX</div>
+            <div class="course-details">
+                <div class="detail-badge discipline">&#127943; ATTELE</div>
+                <div class="detail-badge prize">&#128176; 35000€</div>
+                <div class="detail-badge distance">&#128207; 2925m</div>
+                <div class="detail-badge runners">&#127942; 10 partants</div>
             </div>
         </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R2.html'">
-            <div class="reunion-number">R2</div>
-            <div class="reunion-name">CHANTILLY</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">8 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
+        <div class="course-card" onclick="window.location.href='participants_R4C2.html'">
+            <div class="course-header">
+                <div class="course-number">R4-C2</div>
+                <div class="course-time">&#128336; 16:07</div>
+            </div>
+            <div class="course-card-title">PRIX DE SAN REMO</div>
+            <div class="course-details">
+                <div class="detail-badge discipline">&#127943; ATTELE</div>
+                <div class="detail-badge prize">&#128176; 23000€</div>
+                <div class="detail-badge distance">&#128207; 2700m</div>
+                <div class="detail-badge runners">&#127942; 15 partants</div>
             </div>
         </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R4.html'">
-            <div class="reunion-number">R4</div>
-            <div class="reunion-name">CAGNES/MER</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">8 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
+        <div class="course-card" onclick="window.location.href='participants_R4C3.html'">
+            <div class="course-header">
+                <div class="course-number">R4-C3</div>
+                <div class="course-time">&#128336; 16:42</div>
+            </div>
+            <div class="course-card-title">PRIX DE FREJUS</div>
+            <div class="course-details">
+                <div class="detail-badge discipline">&#127943; ATTELE</div>
+                <div class="detail-badge prize">&#128176; 26000€</div>
+                <div class="detail-badge distance">&#128207; 2700m</div>
+                <div class="detail-badge runners">&#127942; 16 partants</div>
             </div>
         </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R5.html'">
-            <div class="reunion-number">R5</div>
-            <div class="reunion-name">KEMPTON PARK</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">1 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
+        <div class="course-card" onclick="window.location.href='participants_R4C4.html'">
+            <div class="course-header">
+                <div class="course-number">R4-C4</div>
+                <div class="course-time">&#128336; 17:20</div>
+            </div>
+            <div class="course-card-title">PRIX DE TOULON</div>
+            <div class="course-details">
+                <div class="detail-badge discipline">&#127943; ATTELE</div>
+                <div class="detail-badge prize">&#128176; 38000€</div>
+                <div class="detail-badge distance">&#128207; 2925m</div>
+                <div class="detail-badge runners">&#127942; 18 partants</div>
             </div>
         </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R6.html'">
-            <div class="reunion-number">R6</div>
-            <div class="reunion-name">SOLVALLA</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">3 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
+        <div class="course-card" onclick="window.location.href='participants_R4C5.html'">
+            <div class="course-header">
+                <div class="course-number">R4-C5</div>
+                <div class="course-time">&#128336; 17:55</div>
+            </div>
+            <div class="course-card-title">PRIX QUIXOTIC</div>
+            <div class="course-details">
+                <div class="detail-badge discipline">&#127943; ATTELE</div>
+                <div class="detail-badge prize">&#128176; 29000€</div>
+                <div class="detail-badge distance">&#128207; 2925m</div>
+                <div class="detail-badge runners">&#127942; 12 partants</div>
             </div>
         </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R7.html'">
-            <div class="reunion-number">R7</div>
-            <div class="reunion-name">SAN ISIDRO</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">1 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
+        <div class="course-card" onclick="window.location.href='participants_R4C6.html'">
+            <div class="course-header">
+                <div class="course-number">R4-C6</div>
+                <div class="course-time">&#128336; 18:25</div>
+            </div>
+            <div class="course-card-title">PRIX DE MADRID</div>
+            <div class="course-details">
+                <div class="detail-badge discipline">&#127943; ATTELE</div>
+                <div class="detail-badge prize">&#128176; 24000€</div>
+                <div class="detail-badge distance">&#128207; 2925m</div>
+                <div class="detail-badge runners">&#127942; 11 partants</div>
             </div>
         </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R8.html'">
-            <div class="reunion-number">R8</div>
-            <div class="reunion-name">VALPARAISO</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">1 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
+        <div class="course-card" onclick="window.location.href='participants_R4C7.html'">
+            <div class="course-header">
+                <div class="course-number">R4-C7</div>
+                <div class="course-time">&#128336; 18:55</div>
+            </div>
+            <div class="course-card-title">PRIX DE BARJOLS</div>
+            <div class="course-details">
+                <div class="detail-badge discipline">&#127943; ATTELE</div>
+                <div class="detail-badge prize">&#128176; 12000€</div>
+                <div class="detail-badge distance">&#128207; 2950m</div>
+                <div class="detail-badge runners">&#127942; 11 partants</div>
+            </div>
+        </div>
+        <div class="course-card" onclick="window.location.href='participants_R4C8.html'">
+            <div class="course-header">
+                <div class="course-number">R4-C8</div>
+                <div class="course-time">&#128336; 19:25</div>
+            </div>
+            <div class="course-card-title">GRAND PRIX DE PASSAU (PRIX DE TOURVES)</div>
+            <div class="course-details">
+                <div class="detail-badge discipline">&#127943; MONTE</div>
+                <div class="detail-badge prize">&#128176; 38000€</div>
+                <div class="detail-badge distance">&#128207; 2925m</div>
+                <div class="detail-badge runners">&#127942; 13 partants</div>
             </div>
         </div>
     </div>

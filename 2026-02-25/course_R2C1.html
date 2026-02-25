@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tableau de Bord - Carr&eacute; Magique Turf</title>
+<title>R2-C1 Classement - Carr&eacute; Magique Turf</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 0; margin: 0; }
@@ -77,75 +77,112 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 </style>
 </head>
 <body>
-
+<a href="reunion_R2.html" class="back-button">&larr; Retour R2</a>
 <div class="container">
 
-    <div class="header-index">
-        <div class="logo-section">
-            <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
-            <input type="date" class="date-picker" value="2026-02-25" onchange="window.location.href='../'+this.value+'/index.html'">
-        </div>
-        <div class="title-section">
-            <h1 class="title">Tableau de Bord</h1>
-            <p class="subtitle">Wednesday 25 february 2026</p>
+    <div class="header">
+        <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
+        <h1 class="course-title">R2-C1 - PRIX ROGER POINCELET (CHMPT PARIS TURF DES APPRENTIS & JEUNES JOCKEYS)</h1>
+        <div class="course-info"><div class="info-badge">&#128336; 10:55</div><div class="info-badge">&#127943; PLAT</div><div class="info-badge">&#128207; 1900m</div><div class="info-badge">&#128176; 14600€</div><div class="info-badge">&#127942; 10 partants</div></div>
+    </div>
+    
+    <div class="nav-buttons">
+        <a href="participants_R2C1.html" class="nav-btn">&#128206; Participants</a>
+        <a href="course_R2C1.html" class="nav-btn active">&#128202; Classement</a>
+        <a href="formules_R2C1.html" class="nav-btn">&#11088; Recommandation</a>
+    </div>
+    <div class="main-section">
+        <h2 class="section-title">&#128202; CLASSEMENT - MISES SG</h2>
+        <table>
+            <thead>
+                <tr><th>Rang</th><th>N&deg;</th><th>Cheval</th><th>Mises</th><th>%</th><th>&Eacute;vol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th></tr>
+            </thead>
+            <tbody>
+        <tr class="alerte-vert">
+            <td>1</td><td><strong>8</strong></td><td>MINO GALESTE</td>
+            <td>34</td><td>25.8%</td><td>+0.0%</td>
+            <td>→</td><td><strong>VERT</strong></td><td>FAVORI - Valeur sure</td>
+        </tr>
+        <tr class="alerte-vert">
+            <td>2</td><td><strong>1</strong></td><td>SWEET DIANA</td>
+            <td>23</td><td>17.4%</td><td>+0.0%</td>
+            <td>→</td><td><strong>VERT</strong></td><td>Tres joue - Confiance</td>
+        </tr>
+        <tr class="alerte-vert">
+            <td>3</td><td><strong>6</strong></td><td>SEIGNEUR</td>
+            <td>14</td><td>10.6%</td><td>+0.0%</td>
+            <td>→</td><td><strong>VERT</strong></td><td>Tres joue - Confiance</td>
+        </tr>
+        <tr class="alerte-vert">
+            <td>4</td><td><strong>7</strong></td><td>BIG ENERGY</td>
+            <td>13</td><td>9.8%</td><td>+0.0%</td>
+            <td>→</td><td><strong>VERT</strong></td><td>A suivre</td>
+        </tr>
+        <tr class="alerte-vert">
+            <td>5</td><td><strong>2</strong></td><td>LOVE THE STARS</td>
+            <td>12</td><td>9.1%</td><td>+0.0%</td>
+            <td>→</td><td><strong>VERT</strong></td><td>A suivre</td>
+        </tr>
+        <tr class="alerte-jaune">
+            <td>6</td><td><strong>3</strong></td><td>SIJOUX</td>
+            <td>12</td><td>9.1%</td><td>+0.0%</td>
+            <td>→</td><td><strong>JAUNE</strong></td><td>Outsider</td>
+        </tr>
+        <tr class="alerte-jaune">
+            <td>7</td><td><strong>9</strong></td><td>DIRE LA VERITE</td>
+            <td>11</td><td>8.3%</td><td>+0.0%</td>
+            <td>→</td><td><strong>JAUNE</strong></td><td>Outsider</td>
+        </tr>
+        <tr class="alerte-jaune">
+            <td>8</td><td><strong>5</strong></td><td>GAULOIS GLORIEUX</td>
+            <td>10</td><td>7.6%</td><td>+0.0%</td>
+            <td>→</td><td><strong>JAUNE</strong></td><td>Outsider</td>
+        </tr>
+        <tr class="alerte-orange">
+            <td>9</td><td><strong>4</strong></td><td>MOUTARDE</td>
+            <td>2</td><td>1.5%</td><td>+0.0%</td>
+            <td>→</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td>
+        </tr>
+        <tr class="alerte-orange">
+            <td>10</td><td><strong>10</strong></td><td>SENECHALE</td>
+            <td>1</td><td>0.8%</td><td>+0.0%</td>
+            <td>→</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="main-section">
+        <h2 class="section-title">&#127919; RECOMMANDATIONS</h2>
+        <div class="recommendations-grid">
+            <div class="recommendation-card base">
+                <div class="reco-title">&#11088; TOP 3 - FAVORIS</div>
+                <div class="reco-numbers">8 - 1 - 6</div>
+            </div>
+            <div class="recommendation-card top5">
+                <div class="reco-title">&#11088; TOP 5</div>
+                <div class="reco-numbers">8 - 1 - 6 - 7 - 2</div>
+            </div>
+            <div class="recommendation-card top8">
+                <div class="reco-title">&#11088; TOP 8 - SELECTION</div>
+                <div class="reco-numbers">8 - 1 - 6 - 7 - 2 - 3 - 9 - 5</div>
+            </div>
+            <div class="recommendation-card outsiders">
+                <div class="reco-title">&#9888; OUTSIDERS A SURVEILLER</div>
+                <div class="reco-numbers">4 - 10</div>
+            </div>
+            <div class="recommendation-card pieges">
+                <div class="reco-title">&#10060; PI&Egrave;GES &Agrave; &Eacute;VITER</div>
+                <div class="reco-numbers"></div>
+            </div>
         </div>
     </div>
-    <div class="reunions-grid">
-        <div class="reunion-card" onclick="window.location.href='reunion_R1.html'">
-            <div class="reunion-number">R1</div>
-            <div class="reunion-name">VINCENNES</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">8 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
-            </div>
-        </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R2.html'">
-            <div class="reunion-number">R2</div>
-            <div class="reunion-name">CHANTILLY</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">8 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
-            </div>
-        </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R4.html'">
-            <div class="reunion-number">R4</div>
-            <div class="reunion-name">CAGNES/MER</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">8 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
-            </div>
-        </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R5.html'">
-            <div class="reunion-number">R5</div>
-            <div class="reunion-name">KEMPTON PARK</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">1 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
-            </div>
-        </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R6.html'">
-            <div class="reunion-number">R6</div>
-            <div class="reunion-name">SOLVALLA</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">3 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
-            </div>
-        </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R7.html'">
-            <div class="reunion-number">R7</div>
-            <div class="reunion-name">SAN ISIDRO</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">1 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
-            </div>
-        </div>
-        <div class="reunion-card" onclick="window.location.href='reunion_R8.html'">
-            <div class="reunion-number">R8</div>
-            <div class="reunion-name">VALPARAISO</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">1 courses</span>
-                <span>Cliquez pour voir les d&eacute;tails</span>
-            </div>
+    <div class="main-section">
+        <h2 class="section-title">&#128214; L&Eacute;GENDE DES ALERTES</h2>
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background:#C6EFCE;"></div><div class="legend-text"><strong>VERT</strong><br>Favori - Valeur s&ucirc;re</div></div>
+            <div class="legend-item"><div class="legend-color" style="background:#FFEB9C;"></div><div class="legend-text"><strong>JAUNE</strong><br>Outsider du TOP 8</div></div>
+            <div class="legend-item"><div class="legend-color" style="background:#FFC7CE;"></div><div class="legend-text"><strong>ORANGE</strong><br>Outsider &agrave; surveiller</div></div>
+            <div class="legend-item"><div class="legend-color" style="background:#FF6B6B;"></div><div class="legend-text"><strong>ROUGE</strong><br>Pi&egrave;ge &agrave; &eacute;viter</div></div>
         </div>
     </div>
 </div>
