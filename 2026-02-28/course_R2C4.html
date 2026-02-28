@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau de Bord - Carré Magique Turf</title>
+  <title>R2-C4 Classement - Carré Magique Turf</title>
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 0; margin: 0; }
@@ -94,99 +94,102 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 </head>
 <body>
   <div class="container">
+    <a class="back-button" href="reunion_R2.html">← Retour R2</a>
     
     
-    <div class="main-section header-index">
-        <div class="logo-section">
+    <div class="main-section" style="text-align:center; padding-bottom:10px;">
+        <a href="index.html">
             <img src="logo.png" class="logo" alt="Carré Magique Turf">
-        </div>
-        <div class="title-section">
-            <div class="title">Tableau de Bord</div>
-            <div class="subtitle">Saturday 28 february 2026</div>
+        </a>
+        <div class="course-title">R2-C4 - PRIX BABYLONE</div>
+        <div class="course-info"><span class="info-badge">🕐 10:40</span>
+<span class="info-badge">🏇 PLAT</span>
+<span class="info-badge">📏 1500m</span>
+<span class="info-badge">💰 4000€</span>
+<span class="info-badge">🏆 12 partants</span>
+</div>
+    </div>
+    <div class="nav-buttons">
+    <a class="nav-btn" href="participants_R2C4.html">📎 Participants</a>
+    <a class="nav-btn active" href="course_R2C4.html">📊 Classement</a>
+    <a class="nav-btn" href="formules_R2C4.html">⭐ Recommandation</a>
+</div>
+    
+    <div class="main-section">
+        <div class="section-title">📊 CLASSEMENT - MISES SG</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rang</th><th>N°</th><th>Cheval</th><th>Mises</th>
+                    <th>%</th><th>Évol. Cotes</th><th>Tendance</th>
+                    <th>Alerte</th><th>Recommandation</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr class="alerte-vert">
+            <td>1</td><td>10</td><td>ANIMAL MAGNETISM</td>
+            <td>7</td><td>58.3%</td><td>+0.0%</td>
+            <td>→</td><td>VERT</td><td>FAVORI - Valeur sure</td>
+        </tr>
+        <tr class="alerte-vert">
+            <td>2</td><td>3</td><td>RAMBAZAMBA</td>
+            <td>2</td><td>16.7%</td><td>+0.0%</td>
+            <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
+        </tr>
+        <tr class="alerte-vert">
+            <td>3</td><td>4</td><td>MISS WOO WOO</td>
+            <td>1</td><td>8.3%</td><td>+0.0%</td>
+            <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
+        </tr>
+        <tr class="alerte-vert">
+            <td>4</td><td>7</td><td>BIG FREEZE</td>
+            <td>1</td><td>8.3%</td><td>+0.0%</td>
+            <td>→</td><td>VERT</td><td>A suivre</td>
+        </tr>
+        <tr class="alerte-vert">
+            <td>5</td><td>12</td><td>IL RITORNO</td>
+            <td>1</td><td>8.3%</td><td>+0.0%</td>
+            <td>→</td><td>VERT</td><td>A suivre</td>
+        </tr></tbody>
+        </table>
+    </div>
+    <div class="main-section">
+        <div class="section-title">🎯 RECOMMANDATIONS</div>
+        <div class="recommendations-grid">
+            <div class="recommendation-card base">
+                <div class="reco-title">⭐ TOP 3 - FAVORIS</div>
+                <div class="reco-numbers">10 - 3 - 4</div>
+            </div>
+            <div class="recommendation-card top5">
+                <div class="reco-title">⭐ TOP 5</div>
+                <div class="reco-numbers">10 - 3 - 4 - 7 - 12</div>
+            </div>
+            <div class="recommendation-card top8">
+                <div class="reco-title">⭐ TOP 8 - SÉLECTION</div>
+                <div class="reco-numbers">10 - 3 - 4 - 7 - 12</div>
+            </div>
+            <div class="recommendation-card outsiders">
+                <div class="reco-title">⚠ OUTSIDERS À SURVEILLER</div>
+                <div class="reco-numbers"></div>
+            </div>
+            <div class="recommendation-card pieges">
+                <div class="reco-title">❌ PIÈGES À ÉVITER</div>
+                <div class="reco-numbers"></div>
+            </div>
         </div>
     </div>
-    <div class="reunions-grid">
-        
-        <a href="reunion_R1.html" style="text-decoration:none;">
-          <div class="reunion-card">
-            <div class="reunion-number">R1</div>
-            <div class="reunion-name">VINCENNES</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">10</span>
-                courses — cliquez pour voir les détails
-            </div>
-          </div>
-        </a>
-        <a href="reunion_R2.html" style="text-decoration:none;">
-          <div class="reunion-card">
-            <div class="reunion-number">R2</div>
-            <div class="reunion-name">MONS (GHLIN)</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">5</span>
-                courses — cliquez pour voir les détails
-            </div>
-          </div>
-        </a>
-        <a href="reunion_R3.html" style="text-decoration:none;">
-          <div class="reunion-card">
-            <div class="reunion-number">R3</div>
-            <div class="reunion-name">FONTAINEBLEAU</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">9</span>
-                courses — cliquez pour voir les détails
-            </div>
-          </div>
-        </a>
-        <a href="reunion_R4.html" style="text-decoration:none;">
-          <div class="reunion-card">
-            <div class="reunion-number">R4</div>
-            <div class="reunion-name">CAGNES/MER</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">8</span>
-                courses — cliquez pour voir les détails
-            </div>
-          </div>
-        </a>
-        <a href="reunion_R5.html" style="text-decoration:none;">
-          <div class="reunion-card">
-            <div class="reunion-number">R5</div>
-            <div class="reunion-name">WOLVEGA</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">4</span>
-                courses — cliquez pour voir les détails
-            </div>
-          </div>
-        </a>
-        <a href="reunion_R6.html" style="text-decoration:none;">
-          <div class="reunion-card">
-            <div class="reunion-number">R6</div>
-            <div class="reunion-name">MEYDAN (E.A.U)</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">4</span>
-                courses — cliquez pour voir les détails
-            </div>
-          </div>
-        </a>
-        <a href="reunion_R7.html" style="text-decoration:none;">
-          <div class="reunion-card">
-            <div class="reunion-number">R7</div>
-            <div class="reunion-name">AQUEDUCT</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">1</span>
-                courses — cliquez pour voir les détails
-            </div>
-          </div>
-        </a>
-        <a href="reunion_R8.html" style="text-decoration:none;">
-          <div class="reunion-card">
-            <div class="reunion-number">R8</div>
-            <div class="reunion-name">PALERMO</div>
-            <div class="reunion-courses">
-                <span class="courses-badge">1</span>
-                courses — cliquez pour voir les détails
-            </div>
-          </div>
-        </a>
+    <div class="main-section">
+        <div class="section-title">📖 LÉGENDE DES ALERTES</div>
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color alerte-vert"></div>
+                <div class="legend-text">VERT — Favori, valeur sûre</div></div>
+            <div class="legend-item"><div class="legend-color alerte-jaune"></div>
+                <div class="legend-text">JAUNE — Outsider du TOP 8</div></div>
+            <div class="legend-item"><div class="legend-color alerte-orange"></div>
+                <div class="legend-text">ORANGE — Outsider à surveiller</div></div>
+            <div class="legend-item"><div class="legend-color alerte-rouge"></div>
+                <div class="legend-text">ROUGE — Piège à éviter</div></div>
+        </div>
     </div>
   </div>
 </body>
