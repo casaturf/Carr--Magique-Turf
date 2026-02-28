@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R3-C6 Recommandation - Carr&eacute; Magique Turf</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R3-C6 Recommandation - Carré Magique Turf</title>
+  <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 0; margin: 0; }
 .container { max-width: 1600px; margin: 0 auto; padding: 0 10px 10px 10px; }
@@ -22,32 +22,36 @@ thead th { background: #00B4D8; color: #000000; padding: 10px 8px; text-align: c
 tbody td { padding: 8px 6px; text-align: center; border-bottom: 1px solid #2A2A2A; font-size: 13px; }
 tbody tr { transition: all 0.2s ease; }
 tbody tr:hover { background: rgba(0, 180, 216, 0.1); }
-.alerte-vert { background: #C6EFCE !important; color: #000000; font-weight: bold; }
-.alerte-jaune { background: #FFEB9C !important; color: #000000; font-weight: bold; }
+.alerte-vert   { background: #C6EFCE !important; color: #000000; font-weight: bold; }
+.alerte-jaune  { background: #FFEB9C !important; color: #000000; font-weight: bold; }
 .alerte-orange { background: #FFC7CE !important; color: #000000; font-weight: bold; }
-.alerte-rouge { background: #FF6B6B !important; color: #FFFFFF; font-weight: bold; }
-.alerte-blanc { background: #2A2A2A !important; color: #999999; }
+.alerte-rouge  { background: #FF6B6B !important; color: #FFFFFF; font-weight: bold; }
+.alerte-blanc  { background: #2A2A2A !important; color: #999999; }
+.top3     { background: rgba(198, 239, 206, 0.15) !important; }
+.top5     { background: rgba(0, 180, 216, 0.12) !important; }
+.top8     { background: rgba(200, 168, 130, 0.10) !important; }
+.outsider { background: rgba(255, 235, 156, 0.08) !important; }
 .nav-buttons { display: flex; gap: 8px; justify-content: center; margin: 10px 0; flex-wrap: wrap; }
 .nav-btn { background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
 .nav-btn:hover { background: #00B4D8; color: #000000; }
 .nav-btn.active { background: #00B4D8; color: #000000; }
 .recommendations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 15px; }
 .recommendation-card { background: #1A1A1A; border-left: 5px solid; padding: 15px; border-radius: 8px; }
-.recommendation-card.base { border-left-color: #C6EFCE; }
-.recommendation-card.top5 { border-left-color: #00B4D8; }
-.recommendation-card.top8 { border-left-color: #C8A882; }
+.recommendation-card.base      { border-left-color: #C6EFCE; }
+.recommendation-card.top5      { border-left-color: #00B4D8; }
+.recommendation-card.top8      { border-left-color: #C8A882; }
 .recommendation-card.outsiders { border-left-color: #FFEB9C; }
-.recommendation-card.pieges { border-left-color: #FF6B6B; }
-.reco-title { font-size: 16px; font-weight: bold; margin-bottom: 8px; color: #00B4D8; }
+.recommendation-card.pieges    { border-left-color: #FF6B6B; }
+.reco-title   { font-size: 16px; font-weight: bold; margin-bottom: 8px; color: #00B4D8; }
 .reco-numbers { font-size: 20px; font-weight: bold; color: #FFFFFF; }
 .legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 15px; }
 .legend-item { display: flex; align-items: center; gap: 8px; }
 .legend-color { width: 35px; height: 35px; border-radius: 6px; }
-.legend-text { font-size: 13px; }
+.legend-text  { font-size: 13px; }
 .header-index { display: flex; align-items: center; margin-bottom: 3px; margin-top: 0; padding-top: 0; }
-.logo-section { display: flex; flex-direction: column; gap: 3px; margin-top: 0; padding-top: 0; }
+.logo-section  { display: flex; flex-direction: column; gap: 3px; margin-top: 0; padding-top: 0; }
 .title-section { flex: 1; text-align: center; margin-left: 20px; }
-.title { font-size: 28px; color: #00B4D8; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
+.title    { font-size: 28px; color: #00B4D8; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
 .subtitle { font-size: 13px; color: #C8A882; }
 .date-picker { background: #1A1A1A; padding: 4px 12px; border-radius: 15px; font-size: 12px; color: #00B4D8; font-weight: bold; border: 2px solid #00B4D8; width: 150px; cursor: pointer; transition: all 0.3s ease; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 .date-picker:hover { background: #00B4D8; color: #000000; }
@@ -56,63 +60,79 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .reunions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 3px; }
 .reunion-card { background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%); border: 2px solid #00B4D8; border-radius: 10px; padding: 12px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
 .reunion-card:hover { transform: translateY(-5px); border-color: #FF6B6B; box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3); }
-.reunion-number { font-size: 22px; font-weight: bold; color: #FF6B6B; margin-bottom: 4px; }
-.reunion-name { font-size: 18px; color: #00B4D8; margin-bottom: 8px; font-weight: 600; }
+.reunion-number  { font-size: 22px; font-weight: bold; color: #FF6B6B; margin-bottom: 4px; }
+.reunion-name    { font-size: 18px; color: #00B4D8; margin-bottom: 8px; font-weight: 600; }
 .reunion-courses { font-size: 13px; color: #C8A882; display: flex; align-items: center; gap: 6px; }
-.courses-badge { background: #FF6B6B; color: #000000; padding: 2px 8px; border-radius: 10px; font-weight: bold; font-size: 12px; }
-.courses-list { margin-top: 3px; }
-.course-card { background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%); border-left: 5px solid #FF6B6B; border-radius: 8px; padding: 10px 15px; margin-bottom: 8px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
+.courses-badge   { background: #FF6B6B; color: #000000; padding: 2px 8px; border-radius: 10px; font-weight: bold; font-size: 12px; }
+.courses-list  { margin-top: 3px; }
+.course-card   { background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%); border-left: 5px solid #FF6B6B; border-radius: 8px; padding: 10px 15px; margin-bottom: 8px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
 .course-card:hover { transform: translateX(10px); border-left-color: #00B4D8; box-shadow: 0 5px 20px rgba(0, 180, 216, 0.3); }
-.course-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
-.course-number { font-size: 18px; font-weight: bold; color: #FF6B6B; }
-.course-time { background: #00B4D8; color: #000000; padding: 4px 12px; border-radius: 12px; font-weight: bold; font-size: 13px; }
+.course-header    { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.course-number    { font-size: 18px; font-weight: bold; color: #FF6B6B; }
+.course-time      { background: #00B4D8; color: #000000; padding: 4px 12px; border-radius: 12px; font-weight: bold; font-size: 13px; }
 .course-card-title { font-size: 16px; color: #FFFFFF; margin-bottom: 8px; font-weight: 600; }
-.course-details { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-.detail-badge { background: #2A2A2A; padding: 4px 8px; border-radius: 8px; font-size: 11px; display: flex; align-items: center; gap: 4px; }
+.course-details   { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.detail-badge            { background: #2A2A2A; padding: 4px 8px; border-radius: 8px; font-size: 11px; display: flex; align-items: center; gap: 4px; }
 .detail-badge.discipline { border: 2px solid #C8A882; color: #C8A882; }
-.detail-badge.prize { border: 2px solid #FFD700; color: #FFD700; }
-.detail-badge.distance { border: 2px solid #00B4D8; color: #00B4D8; }
-.detail-badge.runners { border: 2px solid #FF6B6B; color: #FF6B6B; }
-@media (max-width: 768px) { .back-button { position: static; display: block; margin: 0 auto 20px; width: fit-content; } .course-title { font-size: 20px; } table { font-size: 12px; } thead th, tbody td { padding: 8px 5px; } .header-index { flex-direction: column; } .title-section { margin-left: 0; margin-top: 10px; } .title { font-size: 24px; } .reunions-grid { grid-template-columns: 1fr; } }
+.detail-badge.prize      { border: 2px solid #FFD700; color: #FFD700; }
+.detail-badge.distance   { border: 2px solid #00B4D8; color: #00B4D8; }
+.detail-badge.runners    { border: 2px solid #FF6B6B; color: #FF6B6B; }
+.arrivee-box { background: linear-gradient(135deg, #0D2D1A 0%, #0A1A0D 100%); border: 2px solid #00FF88; border-radius: 10px; padding: 12px 20px; margin-bottom: 10px; text-align: center; }
+.arrivee-box .arrivee-label { font-size: 13px; color: #00FF88; font-weight: bold; margin-bottom: 4px; }
+.arrivee-box .arrivee-nums  { font-size: 22px; font-weight: bold; color: #FFFFFF; letter-spacing: 2px; }
+@media (max-width: 768px) {
+  .back-button { position: static; display: block; margin: 0 auto 20px; width: fit-content; }
+  .course-title { font-size: 20px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 8px 5px; }
+  .header-index { flex-direction: column; }
+  .title-section { margin-left: 0; margin-top: 10px; }
+  .title { font-size: 24px; }
+  .reunions-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
-<a href="reunion_R3.html" class="back-button">&larr; Retour R3</a>
-<div class="container">
-
-    <div class="header">
-        <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">
-        <h1 class="course-title">R3-C6 - PRIX GEORGES DERCOURT</h1>
-        <div class="course-info"><div class="info-badge">&#128336; 12:40</div><div class="info-badge">&#127943; PLAT</div><div class="info-badge">&#128207; 2200m</div><div class="info-badge">&#128176; 22100€</div><div class="info-badge">&#127942; 16 partants</div></div>
-    </div>
+  <div class="container">
+    <a class="back-button" href="reunion_R3.html">← Retour R3</a>
     
-    <div class="nav-buttons">
-        <a href="participants_R3C6.html" class="nav-btn">&#128206; Participants</a>
-        <a href="course_R3C6.html" class="nav-btn">&#128202; Classement</a>
-        <a href="formules_R3C6.html" class="nav-btn active">&#11088; Recommandation</a>
-        
-        
-        
-        
-    </div>
     
-    <div class="main-section" style="border-color: #FFD700;">
-        <h2 class="section-title" style="color: #FFD700; border-bottom-color: #FFD700;">&#11088; RECOMMANDATION CARR&Eacute; MAGIQUE TURF - TOP 8</h2>
-        <p style="color: #00B4D8; font-size: 22px; font-weight: bold; margin: 10px 0;">15 - 7 - 13 - 3 - 11 - 14 - 5 - 8</p>
-        <table>
-            <thead><tr><th>Rang</th><th>N&deg;</th><th>Cheval</th><th>Mises</th><th>&Eacute;vol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th></tr></thead>
-            <tbody><tr class="alerte-vert"><td>1</td><td><strong>15</strong></td><td>DALYAMIX</td><td>18</td><td>-84.0%</td><td>↓↓</td><td><strong>VERT</strong></td><td>FAVORI - Valeur sure</td></tr><tr class="alerte-vert"><td>2</td><td><strong>7</strong></td><td>PINGO</td><td>6</td><td>+38.5%</td><td>↑↑</td><td><strong>VERT</strong></td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>3</td><td><strong>13</strong></td><td>KEEN APPROACH</td><td>5</td><td>+120.5%</td><td>↑↑</td><td><strong>VERT</strong></td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>4</td><td><strong>3</strong></td><td>RIYAK</td><td>4</td><td>+0.0%</td><td>→</td><td><strong>VERT</strong></td><td>A suivre</td></tr><tr class="alerte-vert"><td>5</td><td><strong>11</strong></td><td>LA DIVA D'ALBEN</td><td>3</td><td>+77.2%</td><td>↑↑</td><td><strong>VERT</strong></td><td>A suivre</td></tr><tr class="alerte-jaune"><td>6</td><td><strong>14</strong></td><td>BRIONA</td><td>3</td><td>+169.2%</td><td>↑↑</td><td><strong>JAUNE</strong></td><td>Outsider</td></tr><tr class="alerte-jaune"><td>7</td><td><strong>5</strong></td><td>DSCHINGIS GALILEI</td><td>2</td><td>+0.0%</td><td>→</td><td><strong>JAUNE</strong></td><td>Outsider</td></tr><tr class="alerte-jaune"><td>8</td><td><strong>8</strong></td><td>HONGUEMARE</td><td>2</td><td>+165.8%</td><td>↑↑</td><td><strong>JAUNE</strong></td><td>Outsider</td></tr></tbody>
-        </table>
-    </div>
-    
-        <div class="main-section">
-            <h2 class="section-title">&#128203; ACCESSIT</h2>
-            <p style="color: #C8A882; font-size: 18px; font-weight: bold; margin: 10px 0;"></p>
-            <table>
-                <thead><tr><th>Rang</th><th>N&deg;</th><th>Cheval</th><th>Mises</th><th>&Eacute;vol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th></tr></thead>
-                <tbody><tr class="alerte-orange"><td>9</td><td><strong>9</strong></td><td>CANDYMAN</td><td>2</td><td>+165.8%</td><td>↑↑</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td></tr><tr class="alerte-orange"><td>10</td><td><strong>10</strong></td><td>JOHN WICK</td><td>2</td><td>+0.0%</td><td>→</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td></tr><tr class="alerte-orange"><td>11</td><td><strong>2</strong></td><td>STAR MAUVE</td><td>1</td><td>+0.0%</td><td>→</td><td><strong>ORANGE</strong></td><td>Outsider a surveiller</td></tr><tr class="alerte-rouge"><td>12</td><td><strong>6</strong></td><td>ROOSTER CROWING</td><td>1</td><td>+186.7%</td><td>↑↑</td><td><strong>ROUGE</strong></td><td>Piege a eviter</td></tr></tbody>
-            </table>
-        </div>
+    <div class="main-section" style="text-align:center; padding-bottom:10px;">
+        <a href="index.html">
+            <img src="logo.png" class="logo" alt="Carré Magique Turf">
+        </a>
+        <div class="course-title">R3-C6 - PRIX GEORGES DERCOURT</div>
+        <div class="course-info"><span class="info-badge">🕐 12:40</span>
+<span class="info-badge">🏇 PLAT</span>
+<span class="info-badge">📏 2200m</span>
+<span class="info-badge">💰 22100€</span>
+<span class="info-badge">🏆 16 partants</span>
 </div>
+    </div>
+    <div class="nav-buttons">
+    <a class="nav-btn" href="participants_R3C6.html">📎 Participants</a>
+    <a class="nav-btn" href="course_R3C6.html">📊 Classement</a>
+    <a class="nav-btn active" href="formules_R3C6.html">⭐ Recommandation</a>
+    <a class="nav-btn" href="plat_R3C6.html">🏈 Spécial PLAT</a>
+</div>
+    
+    <div class="main-section">
+        <div class="section-title">⭐ RECOMMANDATION CARRÉ MAGIQUE TURF - TOP 8</div>
+        <div style="font-size:18px; color:#00B4D8; font-weight:bold; margin-bottom:10px;">15 - 7 - 13 - 3 - 11 - 14 - 5 - 8</div>
+        <table><thead><tr>
+        <th>Rang</th><th>N°</th><th>Cheval</th><th>Mises</th>
+        <th>Évol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th>
+    </tr></thead><tbody><tr class="alerte-vert"><td>1</td><td>15</td><td>DALYAMIX</td><td>18</td><td>-84.0%</td><td>↓↓</td><td>VERT</td><td>FAVORI - Valeur sure</td></tr><tr class="alerte-vert"><td>2</td><td>7</td><td>PINGO</td><td>6</td><td>+38.5%</td><td>↑↑</td><td>VERT</td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>3</td><td>13</td><td>KEEN APPROACH</td><td>5</td><td>+120.5%</td><td>↑↑</td><td>VERT</td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>4</td><td>3</td><td>RIYAK</td><td>4</td><td>+0.0%</td><td>→</td><td>VERT</td><td>A suivre</td></tr><tr class="alerte-vert"><td>5</td><td>11</td><td>LA DIVA D'ALBEN</td><td>3</td><td>+77.2%</td><td>↑↑</td><td>VERT</td><td>A suivre</td></tr><tr class="alerte-jaune"><td>6</td><td>14</td><td>BRIONA</td><td>3</td><td>+169.2%</td><td>↑↑</td><td>JAUNE</td><td>Outsider</td></tr><tr class="alerte-jaune"><td>7</td><td>5</td><td>DSCHINGIS GALILEI</td><td>2</td><td>+0.0%</td><td>→</td><td>JAUNE</td><td>Outsider</td></tr><tr class="alerte-jaune"><td>8</td><td>8</td><td>HONGUEMARE</td><td>2</td><td>+165.8%</td><td>↑↑</td><td>JAUNE</td><td>Outsider</td></tr></tbody></table>
+    </div>
+    
+    <div class="main-section">
+        <div class="section-title">📋 ACCESSIT</div>
+        <div style="font-size:18px; color:#C8A882; font-weight:bold; margin-bottom:10px;"></div>
+        <table><thead><tr>
+        <th>Rang</th><th>N°</th><th>Cheval</th><th>Mises</th>
+        <th>Évol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th>
+    </tr></thead><tbody><tr class="alerte-orange"><td>9</td><td>9</td><td>CANDYMAN</td><td>2</td><td>+165.8%</td><td>↑↑</td><td>ORANGE</td><td>Outsider a surveiller</td></tr><tr class="alerte-orange"><td>10</td><td>10</td><td>JOHN WICK</td><td>2</td><td>+0.0%</td><td>→</td><td>ORANGE</td><td>Outsider a surveiller</td></tr><tr class="alerte-orange"><td>11</td><td>2</td><td>STAR MAUVE</td><td>1</td><td>+0.0%</td><td>→</td><td>ORANGE</td><td>Outsider a surveiller</td></tr><tr class="alerte-rouge"><td>12</td><td>6</td><td>ROOSTER CROWING</td><td>1</td><td>+186.7%</td><td>↑↑</td><td>ROUGE</td><td>Piege a eviter</td></tr></tbody></table>
+    </div>
+  </div>
 </body>
 </html>
