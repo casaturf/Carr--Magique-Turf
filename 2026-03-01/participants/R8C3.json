@@ -1,0 +1,138 @@
+{
+  "discipline": "PLAT",
+  "distance": 1100,
+  "libelle": "HELLO-GOODBYE (2021)",
+  "heure": "20:15",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "NOCCIOLI D'ITALIA",
+      "driver": "ERIC ACOSTA",
+      "corde": 1,
+      "poids": 55.0,
+      "gains": 0,
+      "musique": "",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "HUERFANO REAL",
+      "driver": "LUCAS URRUZMENDI",
+      "corde": 2,
+      "poids": 55.0,
+      "gains": 3452000,
+      "musique": "7p6p4p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "SARCOFAGO",
+      "driver": "JOSE LUIZ DA SILVA",
+      "corde": 3,
+      "poids": 55.0,
+      "gains": 0,
+      "musique": "",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "EL ELEGIDO",
+      "driver": "FEDERICO FABIAN PIRIZ",
+      "corde": 4,
+      "poids": 55.0,
+      "gains": 11000000,
+      "musique": "5p3p4p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "AERO CHAMPION",
+      "driver": "LUIS ALBERTO CACERES",
+      "corde": 5,
+      "poids": 56.0,
+      "gains": 42416000,
+      "musique": "2p1p2p",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "EZEQUIEL",
+      "driver": "CARLOS MANUEL SUAREZ",
+      "corde": 6,
+      "poids": 55.0,
+      "gains": 0,
+      "musique": "9p5p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "DE BOY",
+      "driver": "DIEGO NICOLAS SANCHEZ",
+      "corde": 7,
+      "poids": 56.0,
+      "gains": 3884000,
+      "musique": "1p3p",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "HELIUM",
+      "driver": "CESAR ADEMAR IBANEZ",
+      "corde": 8,
+      "poids": 56.0,
+      "gains": 24636000,
+      "musique": "1p4p",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "WHITE PAINT",
+      "driver": "JULIO CESAR MENDEZ",
+      "corde": 9,
+      "poids": 55.0,
+      "gains": 0,
+      "musique": "",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "EXCLUSIVO FEVER",
+      "driver": "JUAN MARTIN DIAZ",
+      "corde": 10,
+      "poids": 55.0,
+      "gains": 0,
+      "musique": "3p",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "DIONISO",
+      "driver": "MAICOL DE SOUZA",
+      "corde": 11,
+      "poids": 55.0,
+      "gains": 7680000,
+      "musique": "3p5p",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "GRAND LUCKY",
+      "driver": "MARCOS ALEJANDRO PADILLA",
+      "corde": 12,
+      "poids": 55.0,
+      "gains": 0,
+      "musique": "",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "SHANDY",
+      "driver": "VAGNER LEAL",
+      "corde": 13,
+      "poids": 55.0,
+      "gains": 2240000,
+      "musique": "4p",
+      "tendance": " "
+    }
+  ]
+}

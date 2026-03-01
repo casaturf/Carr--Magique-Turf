@@ -1,0 +1,128 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2700,
+  "libelle": "PRIX AMISO - FLERS",
+  "heure": "13:50",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "LYS PETTEVINIERE",
+      "driver": "Y. LEBOURGEOIS",
+      "corde": 1,
+      "poids": 0,
+      "gains": 3209500,
+      "musique": "6a2a7a(25)0a2a5a4a5a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "LUXURY DU DOUAROU",
+      "driver": "F. NIVARD",
+      "corde": 2,
+      "poids": 0,
+      "gains": 3314000,
+      "musique": "(25)3a5a2a8a4a2a8a5aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "LABEL GEMA",
+      "driver": "A. GENDROT",
+      "corde": 3,
+      "poids": 0,
+      "gains": 3118000,
+      "musique": "(25)7a6a0a4a4a1a5a(24)6a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "LASCAUX DU PERCHE",
+      "driver": "A.G. MAILLARD",
+      "corde": 4,
+      "poids": 0,
+      "gains": 3214000,
+      "musique": "2a9a(25)3a4a8a8aDaDa2a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "LATINO DES ISLES",
+      "driver": "G. DELACOUR",
+      "corde": 5,
+      "poids": 0,
+      "gains": 3209000,
+      "musique": "(25)7m9m1m7a4aDa6a5aAa",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "LUCKY DES GAUDINES",
+      "driver": "F. PRIOUL",
+      "corde": 6,
+      "poids": 0,
+      "gains": 3163000,
+      "musique": "(25)7aDa0a7a4a6a2a8a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "LOUISIS DU LUPIN",
+      "driver": "P. BOUGON BOUGEARD",
+      "corde": 7,
+      "poids": 0,
+      "gains": 2908000,
+      "musique": "0a(25)8a1a5a5aDa0a3a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "LUTIN DE LA BASLE",
+      "driver": "S. HARDY",
+      "corde": 8,
+      "poids": 0,
+      "gains": 3019500,
+      "musique": "5a3a4a(25)2a9a6a3a4a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "LOUDEAC D'YVI",
+      "driver": "B. DELASALLE",
+      "corde": 9,
+      "poids": 0,
+      "gains": 646000,
+      "musique": "5a9a8a(25)6a5a6a3a9a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "LAMENTIN",
+      "driver": "P. HOUEL",
+      "corde": 10,
+      "poids": 0,
+      "gains": 2131000,
+      "musique": "Da3a(25)8aDa2a5aDaDaDm",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "L'ARNACOEUR",
+      "driver": "M. BANSARD",
+      "corde": 11,
+      "poids": 0,
+      "gains": 2902500,
+      "musique": "(25)DaDa5a8a4a3a1a9a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "LISSANDRO D'ARC",
+      "driver": "F. DESMIGNEUX",
+      "corde": 12,
+      "poids": 0,
+      "gains": 2767500,
+      "musique": "4aDa2a(25)3a9a9a2aDa2a",
+      "tendance": " "
+    }
+  ]
+}

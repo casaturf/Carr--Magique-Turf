@@ -1,0 +1,128 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2500,
+  "libelle": "PRIX DE LA FEDERATION DE L'EST",
+  "heure": "16:00",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "IRONIE DES BROUETS",
+      "driver": "A. DAULIER",
+      "corde": 1,
+      "poids": 0,
+      "gains": 4383000,
+      "musique": "8a(25)5a0a0a5a2a9a7a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "JUSTIN DE VALMONT",
+      "driver": "L. RIVENET",
+      "corde": 2,
+      "poids": 0,
+      "gains": 5538500,
+      "musique": "(25)Da2m7m2m4a8a9m0aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "JISKAYA DE CARSI",
+      "driver": "Mme M. HAWAS",
+      "corde": 3,
+      "poids": 0,
+      "gains": 5632500,
+      "musique": "(25)0a7a8a1a7a3a(24)7a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "INOX MAZA",
+      "driver": "A. NEIRINCK",
+      "corde": 4,
+      "poids": 0,
+      "gains": 5297500,
+      "musique": "(25)DaDaDaDa6a9aDa7a9a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "JEWEL D'ARGENT",
+      "driver": "S. LABOUTIQUE",
+      "corde": 5,
+      "poids": 0,
+      "gains": 4270000,
+      "musique": "5a(25)8a4a3a2aDa5a0aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "IDEAL DU MAXFRAN",
+      "driver": "J.M. BERTRAND",
+      "corde": 6,
+      "poids": 0,
+      "gains": 5576000,
+      "musique": "1a0a(25)4a9aDa1a0a0aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "JOY ERCA",
+      "driver": "L. HEUZE",
+      "corde": 7,
+      "poids": 0,
+      "gains": 5491500,
+      "musique": "0a(25)6a6a7a0a0a7a1a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "JOCKEY CADENCE",
+      "driver": "B. SCHWARTZ",
+      "corde": 8,
+      "poids": 0,
+      "gains": 3764500,
+      "musique": "0a(25)8a3a2a2a7a0aDa4a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "JARDY DES LANDES",
+      "driver": "D. CAILLET",
+      "corde": 9,
+      "poids": 0,
+      "gains": 3144500,
+      "musique": "(25)5m4m2m7a3a2a7a2aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "JERIDAN",
+      "driver": "TH. HUCHEDE",
+      "corde": 10,
+      "poids": 0,
+      "gains": 3642500,
+      "musique": "3a0a(25)5a8aDa7aDaDa7a",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "JAM DES LANDES",
+      "driver": "TH. LEVASSEUR",
+      "corde": 11,
+      "poids": 0,
+      "gains": 3708500,
+      "musique": "(25)3a6a0a0a4a0a7a5a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "JIJI DOUZOU",
+      "driver": "K. PHLYPO",
+      "corde": 12,
+      "poids": 0,
+      "gains": 2314500,
+      "musique": "Da7a(25)7a5aDa(24)8a4a4a",
+      "tendance": " "
+    }
+  ]
+}

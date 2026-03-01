@@ -1,0 +1,148 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2575,
+  "libelle": "PRIX LOUIS CHAUX",
+  "heure": "15:25",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "HARCOURT DE PADD",
+      "driver": "Mme G. HERITIER",
+      "corde": 1,
+      "poids": 0,
+      "gains": 12136000,
+      "musique": "Dm9aDm(25)0a5a0a0a0a7m",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "HEOLA DU PILET",
+      "driver": "CH. BOISNARD",
+      "corde": 2,
+      "poids": 0,
+      "gains": 12651000,
+      "musique": "0a0a5a(25)5a9aDa4a7a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "HEPICETOU",
+      "driver": "J. ASSELIE",
+      "corde": 3,
+      "poids": 0,
+      "gains": 12601500,
+      "musique": "9mDm4m(25)0a7aDa0mDmDa",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "JEFF DE MONPAZ",
+      "driver": "L. LALANDE",
+      "corde": 4,
+      "poids": 0,
+      "gains": 12542500,
+      "musique": "Da1aDa(25)4a6a6a1a2a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "IZAYA DE COUSSERAT",
+      "driver": "M.X. CHARLOT",
+      "corde": 5,
+      "poids": 0,
+      "gains": 13287500,
+      "musique": "3m8a7a(25)6a2m6a1a6a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "HARONA D'OLIVERIE",
+      "driver": "F. CLOZIER",
+      "corde": 6,
+      "poids": 0,
+      "gains": 12816000,
+      "musique": "8a(25)0a5a6a0a9a0a7a9a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "HORUS DES CHAMPS",
+      "driver": "D. CANNILLO",
+      "corde": 7,
+      "poids": 0,
+      "gains": 12832500,
+      "musique": "0a(25)0a0a0a9a8a0a3a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "HUGH DE BANVILLE",
+      "driver": "N.R. BROSSARD",
+      "corde": 8,
+      "poids": 0,
+      "gains": 13494500,
+      "musique": "0a5a4aDa5a0a(25)5a7a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "HILAIRE DES PLANS",
+      "driver": "Mlle D. POSTHUMUS",
+      "corde": 9,
+      "poids": 0,
+      "gains": 12096000,
+      "musique": "9a8a0a(25)Dm6a0a0a8a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "INUKSHUK",
+      "driver": "M. GRASSET",
+      "corde": 10,
+      "poids": 0,
+      "gains": 11343500,
+      "musique": "Da2a(25)2a9a5a5a1a4a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "JACK REACHER",
+      "driver": "Mme LANA HENRY",
+      "corde": 11,
+      "poids": 0,
+      "gains": 10256000,
+      "musique": "2a3a2a(25)3aDaDa3a4a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "ICARE BRILLOUARD",
+      "driver": "A. LEVEAU",
+      "corde": 12,
+      "poids": 0,
+      "gains": 9528500,
+      "musique": "3a(25)0a7a7a2a4a4a3a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "ICARE DECAST",
+      "driver": "P. GESRET",
+      "corde": 13,
+      "poids": 0,
+      "gains": 10395000,
+      "musique": "Da(25)0a0a6a5a0aDa2a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "HAYRTON MAGIC",
+      "driver": "S. LALOUM",
+      "corde": 14,
+      "poids": 0,
+      "gains": 11785500,
+      "musique": "Da6a4a3a(25)7mDa4aDaDa",
+      "tendance": " "
+    }
+  ]
+}

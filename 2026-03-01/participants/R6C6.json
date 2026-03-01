@@ -1,0 +1,88 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2100,
+  "libelle": "PRIX GROSBOIS                           AUTRICHE",
+  "heure": "18:50",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "MUSCLE MAGIC",
+      "driver": "THOMAS PRIBIL",
+      "corde": 1,
+      "poids": 0,
+      "gains": 1785300,
+      "musique": "4a5a(25)5a1a8a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "HUGO CAESAR",
+      "driver": "MARIO ZANDERIGO",
+      "corde": 2,
+      "poids": 0,
+      "gains": 2067600,
+      "musique": "5a(25)8a4a6a3a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "WILD GLIDE",
+      "driver": "GERHARD MAYR",
+      "corde": 3,
+      "poids": 0,
+      "gains": 2170800,
+      "musique": "1a1a(25)3a4a3a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "RIMSKI",
+      "driver": "GREGOR KRENMAYR",
+      "corde": 4,
+      "poids": 0,
+      "gains": 2284200,
+      "musique": "7a(25)4a3a2a6a(24)1a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "LAMBORGHINI BROS",
+      "driver": "Mme CORNELIA MAYR",
+      "corde": 5,
+      "poids": 0,
+      "gains": 2290100,
+      "musique": "6a2a3a3a2a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "PRINCESS",
+      "driver": "ERICH KUBES",
+      "corde": 6,
+      "poids": 0,
+      "gains": 2368300,
+      "musique": "4a(25)2a2a9a2a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "AMIGO VENUS",
+      "driver": "FRANZ KONLECHNER",
+      "corde": 7,
+      "poids": 0,
+      "gains": 3421600,
+      "musique": "6a8a(25)1a2a3a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "WIM HAZELAAR",
+      "driver": "CHRISTOPH FISCHER",
+      "corde": 8,
+      "poids": 0,
+      "gains": 3473400,
+      "musique": "5a2a(25)Da1a2a3a",
+      "tendance": " "
+    }
+  ]
+}

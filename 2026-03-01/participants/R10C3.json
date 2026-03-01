@@ -1,0 +1,168 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2625,
+  "libelle": "PRIX DE ROQUEFORT",
+  "heure": "13:55",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "LINGOT D'ARGENT",
+      "driver": "V. CABOS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1283000,
+      "musique": "8a(25)Da0a3a8a0a8a6a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "LUCKY D'AVIGNERE",
+      "driver": "R. LE CREPS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1458000,
+      "musique": "Da(25)9aDa1aDa1a(24)Da4a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "LEWIS DU PADOUENG",
+      "driver": "P. GERAY",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1481500,
+      "musique": "(25)2aDa5a7a2aDa(24)4a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "LOVE YOU DRALIAM",
+      "driver": "M.X. CHARLOT",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1547000,
+      "musique": "DaDa(25)2a3a4a8aDaDaDa",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "LEADER DE LA COTE",
+      "driver": "P. GESRET",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1647500,
+      "musique": "9a(25)Da6a9a6a7a3a6aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "LUCKY DU CHALONGE",
+      "driver": "ET. CLOZIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1648500,
+      "musique": "Da4a3a7a(25)Da5a6a5aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "LIBECCIU",
+      "driver": "M. GRASSET",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1677500,
+      "musique": "Da7a(25)Da8a9a7aDaDa0a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "LOURZY DE FARS",
+      "driver": "M. CRIADO",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1794500,
+      "musique": "7a3a(25)8a3a1a3a8a2a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "LUZ JELOCA",
+      "driver": "S. LALOUM",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1878000,
+      "musique": "Da5a1a0a(25)Da3a0a7a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "L'AMIRAL DE BOUERE",
+      "driver": "S. POILANE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2366500,
+      "musique": "(25)8a7a0a5a8a2a9a8a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "L'INDIEN DU VALVIC",
+      "driver": "Y. BOUISSON",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2863000,
+      "musique": "9a6a9a(25)1a5a5a4a7a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "LUXURIO VICI",
+      "driver": "Mme LANA HENRY",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3240000,
+      "musique": "7a(25)6a2a2a8a0aDa8a5a",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "LE PREMIER ORTHON",
+      "driver": "Y. LACOMBE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3372000,
+      "musique": "5aDa(25)5a1a7a1a2a1a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "LIEVRE D'ALBRET",
+      "driver": "B. VANACKER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3591000,
+      "musique": "5a9a0a(25)0a7a2a1a5a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 15,
+      "nom": "LOVE DU PASSAGE",
+      "driver": "Mme E. LEPAGE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3747000,
+      "musique": "5a2a(25)5a5a1a7a9a2a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 16,
+      "nom": "LIBERTANGO",
+      "driver": "F. CLOZIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3760000,
+      "musique": "Da2a1a(25)DaDa1a3a(24)Da",
+      "tendance": " "
+    }
+  ]
+}

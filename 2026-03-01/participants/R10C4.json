@@ -1,0 +1,108 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2625,
+  "libelle": "PRIX JEAN-FRANCOIS MAURY",
+  "heure": "14:25",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "KWYTE DE HOUELLE",
+      "driver": "Mlle L. LIZEE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1827000,
+      "musique": "4a(25)7a6a5aDa(24)0a1a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "KAYCAT WARRIOR",
+      "driver": "L. SEIGNE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3370000,
+      "musique": "7a6a3a7a0a(25)9a8a3a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "KRAC MICHA",
+      "driver": "C. LANGLOIS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3898000,
+      "musique": "1a5m1a(25)6mDm2m8a5a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "ISABELLE GRAND PRE",
+      "driver": "E. PEREKRESTOFF",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3943000,
+      "musique": "9a4a(25)0a5a5a0a7a2a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "JOUR DE JUIN",
+      "driver": "C. BATY",
+      "corde": 0,
+      "poids": 0,
+      "gains": 4007000,
+      "musique": "3a2a7a1a(25)1aDa2aDa7m",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "KALITA DU PADOUENG",
+      "driver": "G. BEAUDOUIN",
+      "corde": 0,
+      "poids": 0,
+      "gains": 4014500,
+      "musique": "2a8aDa(25)4a0a4aDm4a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "HAMBRIN D'ARANAU",
+      "driver": "H.C. BAKKER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 6975000,
+      "musique": "0a(25)0a0aDa4a3aAa0a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "IN THE MOOD GEDE",
+      "driver": "J.M. FREYSSENGE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7499500,
+      "musique": "(25)3m3m2m2m3m6a4a8a(24)",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "HOLA DE BOUERE",
+      "driver": "R. PELLIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 8093000,
+      "musique": "7a5a(25)6a1aDa2a7a6a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "GENTLEMAN SMART",
+      "driver": "A. RIVIERE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 8098500,
+      "musique": "0a(25)0a0a0a0a7aDa7a3a",
+      "tendance": " "
+    }
+  ]
+}

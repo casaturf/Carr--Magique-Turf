@@ -1,0 +1,78 @@
+{
+  "discipline": "STEEPLECHASE",
+  "distance": 3600,
+  "libelle": "PRIX RIVOLI",
+  "heure": "12:58",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "MATADOR FOREZ",
+      "driver": "K.DUBOURG",
+      "corde": 0,
+      "poids": 72.0,
+      "gains": 3918000,
+      "musique": "(25)2s1s3s2s4h1h6h",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "LETSGO D'ALENE",
+      "driver": "M.ZULIANI",
+      "corde": 0,
+      "poids": 72.0,
+      "gains": 1996000,
+      "musique": "2s7s(25)As5hTh(24)2h",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "LUGOVILLE",
+      "driver": "J.REVELEY",
+      "corde": 0,
+      "poids": 71.0,
+      "gains": 1773000,
+      "musique": "(25)4sAh(24)2h",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "LUSAKA DE THAIX",
+      "driver": "L.BRECHET",
+      "corde": 0,
+      "poids": 70.0,
+      "gains": 1548500,
+      "musique": "7h(25)1h",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "MONTGAZON",
+      "driver": "C.LEFEBVRE",
+      "corde": 0,
+      "poids": 68.0,
+      "gains": 1100000,
+      "musique": "4s3s(25)4s9s8h",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "MUSTANG DE MEE",
+      "driver": "A.RENARD",
+      "corde": 0,
+      "poids": 66.0,
+      "gains": 935000,
+      "musique": "2h5h(25)2p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "MATA D'OR",
+      "driver": "L.BEAUBOIS",
+      "corde": 0,
+      "poids": 66.0,
+      "gains": 697500,
+      "musique": "(25)0h6h5h4h",
+      "tendance": " "
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "discipline": "PLAT",
+  "distance": 1600,
+  "libelle": "PRIX DE LA VILLE DE CUGNAUX",
+  "heure": "15:42",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "ABACUR",
+      "driver": "I.MENDIZABAL",
+      "corde": 10,
+      "poids": 60.0,
+      "gains": 3844400,
+      "musique": "8p3p(25)1p1pAp1p5p1p",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "NOCE DE RUBIS",
+      "driver": "T.BACHELOT",
+      "corde": 13,
+      "poids": 59.5,
+      "gains": 2575600,
+      "musique": "5p(25)4p3p5p1p4p0p2p6p",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "ANOTHER ROSE",
+      "driver": "V.SEGUY",
+      "corde": 6,
+      "poids": 59.5,
+      "gains": 2115800,
+      "musique": "(25)4p0p3p2p5p9p4p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "MANGAKEN",
+      "driver": "A.WERLE",
+      "corde": 3,
+      "poids": 59.0,
+      "gains": 6487700,
+      "musique": "3p0p4p(25)5p7p5p1p1p8p",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "SIR CRATER",
+      "driver": "D.SANTIAGO",
+      "corde": 2,
+      "poids": 57.5,
+      "gains": 3922200,
+      "musique": "6p(25)6p0p2p1p1p5p0p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "TIMBER LIGHT",
+      "driver": "T.PICCONE",
+      "corde": 1,
+      "poids": 57.5,
+      "gains": 6335000,
+      "musique": "(25)9p5p7p9p0p(24)0p3p5p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "NOVA HOPE",
+      "driver": "M.GRANDIN",
+      "corde": 7,
+      "poids": 55.5,
+      "gains": 5119300,
+      "musique": "8p(25)7p1p0p0p0p8p4p8p",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "TALISMAN TOUCH",
+      "driver": "M.LAURON",
+      "corde": 9,
+      "poids": 55.0,
+      "gains": 13483100,
+      "musique": "0p3p0p0p8p(25)7p3p0p2p",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "ALPHABIA",
+      "driver": "N.M..LOPES DUARTE",
+      "corde": 11,
+      "poids": 55.0,
+      "gains": 3990700,
+      "musique": "0p(25)0p7p7p2p0p8p0p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "RAPIDO PRESTO",
+      "driver": "A.GAVILAN",
+      "corde": 4,
+      "poids": 54.5,
+      "gains": 14653600,
+      "musique": "0p(25)0p2p9p6p8p5p8p2p",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "PIC DU MIDI",
+      "driver": "R.DUBORD",
+      "corde": 8,
+      "poids": 54.0,
+      "gains": 3123000,
+      "musique": "1p1p(25)3p9p0p0p0p5p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "MANA MAHA",
+      "driver": "B.G .LOURENCO FERREIRA",
+      "corde": 5,
+      "poids": 54.0,
+      "gains": 8367200,
+      "musique": "0p(25)9p3p1p5p8p2p9p4p",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "DAKOVKA",
+      "driver": "M.FOULON",
+      "corde": 12,
+      "poids": 52.5,
+      "gains": 4389700,
+      "musique": "9p8p(25)2p2p0p4p3p3p5p",
+      "tendance": " "
+    }
+  ]
+}

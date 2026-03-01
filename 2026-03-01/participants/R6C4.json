@@ -1,0 +1,98 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2100,
+  "libelle": "PRIX VINCENNES                          AUTRICHE",
+  "heure": "17:45",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "CHICOLINA",
+      "driver": "ERICH KUBES",
+      "corde": 1,
+      "poids": 0,
+      "gains": 848000,
+      "musique": "(25)9aDa1a1aDa1a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "FORREST BIG EFFE",
+      "driver": "HUBERT BRANDSTATTER",
+      "corde": 2,
+      "poids": 0,
+      "gains": 891500,
+      "musique": "1a3a1a(25)1a2a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "DOROTHY BR",
+      "driver": "GERHARD MAYR",
+      "corde": 3,
+      "poids": 0,
+      "gains": 899300,
+      "musique": "2a6a3a(25)3a5a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "EUROPEAN WINNER",
+      "driver": "JONAS STEINER",
+      "corde": 4,
+      "poids": 0,
+      "gains": 981300,
+      "musique": "8a(25)5a3a3a2a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "NEEDLEFISH BOKO",
+      "driver": "JOHANN LICHTENWORTHER",
+      "corde": 5,
+      "poids": 0,
+      "gains": 1177400,
+      "musique": "4a(25)9a6a1a4a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "MONDSTERN EM",
+      "driver": "THOMAS PRIBIL",
+      "corde": 6,
+      "poids": 0,
+      "gains": 1265500,
+      "musique": "(25)0a8a3a5a5a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "JOYNER",
+      "driver": "MARIO ZANDERIGO",
+      "corde": 7,
+      "poids": 0,
+      "gains": 1518200,
+      "musique": "6a6a(25)DaDaDa2a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "FOR LOVE AS",
+      "driver": "GREGOR KRENMAYR",
+      "corde": 8,
+      "poids": 0,
+      "gains": 1538300,
+      "musique": "3a(25)DaDa1a6a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "UNFINISHED BUSINESS",
+      "driver": "CHRISTOPH FISCHER",
+      "corde": 9,
+      "poids": 0,
+      "gains": 1691000,
+      "musique": "3aDa2a2a2a",
+      "tendance": " "
+    }
+  ]
+}

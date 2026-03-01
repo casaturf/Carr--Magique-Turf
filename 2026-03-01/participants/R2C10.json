@@ -1,0 +1,148 @@
+{
+  "discipline": "PLAT",
+  "distance": 2000,
+  "libelle": "CITI INVESTMENT SERVICES HANDICAP",
+  "heure": "09:20",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "GENTLEMEN LEGACY",
+      "driver": "BOWMAN H.",
+      "corde": 7,
+      "poids": 61.0,
+      "gains": 455110000,
+      "musique": "1p3p(25)3p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "KARMA",
+      "driver": "MCMONAGLE D.B.",
+      "corde": 6,
+      "poids": 59.0,
+      "gains": 821915000,
+      "musique": "2p4p6p(25)8p",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "LIVEANDLETLIVE",
+      "driver": "CHADWICK M.",
+      "corde": 10,
+      "poids": 57.5,
+      "gains": 400395000,
+      "musique": "2p2p0p(25)2p",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "SHANWAH",
+      "driver": "AVDULLA B.",
+      "corde": 12,
+      "poids": 57.5,
+      "gains": 0,
+      "musique": "0p0p(25)0p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "AERODYNAMICS",
+      "driver": "PURTON Z.",
+      "corde": 4,
+      "poids": 56.5,
+      "gains": 49560000,
+      "musique": "0p2p5p",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "NOISY BOY",
+      "driver": "BADEL A.",
+      "corde": 8,
+      "poids": 56.5,
+      "gains": 411460000,
+      "musique": "8p9p(25)4p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "BRAVEHEARTS",
+      "driver": "CHAU C.L.",
+      "corde": 11,
+      "poids": 56.0,
+      "gains": 580915000,
+      "musique": "9p5p(25)5p9p",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "DREAMING TOGETHER",
+      "driver": "TEETAN K.",
+      "corde": 5,
+      "poids": 55.5,
+      "gains": 0,
+      "musique": "0p",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "SKY VINO",
+      "driver": "WONG E.C.W.",
+      "corde": 9,
+      "poids": 55.5,
+      "gains": 424525000,
+      "musique": "1p2p(25)0p9p",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "MONEY CATCHER",
+      "driver": "LEUNG K.C.",
+      "corde": 2,
+      "poids": 55.0,
+      "gains": 2234695000,
+      "musique": "7p3p1p(25)3p",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "FORTUNE BOY",
+      "driver": "BENTLEY H.",
+      "corde": 13,
+      "poids": 54.5,
+      "gains": 357800000,
+      "musique": "4p0p7p6p(25)",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "THE AUSPICIOUS",
+      "driver": "GUYON M.",
+      "corde": 1,
+      "poids": 53.5,
+      "gains": 453295000,
+      "musique": "7p4p3p(25)1p",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "PACKING FIGHTER",
+      "driver": "HEWITSON L.",
+      "corde": 14,
+      "poids": 52.0,
+      "gains": 16400000,
+      "musique": "6p0p4p",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "AGENDA",
+      "driver": "POON M.F.",
+      "corde": 3,
+      "poids": 52.0,
+      "gains": 23575000,
+      "musique": "5p(25)6p9p0p",
+      "tendance": " "
+    }
+  ]
+}
