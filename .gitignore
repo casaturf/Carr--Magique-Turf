@@ -13,6 +13,7 @@ arrivees_officielles/
 
 # Scripts Python source - rester en local
 *.py
+!generate_sitemap.py
 
 # Fichiers Excel intermédiaires
 *.xlsx
