@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Carré Magique Turf</title>
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000000; color: #FFFFFF;
+    min-height: 100vh; padding: 0; margin: 0;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header { text-align: center; margin-bottom: 30px; }
+.logo { width: 120px; height: auto; margin-bottom: 10px; }
+.title { font-size: 28px; color: #00B4D8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
+.subtitle { font-size: 14px; color: #C8A882; }
+.nav-menu { display: flex; gap: 10px; justify-content: center; margin: 20px 0; flex-wrap: wrap; }
+.nav-menu a {
+    background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8;
+    padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: bold;
+    text-decoration: none; transition: all 0.3s ease;
+}
+.nav-menu a:hover, .nav-menu a.active { background: #00B4D8; color: #000000; }
+.section {
+    background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+    border: 2px solid #00B4D8; border-radius: 10px;
+    padding: 25px; margin-bottom: 20px;
+}
+.section-title {
+    font-size: 22px; color: #FF6B6B; margin-bottom: 15px;
+    padding-bottom: 8px; border-bottom: 2px solid #FF6B6B;
+}
+.section p { line-height: 1.8; font-size: 15px; color: #CCCCCC; margin-bottom: 15px; }
+.section strong { color: #00B4D8; }
+.section em { color: #C8A882; font-style: normal; }
+.highlight-box {
+    background: #0D0D0D; border-left: 4px solid #C8A882;
+    padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;
+}
+.highlight-box p { color: #C8A882; margin: 0; }
+.back-button {
+    display: inline-block; background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8;
+    padding: 8px 16px; border-radius: 15px; font-size: 13px; font-weight: bold;
+    text-decoration: none; transition: all 0.3s ease; margin-bottom: 20px;
+}
+.back-button:hover { background: #00B4D8; color: #000000; }
+.footer { text-align: center; padding: 30px 0; border-top: 1px solid #2A2A2A; margin-top: 30px; color: #666666; font-size: 12px; }
+.footer a { color: #00B4D8; text-decoration: none; }
+@media (max-width: 768px) {
+    .title { font-size: 22px; }
+    .section { padding: 15px; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">&larr; Retour au Tableau de Bord</a>
+        
+        <div class="header">
+            <img src="logo.png" alt="Carré Magique Turf" class="logo">
+            <h1 class="title">À Propos de Carré Magique Turf</h1>
+            <p class="subtitle">Analyse Professionnelle des Courses Hippiques Françaises</p>
+        </div>
+
+        <div class="nav-menu">
+            <a href="a-propos.html" class="active">À Propos</a>
+            <a href="methodologie.html">Méthodologie</a>
+            <a href="guide.html">Guide Utilisateur</a>
+            <a href="politique-confidentialite.html">Confidentialité</a>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#128206; Qui Sommes-Nous ?</h2>
+            <p><strong>Carré Magique Turf</strong> est une plateforme indépendante d'analyse et de recommandations pour les courses hippiques françaises. Fondée par des passionnés de turf et d'analyse de données, notre mission est de fournir aux parieurs des outils d'aide à la décision fiables, transparents et sérieux.</p>
+            <p>Nous analysons quotidiennement l'ensemble des réunions PMU en combinant <strong>données statistiques</strong>, <strong>évolution des marchés</strong> et <strong>consensus des experts</strong> pour produire des recommandations claires et argumentées.</p>
+            <div class="highlight-box">
+                <p>&#128161; Notre philosophie : mettre notre expertise au service des parieurs, du débutant au turfiste confirmé, grâce à des outils d'analyse développés en interne.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#127942; Notre Expertise</h2>
+            <p>Notre équipe combine une passion profonde pour les courses hippiques et une expertise en analyse de données. Nous avons développé au fil des années des méthodes d'analyse propriétaires permettant d'identifier les chevaux les plus sérieux dans chaque course.</p>
+            <p>Chaque jour, notre système automatisé collecte et traite les données de toutes les courses PMU pour produire des recommandations actualisées en temps réel, des premières heures de la matinée jusqu'au départ de chaque course.</p>
+            <p>Notre approche repose sur l'analyse croisée de multiples indicateurs de marché, affinée et optimisée en continu pour offrir les meilleures recommandations possibles.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#128250; Retrouvez-Nous</h2>
+            <p>Suivez nos analyses et résultats sur nos différentes plateformes :</p>
+            <p>&#127909; <strong>YouTube</strong> : Plus de 17 000 abonnés nous font confiance pour leurs analyses quotidiennes. Retrouvez nos vidéos de pronostics, tutoriels et bilans de résultats.</p>
+            <p>&#128172; <strong>Telegram</strong> : Rejoignez notre canal pour recevoir les recommandations en temps réel directement sur votre téléphone.</p>
+            <p>&#127760; <strong>Site web</strong> : https://carrémagique-turf.fr</p>
+            <div class="highlight-box">
+                <p>&#9888;&#65039; Avertissement : Les courses hippiques comportent des risques financiers. Nos recommandations sont des aides à la décision et ne garantissent pas de gains. Jouez de manière responsable et ne misez que ce que vous pouvez vous permettre de perdre.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Carré Magique Turf - Tous droits réservés</p>
+            <p style="margin-top: 8px;">
+                <a href="a-propos.html">À Propos</a> &bull;
+                <a href="methodologie.html">Méthodologie</a> &bull;
+                <a href="guide.html">Guide Utilisateur</a> &bull;
+                <a href="politique-confidentialite.html">Politique de Confidentialité</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

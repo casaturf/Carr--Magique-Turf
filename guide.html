@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Utilisateur - Carré Magique Turf</title>
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000000; color: #FFFFFF;
+    min-height: 100vh; padding: 0; margin: 0;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header { text-align: center; margin-bottom: 30px; }
+.logo { width: 120px; height: auto; margin-bottom: 10px; }
+.title { font-size: 28px; color: #00B4D8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
+.subtitle { font-size: 14px; color: #C8A882; }
+.nav-menu { display: flex; gap: 10px; justify-content: center; margin: 20px 0; flex-wrap: wrap; }
+.nav-menu a {
+    background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8;
+    padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: bold;
+    text-decoration: none; transition: all 0.3s ease;
+}
+.nav-menu a:hover, .nav-menu a.active { background: #00B4D8; color: #000000; }
+.section {
+    background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+    border: 2px solid #00B4D8; border-radius: 10px;
+    padding: 25px; margin-bottom: 20px;
+}
+.section-title {
+    font-size: 22px; color: #FF6B6B; margin-bottom: 15px;
+    padding-bottom: 8px; border-bottom: 2px solid #FF6B6B;
+}
+.section h3 { color: #00B4D8; font-size: 17px; margin: 20px 0 10px 0; }
+.section p { line-height: 1.8; font-size: 15px; color: #CCCCCC; margin-bottom: 15px; }
+.section strong { color: #00B4D8; }
+.highlight-box {
+    background: #0D0D0D; border-left: 4px solid #C8A882;
+    padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;
+}
+.highlight-box p { color: #C8A882; margin: 0; }
+.page-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 15px 0; }
+.page-card {
+    background: #0D0D0D; border: 2px solid #2A2A2A; border-radius: 10px;
+    padding: 20px; transition: all 0.3s ease;
+}
+.page-card:hover { border-color: #00B4D8; }
+.page-card h4 { color: #FF6B6B; font-size: 16px; margin-bottom: 10px; }
+.page-card p { font-size: 13px; color: #999999; margin: 0; line-height: 1.6; }
+.faq-item { border-bottom: 1px solid #2A2A2A; padding: 15px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { color: #00B4D8; font-weight: bold; font-size: 15px; margin-bottom: 8px; }
+.faq-answer { color: #CCCCCC; font-size: 14px; line-height: 1.7; }
+.back-button {
+    display: inline-block; background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8;
+    padding: 8px 16px; border-radius: 15px; font-size: 13px; font-weight: bold;
+    text-decoration: none; transition: all 0.3s ease; margin-bottom: 20px;
+}
+.back-button:hover { background: #00B4D8; color: #000000; }
+.footer { text-align: center; padding: 30px 0; border-top: 1px solid #2A2A2A; margin-top: 30px; color: #666666; font-size: 12px; }
+.footer a { color: #00B4D8; text-decoration: none; }
+@media (max-width: 768px) {
+    .title { font-size: 22px; }
+    .section { padding: 15px; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">&larr; Retour au Tableau de Bord</a>
+        
+        <div class="header">
+            <img src="logo.png" alt="Carré Magique Turf" class="logo">
+            <h1 class="title">Guide Utilisateur</h1>
+            <p class="subtitle">Comment Naviguer et Utiliser Carré Magique Turf</p>
+        </div>
+
+        <div class="nav-menu">
+            <a href="a-propos.html">À Propos</a>
+            <a href="methodologie.html">Méthodologie</a>
+            <a href="guide.html" class="active">Guide Utilisateur</a>
+            <a href="politique-confidentialite.html">Confidentialité</a>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#128466; Les 5 Pages du Site</h2>
+            <p>Chaque course est présentée à travers <strong>5 types de pages</strong> pour une analyse complète :</p>
+            <div class="page-cards">
+                <div class="page-card">
+                    <h4>&#127968; 1. Tableau de Bord (Index)</h4>
+                    <p>Page d'accueil affichant toutes les réunions du jour. Cliquez sur une réunion pour accéder à ses courses. Utilisez le sélecteur de date pour consulter les analyses des jours précédents.</p>
+                </div>
+                <div class="page-card">
+                    <h4>&#128206; 2. Réunion</h4>
+                    <p>Liste toutes les courses d'une réunion avec les informations clés : discipline, distance, dotation, heure de départ et nombre de partants. Cliquez sur une course pour voir les détails.</p>
+                </div>
+                <div class="page-card">
+                    <h4>&#128100; 3. Participants</h4>
+                    <p>Tableau complet des partants de la course : numéro, nom du cheval, jockey, entraîneur, musique (historique des performances) et cote actuelle.</p>
+                </div>
+                <div class="page-card">
+                    <h4>&#128202; 4. Classement</h4>
+                    <p>Le classement Carré Magique Turf avec les alertes colorées. Affiche pour chaque cheval : rang, indicateurs de marché, tendance et recommandation.</p>
+                </div>
+                <div class="page-card">
+                    <h4>&#11088; 5. Recommandation</h4>
+                    <p>Page finale avec l'arrivée officielle (après la course), le TOP 8 Carré Magique et les formules de jeu pour le Tiercé, Quarté et Quinté+.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#128214; Comment Lire le Classement</h2>
+            
+            <h3>&#128202; Le Tableau de Classement</h3>
+            <p>Le classement est le cœur de notre analyse. Voici comment interpréter chaque colonne :</p>
+            <p><strong>Rang</strong> : Position du cheval dans notre classement. Le numéro 1 est notre favori principal.</p>
+            <p><strong>N°</strong> : Le numéro de départ du cheval dans la course (utilisé pour vos paris PMU).</p>
+            <p><strong>Indicateurs de marché</strong> : Les données collectées en temps réel sur ce cheval, reflétant le comportement des parieurs et l'évolution du marché.</p>
+            <p><strong>Tendance</strong> : Représentation visuelle de l'évolution globale des indicateurs du cheval.</p>
+            <p><strong>Alerte</strong> : Le code couleur VERT / JAUNE / ORANGE / ROUGE indiquant le niveau de confiance selon notre algorithme.</p>
+
+            <h3>&#128161; Comprendre les Alertes</h3>
+            <div class="highlight-box">
+                <p><strong>VERT</strong> = Cheval fortement recommandé — Signal de haute confiance<br>
+                <strong>JAUNE</strong> = Outsider intéressant — Signal positif mais moins certain<br>
+                <strong>ORANGE</strong> = À surveiller — Indicateurs mitigés<br>
+                <strong>ROUGE</strong> = À éviter — Signal défavorable</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#127919; Comment Utiliser les Formules de Jeu</h2>
+            <p>La page Recommandation propose des <strong>formules prêtes à jouer</strong> :</p>
+            
+            <h3>&#128274; TOP 8 - Sélection Principale</h3>
+            <p>Ce sont les 8 chevaux que nous considérons comme les plus sérieux dans la course. La quasi-totalité des combinaisons gagnantes se trouvent dans ce groupe. Utilisez-les comme base pour vos jeux Tiercé, Quarté et Quinté+.</p>
+
+            <h3>&#128170; Formule BASE</h3>
+            <p>Constituée uniquement des chevaux en alerte VERTE. C'est la sélection la plus sûre. Idéale pour les jeux simples (Gagnant, Placé) et comme base de vos combinaisons.</p>
+
+            <h3>&#128176; Formule CHAMP RÉDUIT</h3>
+            <p>Combine les chevaux VERTS et JAUNES pour un bon rapport risque/gain. Recommandée pour les jeux combinés (Tiercé, Quarté) avec un budget maîtrisé.</p>
+
+            <h3>&#127942; ACCESSIT</h3>
+            <p>Les chevaux classés juste après le TOP 8. Ils peuvent compléter vos combinaisons pour le Quinté+ si vous souhaitez élargir votre couverture.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#10067; Questions Fréquentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">À quelle heure les analyses sont-elles disponibles ?</div>
+                <div class="faq-answer">Les premières analyses apparaissent dès les premières collectes de données, généralement en début de matinée. Elles sont mises à jour toutes les 15 minutes et deviennent de plus en plus fiables à mesure que le départ approche.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Puis-je consulter les analyses des jours précédents ?</div>
+                <div class="faq-answer">Oui, utilisez le sélecteur de date sur la page d'accueil pour naviguer entre les différentes journées de courses. Les arrivées officielles et les résultats sont également affichés pour les courses terminées.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Comment voir l'arrivée officielle d'une course ?</div>
+                <div class="faq-answer">Rendez-vous sur la page "Recommandation" de la course concernée. Si la course est terminée et que les résultats sont disponibles, l'arrivée officielle apparaît en haut de la page dans un encadré vert.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Le site est-il adapté aux mobiles ?</div>
+                <div class="faq-answer">Oui, toutes les pages du site sont responsive et s'adaptent aux écrans de smartphones et tablettes. Vous pouvez consulter vos analyses directement depuis l'hippodrome ou le point de vente PMU.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Quelles courses analysez-vous ?</div>
+                <div class="faq-answer">Nous analysons l'ensemble des réunions PMU du jour : courses françaises (trot attelé, trot monté, plat, obstacles) et certaines courses internationales lorsque les données sont disponibles.</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Carré Magique Turf - Tous droits réservés</p>
+            <p style="margin-top: 8px;">
+                <a href="a-propos.html">À Propos</a> &bull;
+                <a href="methodologie.html">Méthodologie</a> &bull;
+                <a href="guide.html">Guide Utilisateur</a> &bull;
+                <a href="politique-confidentialite.html">Politique de Confidentialité</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

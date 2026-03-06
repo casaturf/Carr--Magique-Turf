@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthodologie - Carré Magique Turf</title>
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000000; color: #FFFFFF;
+    min-height: 100vh; padding: 0; margin: 0;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header { text-align: center; margin-bottom: 30px; }
+.logo { width: 120px; height: auto; margin-bottom: 10px; }
+.title { font-size: 28px; color: #00B4D8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
+.subtitle { font-size: 14px; color: #C8A882; }
+.nav-menu { display: flex; gap: 10px; justify-content: center; margin: 20px 0; flex-wrap: wrap; }
+.nav-menu a {
+    background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8;
+    padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: bold;
+    text-decoration: none; transition: all 0.3s ease;
+}
+.nav-menu a:hover, .nav-menu a.active { background: #00B4D8; color: #000000; }
+.section {
+    background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+    border: 2px solid #00B4D8; border-radius: 10px;
+    padding: 25px; margin-bottom: 20px;
+}
+.section-title {
+    font-size: 22px; color: #FF6B6B; margin-bottom: 15px;
+    padding-bottom: 8px; border-bottom: 2px solid #FF6B6B;
+}
+.section p { line-height: 1.8; font-size: 15px; color: #CCCCCC; margin-bottom: 15px; }
+.section strong { color: #00B4D8; }
+.highlight-box {
+    background: #0D0D0D; border-left: 4px solid #C8A882;
+    padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;
+}
+.highlight-box p { color: #C8A882; margin: 0; }
+.alerte-demo { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 15px 0; }
+.alerte-card { padding: 15px; border-radius: 8px; }
+.alerte-card.vert { background: #C6EFCE; color: #000000; }
+.alerte-card.jaune { background: #FFEB9C; color: #000000; }
+.alerte-card.orange { background: #FFC7CE; color: #000000; }
+.alerte-card.rouge { background: #FF6B6B; color: #FFFFFF; }
+.alerte-card h4 { font-size: 16px; margin-bottom: 8px; }
+.alerte-card p { font-size: 13px; margin: 0; color: inherit; }
+.formule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 15px 0; }
+.formule-card {
+    background: #0D0D0D; border-left: 5px solid; padding: 15px; border-radius: 8px;
+}
+.formule-card.base { border-left-color: #C6EFCE; }
+.formule-card.champ { border-left-color: #00B4D8; }
+.formule-card.rapports { border-left-color: #FFC7CE; }
+.formule-card h4 { color: #00B4D8; font-size: 15px; margin-bottom: 8px; }
+.formule-card p { font-size: 13px; color: #999999; margin: 0; line-height: 1.6; }
+.back-button {
+    display: inline-block; background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8;
+    padding: 8px 16px; border-radius: 15px; font-size: 13px; font-weight: bold;
+    text-decoration: none; transition: all 0.3s ease; margin-bottom: 20px;
+}
+.back-button:hover { background: #00B4D8; color: #000000; }
+.footer { text-align: center; padding: 30px 0; border-top: 1px solid #2A2A2A; margin-top: 30px; color: #666666; font-size: 12px; }
+.footer a { color: #00B4D8; text-decoration: none; }
+@media (max-width: 768px) {
+    .title { font-size: 22px; }
+    .section { padding: 15px; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">&larr; Retour au Tableau de Bord</a>
+        
+        <div class="header">
+            <img src="logo.png" alt="Carré Magique Turf" class="logo">
+            <h1 class="title">Notre Méthodologie</h1>
+            <p class="subtitle">Comment Fonctionne le Système Carré Magique Turf</p>
+        </div>
+
+        <div class="nav-menu">
+            <a href="a-propos.html">À Propos</a>
+            <a href="methodologie.html" class="active">Méthodologie</a>
+            <a href="guide.html">Guide Utilisateur</a>
+            <a href="politique-confidentialite.html">Confidentialité</a>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#128300; Notre Approche</h2>
+            <p>Le système <strong>Carré Magique Turf</strong> repose sur une approche d'<strong>analyse multi-critères propriétaire</strong>, développée et affinée en interne au fil des années. Notre méthode croise plusieurs indicateurs de marché complémentaires pour produire un classement final robuste et fiable.</p>
+            <p>Plutôt que de s'appuyer sur un seul signal, nous combinons différentes dimensions d'analyse pour identifier les chevaux les plus sérieux dans chaque course. Les détails techniques de notre algorithme restent confidentiels afin de préserver l'intégrité et l'efficacité de notre système.</p>
+            <div class="highlight-box">
+                <p>&#128274; Notre algorithme est une méthode propriétaire protégée. Seuls les résultats — classements, alertes et recommandations — sont rendus disponibles aux utilisateurs.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#128202; Indicateurs Analysés</h2>
+            <p>Notre système évalue chaque partant à travers une combinaison d'indicateurs de marché collectés en temps réel. Ces indicateurs incluent notamment l'analyse des volumes de paris, les tendances des cotes, et le comportement du marché dans les heures précédant le départ.</p>
+            <p>Chaque indicateur est pondéré selon son importance relative et la proximité du départ. Les analyses deviennent de plus en plus fiables à mesure que le départ approche, car les données de marché se consolident.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#127308; Système d'Alertes Colorées</h2>
+            <p>Chaque cheval reçoit une <strong>alerte colorée</strong> basée sur sa position dans notre classement et ses indicateurs globaux :</p>
+            <div class="alerte-demo">
+                <div class="alerte-card vert">
+                    <h4>&#9989; VERT - Confiance</h4>
+                    <p>Chevaux dans le TOP 5. Fortement soutenus par les indicateurs de marché. Constituent la base solide de vos jeux.</p>
+                </div>
+                <div class="alerte-card jaune">
+                    <h4>&#9888;&#65039; JAUNE - Outsider</h4>
+                    <p>Chevaux classés 6ème à 8ème. Bons indicateurs mais moins de certitude. Intéressants pour élargir vos combinaisons.</p>
+                </div>
+                <div class="alerte-card orange">
+                    <h4>&#128312; ORANGE - À surveiller</h4>
+                    <p>Chevaux classés 9ème à 11ème. Indicateurs mitigés. Peuvent créer la surprise mais le risque est plus élevé.</p>
+                </div>
+                <div class="alerte-card rouge">
+                    <h4>&#10060; ROUGE - Piège</h4>
+                    <p>Chevaux en fin de classement. Peu soutenus par le marché. À éviter sauf pari très spéculatif.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#127919; Formules de Jeu</h2>
+            <p>À partir du classement final, nous générons automatiquement des <strong>formules de jeu adaptées</strong> à différents profils de risque :</p>
+            <div class="formule-grid">
+                <div class="formule-card base">
+                    <h4>&#128274; Formule BASE (Sécurité)</h4>
+                    <p>Utilise uniquement les chevaux en alerte VERTE. Taux de réussite le plus élevé. Idéal pour les parieurs prudents qui privilégient la régularité.</p>
+                </div>
+                <div class="formule-card champ">
+                    <h4>&#128170; Formule CHAMP RÉDUIT</h4>
+                    <p>Combine les chevaux VERTS et JAUNES. Bon équilibre entre sécurité et potentiel de gains. Recommandé pour la plupart des parieurs.</p>
+                </div>
+                <div class="formule-card rapports">
+                    <h4>&#128176; Formule RAPPORTS</h4>
+                    <p>Inclut des outsiders ORANGE pour viser des rapports plus élevés. Risque accru mais potentiel de gains importants sur les Tiercé, Quarté et Quinté+.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">&#9201; Mise à Jour en Temps Réel</h2>
+            <p>Notre système collecte les données <strong>toutes les 15 minutes</strong> de 5h00 à 23h45. Cela signifie que nos recommandations évoluent au fil de la journée pour refléter les dernières informations du marché.</p>
+            <p>Les analyses sont <strong>figées quelques minutes avant le départ</strong> de chaque course pour capturer l'état final du marché. C'est le classement le plus proche du départ qui est affiché sur le site et utilisé pour les formules de jeu.</p>
+            <div class="highlight-box">
+                <p>&#128161; Conseil : Consultez les recommandations au plus près du départ pour bénéficier des analyses les plus actualisées.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Carré Magique Turf - Tous droits réservés</p>
+            <p style="margin-top: 8px;">
+                <a href="a-propos.html">À Propos</a> &bull;
+                <a href="methodologie.html">Méthodologie</a> &bull;
+                <a href="guide.html">Guide Utilisateur</a> &bull;
+                <a href="politique-confidentialite.html">Politique de Confidentialité</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
