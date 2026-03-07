@@ -90,6 +90,11 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   .title { font-size: 24px; }
   .reunions-grid { grid-template-columns: 1fr; }
 }
+.footer { text-align: center; padding: 20px 10px; margin-top: 20px; border-top: 1px solid #2A2A2A; }
+.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
+.footer-links a { color: #00B4D8; text-decoration: none; font-size: 12px; transition: color 0.3s; }
+.footer-links a:hover { color: #FF6B6B; }
+.footer-copy { font-size: 11px; color: #555; }
 </style>
 </head>
 <body>
@@ -122,6 +127,15 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         <table><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3"><td>1</td><td>12</td><td>GALANT DE CAREL</td><td>32776000</td><td>3.4</td><td>1</td><td>4</td><td>2.2</td></tr><tr class="top3"><td>2</td><td>6</td><td>IALKO JENILAT</td><td>17020500</td><td>6.8</td><td>7</td><td>1</td><td>4.6</td></tr><tr class="top3"><td>3</td><td>11</td><td>GAZ D'OCCAGNES</td><td>31568000</td><td>1.2</td><td>2</td><td>9</td><td>4.8</td></tr><tr class="top5"><td>4</td><td>8</td><td>FILOU DE SITA</td><td>23484500</td><td>3</td><td>5</td><td>5</td><td>5</td></tr><tr class="top5"><td>5</td><td>9</td><td>HOLD UP DU DIGEON</td><td>31253500</td><td>1.4</td><td>4</td><td>8</td><td>5.6</td></tr><tr class="top8"><td>6</td><td>10</td><td>HELIOS SI</td><td>31555000</td><td>1</td><td>3</td><td>10</td><td>5.8</td></tr><tr class="top8"><td>7</td><td>7</td><td>INCROYABLE BLACK</td><td>17178500</td><td>2.2</td><td>6</td><td>6</td><td>6</td></tr><tr class="top8"><td>8</td><td>4</td><td>ILTON CASH</td><td>15886500</td><td>3.4</td><td>9</td><td>3</td><td>6.6</td></tr><tr class="outsider"><td>9</td><td>1</td><td>IDOLE DE BEYLEV</td><td>12251000</td><td>4</td><td>12</td><td>2</td><td>8</td></tr><tr class="outsider"><td>10</td><td>3</td><td>KASH DES CAILLONS</td><td>14865500</td><td>1.8</td><td>10</td><td>7</td><td>8.8</td></tr><tr class="outsider"><td>11</td><td>5</td><td>KANO</td><td>16739000</td><td>0.4</td><td>8</td><td>12</td><td>9.6</td></tr><tr class="outsider"><td>12</td><td>2</td><td>KIRCIE DE GUEZ</td><td>12520500</td><td>0.8</td><td>11</td><td>11</td><td>11</td></tr></tbody></table>
     </div>
 </div>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/a-propos.html">À Propos</a>
+    <a href="/guide.html">Guide</a>
+    <a href="/methodologie.html">Méthodologie</a>
+    <a href="/politique-confidentialite.html">Politique de Confidentialité</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
+</footer>
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};

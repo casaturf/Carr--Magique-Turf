@@ -90,6 +90,11 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   .title { font-size: 24px; }
   .reunions-grid { grid-template-columns: 1fr; }
 }
+.footer { text-align: center; padding: 20px 10px; margin-top: 20px; border-top: 1px solid #2A2A2A; }
+.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
+.footer-links a { color: #00B4D8; text-decoration: none; font-size: 12px; transition: color 0.3s; }
+.footer-links a:hover { color: #FF6B6B; }
+.footer-copy { font-size: 11px; color: #555; }
 </style>
 </head>
 <body>
@@ -122,6 +127,15 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         <table><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3"><td>1</td><td>12</td><td>KOSETTE DU LINON</td><td>8047000</td><td>3</td><td>1</td><td>3</td><td>1.8</td></tr><tr class="top3"><td>2</td><td>10</td><td>KAPTA JELOCA</td><td>6950500</td><td>5.25</td><td>3</td><td>2</td><td>2.6</td></tr><tr class="top3"><td>3</td><td>7</td><td>KARINE DE BRETAGNE</td><td>3673500</td><td>6.4</td><td>6</td><td>1</td><td>4</td></tr><tr class="top5"><td>4</td><td>11</td><td>KISS ME DU LIVET</td><td>7968000</td><td>0.5</td><td>2</td><td>9</td><td>4.8</td></tr><tr class="top5"><td>5</td><td>5</td><td>KOLYTA DU CHENE</td><td>3335000</td><td>2.2</td><td>8</td><td>5</td><td>6.8</td></tr><tr class="top8"><td>6</td><td>9</td><td>KARESSE D'EURVAD</td><td>5503000</td><td>0.2</td><td>4</td><td>11</td><td>6.8</td></tr><tr class="top8"><td>7</td><td>4</td><td>KISS ME DU BOULAY</td><td>3181000</td><td>2.6</td><td>9</td><td>4</td><td>7</td></tr><tr class="top8"><td>8</td><td>8</td><td>KENZA D'ASNOIS</td><td>3797000</td><td>0</td><td>5</td><td>12</td><td>7.8</td></tr><tr class="outsider"><td>9</td><td>6</td><td>KINAYA D'OCCAGNES</td><td>3524500</td><td>0.4</td><td>7</td><td>10</td><td>8.2</td></tr><tr class="outsider"><td>10</td><td>3</td><td>KANDY VENESI</td><td>3169000</td><td>2</td><td>10</td><td>8</td><td>9.2</td></tr><tr class="outsider"><td>11</td><td>2</td><td>KATRINA DE MARZY</td><td>2802500</td><td>2</td><td>11</td><td>7</td><td>9.4</td></tr><tr class="outsider"><td>12</td><td>1</td><td>KADENCE CENSERIE</td><td>2032000</td><td>2</td><td>12</td><td>6</td><td>9.6</td></tr></tbody></table>
     </div>
 </div>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/a-propos.html">À Propos</a>
+    <a href="/guide.html">Guide</a>
+    <a href="/methodologie.html">Méthodologie</a>
+    <a href="/politique-confidentialite.html">Politique de Confidentialité</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
+</footer>
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};

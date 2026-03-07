@@ -90,6 +90,11 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   .title { font-size: 24px; }
   .reunions-grid { grid-template-columns: 1fr; }
 }
+.footer { text-align: center; padding: 20px 10px; margin-top: 20px; border-top: 1px solid #2A2A2A; }
+.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
+.footer-links a { color: #00B4D8; text-decoration: none; font-size: 12px; transition: color 0.3s; }
+.footer-links a:hover { color: #FF6B6B; }
+.footer-copy { font-size: 11px; color: #555; }
 </style>
 </head>
 <body>
@@ -122,6 +127,15 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         <table><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3"><td>1</td><td>1</td><td>ITONO DE MILLAC</td><td>11903500</td><td>4</td><td>2</td><td>3</td><td>2.4</td></tr><tr class="top3"><td>2</td><td>8</td><td>JADE DE PAME</td><td>11696500</td><td>5</td><td>3</td><td>2</td><td>2.6</td></tr><tr class="top3"><td>3</td><td>5</td><td>ICARE D'ASNOIS</td><td>11195000</td><td>2.2</td><td>5</td><td>4</td><td>4.6</td></tr><tr class="top5"><td>4</td><td>7</td><td>INO DE BRION</td><td>11974000</td><td>0</td><td>1</td><td>10</td><td>4.6</td></tr><tr class="top5"><td>5</td><td>3</td><td>HOLD UP CRAZY</td><td>11347200</td><td>0.8</td><td>4</td><td>8</td><td>5.6</td></tr><tr class="top8"><td>6</td><td>10</td><td>KEY TO SUCCESS</td><td>9119000</td><td>6.2</td><td>9</td><td>1</td><td>5.8</td></tr><tr class="top8"><td>7</td><td>4</td><td>JAVA DE CAPONET</td><td>9770500</td><td>2</td><td>8</td><td>5</td><td>6.8</td></tr><tr class="top8"><td>8</td><td>6</td><td>JUSTIN DE MARCAY</td><td>10247500</td><td>1.4</td><td>7</td><td>7</td><td>7</td></tr><tr class="outsider"><td>9</td><td>2</td><td>KAISER CHANCE</td><td>10335000</td><td>0.2</td><td>6</td><td>9</td><td>7.2</td></tr><tr class="outsider"><td>10</td><td>9</td><td>INSTANT DU BOIS</td><td>8864500</td><td>2</td><td>10</td><td>6</td><td>8.4</td></tr></tbody></table>
     </div>
 </div>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/a-propos.html">À Propos</a>
+    <a href="/guide.html">Guide</a>
+    <a href="/methodologie.html">Méthodologie</a>
+    <a href="/politique-confidentialite.html">Politique de Confidentialité</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
+</footer>
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};

@@ -90,6 +90,11 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   .title { font-size: 24px; }
   .reunions-grid { grid-template-columns: 1fr; }
 }
+.footer { text-align: center; padding: 20px 10px; margin-top: 20px; border-top: 1px solid #2A2A2A; }
+.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
+.footer-links a { color: #00B4D8; text-decoration: none; font-size: 12px; transition: color 0.3s; }
+.footer-links a:hover { color: #FF6B6B; }
+.footer-copy { font-size: 11px; color: #555; }
 </style>
 </head>
 <body>
@@ -165,6 +170,15 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         </div>
     </div>
 </div>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/a-propos.html">À Propos</a>
+    <a href="/guide.html">Guide</a>
+    <a href="/methodologie.html">Méthodologie</a>
+    <a href="/politique-confidentialite.html">Politique de Confidentialité</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
+</footer>
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};
