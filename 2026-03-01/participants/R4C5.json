@@ -1,0 +1,188 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2800,
+  "libelle": "PRIX AMB MENUISERIE",
+  "heure": "12:38",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "JACINTHE DES BOIS",
+      "driver": "S. ERNAULT",
+      "corde": 0,
+      "poids": 0,
+      "gains": 5071000,
+      "musique": "4aDa5a(25)Dm8a6a0aDa8a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "JOMINI D'AMBRI",
+      "driver": "A. FAVRIS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 5421000,
+      "musique": "(25)Da9m5m0a6a4mDa2m4m",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "JENORA GUIVIA",
+      "driver": "S. TESSIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 5997500,
+      "musique": "(25)8a4a5m6a4a3a3a3m7a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "JADE THORIS",
+      "driver": "A.G. MAILLARD",
+      "corde": 0,
+      "poids": 0,
+      "gains": 6058500,
+      "musique": "(25)DaDmDmDa9aDa1a1m3a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "JULIUS ECUS",
+      "driver": "A. WIELS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 6062500,
+      "musique": "4a(25)Da6aDa3a4a5aDa2a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "JESABELLE DU JOUR",
+      "driver": "T. LE BELLER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 6098500,
+      "musique": "DaDaDa(25)2a5aDaDa6a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "JISA DES LOYAUX",
+      "driver": "A. DABOUIS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 6239000,
+      "musique": "8a7a(25)4a0a6a5a5a7a8a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "JAG DU LIOT",
+      "driver": "S. HARDY",
+      "corde": 0,
+      "poids": 0,
+      "gains": 6309500,
+      "musique": "Da9a1a(25)7aDaDaDm5a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "JOYAU DE L'ITON",
+      "driver": "A. BOURGOIN-TIMBERT",
+      "corde": 0,
+      "poids": 0,
+      "gains": 6454500,
+      "musique": "0a6a(25)Da2a1a3a6a1a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "JOG JELOCA",
+      "driver": "J.L.CL. DERSOIR",
+      "corde": 0,
+      "poids": 0,
+      "gains": 10764500,
+      "musique": "2a1a2a(25)6a1a3a3a2aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "JAZZMAN",
+      "driver": "J.PH. DUBOIS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 11246000,
+      "musique": "Da4aDa(25)6a5a3a1aDa3a",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "JUNE D'ERABLE",
+      "driver": "CL. THOMAIN",
+      "corde": 0,
+      "poids": 0,
+      "gains": 11605000,
+      "musique": "8a(25)8m8a0a1a7a9a7a8a",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "JOJO DE L'AUNAY",
+      "driver": "L.M. DAVID",
+      "corde": 0,
+      "poids": 0,
+      "gains": 11686000,
+      "musique": "(25)4m8m9m7m9aDm5a5m8a",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "JULIE DU CLOS",
+      "driver": "L.G. RICHARD",
+      "corde": 0,
+      "poids": 0,
+      "gains": 11859000,
+      "musique": "0a(25)6aDaAa2a4aDa3a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 15,
+      "nom": "JACK QUICK",
+      "driver": "CH. GALLIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 12048000,
+      "musique": "3a2a0a5m(25)1mDa1a0a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 16,
+      "nom": "JAMAIQUE DAIRPET",
+      "driver": "F. NIVARD",
+      "corde": 0,
+      "poids": 0,
+      "gains": 12172000,
+      "musique": "5a9m(25)2a5a3a1a1a2a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 17,
+      "nom": "JOYEUX NONNA",
+      "driver": "Y. LEBOURGEOIS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 12262500,
+      "musique": "3a1a1a(25)DaDa2a5a0a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 18,
+      "nom": "JACK SURPRISE",
+      "driver": "F. DESMIGNEUX",
+      "corde": 0,
+      "poids": 0,
+      "gains": 12456000,
+      "musique": "(25)7m1m7a6a4m5mDa9a7a",
+      "tendance": " "
+    }
+  ]
+}

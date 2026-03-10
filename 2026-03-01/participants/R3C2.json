@@ -1,0 +1,148 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2150,
+  "libelle": "PREMI CABRERA                           ESPAGNE",
+  "heure": "10:46",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "MANOLITO STAR",
+      "driver": "G. RIERA",
+      "corde": 1,
+      "poids": 0,
+      "gains": 80000,
+      "musique": "2a(25)7a3a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "MAGGIE",
+      "driver": "B. CALVO",
+      "corde": 2,
+      "poids": 0,
+      "gains": 58400,
+      "musique": "Da(25)5a0a0a3a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "MY VOICI D'URZY RF",
+      "driver": "A. RIERA B.",
+      "corde": 3,
+      "poids": 0,
+      "gains": 121900,
+      "musique": "7aDa4a4a(25)2a6a",
+      "tendance": "+"
+    },
+    {
+      "numero": 4,
+      "nom": "MATCH WINNER",
+      "driver": "A. FRONTERA",
+      "corde": 4,
+      "poids": 0,
+      "gains": 112000,
+      "musique": "7aDa2aDa(25)4a1a",
+      "tendance": "-"
+    },
+    {
+      "numero": 5,
+      "nom": "MENUT CL",
+      "driver": "A. VALLS",
+      "corde": 5,
+      "poids": 0,
+      "gains": 60600,
+      "musique": "3a4a5a(25)1aDa",
+      "tendance": "+"
+    },
+    {
+      "numero": 6,
+      "nom": "MAGNIFIC SON OMS",
+      "driver": "P. GUASCH C.",
+      "corde": 6,
+      "poids": 0,
+      "gains": 73600,
+      "musique": "2a2a3a(25)4a6a0a",
+      "tendance": "+"
+    },
+    {
+      "numero": 7,
+      "nom": "MIAMI DE CLIDE",
+      "driver": "B. FUSTER",
+      "corde": 7,
+      "poids": 0,
+      "gains": 110200,
+      "musique": "0aDa7a6a0a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "MARTINA LABOU",
+      "driver": "J.A. RIERA",
+      "corde": 8,
+      "poids": 0,
+      "gains": 30000,
+      "musique": "4aDa0a(25)2a0a",
+      "tendance": "+"
+    },
+    {
+      "numero": 9,
+      "nom": "MANILA D'ITE",
+      "driver": "J.A. GARCIA",
+      "corde": 9,
+      "poids": 0,
+      "gains": 64000,
+      "musique": "5a4aDa2a5a(25)5a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "LEONESA POWER",
+      "driver": "S.C. JAUME",
+      "corde": 10,
+      "poids": 0,
+      "gains": 4000,
+      "musique": "0a6a0a(25)Da",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "MAXIMO ABAT",
+      "driver": "M. RIERA B.",
+      "corde": 11,
+      "poids": 0,
+      "gains": 62800,
+      "musique": "1a0aDa(25)Da3aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "MICHAEL JET",
+      "driver": "G. FUSTER",
+      "corde": 12,
+      "poids": 0,
+      "gains": 51000,
+      "musique": "1a5aDa(25)DaDa",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "MAEVA",
+      "driver": "C. CRUELLAS",
+      "corde": 13,
+      "poids": 0,
+      "gains": 129600,
+      "musique": "1a6a6a(25)Da7a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "MILORD COKTAIL GS",
+      "driver": "A. VAQUER S.",
+      "corde": 14,
+      "poids": 0,
+      "gains": 103600,
+      "musique": "Da3aDa0a5a(25)3a",
+      "tendance": " "
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "discipline": "MONTE",
+  "distance": 2800,
+  "libelle": "PRIX PASCAL GUILBERT",
+  "heure": "11:02",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "LEU DES BOIS",
+      "driver": "J. FERRON",
+      "corde": 0,
+      "poids": 60.0,
+      "gains": 478500,
+      "musique": "8a(25)Da8a8aDaDa8a8aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "LOUMANA ROSE",
+      "driver": "LOUIS FORTIN",
+      "corde": 0,
+      "poids": 58.0,
+      "gains": 980000,
+      "musique": "9m(25)Da5a1aDaDa(24)5a",
+      "tendance": "+"
+    },
+    {
+      "numero": 3,
+      "nom": "L'AS RUSH",
+      "driver": "Mlle L.A. LECOQ",
+      "corde": 0,
+      "poids": 57.0,
+      "gains": 1603000,
+      "musique": "Da5a4a(25)Da4a3a3a2a5a",
+      "tendance": "-"
+    },
+    {
+      "numero": 4,
+      "nom": "LARIANA CLEVILLE",
+      "driver": "Mlle E. BIZOUX",
+      "corde": 0,
+      "poids": 56.0,
+      "gains": 1963500,
+      "musique": "3m(25)7mDm7m3m7m3m0m1m",
+      "tendance": "-"
+    },
+    {
+      "numero": 5,
+      "nom": "LUCIE DES BAUX",
+      "driver": "Mme M.K. DUVAL",
+      "corde": 0,
+      "poids": 56.0,
+      "gains": 1977000,
+      "musique": "6a0aDa9a(25)3aDaDa4aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "LOUXOR DE JOUB",
+      "driver": "Mme C. BLAIZOT",
+      "corde": 0,
+      "poids": 57.0,
+      "gains": 3050000,
+      "musique": "(25)8mDm6mDm(24)9m2m1mDm",
+      "tendance": "+"
+    },
+    {
+      "numero": 7,
+      "nom": "LOU DE LANGE",
+      "driver": "Mlle M. JOLY",
+      "corde": 0,
+      "poids": 59.0,
+      "gains": 3089000,
+      "musique": "4m4m(25)Dm6m6a9m6m4m6m",
+      "tendance": "+"
+    },
+    {
+      "numero": 8,
+      "nom": "LA FLECHE",
+      "driver": "F.A. WARTEL",
+      "corde": 0,
+      "poids": 58.0,
+      "gains": 3323000,
+      "musique": "4a3a2a3a(25)3a2a4a5a6m",
+      "tendance": "+"
+    },
+    {
+      "numero": 9,
+      "nom": "LISON DES GLENAN",
+      "driver": "Mlle CLARA DERSOIR",
+      "corde": 0,
+      "poids": 59.0,
+      "gains": 3482500,
+      "musique": "1m5m(25)2m2m4mDaDa8a5a",
+      "tendance": " "
+    }
+  ]
+}

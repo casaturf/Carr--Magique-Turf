@@ -1,0 +1,128 @@
+{
+  "discipline": "PLAT",
+  "distance": 1100,
+  "libelle": "RACING WA PROVINCIAL SERIES HEAT (1100 METRES)",
+  "heure": "08:25",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "MEAT PIE ARTIE",
+      "driver": "AVA CATARINO",
+      "corde": 8,
+      "poids": 61.0,
+      "gains": 9926400,
+      "musique": "1p4p2p1p1p",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "ROYAL ACCOLADE",
+      "driver": "HOLLY NOTTLE",
+      "corde": 7,
+      "poids": 60.5,
+      "gains": 7763900,
+      "musique": "2p7p3p(25)1p",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "DUBAI'S DAUGHTER",
+      "driver": "ALEX HEARN",
+      "corde": 5,
+      "poids": 60.0,
+      "gains": 8297500,
+      "musique": "(25)0p1p2p2p",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "OREGON HIKER",
+      "driver": "NATIKA RIORDAN",
+      "corde": 12,
+      "poids": 60.0,
+      "gains": 10701300,
+      "musique": "4p5p4p1p(25)",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "RUPERT'S EMPIRE",
+      "driver": "BRAYDEN GAERTH",
+      "corde": 6,
+      "poids": 59.0,
+      "gains": 16034300,
+      "musique": "3p9p8p7p(25)",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "FAMEUX",
+      "driver": "ZEPHEN JOHNSTON-PORTER",
+      "corde": 9,
+      "poids": 58.5,
+      "gains": 11469000,
+      "musique": "8p(25)2p5p3p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "BUSTER'S GIRL",
+      "driver": "TIANA MURRAY",
+      "corde": 11,
+      "poids": 57.0,
+      "gains": 6654700,
+      "musique": "1p2p3p(25)2p",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "ALOTOFBANTER",
+      "driver": "JORDAN TURNER",
+      "corde": 10,
+      "poids": 56.0,
+      "gains": 9971000,
+      "musique": "3p(25)0p6p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "TROPICAL SUN",
+      "driver": "ROCKY CHEUNG",
+      "corde": 2,
+      "poids": 55.0,
+      "gains": 9432300,
+      "musique": "3p7p2p2p(25)",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "VIA MONTE",
+      "driver": "JADE MCNAUGHT",
+      "corde": 1,
+      "poids": 55.0,
+      "gains": 20186900,
+      "musique": "7p7p(25)7p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "HARD SOLO",
+      "driver": "NATASHA FAITHFULL",
+      "corde": 3,
+      "poids": 54.5,
+      "gains": 8992000,
+      "musique": "0p(25)3p6p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "MARYBEE",
+      "driver": "JEFFERSON TSANG",
+      "corde": 4,
+      "poids": 54.0,
+      "gains": 6376100,
+      "musique": "5p1p0p(25)1p",
+      "tendance": " "
+    }
+  ]
+}

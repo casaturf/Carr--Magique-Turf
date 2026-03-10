@@ -1,0 +1,138 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2700,
+  "libelle": "PRIX JAMOTTE MOTOCULTURE",
+  "heure": "12:06",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "MAMBO DE CAHOT",
+      "driver": "L.G. RICHARD",
+      "corde": 1,
+      "poids": 0,
+      "gains": 992000,
+      "musique": "(25)4a2a2a",
+      "tendance": "+"
+    },
+    {
+      "numero": 2,
+      "nom": "MAESTRO D'IDEE",
+      "driver": "C. MEGISSIER",
+      "corde": 2,
+      "poids": 0,
+      "gains": 1097000,
+      "musique": "4a3a(25)8a1a3a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "MAHATMA DANICA",
+      "driver": "A. GENDROT",
+      "corde": 3,
+      "poids": 0,
+      "gains": 1305500,
+      "musique": "4a(25)DaDaDa2a2a",
+      "tendance": "+"
+    },
+    {
+      "numero": 4,
+      "nom": "MAGISTER",
+      "driver": "CL. DUVALDESTIN",
+      "corde": 4,
+      "poids": 0,
+      "gains": 1268500,
+      "musique": "Da(25)2a1a4aDa",
+      "tendance": "+"
+    },
+    {
+      "numero": 5,
+      "nom": "MATRIX DE LA BAIE",
+      "driver": "F. NIVARD",
+      "corde": 5,
+      "poids": 0,
+      "gains": 1294000,
+      "musique": "(25)4aDaDa5a6a1a2a",
+      "tendance": "+"
+    },
+    {
+      "numero": 6,
+      "nom": "MON ROI",
+      "driver": "S. HARDY",
+      "corde": 6,
+      "poids": 0,
+      "gains": 1234500,
+      "musique": "3a7a(25)8a6aDa5a4aDaDa",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "MONSIEUR DARLING",
+      "driver": "Y. LEBOURGEOIS",
+      "corde": 7,
+      "poids": 0,
+      "gains": 1134000,
+      "musique": "(25)5a1a6a3a9a3aDa",
+      "tendance": "+"
+    },
+    {
+      "numero": 8,
+      "nom": "MILLION DREAMS",
+      "driver": "L.M. DAVID",
+      "corde": 8,
+      "poids": 0,
+      "gains": 1127000,
+      "musique": "(25)8a7a6a6a9a3a3a4aDa",
+      "tendance": "+"
+    },
+    {
+      "numero": 9,
+      "nom": "MAX DE COQUERIE",
+      "driver": "G. BLANDIN",
+      "corde": 9,
+      "poids": 0,
+      "gains": 672000,
+      "musique": "7a6aDaDa(25)Da1aDaDa7a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "MAJESTIC DU KLAU",
+      "driver": "A. MARION",
+      "corde": 10,
+      "poids": 0,
+      "gains": 625500,
+      "musique": "(25)Da8a7a0aDaDa5a6a2a",
+      "tendance": "+"
+    },
+    {
+      "numero": 11,
+      "nom": "MUSTANG D'ERI",
+      "driver": "S.E. PASQUIER",
+      "corde": 11,
+      "poids": 0,
+      "gains": 403000,
+      "musique": "2a(25)DaDa6aDaDa7a",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "MYSTERE DES ARRIS",
+      "driver": "F. LECANU",
+      "corde": 12,
+      "poids": 0,
+      "gains": 966000,
+      "musique": "Da(25)5a8a4a4aDa1a",
+      "tendance": "-"
+    },
+    {
+      "numero": 13,
+      "nom": "MILORD D'ISSE",
+      "driver": "ADRIEN BLANDIN",
+      "corde": 13,
+      "poids": 0,
+      "gains": 982500,
+      "musique": "2a1a9a(25)DaDa",
+      "tendance": " "
+    }
+  ]
+}

@@ -1,0 +1,736 @@
+{
+  "1": {
+    "numero": "1",
+    "hippodrome": "AUTEUIL",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "PRIX RIVOLI",
+        "heure": "12:58",
+        "nb_partants": 7,
+        "discipline": "STEEPLECHASE",
+        "distance": 3600
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "PRIX HUBERT D'AILLIERES",
+        "heure": "13:33",
+        "nb_partants": 8,
+        "discipline": "HAIE",
+        "distance": 4300
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "PRIX SOUVIENS-TOI",
+        "heure": "14:15",
+        "nb_partants": 16,
+        "discipline": "HAIE",
+        "distance": 3600
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "PRIX D'INDY",
+        "heure": "14:50",
+        "nb_partants": 8,
+        "discipline": "HAIE",
+        "distance": 3600
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "PRIX KARCIMONT",
+        "heure": "15:25",
+        "nb_partants": 14,
+        "discipline": "STEEPLECHASE",
+        "distance": 4400
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "PRIX VENTRILOQUE",
+        "heure": "16:00",
+        "nb_partants": 10,
+        "discipline": "HAIE",
+        "distance": 3500
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "PRIX D'ACHERES",
+        "heure": "16:35",
+        "nb_partants": 16,
+        "discipline": "HAIE",
+        "distance": 3600
+      },
+      "8": {
+        "numero": "8",
+        "libelle": "PRIX CHINCO",
+        "heure": "17:10",
+        "nb_partants": 14,
+        "discipline": "STEEPLECHASE",
+        "distance": 4400
+      }
+    }
+  },
+  "2": {
+    "numero": "2",
+    "hippodrome": "SHA TIN (HONG KONG)",
+    "courses": {
+      "8": {
+        "numero": "8",
+        "libelle": "CITI INSURANCE SERVICES HANDICAP - SECTION 2",
+        "heure": "08:10",
+        "nb_partants": 11,
+        "discipline": "PLAT",
+        "distance": 1200
+      },
+      "9": {
+        "numero": "9",
+        "libelle": "THE HONG KONG CLASSIC CUP",
+        "heure": "08:45",
+        "nb_partants": 14,
+        "discipline": "PLAT",
+        "distance": 1800
+      },
+      "10": {
+        "numero": "10",
+        "libelle": "CITI INVESTMENT SERVICES HANDICAP",
+        "heure": "09:20",
+        "nb_partants": 14,
+        "discipline": "PLAT",
+        "distance": 2000
+      },
+      "11": {
+        "numero": "11",
+        "libelle": "CITI CREDIT CARD HANDICAP",
+        "heure": "09:55",
+        "nb_partants": 12,
+        "discipline": "PLAT",
+        "distance": 1400
+      }
+    }
+  },
+  "3": {
+    "numero": "3",
+    "hippodrome": "SON PARDO",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "PREMI FORMENTERA                        ESPAGNE",
+        "heure": "10:14",
+        "nb_partants": 9,
+        "discipline": "ATTELE",
+        "distance": 2650
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "PREMI CABRERA                           ESPAGNE",
+        "heure": "10:46",
+        "nb_partants": 14,
+        "discipline": "ATTELE",
+        "distance": 2150
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "GRAN PREMI GOVERN DE LES ILLES BALEARS  ESPAGNE",
+        "heure": "11:18",
+        "nb_partants": 7,
+        "discipline": "ATTELE",
+        "distance": 2150
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "PREMI EIVISSA                           ESPAGNE",
+        "heure": "11:50",
+        "nb_partants": 10,
+        "discipline": "ATTELE",
+        "distance": 2650
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "PREMI ILLES BALEARS                     ESPAGNE",
+        "heure": "12:22",
+        "nb_partants": 14,
+        "discipline": "ATTELE",
+        "distance": 2150
+      }
+    }
+  },
+  "4": {
+    "numero": "4",
+    "hippodrome": "VIRE",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "PRIX RADIO VFM",
+        "heure": "10:30",
+        "nb_partants": 8,
+        "discipline": "ATTELE",
+        "distance": 2150
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "PRIX PASCAL GUILBERT",
+        "heure": "11:02",
+        "nb_partants": 9,
+        "discipline": "MONTE",
+        "distance": 2800
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "PRIX INTERMARCHE - VIRE NORMANDIE",
+        "heure": "11:34",
+        "nb_partants": 16,
+        "discipline": "ATTELE",
+        "distance": 2700
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "PRIX JAMOTTE MOTOCULTURE",
+        "heure": "12:06",
+        "nb_partants": 13,
+        "discipline": "ATTELE",
+        "distance": 2700
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "PRIX AMB MENUISERIE",
+        "heure": "12:38",
+        "nb_partants": 18,
+        "discipline": "ATTELE",
+        "distance": 2800
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "PRIX SALON DE L'HABITAT VIRE NORMANDIE",
+        "heure": "13:15",
+        "nb_partants": 18,
+        "discipline": "ATTELE",
+        "distance": 2800
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "PRIX AMISO - FLERS",
+        "heure": "13:50",
+        "nb_partants": 12,
+        "discipline": "ATTELE",
+        "distance": 2700
+      },
+      "8": {
+        "numero": "8",
+        "libelle": "PRIX OLIVIER STIRN / ROBERT AUVRAY",
+        "heure": "14:32",
+        "nb_partants": 18,
+        "discipline": "ATTELE",
+        "distance": 2800
+      }
+    }
+  },
+  "5": {
+    "numero": "5",
+    "hippodrome": "LA CEPIERE",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "PRIX CHAMAKO",
+        "heure": "15:07",
+        "nb_partants": 10,
+        "discipline": "HAIE",
+        "distance": 3500
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "PRIX DE LA VILLE DE CUGNAUX",
+        "heure": "15:42",
+        "nb_partants": 13,
+        "discipline": "PLAT",
+        "distance": 1600
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "PRIX ARVINC",
+        "heure": "16:17",
+        "nb_partants": 8,
+        "discipline": "HAIE",
+        "distance": 3500
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "PRIX LAVAREDE",
+        "heure": "16:52",
+        "nb_partants": 7,
+        "discipline": "STEEPLECHASE",
+        "distance": 3500
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "PRIX DE LA CITE MONDINE",
+        "heure": "17:27",
+        "nb_partants": 7,
+        "discipline": "PLAT",
+        "distance": 1600
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "PRIX JEAN-PAUL BOSC",
+        "heure": "18:02",
+        "nb_partants": 6,
+        "discipline": "PLAT",
+        "distance": 1600
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "PRIX ANGLO-COURSE",
+        "heure": "18:34",
+        "nb_partants": 13,
+        "discipline": "PLAT",
+        "distance": 2400
+      },
+      "8": {
+        "numero": "8",
+        "libelle": "PRIX WARDA - JEAN-FRANCOIS BERNARD",
+        "heure": "19:06",
+        "nb_partants": 10,
+        "discipline": "PLAT",
+        "distance": 2100
+      }
+    }
+  },
+  "6": {
+    "numero": "6",
+    "hippodrome": "KRIEAU (VIENNE)",
+    "courses": {
+      "4": {
+        "numero": "4",
+        "libelle": "PRIX VINCENNES                          AUTRICHE",
+        "heure": "17:45",
+        "nb_partants": 9,
+        "discipline": "ATTELE",
+        "distance": 2100
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "MARZ-PMU-GALA DES TRABERSPORTKLUBS      AUTRICHE",
+        "heure": "18:18",
+        "nb_partants": 13,
+        "discipline": "ATTELE",
+        "distance": 2100
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "PRIX GROSBOIS                           AUTRICHE",
+        "heure": "18:50",
+        "nb_partants": 8,
+        "discipline": "ATTELE",
+        "distance": 2100
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "PRIX ENGHIEN                            AUTRICHE",
+        "heure": "19:22",
+        "nb_partants": 8,
+        "discipline": "ATTELE",
+        "distance": 2600
+      }
+    }
+  },
+  "7": {
+    "numero": "7",
+    "hippodrome": "ESPERANCE AUSTRALIE",
+    "courses": {
+      "6": {
+        "numero": "6",
+        "libelle": "RACING WA PROVINCIAL SERIES HEAT (1100 METRES)",
+        "heure": "08:25",
+        "nb_partants": 12,
+        "discipline": "PLAT",
+        "distance": 1100
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "FREIGHT LINES GROUP ESPERANCE CUP (2010 METRES",
+        "heure": "09:00",
+        "nb_partants": 15,
+        "discipline": "PLAT",
+        "distance": 2010
+      },
+      "8": {
+        "numero": "8",
+        "libelle": "FARM & GENERAL - AG & TRADE HANDICAP (1600 METRES)",
+        "heure": "09:35",
+        "nb_partants": 13,
+        "discipline": "PLAT",
+        "distance": 1600
+      }
+    }
+  },
+  "8": {
+    "numero": "8",
+    "hippodrome": "MARONAS",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "FENOMENO (2018)",
+        "heure": "19:15",
+        "nb_partants": 11,
+        "discipline": "PLAT",
+        "distance": 1400
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "MANGO JANGLE (2019)",
+        "heure": "19:45",
+        "nb_partants": 13,
+        "discipline": "PLAT",
+        "distance": 1400
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "HELLO-GOODBYE (2021)",
+        "heure": "20:15",
+        "nb_partants": 13,
+        "discipline": "PLAT",
+        "distance": 1100
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "ESTE DORADO (2022)",
+        "heure": "20:45",
+        "nb_partants": 13,
+        "discipline": "PLAT",
+        "distance": 1100
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "INMENZO (2023)",
+        "heure": "21:15",
+        "nb_partants": 13,
+        "discipline": "PLAT",
+        "distance": 1200
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "TOTO RIINA (2024)",
+        "heure": "21:45",
+        "nb_partants": 14,
+        "discipline": "PLAT",
+        "distance": 1000
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "LEOPARDYNO (2025)",
+        "heure": "22:15",
+        "nb_partants": 14,
+        "discipline": "PLAT",
+        "distance": 1100
+      }
+    }
+  },
+  "9": {
+    "numero": "9",
+    "hippodrome": "SANTIAGO",
+    "courses": {
+      "6": {
+        "numero": "6",
+        "libelle": "ATREO",
+        "heure": "19:30",
+        "nb_partants": 10,
+        "discipline": "PLAT",
+        "distance": 1000
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "ART CENTER H.",
+        "heure": "20:00",
+        "nb_partants": 12,
+        "discipline": "PLAT",
+        "distance": 1200
+      },
+      "8": {
+        "numero": "8",
+        "libelle": "ACLIMATADO H",
+        "heure": "20:30",
+        "nb_partants": 11,
+        "discipline": "PLAT",
+        "distance": 1200
+      },
+      "9": {
+        "numero": "9",
+        "libelle": "EUGENIA S.",
+        "heure": "21:00",
+        "nb_partants": 6,
+        "discipline": "PLAT",
+        "distance": 1200
+      },
+      "10": {
+        "numero": "10",
+        "libelle": "APERADO H.",
+        "heure": "21:30",
+        "nb_partants": 9,
+        "discipline": "PLAT",
+        "distance": 1000
+      },
+      "11": {
+        "numero": "11",
+        "libelle": "ALIFE",
+        "heure": "22:00",
+        "nb_partants": 9,
+        "discipline": "PLAT",
+        "distance": 1000
+      }
+    }
+  },
+  "10": {
+    "numero": "10",
+    "hippodrome": "AGEN LA GARENNE",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "PRIX DE PRAYSSAS",
+        "heure": "12:55",
+        "nb_partants": 15,
+        "discipline": "ATTELE",
+        "distance": 2575
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "PRIX DES PRIMEVERES",
+        "heure": "13:25",
+        "nb_partants": 16,
+        "discipline": "ATTELE",
+        "distance": 2625
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "PRIX DE ROQUEFORT",
+        "heure": "13:55",
+        "nb_partants": 16,
+        "discipline": "ATTELE",
+        "distance": 2625
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "PRIX JEAN-FRANCOIS MAURY",
+        "heure": "14:25",
+        "nb_partants": 10,
+        "discipline": "ATTELE",
+        "distance": 2625
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "PRIX DE SAINT JEAN-DE-THURAC",
+        "heure": "14:55",
+        "nb_partants": 14,
+        "discipline": "ATTELE",
+        "distance": 2625
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "PRIX LOUIS CHAUX",
+        "heure": "15:25",
+        "nb_partants": 14,
+        "discipline": "ATTELE",
+        "distance": 2575
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "PRIX LEON LUPIS",
+        "heure": "15:55",
+        "nb_partants": 9,
+        "discipline": "ATTELE",
+        "distance": 2575
+      }
+    }
+  },
+  "11": {
+    "numero": "11",
+    "hippodrome": "CAVAILLON",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "PRIX DU CREDIT MUTUEL",
+        "heure": "12:30",
+        "nb_partants": 10,
+        "discipline": "PLAT",
+        "distance": 1600
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "PRIX JEAN ROUGET",
+        "heure": "13:00",
+        "nb_partants": 10,
+        "discipline": "PLAT",
+        "distance": 1600
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "PRIX ASSOCIATION LE SOUFFLE D'EOLE",
+        "heure": "13:30",
+        "nb_partants": 16,
+        "discipline": "ATTELE",
+        "distance": 2600
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "PRIX HIPPODROME DE BORELY",
+        "heure": "14:00",
+        "nb_partants": 12,
+        "discipline": "PLAT",
+        "distance": 2900
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "PRIX LUCIEN WUILLEME",
+        "heure": "14:30",
+        "nb_partants": 11,
+        "discipline": "ATTELE",
+        "distance": 2600
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "PRIX GEORGES MILLER",
+        "heure": "15:00",
+        "nb_partants": 7,
+        "discipline": "PLAT",
+        "distance": 2200
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "PRIX PAUL GIOVANNA / PRIX #RACEANDCARE",
+        "heure": "15:30",
+        "nb_partants": 15,
+        "discipline": "ATTELE",
+        "distance": 2600
+      },
+      "8": {
+        "numero": "8",
+        "libelle": "PRIX JEAN-MARIE SOUMILLE",
+        "heure": "16:00",
+        "nb_partants": 16,
+        "discipline": "ATTELE",
+        "distance": 2600
+      }
+    }
+  },
+  "13": {
+    "numero": "13",
+    "hippodrome": "REIMS",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "PRIX DES HIPPODROMES DE LA CHAMPAGNE",
+        "heure": "13:00",
+        "nb_partants": 15,
+        "discipline": "MONTE",
+        "distance": 2550
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "PRIX SAS PRIMAULT",
+        "heure": "13:30",
+        "nb_partants": 10,
+        "discipline": "ATTELE",
+        "distance": 2550
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "PRIX EASY CARS",
+        "heure": "14:00",
+        "nb_partants": 13,
+        "discipline": "ATTELE",
+        "distance": 2550
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "GRAND PRIX CHAMPAGNE GARDET",
+        "heure": "14:30",
+        "nb_partants": 9,
+        "discipline": "ATTELE",
+        "distance": 2500
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "PRIX DE LA FNCH",
+        "heure": "15:00",
+        "nb_partants": 10,
+        "discipline": "ATTELE",
+        "distance": 2500
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "PRIX RÊVE DE PROPRIETAIRE",
+        "heure": "15:30",
+        "nb_partants": 11,
+        "discipline": "ATTELE",
+        "distance": 2500
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "PRIX DE LA FEDERATION DE L'EST",
+        "heure": "16:00",
+        "nb_partants": 12,
+        "discipline": "ATTELE",
+        "distance": 2500
+      }
+    }
+  },
+  "14": {
+    "numero": "14",
+    "hippodrome": "SAINT BRIEUC",
+    "courses": {
+      "1": {
+        "numero": "1",
+        "libelle": "PRIX DE SAINT-MALO",
+        "heure": "13:10",
+        "nb_partants": 12,
+        "discipline": "PLAT",
+        "distance": 1700
+      },
+      "2": {
+        "numero": "2",
+        "libelle": "PRIX DE SAINT-JULIEN",
+        "heure": "13:40",
+        "nb_partants": 11,
+        "discipline": "HAIE",
+        "distance": 3800
+      },
+      "3": {
+        "numero": "3",
+        "libelle": "PRIX DE SAINT-CLOUD",
+        "heure": "14:10",
+        "nb_partants": 14,
+        "discipline": "PLAT",
+        "distance": 3100
+      },
+      "4": {
+        "numero": "4",
+        "libelle": "PRIX D'ENGHIEN",
+        "heure": "14:40",
+        "nb_partants": 13,
+        "discipline": "HAIE",
+        "distance": 3800
+      },
+      "5": {
+        "numero": "5",
+        "libelle": "PRIX DE PARISLONGCHAMP",
+        "heure": "15:10",
+        "nb_partants": 13,
+        "discipline": "PLAT",
+        "distance": 2400
+      },
+      "6": {
+        "numero": "6",
+        "libelle": "PRIX DE CLAIREFONTAINE",
+        "heure": "15:40",
+        "nb_partants": 8,
+        "discipline": "STEEPLECHASE",
+        "distance": 3800
+      },
+      "7": {
+        "numero": "7",
+        "libelle": "PRIX DE CORLAY",
+        "heure": "16:10",
+        "nb_partants": 10,
+        "discipline": "STEEPLECHASE",
+        "distance": 4200
+      }
+    }
+  }
+}

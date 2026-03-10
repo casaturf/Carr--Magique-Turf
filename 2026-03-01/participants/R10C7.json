@@ -1,0 +1,98 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2575,
+  "libelle": "PRIX LEON LUPIS",
+  "heure": "15:55",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "JEANNOT DU VALLON",
+      "driver": "J.PH. TREICH",
+      "corde": 1,
+      "poids": 0,
+      "gains": 6526000,
+      "musique": "5a0a(25)DaDaDa4a1a7a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "JOURNEE A LA GRAVE",
+      "driver": "A. GONCALVES DA SILVA",
+      "corde": 2,
+      "poids": 0,
+      "gains": 6577000,
+      "musique": "8a5a(25)4a3a3a7a5a4a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "HADOL D'AUVRECY",
+      "driver": "H.C. BAKKER",
+      "corde": 3,
+      "poids": 0,
+      "gains": 4836500,
+      "musique": "7a(25)7a9a5a0a3a5a5aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "JUNTA DES THIRONS",
+      "driver": "D. BOUYNE",
+      "corde": 4,
+      "poids": 0,
+      "gains": 6750500,
+      "musique": "5a6a6a(25)9aAa3a9aDa0a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "JEU ROYAL",
+      "driver": "L. SEIGNE",
+      "corde": 5,
+      "poids": 0,
+      "gains": 6229000,
+      "musique": "2a(25)7a1a1a0aDa0aDa8a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "IMPEC DE BERTRANGE",
+      "driver": "DIDIER PRIOU",
+      "corde": 6,
+      "poids": 0,
+      "gains": 6456500,
+      "musique": "4a6a1a5m1a(25)7m7a0a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "HARDI",
+      "driver": "Mlle L. LIZEE",
+      "corde": 7,
+      "poids": 0,
+      "gains": 6462000,
+      "musique": "7a(25)5a5a4a4a0a1a1a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "ICI MACHECOUL",
+      "driver": "C. BATY",
+      "corde": 8,
+      "poids": 0,
+      "gains": 5301000,
+      "musique": "(25)6a7a1a1a2a7a7aDa3a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "IMPERIALE DE SYHM",
+      "driver": "Mlle M. PAILLARD",
+      "corde": 9,
+      "poids": 0,
+      "gains": 4667500,
+      "musique": "9a3a(25)0a0a0a6a5a5a7a",
+      "tendance": " "
+    }
+  ]
+}

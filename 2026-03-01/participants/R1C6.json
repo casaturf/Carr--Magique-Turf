@@ -1,0 +1,108 @@
+{
+  "discipline": "HAIE",
+  "distance": 3500,
+  "libelle": "PRIX VENTRILOQUE",
+  "heure": "16:00",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "SALUT DES FLOS",
+      "driver": "K.DUBOURG",
+      "corde": 0,
+      "poids": 71.0,
+      "gains": 3297000,
+      "musique": "(25)1h3h",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "NOVAK",
+      "driver": "J.REVELEY",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 2071000,
+      "musique": "(25)2h3h",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "MOZAMBIQUE",
+      "driver": "L.VANDAMME",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 1909000,
+      "musique": "1h2h(25)5p4p4p",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "POPULAS",
+      "driver": "L.BRECHET",
+      "corde": 0,
+      "poids": 68.0,
+      "gains": 1564000,
+      "musique": "1h",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "L'AU REVOIR",
+      "driver": "C.LEFEBVRE",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 483000,
+      "musique": "2h",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "DEPRO",
+      "driver": "G.MEUNIER",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 0,
+      "musique": "(25)0p3p3p9p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "MELLOW DU LARGE",
+      "driver": "G.FAIVRE-PICON",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 0,
+      "musique": "",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "ALHUNTER",
+      "driver": "B.LE CLERC",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 84000,
+      "musique": "Jh4p(25)6h",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "MATADOR ALLEN",
+      "driver": "A.ZULIANI",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 650000,
+      "musique": "(25)3h",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "GIZLI",
+      "driver": "B.FROST",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 688500,
+      "musique": "4h(25)5h",
+      "tendance": " "
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2625,
+  "libelle": "PRIX DES PRIMEVERES",
+  "heure": "13:25",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "LUMIERE DU LOOK",
+      "driver": "CH. BOISNARD",
+      "corde": 0,
+      "poids": 0,
+      "gains": 528000,
+      "musique": "(25)Da6a5aDa3a7aDaDa5a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "LYZA DES THIRONS",
+      "driver": "P. GERAY",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1155700,
+      "musique": "DaDa(25)8a4aDa9a7a0a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "LADY DU RUISSEAU",
+      "driver": "S. TRIBOURDEAU",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1365000,
+      "musique": "2a0a0a(25)3a3a9a7a4a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "LADY MIL",
+      "driver": "M. GRASSET",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1445000,
+      "musique": "5a6a7a9a(25)4a4aDa3aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "LOVALIE ROC",
+      "driver": "V. CABOS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1732000,
+      "musique": "7a7a8a(25)7a9a5aDa5a5a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "LUNA DES MALBERAUX",
+      "driver": "F. CLOZIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1794500,
+      "musique": "0a(25)0a5a7a2a6a6a0a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "LA KIFFANCE MIL",
+      "driver": "Mme G. HERITIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1838500,
+      "musique": "6a7a(25)7a9a8a2a4a2a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "LOVE ME PASS",
+      "driver": "D. CANNILLO",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1887500,
+      "musique": "0a(25)0m2a6aDa8a0a1a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "LOVELY KADY",
+      "driver": "J. PAILLE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1898000,
+      "musique": "3a(25)DaDa3aDa2a3a6a5a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "LISA MARIA",
+      "driver": "S. POILANE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2176000,
+      "musique": "7a(25)0a0a8a9a1a5a6a5a",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "LIONNE DES BROUETS",
+      "driver": "J. ASSELIE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2868500,
+      "musique": "(25)9a5a0a0a6a(24)5aDa3a",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "LIBREVILLE",
+      "driver": "Mlle D. POSTHUMUS",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2944000,
+      "musique": "9aDaDm(25)Da3a8a9a5aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "LICORNE QUICK",
+      "driver": "TH. PRUDHON",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3375500,
+      "musique": "4a3a9a(25)9a4a3aDa3aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "L'ETOILE DE PAME",
+      "driver": "ET. CLOZIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3516500,
+      "musique": "3a(25)Da0a4a2a1a9a4a(24)",
+      "tendance": " "
+    },
+    {
+      "numero": 15,
+      "nom": "LAGHERTHA DU PONT",
+      "driver": "H. SIONNEAU",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3647500,
+      "musique": "1a3a1a(25)1a7m4aDaDm8a",
+      "tendance": " "
+    },
+    {
+      "numero": 16,
+      "nom": "LAZIZA DE LIGNY",
+      "driver": "P. GESRET",
+      "corde": 0,
+      "poids": 0,
+      "gains": 3775000,
+      "musique": "(25)0a4a5a1a5aDa7a(24)Da",
+      "tendance": " "
+    }
+  ]
+}

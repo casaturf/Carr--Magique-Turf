@@ -1,0 +1,118 @@
+{
+  "discipline": "HAIE",
+  "distance": 3800,
+  "libelle": "PRIX DE SAINT-JULIEN",
+  "heure": "13:40",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "BAMBOCHE",
+      "driver": "A.BLAIS",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 399000,
+      "musique": "4h6h",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "BANKSY NOVA",
+      "driver": "D.THOMAS",
+      "corde": 0,
+      "poids": 68.0,
+      "gains": 273000,
+      "musique": "3h(25)Ah",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "MILLENIUM SMART",
+      "driver": "J.LEBRUN",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 0,
+      "musique": "6h",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "EMSIROCK",
+      "driver": "A.DUVACHER",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 0,
+      "musique": "",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "KOROVINE",
+      "driver": "A.COUPU",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 0,
+      "musique": "(25)0p0p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "MANAHATA",
+      "driver": "C.GUITRAUD",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 0,
+      "musique": "1p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "LOVELY EYES",
+      "driver": "C.RIOU",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 0,
+      "musique": "",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "GELINA",
+      "driver": "A.GAUTRON",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 0,
+      "musique": "(25)2p2p",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "MUSISTAR",
+      "driver": "T.DUMOUCH",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 94500,
+      "musique": "5h",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "BAHIARY",
+      "driver": "E.MEUNIER",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 0,
+      "musique": "(25)0p",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "MASTERSTROKE LADY",
+      "driver": "M.BEHOCARAY",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 0,
+      "musique": "(25)AhAh",
+      "tendance": " "
+    }
+  ]
+}

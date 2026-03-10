@@ -1,0 +1,158 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2600,
+  "libelle": "PRIX PAUL GIOVANNA / PRIX #RACEANDCARE",
+  "heure": "15:30",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "JOHANNA ELEVEN",
+      "driver": "G. TOURON",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7361000,
+      "musique": "0a(25)8aDa8a7a1a2a6aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "KIEFFER D'OURVILLE",
+      "driver": "K. THONNERIEUX",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7422000,
+      "musique": "(25)Da0a9a2a3a4a4a4a7a",
+      "tendance": "+"
+    },
+    {
+      "numero": 3,
+      "nom": "KENAVO DU BOUILLON",
+      "driver": "F. TUGEND",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7514500,
+      "musique": "1a2a1a(25)2aDaDaDaDa1a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "JOLI CHARMEUR",
+      "driver": "J. GUELPA",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7589000,
+      "musique": "2a2a(25)Da1a4aDmDa5a6m",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "JOUR DE TONNERRE",
+      "driver": "LAURENT GOUT",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7611000,
+      "musique": "(25)4a0aDa2aDaDa2aDa5a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "JAIZKIBEL",
+      "driver": "J.CH. FERON",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7666500,
+      "musique": "3a1a(25)4a7a1a8a2a6a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "HELIOS DES RACQUES",
+      "driver": "K. DEVIENNE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7705500,
+      "musique": "7a(25)0a0a5a6a1a2aDa7a",
+      "tendance": "+"
+    },
+    {
+      "numero": 8,
+      "nom": "KENZA KALOUMA",
+      "driver": "D. BEKAERT",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7757000,
+      "musique": "8a(25)Da0a7a3a8a1a0a5a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "JANE LUIS PORSGUEN",
+      "driver": "Y.A. BRIAND",
+      "corde": 0,
+      "poids": 0,
+      "gains": 7853000,
+      "musique": "Dm8a4a(25)Da4a6a8a6a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "INVICTUS D'ORGERES",
+      "driver": "J. ROULLAND",
+      "corde": 0,
+      "poids": 0,
+      "gains": 12470000,
+      "musique": "5a(25)9a0a(24)0a1a1a1a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "JIGSAW PUZZLE",
+      "driver": "P. REPICHET",
+      "corde": 0,
+      "poids": 0,
+      "gains": 16100000,
+      "musique": "9a6a(25)8a9a0a8a2aDaDa",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "INESKA",
+      "driver": "H. CHAUVE-LAFFAY",
+      "corde": 0,
+      "poids": 0,
+      "gains": 16904000,
+      "musique": "1a0a(25)1a5a3a1a4a2a4a",
+      "tendance": "-"
+    },
+    {
+      "numero": 13,
+      "nom": "IDEAL DELADOU",
+      "driver": "N. PACHA",
+      "corde": 0,
+      "poids": 0,
+      "gains": 16970500,
+      "musique": "Da8a(25)5aDaDa1aDaDa7a",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "HOLD UP NOCTURNE",
+      "driver": "S. CINGLAND",
+      "corde": 0,
+      "poids": 0,
+      "gains": 17019000,
+      "musique": "(25)7a0a0a5a8a9a9a6a8a",
+      "tendance": " "
+    },
+    {
+      "numero": 15,
+      "nom": "HARENA DE MARZY",
+      "driver": "D. BROUWER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 17068000,
+      "musique": "4aDaDa4aDa(25)Da4a0a8a",
+      "tendance": "+"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2650,
+  "libelle": "PREMI FORMENTERA                        ESPAGNE",
+  "heure": "10:14",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "MOET DE FONT",
+      "driver": "M.A. BINIMELIS",
+      "corde": 1,
+      "poids": 0,
+      "gains": 305400,
+      "musique": "1a3a(24)Da7a1aRa",
+      "tendance": "+"
+    },
+    {
+      "numero": 2,
+      "nom": "LE CASINO ROYALE",
+      "driver": "V. GINARD",
+      "corde": 2,
+      "poids": 0,
+      "gains": 337500,
+      "musique": "6a0a3a0a0a(25)6a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "MAGENTA D'ESCAFI",
+      "driver": "E. PERPINAN",
+      "corde": 3,
+      "poids": 0,
+      "gains": 368800,
+      "musique": "0a3a5a(25)8aDa2a",
+      "tendance": "+"
+    },
+    {
+      "numero": 4,
+      "nom": "L'ENCANT ROYAL GF",
+      "driver": "ANT. ANDREU M.",
+      "corde": 4,
+      "poids": 0,
+      "gains": 479200,
+      "musique": "2aDa1a(25)0a0a6a",
+      "tendance": "+"
+    },
+    {
+      "numero": 5,
+      "nom": "LAUDA LLINARITX",
+      "driver": "J. PASTOR",
+      "corde": 5,
+      "poids": 0,
+      "gains": 411800,
+      "musique": "6a7a(25)0a4a0a5a",
+      "tendance": "+"
+    },
+    {
+      "numero": 6,
+      "nom": "LODYSEAS",
+      "driver": "J. FORTEZA R.",
+      "corde": 6,
+      "poids": 0,
+      "gains": 303400,
+      "musique": "(25)Da7aDa5a6a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "MOET DEL SOL",
+      "driver": "M. MESTRE",
+      "corde": 7,
+      "poids": 0,
+      "gains": 337800,
+      "musique": "2a2a3a4a4a(25)1a",
+      "tendance": "-"
+    },
+    {
+      "numero": 8,
+      "nom": "MON AMI",
+      "driver": "G. ANDREU",
+      "corde": 8,
+      "poids": 0,
+      "gains": 494900,
+      "musique": "1a3a3a(25)4a4a2a",
+      "tendance": "+"
+    },
+    {
+      "numero": 9,
+      "nom": "MAHOU SP",
+      "driver": "A. RIERA R.",
+      "corde": 9,
+      "poids": 0,
+      "gains": 240200,
+      "musique": "5a3a1a5aDa(25)Ra",
+      "tendance": " "
+    }
+  ]
+}

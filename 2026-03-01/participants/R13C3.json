@@ -1,0 +1,138 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2550,
+  "libelle": "PRIX EASY CARS",
+  "heure": "14:00",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "LADY BELL",
+      "driver": "Mlle THAIS PELTIER",
+      "corde": 0,
+      "poids": 0,
+      "gains": 1823500,
+      "musique": "0a2a(25)8m0m2aDa9aDa7a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "LEGENDE DU GERS",
+      "driver": "M.J. BARCELO BISQUERRA",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2024000,
+      "musique": "(25)Da8a7a5a2aDa4aDa2a",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "LADY PURPLE",
+      "driver": "L. CHUPIN",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2058500,
+      "musique": "Da(25)DaDaDa2a1aDaDa3a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "LOOK DAIRPET",
+      "driver": "R. HOJKA",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2086000,
+      "musique": "(25)6a7a4a6a7a7a0a4a7a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "LORETTE D'ERABLE",
+      "driver": "G. LEMAITRE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2180000,
+      "musique": "(25)9m7a4aGa4aDaDa4a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "LUTIN DE LA BESVRE",
+      "driver": "D. THIEFAINE",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2209000,
+      "musique": "(25)DaDa0a5a1a3a7aDa0a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "LADY DES VALOIS",
+      "driver": "M. GARCON",
+      "corde": 0,
+      "poids": 0,
+      "gains": 2217000,
+      "musique": "(25)Da5m1a1aDaDaDaDa2a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "LUCKY STAR JIEL",
+      "driver": "C. GILLET",
+      "corde": 0,
+      "poids": 0,
+      "gains": 4602000,
+      "musique": "8a6a(25)Da9a1aDa5aDa3a",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "LA CALLAS",
+      "driver": "G. GILARD",
+      "corde": 0,
+      "poids": 0,
+      "gains": 4648500,
+      "musique": "4a5a6a3aDa(25)3a4a5a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "LUNE LUMALO",
+      "driver": "L. CUEFF",
+      "corde": 0,
+      "poids": 0,
+      "gains": 4892500,
+      "musique": "Da1a9a(25)7aDa5a7a5a4a",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "LICARI",
+      "driver": "N. PIERQUIN",
+      "corde": 0,
+      "poids": 0,
+      "gains": 4908500,
+      "musique": "1m(25)3mDmDaDa9a3mDaDa",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "LUDIVINE DE BAILLY",
+      "driver": "Mme A. BOURGOIN",
+      "corde": 0,
+      "poids": 0,
+      "gains": 4923500,
+      "musique": "Da1a5a5a(25)1a1a3a4a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "LAST DES BROUSSES",
+      "driver": "K. ACHARD",
+      "corde": 0,
+      "poids": 0,
+      "gains": 4939000,
+      "musique": "Da0a8a(25)DaDa4a5a4a3a",
+      "tendance": " "
+    }
+  ]
+}

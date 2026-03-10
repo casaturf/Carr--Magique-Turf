@@ -1,0 +1,98 @@
+{
+  "discipline": "PLAT",
+  "distance": 1000,
+  "libelle": "APERADO H.",
+  "heure": "21:30",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "ARAKI",
+      "driver": "JESUS ANTONIO TORO NARANJO",
+      "corde": 1,
+      "poids": 55.0,
+      "gains": 2027790000,
+      "musique": "3p6p8p4p",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "ONIX BLUE",
+      "driver": "NICOLAS ALEJANDRO RAMIREZ MUNOZ",
+      "corde": 2,
+      "poids": 54.0,
+      "gains": 1635120000,
+      "musique": "5p3p4p3p",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "STRAY KIDS",
+      "driver": "LESLY CAROLINA GONZALEZ",
+      "corde": 3,
+      "poids": 53.0,
+      "gains": 2964060000,
+      "musique": "8p9p7p8p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "TRES PRINCIPES",
+      "driver": "GONZALO ULLOA PEREZ",
+      "corde": 4,
+      "poids": 57.0,
+      "gains": 658080000,
+      "musique": "4p1p9p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "INDHIRA",
+      "driver": "IGNACIO ISAIAS VALDIVIA",
+      "corde": 5,
+      "poids": 52.0,
+      "gains": 1372410000,
+      "musique": "2p5p7p8p2p",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "PIANTAO",
+      "driver": "JONATHAN ANDRES CASTILLO TAPIA",
+      "corde": 6,
+      "poids": 60.0,
+      "gains": 2003580000,
+      "musique": "6p5p3p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "FERLUISI",
+      "driver": "JOAQUIN ALEJANDRO HERRERA OLIVAR",
+      "corde": 7,
+      "poids": 57.0,
+      "gains": 773730000,
+      "musique": "3p2p0p1p",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "GRIEZMANN",
+      "driver": "RODOLFO S DORES",
+      "corde": 8,
+      "poids": 58.0,
+      "gains": 6113070000,
+      "musique": "9p6p3p5p6p",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "PALACETE",
+      "driver": "GERALD ANDRES RODRIGUEZ SEPULVED",
+      "corde": 9,
+      "poids": 60.0,
+      "gains": 1323900000,
+      "musique": "1p4p6p2p8p",
+      "tendance": " "
+    }
+  ]
+}

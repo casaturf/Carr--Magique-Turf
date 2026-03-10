@@ -1,0 +1,148 @@
+{
+  "discipline": "STEEPLECHASE",
+  "distance": 4400,
+  "libelle": "PRIX KARCIMONT",
+  "heure": "15:25",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "CALIGRAMME",
+      "driver": "L.BRECHET",
+      "corde": 0,
+      "poids": 72.0,
+      "gains": 18863000,
+      "musique": "1h(25)1s5hAs(24)5sTs1hTs",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "ILLAHO",
+      "driver": "J.REVELEY",
+      "corde": 0,
+      "poids": 69.5,
+      "gains": 12572000,
+      "musique": "0s(25)1s3s3s1s5s3s3s",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "CHARDASSO",
+      "driver": "A.CHESNEAU",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 4888000,
+      "musique": "(25)As2s3s(24)2h6h2h",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "MAMIX'S PASSION",
+      "driver": "C.LEFEBVRE",
+      "corde": 0,
+      "poids": 67.5,
+      "gains": 39674500,
+      "musique": "8s(25)6s4s4s4s5hAh3h",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "NAVARRENX",
+      "driver": "K.NABET",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 6726000,
+      "musique": "(25)Ts1s3s4s(24)5h3h4h5h",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "JAGUAR DU LARGE",
+      "driver": "T.BEAURAIN",
+      "corde": 0,
+      "poids": 66.5,
+      "gains": 11257500,
+      "musique": "2h1s(25)6h5s4s6s1s4s",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "JAGUAR DES OBEAUX",
+      "driver": "O.JOUIN",
+      "corde": 0,
+      "poids": 65.5,
+      "gains": 18336500,
+      "musique": "2h(25)3sDs2s6h2s8sTs1h",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "LASCARIS",
+      "driver": "THO .JOURNIAC",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 6035500,
+      "musique": "3s(25)4s5h6h4sAsTs(24)2s",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "KRISNA",
+      "driver": "A.ZULIANI",
+      "corde": 0,
+      "poids": 63.0,
+      "gains": 9030500,
+      "musique": "5h(25)5s2s1pAs5h1s7s5s",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "MALBEC DU MATHAN",
+      "driver": "G.MASURE",
+      "corde": 0,
+      "poids": 63.0,
+      "gains": 11537000,
+      "musique": "(25)2s(22)8s5s2s3h(21)Ts1s",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "SEIGNEUR DES AS",
+      "driver": "G.MEUNIER",
+      "corde": 0,
+      "poids": 63.0,
+      "gains": 4733200,
+      "musique": "Ts(25)5s(24)2s5h3h(23)5s4s",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "PERSYAMBRE",
+      "driver": "C.PRICHARD",
+      "corde": 0,
+      "poids": 62.5,
+      "gains": 9743500,
+      "musique": "(25)3s7s2s0s6h(24)1s(23)3s",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "LE COUP D'ENVOI",
+      "driver": "T.CHEVILLARD",
+      "corde": 0,
+      "poids": 62.0,
+      "gains": 2956000,
+      "musique": "4s2s(25)4sAs5s3s3s3h7h",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "GAZ GAZ",
+      "driver": "G.FAIVRE-PICON",
+      "corde": 0,
+      "poids": 62.0,
+      "gains": 13532000,
+      "musique": "2s(25)4s2s5s1h6h5s(24)1s",
+      "tendance": " "
+    }
+  ]
+}

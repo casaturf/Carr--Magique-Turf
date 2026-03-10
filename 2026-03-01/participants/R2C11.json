@@ -1,0 +1,128 @@
+{
+  "discipline": "PLAT",
+  "distance": 1400,
+  "libelle": "CITI CREDIT CARD HANDICAP",
+  "heure": "09:55",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "HEALTHY HAPPY",
+      "driver": "WONG E.C.W.",
+      "corde": 7,
+      "poids": 61.0,
+      "gains": 2389845000,
+      "musique": "4p6p(25)6p9p",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "BEAUTY ETERNAL",
+      "driver": "AVDULLA B.",
+      "corde": 11,
+      "poids": 60.0,
+      "gains": 3907512500,
+      "musique": "5p5p5p0p(25)",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "NEW FOREST",
+      "driver": "HEWITSON L.",
+      "corde": 3,
+      "poids": 59.0,
+      "gains": 586555000,
+      "musique": "8p1p(25)1p4p",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "MUGEN",
+      "driver": "PURTON Z.",
+      "corde": 2,
+      "poids": 58.5,
+      "gains": 1069190000,
+      "musique": "0p8p(25)0p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "LADY'S CHOICE",
+      "driver": "KINGSCOTE R.",
+      "corde": 4,
+      "poids": 57.5,
+      "gains": 1123020000,
+      "musique": "8p6p9p(25)9p",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "SON PAK FU",
+      "driver": "BADEL A.",
+      "corde": 5,
+      "poids": 55.5,
+      "gains": 1094292500,
+      "musique": "5p6p(25)8p8p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "GUSTOSISIMO",
+      "driver": "CHUNG Y.L.",
+      "corde": 1,
+      "poids": 55.0,
+      "gains": 568240000,
+      "musique": "3p4p4p7p(25)",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "ALL OUT FOR SIX",
+      "driver": "TEETAN K.",
+      "corde": 10,
+      "poids": 54.0,
+      "gains": 5680000,
+      "musique": "6p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "EMBLAZON",
+      "driver": "CHAU C.L.",
+      "corde": 6,
+      "poids": 54.0,
+      "gains": 366270000,
+      "musique": "1p1p(25)1p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "JUNEAU PRIDE",
+      "driver": "ATZENI A.",
+      "corde": 9,
+      "poids": 54.0,
+      "gains": 506625000,
+      "musique": "3p3p(25)5p7p",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "MID WINTER WIND",
+      "driver": "NON PARTANT",
+      "corde": 12,
+      "poids": 54.0,
+      "gains": 240040000,
+      "musique": "7p3p(25)4p3p",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "MR ASCENDENCY",
+      "driver": "POON M.F.",
+      "corde": 8,
+      "poids": 52.0,
+      "gains": 1273620000,
+      "musique": "9p0p(25)0p0p",
+      "tendance": " "
+    }
+  ]
+}

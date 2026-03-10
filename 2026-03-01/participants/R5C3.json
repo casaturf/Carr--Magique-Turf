@@ -1,0 +1,88 @@
+{
+  "discipline": "HAIE",
+  "distance": 3500,
+  "libelle": "PRIX ARVINC",
+  "heure": "16:17",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "ESCORT'MAN",
+      "driver": "D.GALLON",
+      "corde": 0,
+      "poids": 70.0,
+      "gains": 1156000,
+      "musique": "(25)8h1h3h",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "PRAIRIE SAMBA",
+      "driver": "JF.RAMBUR",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 1472000,
+      "musique": "Ah1h(25)0p9p8p",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "MICAWBER",
+      "driver": "G.RICHARD",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 695500,
+      "musique": "1p6h(25)3h5h2p4p",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "MESSIDOR",
+      "driver": "M.ZITIOU-COLLONGES",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 0,
+      "musique": "",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "MISSILE",
+      "driver": "Q.DEFONTAINE",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 133000,
+      "musique": "4h(25)Th",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "LA LETTRE",
+      "driver": "J.PHELIPPE",
+      "corde": 0,
+      "poids": 66.0,
+      "gains": 424500,
+      "musique": "(25)5hAhJh2h5h0p0p",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "OVER DREAM",
+      "driver": "A.GLEYROUX",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 102000,
+      "musique": "Jh6h",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "BOROUGHA",
+      "driver": "D.RODRIGUEZ",
+      "corde": 0,
+      "poids": 65.0,
+      "gains": 126000,
+      "musique": "6h(25)2p",
+      "tendance": " "
+    }
+  ]
+}

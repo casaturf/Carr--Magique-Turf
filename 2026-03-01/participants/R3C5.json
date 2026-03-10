@@ -1,0 +1,148 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2150,
+  "libelle": "PREMI ILLES BALEARS                     ESPAGNE",
+  "heure": "12:22",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "FEELING BOY",
+      "driver": "A. RIERA B.",
+      "corde": 1,
+      "poids": 0,
+      "gains": 25305500,
+      "musique": "(25)DaDm5a0a8a6a7aDa7a",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "GOLDORACK",
+      "driver": "J. FORTEZA R.",
+      "corde": 2,
+      "poids": 0,
+      "gains": 21120000,
+      "musique": "7a6a3a(25)Da4a5a",
+      "tendance": "+"
+    },
+    {
+      "numero": 3,
+      "nom": "FELLI ELEVEN",
+      "driver": "A. FRONTERA",
+      "corde": 3,
+      "poids": 0,
+      "gains": 23505000,
+      "musique": "3a0a0a(25)4a3aDa",
+      "tendance": "+"
+    },
+    {
+      "numero": 4,
+      "nom": "FOUDRE DAIRPET",
+      "driver": "C. CRUELLAS",
+      "corde": 4,
+      "poids": 0,
+      "gains": 24618100,
+      "musique": "4a1a2a(25)1a2a1a",
+      "tendance": "+"
+    },
+    {
+      "numero": 5,
+      "nom": "EQUEJUELO",
+      "driver": "M. MESTRE",
+      "corde": 5,
+      "poids": 0,
+      "gains": 23744000,
+      "musique": "Da(25)Ra0aDa0a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "GYBOR WELL",
+      "driver": "J. BAUZA B.",
+      "corde": 6,
+      "poids": 0,
+      "gains": 29785300,
+      "musique": "0a4a(25)1a2a7a8a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "FANFARONNEUR",
+      "driver": "JME. FLUXA",
+      "corde": 7,
+      "poids": 0,
+      "gains": 32297000,
+      "musique": "Da1a(25)1a1a7a0a",
+      "tendance": "-"
+    },
+    {
+      "numero": 8,
+      "nom": "HEROS DE FLEUR",
+      "driver": "F. BENNASAR",
+      "corde": 8,
+      "poids": 0,
+      "gains": 43069600,
+      "musique": "5a3a6a(25)0a7a2a",
+      "tendance": "+"
+    },
+    {
+      "numero": 9,
+      "nom": "GREEN DE LARRE",
+      "driver": "M. RIERA B.",
+      "corde": 9,
+      "poids": 0,
+      "gains": 20127500,
+      "musique": "2a1a1a2a(25)2a5a",
+      "tendance": "+"
+    },
+    {
+      "numero": 10,
+      "nom": "ESPOIR DE TOUES",
+      "driver": "J. FLUXA",
+      "corde": 10,
+      "poids": 0,
+      "gains": 18155000,
+      "musique": "6a6a3a3a(25)4a3a",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "HASCHELEY BERRY",
+      "driver": "P. MONTANER",
+      "corde": 11,
+      "poids": 0,
+      "gains": 13113300,
+      "musique": "2a4a(25)Da3a7a2a",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "FILOU NICAUX",
+      "driver": "S. POCOVI",
+      "corde": 12,
+      "poids": 0,
+      "gains": 16308800,
+      "musique": "1a2aDa(25)DaDa5a",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "GLOIRE DE FLEURY",
+      "driver": "B. LLOBET R.",
+      "corde": 13,
+      "poids": 0,
+      "gains": 15156000,
+      "musique": "3a2a(25)3a5a4a2a",
+      "tendance": "+"
+    },
+    {
+      "numero": 14,
+      "nom": "FAVARY",
+      "driver": "A. VALLS",
+      "corde": 14,
+      "poids": 0,
+      "gains": 15857900,
+      "musique": "1a2a1a(25)3a6a4a",
+      "tendance": "+"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "discipline": "ATTELE",
+  "distance": 2500,
+  "libelle": "GRAND PRIX CHAMPAGNE GARDET",
+  "heure": "14:30",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "JAZZ D'OURVILLE",
+      "driver": "M. ABRIVARD",
+      "corde": 1,
+      "poids": 0,
+      "gains": 11372500,
+      "musique": "0a2a6a9a0a(25)Da7a8aAa",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "KRAKEN CASTELETS",
+      "driver": "GUILLAUME MARTIN",
+      "corde": 2,
+      "poids": 0,
+      "gains": 12771000,
+      "musique": "6a(25)9a8a2a4a4a3a0aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "GAMIN DE COKTAIL",
+      "driver": "M.J. BARCELO BISQUERRA",
+      "corde": 3,
+      "poids": 0,
+      "gains": 11849600,
+      "musique": "(25)Da4aDa0a8a9a(24)7a8a",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "JOYEUX MESLOIS",
+      "driver": "TH. DROMIGNY",
+      "corde": 4,
+      "poids": 0,
+      "gains": 12253000,
+      "musique": "5a1a9m(25)4m6a3m0a9a6a",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "JARDYLAND",
+      "driver": "D. BONNE",
+      "corde": 5,
+      "poids": 0,
+      "gains": 12170000,
+      "musique": "3a4a(25)Da4aDa8a0a0a5a",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "HAHICHA GIRL",
+      "driver": "CL. FRECELLE",
+      "corde": 6,
+      "poids": 0,
+      "gains": 11812500,
+      "musique": "0a(25)2a6a8a4a8a2a3a0a",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "JIMBO SPORT",
+      "driver": "K. DEPUYDT",
+      "corde": 7,
+      "poids": 0,
+      "gains": 11856100,
+      "musique": "7a4a(25)1a2a3a1a1a1a1a",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "IOUP LA BOUM",
+      "driver": "J. TRAVERS",
+      "corde": 8,
+      "poids": 0,
+      "gains": 10513000,
+      "musique": "0aDaDa(25)0a0aDa0a0aDa",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "JASON BLUE",
+      "driver": "F. OUVRIE",
+      "corde": 9,
+      "poids": 0,
+      "gains": 10557500,
+      "musique": "Da7a(25)DaDa4a3aDaDa5a",
+      "tendance": " "
+    }
+  ]
+}

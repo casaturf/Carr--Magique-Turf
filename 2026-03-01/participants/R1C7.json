@@ -1,0 +1,168 @@
+{
+  "discipline": "HAIE",
+  "distance": 3600,
+  "libelle": "PRIX D'ACHERES",
+  "heure": "16:35",
+  "participants": [
+    {
+      "numero": 1,
+      "nom": "ROI DU REVE",
+      "driver": "T.BEAURAIN",
+      "corde": 0,
+      "poids": 72.0,
+      "gains": 4574000,
+      "musique": "8s(25)4s3h2h2hJh3h7h8h",
+      "tendance": " "
+    },
+    {
+      "numero": 2,
+      "nom": "POLYNECTAR VAL",
+      "driver": "L.COLSON",
+      "corde": 0,
+      "poids": 72.0,
+      "gains": 2494000,
+      "musique": "5h3h(25)4h1h3p3pJh4p6p",
+      "tendance": " "
+    },
+    {
+      "numero": 3,
+      "nom": "CHADOC",
+      "driver": "C.PRICHARD",
+      "corde": 0,
+      "poids": 71.5,
+      "gains": 2940000,
+      "musique": "2s1h(25)2h3h4h",
+      "tendance": " "
+    },
+    {
+      "numero": 4,
+      "nom": "SUPER BEND",
+      "driver": "G.FAIVRE-PICON",
+      "corde": 0,
+      "poids": 71.5,
+      "gains": 7534500,
+      "musique": "4s(25)3s5s2h9h6s3s2s4s",
+      "tendance": " "
+    },
+    {
+      "numero": 5,
+      "nom": "KING LANE",
+      "driver": "L.PHILIPPERON",
+      "corde": 0,
+      "poids": 70.5,
+      "gains": 996000,
+      "musique": "(25)9h4h2h8h(24)0h",
+      "tendance": " "
+    },
+    {
+      "numero": 6,
+      "nom": "LES FLOTS BLEUS",
+      "driver": "N.FERREIRA",
+      "corde": 0,
+      "poids": 70.0,
+      "gains": 9060500,
+      "musique": "Ah(25)0h4h9hAh5h7h3hAh",
+      "tendance": " "
+    },
+    {
+      "numero": 7,
+      "nom": "CARGO DE NUIT",
+      "driver": "K.OUVRIER",
+      "corde": 0,
+      "poids": 70.0,
+      "gains": 7275000,
+      "musique": "0s2s(25)As9hAsAh5s4h8h",
+      "tendance": " "
+    },
+    {
+      "numero": 8,
+      "nom": "KISSY",
+      "driver": "C.SMEULDERS",
+      "corde": 0,
+      "poids": 69.5,
+      "gains": 7651500,
+      "musique": "0s8s(25)7h1h8s9hAh0h6h",
+      "tendance": " "
+    },
+    {
+      "numero": 9,
+      "nom": "LITCHI ROQUE",
+      "driver": "M.ZULIANI",
+      "corde": 0,
+      "poids": 69.5,
+      "gains": 3021000,
+      "musique": "3h(25)2hJh3h1h8h6h8h",
+      "tendance": " "
+    },
+    {
+      "numero": 10,
+      "nom": "COCOTTE ROYALE",
+      "driver": "L.BRECHET",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 6538500,
+      "musique": "3s2h5h(25)2h4s6h3s6s2s",
+      "tendance": " "
+    },
+    {
+      "numero": 11,
+      "nom": "LIGHT OF STAR",
+      "driver": "Q.SAMARIA",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 3014500,
+      "musique": "AhAh1h2h(25)Ah0hTs0h3h",
+      "tendance": " "
+    },
+    {
+      "numero": 12,
+      "nom": "MARVEL DELABLAIRIE",
+      "driver": "C.LEFEBVRE",
+      "corde": 0,
+      "poids": 69.0,
+      "gains": 1795500,
+      "musique": "6h(25)3hTh8s9hTh1h4p",
+      "tendance": " "
+    },
+    {
+      "numero": 13,
+      "nom": "LA PAGAILLE",
+      "driver": "E.HER",
+      "corde": 0,
+      "poids": 68.5,
+      "gains": 2674500,
+      "musique": "4h(25)Ah7sAhAs4h4h8s0s",
+      "tendance": " "
+    },
+    {
+      "numero": 14,
+      "nom": "BAHIA DU CARCAUD",
+      "driver": "A.FOUCHER",
+      "corde": 0,
+      "poids": 67.5,
+      "gains": 493500,
+      "musique": "5h6h(25)4h",
+      "tendance": " "
+    },
+    {
+      "numero": 15,
+      "nom": "LOWAVE",
+      "driver": "A.CHESNEAU",
+      "corde": 0,
+      "poids": 67.0,
+      "gains": 338000,
+      "musique": "5h(25)5hAh4pDpAh(24)4p2p",
+      "tendance": " "
+    },
+    {
+      "numero": 16,
+      "nom": "BREEZE D'AUTEUIL",
+      "driver": "R.POINCOT",
+      "corde": 0,
+      "poids": 63.5,
+      "gains": 2806000,
+      "musique": "8h0p(25)5h6s6h4s6s5h6s",
+      "tendance": " "
+    }
+  ]
+}
