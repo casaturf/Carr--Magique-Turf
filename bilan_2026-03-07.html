@@ -16,13 +16,13 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
 .container { max-width: 1600px; margin: 0 auto; padding: 0 10px 10px 10px; }
 .header { text-align: center; margin-bottom: 5px; margin-top: 0; padding: 0; }
 .logo { width: 120px; height: auto; margin-bottom: 0; margin-top: 0; }
-.back-button { position: absolute; top: 5px; left: 10px; background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 4px 10px; border-radius: 15px; cursor: pointer; font-size: 11px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; z-index: 10; }
+.back-button { position: absolute; top: 5px; left: 10px; background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 14px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; z-index: 10; }
 .back-button:hover { background: #00B4D8; color: #000000; transform: translateX(-5px); }
 .main-section { background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%); border: 2px solid #00B4D8; border-radius: 10px; padding: 15px; margin-bottom: 6px; }
 .section-title { font-size: 20px; color: #FF6B6B; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid #FF6B6B; }
 .course-title { font-size: 24px; color: #00B4D8; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
 .course-info { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 3px; }
-.info-badge { background: #1A1A1A; padding: 4px 10px; border-radius: 8px; font-size: 11px; border: 2px solid #C8A882; color: #C8A882; }
+.info-badge { background: #1A1A1A; padding: 8px 16px; border-radius: 8px; font-size: 11px; border: 2px solid #C8A882; color: #C8A882; }
 table { width: 100%; border-collapse: collapse; margin-top: 15px; }
 thead th { background: #00B4D8; color: #000000; padding: 10px 8px; text-align: center; font-weight: bold; font-size: 13px; }
 tbody td { padding: 8px 6px; text-align: center; border-bottom: 1px solid #2A2A2A; font-size: 13px; }
@@ -58,8 +58,8 @@ tbody tr:hover { background: rgba(0, 180, 216, 0.1); }
 .logo-section  { display: flex; flex-direction: column; gap: 3px; margin-top: 0; padding-top: 0; }
 .title-section { flex: 1; text-align: center; margin-left: 20px; }
 .title    { font-size: 28px; color: #00B4D8; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
-.subtitle { font-size: 13px; color: #C8A882; }
-.date-picker { background: #1A1A1A; padding: 4px 12px; border-radius: 15px; font-size: 12px; color: #00B4D8; font-weight: bold; border: 2px solid #00B4D8; width: 150px; cursor: pointer; transition: all 0.3s ease; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+.subtitle { font-size: 17px; color: #C8A882; }
+.date-picker { background: #1A1A1A; padding: 4px 12px; border-radius: 15px; font-size: 15px; color: #00B4D8; font-weight: bold; border: 2px solid #00B4D8; width: 180px; cursor: pointer; transition: all 0.3s ease; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 .date-picker:hover { background: #00B4D8; color: #000000; }
 .date-picker:focus { outline: none; border-color: #FF6B6B; }
 input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepia(1) saturate(5) hue-rotate(175deg); cursor: pointer; }
@@ -75,7 +75,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .course-card:hover { transform: translateX(10px); border-left-color: #00B4D8; box-shadow: 0 5px 20px rgba(0, 180, 216, 0.3); }
 .course-header    { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
 .course-number    { font-size: 18px; font-weight: bold; color: #FF6B6B; }
-.course-time      { background: #00B4D8; color: #000000; padding: 4px 12px; border-radius: 12px; font-weight: bold; font-size: 13px; }
+.course-time      { background: #00B4D8; color: #000000; padding: 8px 16px; border-radius: 12px; font-weight: bold; font-size: 13px; }
 .course-card-title { font-size: 16px; color: #FFFFFF; margin-bottom: 8px; font-weight: 600; }
 .course-details   { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .detail-badge            { background: #2A2A2A; padding: 4px 8px; border-radius: 8px; font-size: 11px; display: flex; align-items: center; gap: 4px; }
@@ -102,6 +102,14 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .footer-links a:hover { color: #FF6B6B; }
 .footer-copy { font-size: 11px; color: #555; }
 </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QETD2M15"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-11QETD2M15');
+  </script>
 </head>
 <body>
 <a class="back-button" href="../bilans.html">← Retour aux Bilans</a>
@@ -171,469 +179,529 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         </tr>
         <tr>
           <td style="font-weight:bold;color:#FF6B6B;">R6</td>
-          <td>2</td>
+          <td>4</td>
+          <td style="color:#FFD700;font-weight:bold;">75%</td>
+          <td style="color:#FFD700;">4/4 (100%)</td><td style="color:#FFD700;">4/4 (100%)</td><td style="color:#FFD700;">4/4 (100%)</td>
+          <td style="color:#FFD700;font-weight:bold;">75%</td>
+          <td style="color:#FFD700;">4/4 (100%)</td>
           <td style="color:#00C853;font-weight:bold;">100%</td>
-          <td style="color:#00C853;">2/2 (100%)</td><td style="color:#00C853;">2/2 (100%)</td><td style="color:#00C853;">2/2 (100%)</td>
-          <td style="color:#00C853;font-weight:bold;">100%</td>
-          <td style="color:#00C853;">2/2 (100%)</td>
-          <td style="color:#00C853;font-weight:bold;">100%</td>
-          <td style="color:#00C853;">2/2 (100%)</td>
+          <td style="color:#00C853;">4/4 (100%)</td>
         </tr>
         <tr style="background:#1A1A1A;font-weight:bold;border-top:2px solid #00B4D8;">
-          <td style="color:#FFD700;">TOTAL</td><td>41</td>
-          <td style="color:#FFD700;font-size:15px;">68%</td>
-          <td style="color:#FFD700;">36/41 (88%)</td><td style="color:#FFD700;">39/41 (95%)</td><td style="color:#FFD700;">40/41 (98%)</td>
-          <td style="color:#00C853;font-size:15px;">80%</td><td style="color:#00C853;">39/41 (95%)</td>
-          <td style="color:#00C853;font-size:15px;">88%</td><td style="color:#00C853;">41/41 (100%)</td>
+          <td style="color:#FFD700;">TOTAL</td><td>43</td>
+          <td style="color:#FFD700;font-size:15px;">67%</td>
+          <td style="color:#FFD700;">38/43 (88%)</td><td style="color:#FFD700;">41/43 (95%)</td><td style="color:#FFD700;">42/43 (98%)</td>
+          <td style="color:#FFD700;font-size:15px;">79%</td><td style="color:#FFD700;">41/43 (95%)</td>
+          <td style="color:#00C853;font-size:15px;">88%</td><td style="color:#00C853;">43/43 (100%)</td>
         </tr></tbody></table>
     </div>
     <div class="section-title" style="margin:16px 0 8px;font-size:18px;color:#FF6B6B;">📋 DÉTAIL PAR RÉUNION</div>
     
       <div class="main-section" style="margin-bottom:16px;">
         <div class="section-title">🏇 Réunion R1</div>
-        <table>
+        <div style="overflow-x:auto;">
+        <table style="min-width:900px;">
           <thead><tr>
-            <th>Course</th><th>Gagnant</th><th>Arrivée</th>
-            <th>TOP 3 Prédit</th><th>✓</th><th>Places</th>
-            <th>TOP 5 Prédit</th><th>✓</th><th>TOP 8 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Course</th>
+            <th style="white-space:nowrap;">Gagnant</th>
+            <th style="white-space:nowrap;">Arrivée</th>
+            <th style="white-space:nowrap;min-width:120px;">TOP 3 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Places</th>
+            <th style="white-space:nowrap;min-width:150px;">TOP 5 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;min-width:200px;">TOP 8 Prédit</th><th>✓</th>
           </tr></thead>
           <tbody>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C1</td>
               <td style="color:#FFD700;font-weight:bold;">#7</td>
-              <td style="font-size:11px;color:#AAAAAA;">7 - 9 - 10 - 8 - 5 - 4</td>
-              <td style="font-size:11px;">1 - 7 - 6</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">7 - 9 - 10 - 8 - 5 - 4</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 7 - 6</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 1/4 | 1/5</td>
-              <td style="font-size:11px;">1 - 7 - 6 - 10 - 9</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">1 - 7 - 6 - 10 - 9 -</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 7 - 6 - 10 - 9</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 7 - 6 - 10 - 9 - 3 - 4 - 8</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C2</td>
               <td style="color:#FFD700;font-weight:bold;">#1</td>
-              <td style="font-size:11px;color:#AAAAAA;">1 - 3 - 8 - 4 - 2 - 7</td>
-              <td style="font-size:11px;">1 - 3 - 2</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">1 - 3 - 8 - 4 - 2 - 7</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 3 - 2</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 3/5</td>
-              <td style="font-size:11px;">1 - 3 - 2 - 5 - 8</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">1 - 3 - 2 - 5 - 8 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 3 - 2 - 5 - 8</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 3 - 2 - 5 - 8 - 7 - 4 - 6</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C3</td>
               <td style="color:#FFD700;font-weight:bold;">#5</td>
-              <td style="font-size:11px;color:#AAAAAA;">5 - 8 - 15 - 3 - 7 - 14</td>
-              <td style="font-size:11px;">11 - 6 - 8</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">5 - 8 - 15 - 3 - 7 - 14</td>
+              <td style="font-size:11px;white-space:nowrap;">11 - 6 - 8</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 1/4 | 1/5</td>
-              <td style="font-size:11px;">11 - 6 - 8 - 2 - 12</td><td style="font-size:15px;">❌</td>
-              <td style="font-size:11px;">11 - 6 - 8 - 2 - 12 </td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">11 - 6 - 8 - 2 - 12</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">11 - 6 - 8 - 2 - 12 - 1 - 3 - 4</td><td style="font-size:15px;">❌</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C4</td>
               <td style="color:#FFD700;font-weight:bold;">#1</td>
-              <td style="font-size:11px;color:#AAAAAA;">1 - 7 - 2 - 3 - 5 - 8</td>
-              <td style="font-size:11px;">1 - 2 - 5</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">1 - 7 - 2 - 3 - 5 - 8</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 2 - 5</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 3/5</td>
-              <td style="font-size:11px;">1 - 2 - 5 - 8 - 7</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">1 - 2 - 5 - 8 - 7 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 2 - 5 - 8 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 2 - 5 - 8 - 7 - 3 - 6</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C5</td>
               <td style="color:#FFD700;font-weight:bold;">#3</td>
-              <td style="font-size:11px;color:#AAAAAA;">3 - 5 - 7 - 6 - 11 - 10</td>
-              <td style="font-size:11px;">6 - 3 - 5</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">3 - 5 - 7 - 6 - 11 - 10</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 3 - 5</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">6 - 3 - 5 - 7 - 11</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">6 - 3 - 5 - 7 - 11 -</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 3 - 5 - 7 - 11</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 3 - 5 - 7 - 11 - 4 - 1 - 10</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C6</td>
               <td style="color:#FFD700;font-weight:bold;">#4</td>
-              <td style="font-size:11px;color:#AAAAAA;">4 - 5 - 1 - 2 - 6</td>
-              <td style="font-size:11px;">1 - 5 - 4</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">4 - 5 - 1 - 2 - 6</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 5 - 4</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">3/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">1 - 5 - 4 - 2 - 6</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">1 - 5 - 4 - 2 - 6</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 5 - 4 - 2 - 6</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 5 - 4 - 2 - 6</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C7</td>
               <td style="color:#FFD700;font-weight:bold;">#4</td>
-              <td style="font-size:11px;color:#AAAAAA;">4 - 11 - 1 - 6 - 10 - 5</td>
-              <td style="font-size:11px;">4 - 11 - 3</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">4 - 11 - 1 - 6 - 10 - 5</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 11 - 3</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">4 - 11 - 3 - 7 - 1</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">4 - 11 - 3 - 7 - 1 -</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 11 - 3 - 7 - 1</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 11 - 3 - 7 - 1 - 5 - 10 - 9</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C8</td>
               <td style="color:#FFD700;font-weight:bold;">#2</td>
-              <td style="font-size:11px;color:#AAAAAA;">2 - 7 - 9 - 11 - 3 - 1</td>
-              <td style="font-size:11px;">3 - 2 - 8</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">2 - 7 - 9 - 11 - 3 - 1</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 2 - 8</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 1/4 | 2/5</td>
-              <td style="font-size:11px;">3 - 2 - 8 - 6 - 5</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">3 - 2 - 8 - 6 - 5 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 2 - 8 - 6 - 5</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 2 - 8 - 6 - 5 - 11 - 9 - 1</td><td style="font-size:15px;">✅</td>
             </tr></tbody>
-        </table><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div>
+        </table>
+        </div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div>
       </div>
       <div class="main-section" style="margin-bottom:16px;">
         <div class="section-title">🏇 Réunion R2</div>
-        <table>
+        <div style="overflow-x:auto;">
+        <table style="min-width:900px;">
           <thead><tr>
-            <th>Course</th><th>Gagnant</th><th>Arrivée</th>
-            <th>TOP 3 Prédit</th><th>✓</th><th>Places</th>
-            <th>TOP 5 Prédit</th><th>✓</th><th>TOP 8 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Course</th>
+            <th style="white-space:nowrap;">Gagnant</th>
+            <th style="white-space:nowrap;">Arrivée</th>
+            <th style="white-space:nowrap;min-width:120px;">TOP 3 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Places</th>
+            <th style="white-space:nowrap;min-width:150px;">TOP 5 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;min-width:200px;">TOP 8 Prédit</th><th>✓</th>
           </tr></thead>
           <tbody>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C1</td>
               <td style="color:#FFD700;font-weight:bold;">#1</td>
-              <td style="font-size:11px;color:#AAAAAA;">1 - 3 - 4 - 7 - 6 - 5</td>
-              <td style="font-size:11px;">1 - 6 - 3</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">1 - 3 - 4 - 7 - 6 - 5</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 6 - 3</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 3/5</td>
-              <td style="font-size:11px;">1 - 6 - 3 - 8 - 2</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">1 - 6 - 3 - 8 - 2 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 6 - 3 - 8 - 2</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 6 - 3 - 8 - 2 - 7 - 4 - 5</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C2</td>
               <td style="color:#FFD700;font-weight:bold;">#8</td>
-              <td style="font-size:11px;color:#AAAAAA;">8 - 2 - 1 - 4 - 5 - 3</td>
-              <td style="font-size:11px;">8 - 5 - 2</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">8 - 2 - 1 - 4 - 5 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 5 - 2</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 3/5</td>
-              <td style="font-size:11px;">8 - 5 - 2 - 7 - 3</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">8 - 5 - 2 - 7 - 3 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 5 - 2 - 7 - 3</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 5 - 2 - 7 - 3 - 4 - 1 - 9</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C3</td>
               <td style="color:#FFD700;font-weight:bold;">#10</td>
-              <td style="font-size:11px;color:#AAAAAA;">10 - 13 - 11 - 9 - 12 - 4</td>
-              <td style="font-size:11px;">9 - 3 - 8</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">10 - 13 - 11 - 9 - 12 - 4</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 3 - 8</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">0/3 | 1/4 | 1/5</td>
-              <td style="font-size:11px;">9 - 3 - 8 - 13 - 1</td><td style="font-size:15px;">❌</td>
-              <td style="font-size:11px;">9 - 3 - 8 - 13 - 1 -</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 3 - 8 - 13 - 1</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 3 - 8 - 13 - 1 - 12 - 2 - 7</td><td style="font-size:15px;">❌</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C4</td>
               <td style="color:#FFD700;font-weight:bold;">#1</td>
-              <td style="font-size:11px;color:#AAAAAA;">1 - 6 - 7 - 10 - 5 - 11</td>
-              <td style="font-size:11px;">14 - 9 - 3</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">1 - 6 - 7 - 10 - 5 - 11</td>
+              <td style="font-size:11px;white-space:nowrap;">14 - 9 - 3</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">0/3 | 0/4 | 0/5</td>
-              <td style="font-size:11px;">14 - 9 - 3 - 5 - 1</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">14 - 9 - 3 - 5 - 1 -</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">14 - 9 - 3 - 5 - 1</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">14 - 9 - 3 - 5 - 1 - 2 - 4 - 6</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C5</td>
               <td style="color:#FFD700;font-weight:bold;">#7</td>
-              <td style="font-size:11px;color:#AAAAAA;">7 - 8 - 1 - 2 - 4 - 6</td>
-              <td style="font-size:11px;">4 - 8 - 6</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">7 - 8 - 1 - 2 - 4 - 6</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 8 - 6</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 1/4 | 2/5</td>
-              <td style="font-size:11px;">4 - 8 - 6 - 1 - 7</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">4 - 8 - 6 - 1 - 7 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 8 - 6 - 1 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 8 - 6 - 1 - 7 - 3 - 5 - 11</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C6</td>
               <td style="color:#FFD700;font-weight:bold;">#3</td>
-              <td style="font-size:11px;color:#AAAAAA;">3 - 2 - 9 - 7 - 1 - 4</td>
-              <td style="font-size:11px;">4 - 5 - 2</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">3 - 2 - 9 - 7 - 1 - 4</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 5 - 2</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 1/4 | 1/5</td>
-              <td style="font-size:11px;">4 - 5 - 2 - 6 - 9</td><td style="font-size:15px;">❌</td>
-              <td style="font-size:11px;">4 - 5 - 2 - 6 - 9 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 5 - 2 - 6 - 9</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 5 - 2 - 6 - 9 - 1 - 3 - 7</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C7</td>
               <td style="color:#FFD700;font-weight:bold;">#2</td>
-              <td style="font-size:11px;color:#AAAAAA;">2 - 1 - 6 - 7 - 4 - 3</td>
-              <td style="font-size:11px;">2 - 7 - 1</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">2 - 1 - 6 - 7 - 4 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">2 - 7 - 1</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">2 - 7 - 1 - 4 - 6</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">2 - 7 - 1 - 4 - 6 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">2 - 7 - 1 - 4 - 6</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">2 - 7 - 1 - 4 - 6 - 3 - 5</td><td style="font-size:15px;">✅</td>
             </tr></tbody>
-        </table><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 3/7 (43%)  |  1 place 5/7 (71%)  |  2 places 6/7 (86%)  |  3 places 6/7 (86%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 5/7 (71%)  |  1 place 7/7 (100%)  |  2 places 7/7 (100%)  |  3 places 7/7 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 6/7 (86%)  |  1 place 7/7 (100%)  |  2 places 7/7 (100%)  |  3 places 7/7 (100%)</div>
+        </table>
+        </div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 3/7 (43%)  |  1 place 5/7 (71%)  |  2 places 6/7 (86%)  |  3 places 6/7 (86%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 5/7 (71%)  |  1 place 7/7 (100%)  |  2 places 7/7 (100%)  |  3 places 7/7 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 6/7 (86%)  |  1 place 7/7 (100%)  |  2 places 7/7 (100%)  |  3 places 7/7 (100%)</div>
       </div>
       <div class="main-section" style="margin-bottom:16px;">
         <div class="section-title">🏇 Réunion R3</div>
-        <table>
+        <div style="overflow-x:auto;">
+        <table style="min-width:900px;">
           <thead><tr>
-            <th>Course</th><th>Gagnant</th><th>Arrivée</th>
-            <th>TOP 3 Prédit</th><th>✓</th><th>Places</th>
-            <th>TOP 5 Prédit</th><th>✓</th><th>TOP 8 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Course</th>
+            <th style="white-space:nowrap;">Gagnant</th>
+            <th style="white-space:nowrap;">Arrivée</th>
+            <th style="white-space:nowrap;min-width:120px;">TOP 3 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Places</th>
+            <th style="white-space:nowrap;min-width:150px;">TOP 5 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;min-width:200px;">TOP 8 Prédit</th><th>✓</th>
           </tr></thead>
           <tbody>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C1</td>
               <td style="color:#FFD700;font-weight:bold;">#6</td>
-              <td style="font-size:11px;color:#AAAAAA;">6 - 1 - 7 - 9 - 8 - 3</td>
-              <td style="font-size:11px;">6 - 8 - 9</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">6 - 1 - 7 - 9 - 8 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 8 - 9</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 2/4 | 3/5</td>
-              <td style="font-size:11px;">6 - 8 - 9 - 2 - 1</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">6 - 8 - 9 - 2 - 1 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 8 - 9 - 2 - 1</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 8 - 9 - 2 - 1 - 4 - 7 - 3</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C2</td>
               <td style="color:#FFD700;font-weight:bold;">#10</td>
-              <td style="font-size:11px;color:#AAAAAA;">10 - 11 - 13 - 7 - 14 - 12</td>
-              <td style="font-size:11px;">11 - 7 - 13</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">10 - 11 - 13 - 7 - 14 - 12</td>
+              <td style="font-size:11px;white-space:nowrap;">11 - 7 - 13</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">11 - 7 - 13 - 10 - 14</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">11 - 7 - 13 - 10 - 1</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">11 - 7 - 13 - 10 - 14</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">11 - 7 - 13 - 10 - 14 - 12 - 8 - 6</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C3</td>
               <td style="color:#FFD700;font-weight:bold;">#10</td>
-              <td style="font-size:11px;color:#AAAAAA;">10 - 11 - 3 - 12 - 9 - 1</td>
-              <td style="font-size:11px;">12 - 10 - 3</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">10 - 11 - 3 - 12 - 9 - 1</td>
+              <td style="font-size:11px;white-space:nowrap;">12 - 10 - 3</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">12 - 10 - 3 - 11 - 7</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">12 - 10 - 3 - 11 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">12 - 10 - 3 - 11 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">12 - 10 - 3 - 11 - 7 - 6 - 5 - 4</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C4</td>
               <td style="color:#FFD700;font-weight:bold;">#1</td>
-              <td style="font-size:11px;color:#AAAAAA;">1 - 6 - 2 - 5 - 4 - 3</td>
-              <td style="font-size:11px;">8 - 1 - 2</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">1 - 6 - 2 - 5 - 4 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 1 - 2</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">8 - 1 - 2 - 9 - 3</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">8 - 1 - 2 - 9 - 3 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 1 - 2 - 9 - 3</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 1 - 2 - 9 - 3 - 4 - 5 - 6</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C5</td>
               <td style="color:#FFD700;font-weight:bold;">#13</td>
-              <td style="font-size:11px;color:#AAAAAA;">13 - 10 - 3 - 5 - 8 - 6</td>
-              <td style="font-size:11px;">13 - 3 - 8</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">13 - 10 - 3 - 5 - 8 - 6</td>
+              <td style="font-size:11px;white-space:nowrap;">13 - 3 - 8</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 3/5</td>
-              <td style="font-size:11px;">13 - 3 - 8 - 5 - 6</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">13 - 3 - 8 - 5 - 6 -</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">13 - 3 - 8 - 5 - 6</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">13 - 3 - 8 - 5 - 6 - 7 - 12 - 9</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C6</td>
               <td style="color:#FFD700;font-weight:bold;">#12</td>
-              <td style="font-size:11px;color:#AAAAAA;">12 - 10 - 2 - 1 - 7 - 3</td>
-              <td style="font-size:11px;">12 - 2 - 10</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">12 - 10 - 2 - 1 - 7 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">12 - 2 - 10</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">3/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">12 - 2 - 10 - 13 - 9</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">12 - 2 - 10 - 13 - 9</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">12 - 2 - 10 - 13 - 9</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">12 - 2 - 10 - 13 - 9 - 8 - 5 - 1</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C7</td>
               <td style="color:#FFD700;font-weight:bold;">#1</td>
-              <td style="font-size:11px;color:#AAAAAA;">1 - 6 - 8 - 2 - 3 - 7</td>
-              <td style="font-size:11px;">8 - 1 - 2</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">1 - 6 - 8 - 2 - 3 - 7</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 1 - 2</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">8 - 1 - 2 - 4 - 7</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">8 - 1 - 2 - 4 - 7 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 1 - 2 - 4 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 1 - 2 - 4 - 7 - 6 - 3 - 9</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C8</td>
               <td style="color:#FFD700;font-weight:bold;">#5</td>
-              <td style="font-size:11px;color:#AAAAAA;">5 - 9 - 6 - 4 - 11 - 10</td>
-              <td style="font-size:11px;">3 - 5 - 9</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">5 - 9 - 6 - 4 - 11 - 10</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 5 - 9</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">3 - 5 - 9 - 10 - 11</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">3 - 5 - 9 - 10 - 11 </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 5 - 9 - 10 - 11</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 5 - 9 - 10 - 11 - 6 - 4 - 12</td><td style="font-size:15px;">✅</td>
             </tr></tbody>
-        </table><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 8/8 (100%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 8/8 (100%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div>
+        </table>
+        </div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 8/8 (100%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 8/8 (100%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div>
       </div>
       <div class="main-section" style="margin-bottom:16px;">
         <div class="section-title">🏇 Réunion R4</div>
-        <table>
+        <div style="overflow-x:auto;">
+        <table style="min-width:900px;">
           <thead><tr>
-            <th>Course</th><th>Gagnant</th><th>Arrivée</th>
-            <th>TOP 3 Prédit</th><th>✓</th><th>Places</th>
-            <th>TOP 5 Prédit</th><th>✓</th><th>TOP 8 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Course</th>
+            <th style="white-space:nowrap;">Gagnant</th>
+            <th style="white-space:nowrap;">Arrivée</th>
+            <th style="white-space:nowrap;min-width:120px;">TOP 3 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Places</th>
+            <th style="white-space:nowrap;min-width:150px;">TOP 5 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;min-width:200px;">TOP 8 Prédit</th><th>✓</th>
           </tr></thead>
           <tbody>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C1</td>
               <td style="color:#FFD700;font-weight:bold;">#11</td>
-              <td style="font-size:11px;color:#AAAAAA;">11 - 4 - 7 - 3 - 5 - 12</td>
-              <td style="font-size:11px;">1 - 5 - 4</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">11 - 4 - 7 - 3 - 5 - 12</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 5 - 4</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 1/4 | 2/5</td>
-              <td style="font-size:11px;">1 - 5 - 4 - 11 - 8</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">1 - 5 - 4 - 11 - 8 -</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 5 - 4 - 11 - 8</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">1 - 5 - 4 - 11 - 8 - 7 - 3 - 12</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C2</td>
               <td style="color:#FFD700;font-weight:bold;">#1</td>
-              <td style="font-size:11px;color:#AAAAAA;">1 - 5 - 11 - 6 - 8 - 9</td>
-              <td style="font-size:11px;">5 - 11 - 12</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">1 - 5 - 11 - 6 - 8 - 9</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 11 - 12</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">5 - 11 - 12 - 3 - 13</td><td style="font-size:15px;">❌</td>
-              <td style="font-size:11px;">5 - 11 - 12 - 3 - 13</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 11 - 12 - 3 - 13</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 11 - 12 - 3 - 13 - 6 - 4 - 8</td><td style="font-size:15px;">❌</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C3</td>
               <td style="color:#FFD700;font-weight:bold;">#7</td>
-              <td style="font-size:11px;color:#AAAAAA;">7 - 15 - 13 - 16 - 6 - 12</td>
-              <td style="font-size:11px;">7 - 16 - 15</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">7 - 15 - 13 - 16 - 6 - 12</td>
+              <td style="font-size:11px;white-space:nowrap;">7 - 16 - 15</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">7 - 16 - 15 - 2 - 12</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">7 - 16 - 15 - 2 - 12</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">7 - 16 - 15 - 2 - 12</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">7 - 16 - 15 - 2 - 12 - 9 - 13 - 10</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C4</td>
               <td style="color:#FFD700;font-weight:bold;">#12</td>
-              <td style="font-size:11px;color:#AAAAAA;">12 - 6 - 5 - 3 - 10 - 8</td>
-              <td style="font-size:11px;">4 - 6 - 5</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">12 - 6 - 5 - 3 - 10 - 8</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 6 - 5</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">4 - 6 - 5 - 3 - 8</td><td style="font-size:15px;">❌</td>
-              <td style="font-size:11px;">4 - 6 - 5 - 3 - 8 - </td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 6 - 5 - 3 - 8</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">4 - 6 - 5 - 3 - 8 - 11 - 1 - 10</td><td style="font-size:15px;">❌</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C5</td>
               <td style="color:#FFD700;font-weight:bold;">#2</td>
-              <td style="font-size:11px;color:#AAAAAA;">2 - 7 - 8 - 6 - 1 - 3</td>
-              <td style="font-size:11px;">2 - 1 - 4</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">2 - 7 - 8 - 6 - 1 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">2 - 1 - 4</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 1/4 | 2/5</td>
-              <td style="font-size:11px;">2 - 1 - 4 - 8 - 7</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">2 - 1 - 4 - 8 - 7 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">2 - 1 - 4 - 8 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">2 - 1 - 4 - 8 - 7 - 9 - 6 - 3</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C6</td>
               <td style="color:#FFD700;font-weight:bold;">#5</td>
-              <td style="font-size:11px;color:#AAAAAA;">5 - 7 - 10 - 15 - 14 - 8</td>
-              <td style="font-size:11px;">7 - 2 - 15</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">5 - 7 - 10 - 15 - 14 - 8</td>
+              <td style="font-size:11px;white-space:nowrap;">7 - 2 - 15</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">7 - 2 - 15 - 13 - 10</td><td style="font-size:15px;">❌</td>
-              <td style="font-size:11px;">7 - 2 - 15 - 13 - 10</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">7 - 2 - 15 - 13 - 10</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">7 - 2 - 15 - 13 - 10 - 5 - 6 - 1</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C7</td>
               <td style="color:#FFD700;font-weight:bold;">#5</td>
-              <td style="font-size:11px;color:#AAAAAA;">5 - 6 - 4 - 3 - 8 - 7</td>
-              <td style="font-size:11px;">3 - 5 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">5 - 6 - 4 - 3 - 8 - 7</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 5 - 7</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">1/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">3 - 5 - 7 - 8 - 1</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">3 - 5 - 7 - 8 - 1 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 5 - 7 - 8 - 1</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 5 - 7 - 8 - 1 - 4 - 6 - 2</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C8</td>
               <td style="color:#FFD700;font-weight:bold;">#6</td>
-              <td style="font-size:11px;color:#AAAAAA;">6 - 8 - 1 - 7 - 10 - 3</td>
-              <td style="font-size:11px;">6 - 1 - 8</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">6 - 8 - 1 - 7 - 10 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 1 - 8</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">3/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">6 - 1 - 8 - 3 - 7</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">6 - 1 - 8 - 3 - 7 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 1 - 8 - 3 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 1 - 8 - 3 - 7 - 4 - 2 - 9</td><td style="font-size:15px;">✅</td>
             </tr></tbody>
-        </table><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 4/8 (50%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 5/8 (62%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 6/8 (75%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div>
+        </table>
+        </div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 4/8 (50%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 5/8 (62%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 6/8 (75%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div>
       </div>
       <div class="main-section" style="margin-bottom:16px;">
         <div class="section-title">🏇 Réunion R5</div>
-        <table>
+        <div style="overflow-x:auto;">
+        <table style="min-width:900px;">
           <thead><tr>
-            <th>Course</th><th>Gagnant</th><th>Arrivée</th>
-            <th>TOP 3 Prédit</th><th>✓</th><th>Places</th>
-            <th>TOP 5 Prédit</th><th>✓</th><th>TOP 8 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Course</th>
+            <th style="white-space:nowrap;">Gagnant</th>
+            <th style="white-space:nowrap;">Arrivée</th>
+            <th style="white-space:nowrap;min-width:120px;">TOP 3 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Places</th>
+            <th style="white-space:nowrap;min-width:150px;">TOP 5 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;min-width:200px;">TOP 8 Prédit</th><th>✓</th>
           </tr></thead>
           <tbody>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C1</td>
               <td style="color:#FFD700;font-weight:bold;">#1</td>
-              <td style="font-size:11px;color:#AAAAAA;">1 - 2 - 3 - 7 - 8 - 5</td>
-              <td style="font-size:11px;">9 - 8 - 7</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">1 - 2 - 3 - 7 - 8 - 5</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 8 - 7</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">0/3 | 1/4 | 2/5</td>
-              <td style="font-size:11px;">9 - 8 - 7 - 6 - 5</td><td style="font-size:15px;">❌</td>
-              <td style="font-size:11px;">9 - 8 - 7 - 6 - 5 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 8 - 7 - 6 - 5</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 8 - 7 - 6 - 5 - 2 - 3 - 1</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C2</td>
               <td style="color:#FFD700;font-weight:bold;">#9</td>
-              <td style="font-size:11px;color:#AAAAAA;">9 - 13 - 3 - 6 - 7 - 4</td>
-              <td style="font-size:11px;">3 - 9 - 10</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">9 - 13 - 3 - 6 - 7 - 4</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 9 - 10</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">3 - 9 - 10 - 13 - 8</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">3 - 9 - 10 - 13 - 8 </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 9 - 10 - 13 - 8</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 9 - 10 - 13 - 8 - 7 - 11 - 5</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C3</td>
               <td style="color:#FFD700;font-weight:bold;">#9</td>
-              <td style="font-size:11px;color:#AAAAAA;">9 - 7 - 5 - 6 - 4 - 3</td>
-              <td style="font-size:11px;">9 - 1 - 5</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">9 - 7 - 5 - 6 - 4 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 1 - 5</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">9 - 1 - 5 - 7 - 3</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">9 - 1 - 5 - 7 - 3 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 1 - 5 - 7 - 3</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">9 - 1 - 5 - 7 - 3 - 6 - 4 - 2</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C4</td>
               <td style="color:#FFD700;font-weight:bold;">#7</td>
-              <td style="font-size:11px;color:#AAAAAA;">7 - 1 - 2 - 8 - 10 - 5</td>
-              <td style="font-size:11px;">8 - 5 - 4</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">7 - 1 - 2 - 8 - 10 - 5</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 5 - 4</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">0/3 | 1/4 | 1/5</td>
-              <td style="font-size:11px;">8 - 5 - 4 - 7 - 2</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">8 - 5 - 4 - 7 - 2 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 5 - 4 - 7 - 2</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 5 - 4 - 7 - 2 - 3 - 1 - 10</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(255,107,107,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C5</td>
               <td style="color:#FFD700;font-weight:bold;">#12</td>
-              <td style="font-size:11px;color:#AAAAAA;">12 - 11 - 10 - 5 - 3 - 9</td>
-              <td style="font-size:11px;">8 - 3 - 4</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">12 - 11 - 10 - 5 - 3 - 9</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 3 - 4</td><td style="font-size:15px;">❌</td>
               <td style="color:#AAAAAA;font-size:11px;">0/3 | 0/4 | 1/5</td>
-              <td style="font-size:11px;">8 - 3 - 4 - 1 - 9</td><td style="font-size:15px;">❌</td>
-              <td style="font-size:11px;">8 - 3 - 4 - 1 - 9 - </td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 3 - 4 - 1 - 9</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">8 - 3 - 4 - 1 - 9 - 2 - 11 - 6</td><td style="font-size:15px;">❌</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C6</td>
               <td style="color:#FFD700;font-weight:bold;">#6</td>
-              <td style="font-size:11px;color:#AAAAAA;">6 - 5 - 7 - 4 - 1</td>
-              <td style="font-size:11px;">6 - 3 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">6 - 5 - 7 - 4 - 1</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 3 - 7</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">6 - 3 - 7 - 5 - 4</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">6 - 3 - 7 - 5 - 4 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 3 - 7 - 5 - 4</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 3 - 7 - 5 - 4 - 2 - 1</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C7</td>
               <td style="color:#FFD700;font-weight:bold;">#7</td>
-              <td style="font-size:11px;color:#AAAAAA;">7 - 3 - 8 - 12 - 6 - 2</td>
-              <td style="font-size:11px;">3 - 11 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">7 - 3 - 8 - 12 - 6 - 2</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 11 - 7</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
-              <td style="font-size:11px;">3 - 11 - 7 - 9 - 6</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">3 - 11 - 7 - 9 - 6 -</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 11 - 7 - 9 - 6</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 11 - 7 - 9 - 6 - 4 - 5 - 2</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C8</td>
               <td style="color:#FFD700;font-weight:bold;">#3</td>
-              <td style="font-size:11px;color:#AAAAAA;">3 - 6 - 4 - 2 - 5 - 1</td>
-              <td style="font-size:11px;">3 - 6 - 2</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">3 - 6 - 4 - 2 - 5 - 1</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 6 - 2</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">3 - 6 - 2 - 5 - 7</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">3 - 6 - 2 - 5 - 7 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 6 - 2 - 5 - 7</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 6 - 2 - 5 - 7 - 8 - 1 - 4</td><td style="font-size:15px;">✅</td>
             </tr></tbody>
-        </table><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 5/8 (62%)  |  1 place 5/8 (62%)  |  2 places 7/8 (88%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 6/8 (75%)  |  1 place 6/8 (75%)  |  2 places 7/8 (88%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div>
+        </table>
+        </div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 5/8 (62%)  |  1 place 5/8 (62%)  |  2 places 7/8 (88%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 6/8 (75%)  |  1 place 6/8 (75%)  |  2 places 7/8 (88%)  |  3 places 8/8 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 7/8 (88%)  |  1 place 8/8 (100%)  |  2 places 8/8 (100%)  |  3 places 8/8 (100%)</div>
       </div>
       <div class="main-section" style="margin-bottom:16px;">
         <div class="section-title">🏇 Réunion R6</div>
-        <table>
+        <div style="overflow-x:auto;">
+        <table style="min-width:900px;">
           <thead><tr>
-            <th>Course</th><th>Gagnant</th><th>Arrivée</th>
-            <th>TOP 3 Prédit</th><th>✓</th><th>Places</th>
-            <th>TOP 5 Prédit</th><th>✓</th><th>TOP 8 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Course</th>
+            <th style="white-space:nowrap;">Gagnant</th>
+            <th style="white-space:nowrap;">Arrivée</th>
+            <th style="white-space:nowrap;min-width:120px;">TOP 3 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Places</th>
+            <th style="white-space:nowrap;min-width:150px;">TOP 5 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;min-width:200px;">TOP 8 Prédit</th><th>✓</th>
           </tr></thead>
           <tbody>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C4</td>
               <td style="color:#FFD700;font-weight:bold;">#3</td>
-              <td style="font-size:11px;color:#AAAAAA;">3 - 5 - 2 - 4 - 1 - 7</td>
-              <td style="font-size:11px;">5 - 4 - 3</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">3 - 5 - 2 - 4 - 1 - 7</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 4 - 3</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">5 - 4 - 3 - 6 - 1</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">5 - 4 - 3 - 6 - 1 - </td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 4 - 3 - 6 - 1</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 4 - 3 - 6 - 1 - 2 - 7 - 8</td><td style="font-size:15px;">✅</td>
             </tr>
             <tr style="background:rgba(0,200,83,0.08);">
               <td style="font-weight:bold;color:#C8A882;">C5</td>
               <td style="color:#FFD700;font-weight:bold;">#4</td>
-              <td style="font-size:11px;color:#AAAAAA;">4 - 6 - 1 - 5 - 7 - 3</td>
-              <td style="font-size:11px;">6 - 1 - 4</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">4 - 6 - 1 - 5 - 7 - 3</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 1 - 4</td><td style="font-size:15px;">✅</td>
               <td style="color:#AAAAAA;font-size:11px;">3/3 | 3/4 | 3/5</td>
-              <td style="font-size:11px;">6 - 1 - 4 - 7 - 3</td><td style="font-size:15px;">✅</td>
-              <td style="font-size:11px;">6 - 1 - 4 - 7 - 3 - </td><td style="font-size:15px;">✅</td>
-            </tr><tr style="opacity:0.5;"><td style="font-weight:bold;color:#C8A882;">C6</td><td colspan="9" style="color:#666;font-style:italic;">Pas d'arrivée disponible</td></tr><tr style="opacity:0.5;"><td style="font-weight:bold;color:#C8A882;">C7</td><td colspan="9" style="color:#666;font-style:italic;">Pas d'arrivée disponible</td></tr></tbody>
-        </table><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 2/2 (100%)  |  1 place 2/2 (100%)  |  2 places 2/2 (100%)  |  3 places 2/2 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 2/2 (100%)  |  1 place 2/2 (100%)  |  2 places 2/2 (100%)  |  3 places 2/2 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 2/2 (100%)  |  1 place 2/2 (100%)  |  2 places 2/2 (100%)  |  3 places 2/2 (100%)</div>
+              <td style="font-size:11px;white-space:nowrap;">6 - 1 - 4 - 7 - 3</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">6 - 1 - 4 - 7 - 3 - 8 - 5 - 2</td><td style="font-size:15px;">✅</td>
+            </tr>
+            <tr style="background:rgba(255,107,107,0.08);">
+              <td style="font-weight:bold;color:#C8A882;">C6</td>
+              <td style="color:#FFD700;font-weight:bold;">#4</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">4 - 2 - 1 - 3 - 6 - 5</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 1 - 2</td><td style="font-size:15px;">❌</td>
+              <td style="color:#AAAAAA;font-size:11px;">2/3 | 2/4 | 2/5</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 1 - 2 - 6 - 3</td><td style="font-size:15px;">❌</td>
+              <td style="font-size:11px;white-space:nowrap;">5 - 1 - 2 - 6 - 3 - 4</td><td style="font-size:15px;">✅</td>
+            </tr>
+            <tr style="background:rgba(0,200,83,0.08);">
+              <td style="font-weight:bold;color:#C8A882;">C7</td>
+              <td style="color:#FFD700;font-weight:bold;">#3</td>
+              <td style="font-size:11px;color:#AAAAAA;white-space:nowrap;">3 - 4 - 2 - 1 - 5</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 2 - 1</td><td style="font-size:15px;">✅</td>
+              <td style="color:#AAAAAA;font-size:11px;">2/3 | 3/4 | 3/5</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 2 - 1 - 4 - 5</td><td style="font-size:15px;">✅</td>
+              <td style="font-size:11px;white-space:nowrap;">3 - 2 - 1 - 4 - 5</td><td style="font-size:15px;">✅</td>
+            </tr></tbody>
+        </table>
+        </div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 3: Gagnant 3/4 (75%)  |  1 place 4/4 (100%)  |  2 places 4/4 (100%)  |  3 places 4/4 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 5: Gagnant 3/4 (75%)  |  1 place 4/4 (100%)  |  2 places 4/4 (100%)  |  3 places 4/4 (100%)</div><div style="color:#00B4D8;font-size:12px;margin-top:4px;">📌 TOP 8: Gagnant 4/4 (100%)  |  1 place 4/4 (100%)  |  2 places 4/4 (100%)  |  3 places 4/4 (100%)</div>
       </div>
       <div class="main-section" style="margin-bottom:16px;">
         <div class="section-title">🏇 Réunion R7</div>
-        <table>
+        <div style="overflow-x:auto;">
+        <table style="min-width:900px;">
           <thead><tr>
-            <th>Course</th><th>Gagnant</th><th>Arrivée</th>
-            <th>TOP 3 Prédit</th><th>✓</th><th>Places</th>
-            <th>TOP 5 Prédit</th><th>✓</th><th>TOP 8 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Course</th>
+            <th style="white-space:nowrap;">Gagnant</th>
+            <th style="white-space:nowrap;">Arrivée</th>
+            <th style="white-space:nowrap;min-width:120px;">TOP 3 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;">Places</th>
+            <th style="white-space:nowrap;min-width:150px;">TOP 5 Prédit</th><th>✓</th>
+            <th style="white-space:nowrap;min-width:200px;">TOP 8 Prédit</th><th>✓</th>
           </tr></thead>
           <tbody><tr style="opacity:0.5;"><td style="font-weight:bold;color:#C8A882;">C10</td><td colspan="9" style="color:#666;font-style:italic;">Pas d'arrivée disponible</td></tr><tr style="opacity:0.5;"><td style="font-weight:bold;color:#C8A882;">C11</td><td colspan="9" style="color:#666;font-style:italic;">Pas d'arrivée disponible</td></tr><tr style="opacity:0.5;"><td style="font-weight:bold;color:#C8A882;">C9</td><td colspan="9" style="color:#666;font-style:italic;">Pas d'arrivée disponible</td></tr></tbody>
         </table>
+        </div>
       </div>
 </div>
 <footer class="footer">
