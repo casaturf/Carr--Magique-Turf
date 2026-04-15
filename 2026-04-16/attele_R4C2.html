@@ -145,8 +145,61 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         <div style="font-size:18px; color:#00B4D8; font-weight:bold; margin-bottom:10px;">
             ⭐ TOP 8 : 13 - 16 - 17 - 12 - 8 - 10 - 15 - 9
         </div>
-        <table><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3"><td>1</td><td>13</td><td>LANNISTER D'AVRIL</td><td>7432500</td><td>5.8</td><td>5</td><td>2</td><td>4.3</td></tr><tr class="top3"><td>2</td><td>16</td><td>LARIFLETTE</td><td>10116500</td><td>6</td><td>2</td><td>1</td><td>4.5</td></tr><tr class="top3"><td>3</td><td>17</td><td>LEADER DE JOUDES</td><td>12582500</td><td>1.5</td><td>1</td><td>8</td><td>4.95</td></tr><tr class="top5"><td>4</td><td>12</td><td>KHEOPS SAINT CLAIR</td><td>7314000</td><td>3.6</td><td>6</td><td>4</td><td>6</td></tr><tr class="top5"><td>5</td><td>8</td><td>L'ARC</td><td>5891500</td><td>1.75</td><td>10</td><td>7</td><td>7.9</td></tr><tr class="top8"><td>6</td><td>10</td><td>KIRA DE CAHOT</td><td>6833000</td><td>1.33</td><td>8</td><td>9</td><td>8.65</td></tr><tr class="top8"><td>7</td><td>15</td><td>KROSS FINGERS</td><td>7738500</td><td>0.6</td><td>3</td><td>10</td><td>8.65</td></tr><tr class="top8"><td>8</td><td>9</td><td>LINARO</td><td>6015000</td><td>0</td><td>9</td><td>16</td><td>8.75</td></tr><tr class="outsider"><td>9</td><td>6</td><td>KITALPHAR</td><td>5330500</td><td>2.2</td><td>12</td><td>5</td><td>9.25</td></tr><tr class="outsider"><td>10</td><td>7</td><td>KALAMA DE BEYLEV</td><td>5879000</td><td>0.33</td><td>11</td><td>13</td><td>9.65</td></tr><tr class="outsider"><td>11</td><td>3</td><td>KOLOSSE</td><td>5032500</td><td>5</td><td>15</td><td>3</td><td>10.05</td></tr><tr class="outsider"><td>12</td><td>14</td><td>KELLE EAU</td><td>7699500</td><td>0</td><td>4</td><td>17</td><td>10.3</td></tr><tr class="outsider"><td>13</td><td>11</td><td>KULTA</td><td>7036500</td><td>0.5</td><td>7</td><td>12</td><td>10.35</td></tr><tr class="outsider"><td>14</td><td>5</td><td>LOTUS DE BEYLEV</td><td>5218000</td><td>0</td><td>13</td><td>15</td><td>12.15</td></tr><tr class="outsider"><td>15</td><td>1</td><td>LOUPIAC DE GODREL</td><td>4080000</td><td>2</td><td>17</td><td>6</td><td>12.25</td></tr><tr class="outsider"><td>16</td><td>4</td><td>KILLER BECO</td><td>5101000</td><td>0.5</td><td>14</td><td>11</td><td>12.65</td></tr><tr class="outsider"><td>17</td><td>2</td><td>KING FLY</td><td>4533500</td><td>0</td><td>16</td><td>14</td><td>12.65</td></tr></tbody></table>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;padding:8px;background:#0D0D0D;border-radius:8px;border:1px solid #333;">
+            <div style="display:flex;align-items:center;margin-right:8px;"><span style="font-size:13px;color:#FF6B6B;font-weight:bold;">🎛️ FILTRES</span></div>
+            <div style="display:inline-flex;flex-direction:column;align-items:center;background:#1A1A1A;border:1px solid #00B4D8;border-radius:8px;padding:6px 10px;min-width:110px;"><label style="font-size:10px;color:#C8A882;margin-bottom:2px;">Gains ≤</label><input type="range" id="slider_gains" min="0" max="20" value="20" style="width:90px;accent-color:#00B4D8;" oninput="filtrerTableau()"><span id="val_gains" style="font-size:12px;color:#00B4D8;font-weight:bold;">OFF</span></div>
+<div style="display:inline-flex;flex-direction:column;align-items:center;background:#1A1A1A;border:1px solid #00B4D8;border-radius:8px;padding:6px 10px;min-width:110px;"><label style="font-size:10px;color:#C8A882;margin-bottom:2px;">Score Mus ≤</label><input type="range" id="slider_score_mus" min="0" max="20" value="20" style="width:90px;accent-color:#00B4D8;" oninput="filtrerTableau()"><span id="val_score_mus" style="font-size:12px;color:#00B4D8;font-weight:bold;">OFF</span></div>
+<div style="display:inline-flex;flex-direction:column;align-items:center;background:#1A1A1A;border:1px solid #00B4D8;border-radius:8px;padding:6px 10px;min-width:110px;"><label style="font-size:10px;color:#C8A882;margin-bottom:2px;">Rg Gains ≤</label><input type="range" id="slider_rg_gains" min="0" max="20" value="20" style="width:90px;accent-color:#00B4D8;" oninput="filtrerTableau()"><span id="val_rg_gains" style="font-size:12px;color:#00B4D8;font-weight:bold;">OFF</span></div>
+<div style="display:inline-flex;flex-direction:column;align-items:center;background:#1A1A1A;border:1px solid #00B4D8;border-radius:8px;padding:6px 10px;min-width:110px;"><label style="font-size:10px;color:#C8A882;margin-bottom:2px;">Rg Musique ≤</label><input type="range" id="slider_rg_musique" min="0" max="20" value="20" style="width:90px;accent-color:#00B4D8;" oninput="filtrerTableau()"><span id="val_rg_musique" style="font-size:12px;color:#00B4D8;font-weight:bold;">OFF</span></div>
+<div style="display:inline-flex;flex-direction:column;align-items:center;background:#1A1A1A;border:1px solid #00B4D8;border-radius:8px;padding:6px 10px;min-width:110px;"><label style="font-size:10px;color:#C8A882;margin-bottom:2px;">Score F6 ≤</label><input type="range" id="slider_score_f6" min="0" max="20" value="20" style="width:90px;accent-color:#00B4D8;" oninput="filtrerTableau()"><span id="val_score_f6" style="font-size:12px;color:#00B4D8;font-weight:bold;">OFF</span></div>
+
+            <button onclick="document.querySelectorAll('input[type=range]').forEach(function(s){s.value=20});filtrerTableau();"
+                style="background:#FF6B6B;color:#000;border:none;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:bold;cursor:pointer;align-self:center;">
+                ↺ Reset
+            </button>
+        </div>
+        <table id="tableau-discipline"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3" data-gains="7432500.0" data-score_mus="5.8" data-rg_gains="5.0" data-rg_musique="2.0" data-score_f6="4.3"><td>1</td><td>13</td><td>LANNISTER D'AVRIL</td><td>7432500</td><td>5.8</td><td>5</td><td>2</td><td>4.3</td></tr><tr class="top3" data-gains="10116500.0" data-score_mus="6.0" data-rg_gains="2.0" data-rg_musique="1.0" data-score_f6="4.5"><td>2</td><td>16</td><td>LARIFLETTE</td><td>10116500</td><td>6</td><td>2</td><td>1</td><td>4.5</td></tr><tr class="top3" data-gains="12582500.0" data-score_mus="1.5" data-rg_gains="1.0" data-rg_musique="8.0" data-score_f6="4.95"><td>3</td><td>17</td><td>LEADER DE JOUDES</td><td>12582500</td><td>1.5</td><td>1</td><td>8</td><td>4.95</td></tr><tr class="top5" data-gains="7314000.0" data-score_mus="3.6" data-rg_gains="6.0" data-rg_musique="4.0" data-score_f6="6.0"><td>4</td><td>12</td><td>KHEOPS SAINT CLAIR</td><td>7314000</td><td>3.6</td><td>6</td><td>4</td><td>6</td></tr><tr class="top5" data-gains="5891500.0" data-score_mus="1.75" data-rg_gains="10.0" data-rg_musique="7.0" data-score_f6="7.9"><td>5</td><td>8</td><td>L'ARC</td><td>5891500</td><td>1.75</td><td>10</td><td>7</td><td>7.9</td></tr><tr class="top8" data-gains="6833000.0" data-score_mus="1.33" data-rg_gains="8.0" data-rg_musique="9.0" data-score_f6="8.65"><td>6</td><td>10</td><td>KIRA DE CAHOT</td><td>6833000</td><td>1.33</td><td>8</td><td>9</td><td>8.65</td></tr><tr class="top8" data-gains="7738500.0" data-score_mus="0.6" data-rg_gains="3.0" data-rg_musique="10.0" data-score_f6="8.65"><td>7</td><td>15</td><td>KROSS FINGERS</td><td>7738500</td><td>0.6</td><td>3</td><td>10</td><td>8.65</td></tr><tr class="top8" data-gains="6015000.0" data-score_mus="0.0" data-rg_gains="9.0" data-rg_musique="16.0" data-score_f6="8.75"><td>8</td><td>9</td><td>LINARO</td><td>6015000</td><td>0</td><td>9</td><td>16</td><td>8.75</td></tr><tr class="outsider" data-gains="5330500.0" data-score_mus="2.2" data-rg_gains="12.0" data-rg_musique="5.0" data-score_f6="9.25"><td>9</td><td>6</td><td>KITALPHAR</td><td>5330500</td><td>2.2</td><td>12</td><td>5</td><td>9.25</td></tr><tr class="outsider" data-gains="5879000.0" data-score_mus="0.33" data-rg_gains="11.0" data-rg_musique="13.0" data-score_f6="9.65"><td>10</td><td>7</td><td>KALAMA DE BEYLEV</td><td>5879000</td><td>0.33</td><td>11</td><td>13</td><td>9.65</td></tr><tr class="outsider" data-gains="5032500.0" data-score_mus="5.0" data-rg_gains="15.0" data-rg_musique="3.0" data-score_f6="10.05"><td>11</td><td>3</td><td>KOLOSSE</td><td>5032500</td><td>5</td><td>15</td><td>3</td><td>10.05</td></tr><tr class="outsider" data-gains="7699500.0" data-score_mus="0.0" data-rg_gains="4.0" data-rg_musique="17.0" data-score_f6="10.3"><td>12</td><td>14</td><td>KELLE EAU</td><td>7699500</td><td>0</td><td>4</td><td>17</td><td>10.3</td></tr><tr class="outsider" data-gains="7036500.0" data-score_mus="0.5" data-rg_gains="7.0" data-rg_musique="12.0" data-score_f6="10.35"><td>13</td><td>11</td><td>KULTA</td><td>7036500</td><td>0.5</td><td>7</td><td>12</td><td>10.35</td></tr><tr class="outsider" data-gains="5218000.0" data-score_mus="0.0" data-rg_gains="13.0" data-rg_musique="15.0" data-score_f6="12.15"><td>14</td><td>5</td><td>LOTUS DE BEYLEV</td><td>5218000</td><td>0</td><td>13</td><td>15</td><td>12.15</td></tr><tr class="outsider" data-gains="4080000.0" data-score_mus="2.0" data-rg_gains="17.0" data-rg_musique="6.0" data-score_f6="12.25"><td>15</td><td>1</td><td>LOUPIAC DE GODREL</td><td>4080000</td><td>2</td><td>17</td><td>6</td><td>12.25</td></tr><tr class="outsider" data-gains="5101000.0" data-score_mus="0.5" data-rg_gains="14.0" data-rg_musique="11.0" data-score_f6="12.65"><td>16</td><td>4</td><td>KILLER BECO</td><td>5101000</td><td>0.5</td><td>14</td><td>11</td><td>12.65</td></tr><tr class="outsider" data-gains="4533500.0" data-score_mus="0.0" data-rg_gains="16.0" data-rg_musique="14.0" data-score_f6="12.65"><td>17</td><td>2</td><td>KING FLY</td><td>4533500</td><td>0</td><td>16</td><td>14</td><td>12.65</td></tr></tbody></table>
     </div>
+    <script>
+function filtrerTableau() {
+    var rows = document.querySelectorAll("#tableau-discipline tbody tr");
+    rows.forEach(function(row) {
+        var pass_filter = true;
+            var s_gains = document.getElementById("slider_gains");
+            var v_gains = parseInt(s_gains.value);
+            document.getElementById("val_gains").textContent = v_gains >= 20 ? "OFF" : "≤ " + v_gains;
+            var d_gains = row.getAttribute("data-gains");
+            if (d_gains && v_gains < 20 && parseFloat(d_gains) > v_gains) pass_filter = false;
+            var s_score_mus = document.getElementById("slider_score_mus");
+            var v_score_mus = parseInt(s_score_mus.value);
+            document.getElementById("val_score_mus").textContent = v_score_mus >= 20 ? "OFF" : "≤ " + v_score_mus;
+            var d_score_mus = row.getAttribute("data-score_mus");
+            if (d_score_mus && v_score_mus < 20 && parseFloat(d_score_mus) > v_score_mus) pass_filter = false;
+            var s_rg_gains = document.getElementById("slider_rg_gains");
+            var v_rg_gains = parseInt(s_rg_gains.value);
+            document.getElementById("val_rg_gains").textContent = v_rg_gains >= 20 ? "OFF" : "≤ " + v_rg_gains;
+            var d_rg_gains = row.getAttribute("data-rg_gains");
+            if (d_rg_gains && v_rg_gains < 20 && parseFloat(d_rg_gains) > v_rg_gains) pass_filter = false;
+            var s_rg_musique = document.getElementById("slider_rg_musique");
+            var v_rg_musique = parseInt(s_rg_musique.value);
+            document.getElementById("val_rg_musique").textContent = v_rg_musique >= 20 ? "OFF" : "≤ " + v_rg_musique;
+            var d_rg_musique = row.getAttribute("data-rg_musique");
+            if (d_rg_musique && v_rg_musique < 20 && parseFloat(d_rg_musique) > v_rg_musique) pass_filter = false;
+            var s_score_f6 = document.getElementById("slider_score_f6");
+            var v_score_f6 = parseInt(s_score_f6.value);
+            document.getElementById("val_score_f6").textContent = v_score_f6 >= 20 ? "OFF" : "≤ " + v_score_f6;
+            var d_score_f6 = row.getAttribute("data-score_f6");
+            if (d_score_f6 && v_score_f6 < 20 && parseFloat(d_score_f6) > v_score_f6) pass_filter = false;
+        if (pass_filter) {
+            row.style.opacity = "1";
+            row.style.filter = "none";
+        } else {
+            row.style.opacity = "0.25";
+            row.style.filter = "grayscale(100%)";
+        }
+    });
+}
+</script>
 </div>
 <footer class="footer">
   <div class="footer-links">
