@@ -16,8 +16,21 @@
     .course-title { font-size: 24px; color: #00B4D8; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
     .course-info { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
     .info-badge { background: #1A1A1A; padding: 8px 16px; border-radius: 8px; font-size: 11px; border: 2px solid #C8A882; color: #C8A882; }
-    .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
-    .footer a { color: #00B4D8; margin: 0 10px; text-decoration: none; }
+    .nav-buttons { display: flex; gap: 8px; justify-content: center; margin: 10px 0; flex-wrap: wrap; }
+    .nav-btn { background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
+    .nav-btn:hover { background: #00B4D8; color: #000; }
+    .nav-reducteur { background: #D4AF37 !important; color: #000 !important; border-color: #D4AF37 !important; }
+    .footer { text-align: center; padding: 20px 10px; margin-top: 20px; border-top: 1px solid #2A2A2A; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
+    .footer-links a { color: #00B4D8; text-decoration: none; font-size: 12px; }
+    .footer-copy { font-size: 11px; color: #555; }
+    @media (max-width: 768px) {
+      .back-button { position: static; display: block; margin: 10px auto 20px; width: fit-content; }
+      .course-title { font-size: 18px; }
+      .nav-btn { padding: 6px 10px; font-size: 11px; }
+      .info-badge { font-size: 10px; padding: 6px 10px; }
+      .main-section { padding: 10px; }
+    }
   </style>
 </head>
 <body>
@@ -30,8 +43,16 @@
         <div class="course-info" style="margin-top:10px;">
             <span class="info-badge">🕐 20:01</span>
             <span class="info-badge">📏 1600m</span>
-            <span class="info-badge">🏆 3 partants</span>
+            <span class="info-badge">🏆 3 partants classés</span>
         </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a class="nav-btn" href="participants_R6C5.html">📎 Participants</a>
+        <a class="nav-btn" href="course_R6C5.html">📊 Classement</a>
+        <a class="nav-btn" href="formules_R6C5.html">⭐ Recommandation</a>
+        <a class="nav-btn" href="fusion_R6C5.html">⚡ Fusion Score</a>
+        <a class="nav-btn nav-reducteur" href="reducteur_R6C5.html">⚡ Réducteur</a>
     </div>
 
     <div class="main-section" style="text-align:center;padding:40px 20px;">
@@ -49,14 +70,14 @@
     </div>
 </div>
 <footer class="footer">
-  <div>
+  <div class="footer-links">
     <a href="/a-propos.html">À Propos</a>
     <a href="/guide.html">Guide</a>
     <a href="/methodologie.html">Méthodologie</a>
     <a href="/politique-confidentialite.html">Politique de Confidentialité</a>
     <a href="/bilans.html">📊 Bilans</a>
   </div>
-  <div style="margin-top:10px;">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
+  <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
 </footer>
 </body>
 </html>
