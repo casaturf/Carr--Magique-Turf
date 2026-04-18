@@ -128,6 +128,16 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <script>
 (function() {
+  // Lire le code depuis l'URL si présent (redirection depuis le Worker)
+  var params = new URLSearchParams(window.location.search);
+  var urlCode = params.get('cmt_code');
+  var urlExpiry = params.get('cmt_expiry');
+  if (urlCode && urlExpiry) {
+    localStorage.setItem('cmt_premium_code', urlCode);
+    localStorage.setItem('cmt_premium_expiry', urlExpiry);
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
   var code = localStorage.getItem('cmt_premium_code');
   var expiry = localStorage.getItem('cmt_premium_expiry');
   if (!code || !expiry || new Date(expiry) < new Date()) {
@@ -136,26 +146,32 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     document.body.classList.add('premium-locked');
     return;
   }
-  // Code valide localement → déverrouiller immédiatement
+  // Code valide localement → déverrouiller
   document.body.classList.remove('premium-locked');
-  // Vérification serveur asynchrone
-  fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({code: code, fingerprint: 'WEB'})
-  }).then(function(r){return r.json();}).then(function(data){
-    if (!data.ok) {
-      localStorage.removeItem('cmt_premium_code');
-      localStorage.removeItem('cmt_premium_expiry');
-      document.body.classList.add('premium-locked');
-    } else if (data.alerte72h) {
-      var d = document.createElement('div');
-      d.className = 'premium-alert';
-      d.textContent = data.messageAlerte;
-      var c = document.querySelector('.container');
-      if (c) c.insertBefore(d, c.firstChild);
-    }
-  }).catch(function(){});
+  // Vérification serveur (silencieuse - ne re-verrouille PAS en cas d'erreur réseau)
+  try {
+    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({code: code, fingerprint: 'WEB'})
+    }).then(function(r){
+      if (!r.ok) return null;
+      return r.json();
+    }).then(function(data){
+      if (!data) return;
+      if (!data.ok) {
+        localStorage.removeItem('cmt_premium_code');
+        localStorage.removeItem('cmt_premium_expiry');
+        document.body.classList.add('premium-locked');
+      } else if (data.alerte72h) {
+        var d = document.createElement('div');
+        d.className = 'premium-alert';
+        d.textContent = data.messageAlerte;
+        var c = document.querySelector('.container');
+        if (c) c.insertBefore(d, c.firstChild);
+      }
+    }).catch(function(){/* réseau/CORS — garder déverrouillé */});
+  } catch(e) {}
 })();
 </script>
 
@@ -212,35 +228,35 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             <tbody>
             <tr>
                 <td>1</td><td>LANCEUR D'ALERTE</td><td>M.FOREST</td>
-                <td>W.WALTON</td><td>0p2p0p6p(25)1p8p0p1p0p</td><td>22</td>
+                <td>W.WALTON</td><td>0p2p0p6p(25)1p8p0p1p0p</td><td>23</td>
             </tr>
             <tr>
                 <td>2</td><td>ZOFFWALTZ</td><td>F.VERON <span title="3 courses/jour">🔥</span></td>
-                <td>MME S.GAVILAN</td><td>0p3p0p2p(25)0p3p2pDp3p</td><td>12</td>
+                <td>MME S.GAVILAN</td><td>0p3p0p2p(25)0p3p2pDp3p</td><td>10</td>
             </tr>
             <tr>
                 <td>3</td><td>ZAMBRA</td><td>M.FOULON <span title="3 courses/jour">🔥</span></td>
-                <td>RC.MONTENEGRO</td><td>3p9p0p7p(25)2p2p6p6p0p</td><td>42</td>
+                <td>RC.MONTENEGRO</td><td>3p9p0p7p(25)2p2p6p6p0p</td><td>31</td>
             </tr>
             <tr>
                 <td>4</td><td>MANNE</td><td>A.GAVILAN <span title="4 courses/jour">🔥🔥</span></td>
-                <td>J.PIEDNOEL</td><td>1p2p3p3p5p8p(25)0p7p5p</td><td>7</td>
+                <td>J.PIEDNOEL</td><td>1p2p3p3p5p8p(25)0p7p5p</td><td>5.7</td>
             </tr>
             <tr>
                 <td>5</td><td>JARKI</td><td>A.WERLE <span title="4 courses/jour">🔥🔥</span></td>
-                <td>CH.GOURDAIN (S)</td><td>1p4p2p2p3p(25)3p5p6p6p</td><td>5.1</td>
+                <td>CH.GOURDAIN (S)</td><td>1p4p2p2p3p(25)3p5p6p6p</td><td>6.5</td>
             </tr>
             <tr>
                 <td>6</td><td>MIRAGE BLOU</td><td>N.M..LOPES DUARTE</td>
-                <td>EJ.FERREIRA ANTUNES</td><td>1p7p(25)2p6p6p9p5p5p3p</td><td>32</td>
+                <td>EJ.FERREIRA ANTUNES</td><td>1p7p(25)2p6p6p9p5p5p3p</td><td>38</td>
             </tr>
             <tr>
                 <td>7</td><td>JERRY LEE</td><td>R.DUBORD</td>
-                <td>HJ.FARIA PEREIRA</td><td>0p(25)5p0p0p1p3p0p6p3p</td><td>54</td>
+                <td>HJ.FARIA PEREIRA</td><td>0p(25)5p0p0p1p3p0p6p3p</td><td>75</td>
             </tr>
             <tr>
                 <td>8</td><td>BEAUTIFUL MESS</td><td>C.MERILLE</td>
-                <td>RC.MONTENEGRO</td><td>6p6p9p7p(25)7p7p8p1p3p</td><td>32</td>
+                <td>RC.MONTENEGRO</td><td>6p6p9p7p(25)7p7p8p1p3p</td><td>26</td>
             </tr>
             <tr>
                 <td>9</td><td>HONNEUR'S ORACLE</td><td>JB. EYQUEM</td>
@@ -248,19 +264,19 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             </tr>
             <tr>
                 <td>10</td><td>PUERTO MADERO</td><td>V.CHENET</td>
-                <td>C.BONIN (S)</td><td>4p5p4p0p(25)6p0p0p(24)6p</td><td>8.1</td>
+                <td>C.BONIN (S)</td><td>4p5p4p0p(25)6p0p0p(24)6p</td><td>8.6</td>
             </tr>
             <tr>
                 <td>11</td><td>L ORIENT EXPRESS</td><td>E.OUDIN</td>
-                <td>MME E.LASSERRE</td><td>0p8p(25)0p</td><td>202</td>
+                <td>MME E.LASSERRE</td><td>0p8p(25)0p</td><td>178</td>
             </tr>
             <tr>
                 <td>12</td><td>POLYSPEED</td><td>H.BESNIER <span title="3 courses/jour">🔥</span></td>
-                <td>MME M.SCANDELLA-LACAILLE</td><td>2p0p0p5p(25)0p8p5p5p8p</td><td>5.9</td>
+                <td>MME M.SCANDELLA-LACAILLE</td><td>2p0p0p5p(25)0p8p5p5p8p</td><td>4.8</td>
             </tr>
             <tr>
                 <td>13</td><td>SEDITION</td><td>A.ORANI <span title="4 courses/jour">🔥🔥</span></td>
-                <td>MME A.TINCHON</td><td>0p7p0p9p(25)0p0p0p6p2p</td><td>18</td>
+                <td>MME A.TINCHON</td><td>0p7p0p9p(25)0p0p0p6p2p</td><td>34</td>
             </tr>
             <tr>
                 <td>14</td><td>SORIANE</td><td>M.ROMARY</td>
@@ -268,7 +284,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             </tr>
             <tr>
                 <td>15</td><td>SISSI IMPERATRICE</td><td>S.LE QUILLEUC</td>
-                <td>F.SANCHEZ</td><td>9p6p1p0p0p7p(25)0p0p0p</td><td>27</td>
+                <td>F.SANCHEZ</td><td>9p6p1p0p0p7p(25)0p0p0p</td><td>53</td>
             </tr></tbody>
         </table>
     </div>

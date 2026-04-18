@@ -128,6 +128,16 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <script>
 (function() {
+  // Lire le code depuis l'URL si présent (redirection depuis le Worker)
+  var params = new URLSearchParams(window.location.search);
+  var urlCode = params.get('cmt_code');
+  var urlExpiry = params.get('cmt_expiry');
+  if (urlCode && urlExpiry) {
+    localStorage.setItem('cmt_premium_code', urlCode);
+    localStorage.setItem('cmt_premium_expiry', urlExpiry);
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
   var code = localStorage.getItem('cmt_premium_code');
   var expiry = localStorage.getItem('cmt_premium_expiry');
   if (!code || !expiry || new Date(expiry) < new Date()) {
@@ -136,26 +146,32 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     document.body.classList.add('premium-locked');
     return;
   }
-  // Code valide localement → déverrouiller immédiatement
+  // Code valide localement → déverrouiller
   document.body.classList.remove('premium-locked');
-  // Vérification serveur asynchrone
-  fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({code: code, fingerprint: 'WEB'})
-  }).then(function(r){return r.json();}).then(function(data){
-    if (!data.ok) {
-      localStorage.removeItem('cmt_premium_code');
-      localStorage.removeItem('cmt_premium_expiry');
-      document.body.classList.add('premium-locked');
-    } else if (data.alerte72h) {
-      var d = document.createElement('div');
-      d.className = 'premium-alert';
-      d.textContent = data.messageAlerte;
-      var c = document.querySelector('.container');
-      if (c) c.insertBefore(d, c.firstChild);
-    }
-  }).catch(function(){});
+  // Vérification serveur (silencieuse - ne re-verrouille PAS en cas d'erreur réseau)
+  try {
+    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({code: code, fingerprint: 'WEB'})
+    }).then(function(r){
+      if (!r.ok) return null;
+      return r.json();
+    }).then(function(data){
+      if (!data) return;
+      if (!data.ok) {
+        localStorage.removeItem('cmt_premium_code');
+        localStorage.removeItem('cmt_premium_expiry');
+        document.body.classList.add('premium-locked');
+      } else if (data.alerte72h) {
+        var d = document.createElement('div');
+        d.className = 'premium-alert';
+        d.textContent = data.messageAlerte;
+        var c = document.querySelector('.container');
+        if (c) c.insertBefore(d, c.firstChild);
+      }
+    }).catch(function(){/* réseau/CORS — garder déverrouillé */});
+  } catch(e) {}
 })();
 </script>
 
@@ -204,11 +220,11 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             </div>
             <div class="recommendation-card top5">
                 <div class="reco-title">⭐ TOP 5</div>
-                <div class="reco-numbers">2 - 3 - 7 - 9 - 5</div>
+                <div class="reco-numbers">2 - 3 - 7 - 9 - 6</div>
             </div>
             <div class="recommendation-card top8">
                 <div class="reco-title">⭐ TOP 8</div>
-                <div class="reco-numbers">2 - 3 - 7 - 9 - 5 - 6 - 8 - 1</div>
+                <div class="reco-numbers">2 - 3 - 7 - 9 - 6 - 8 - 5 - 1</div>
             </div>
         </div>
         <table>
@@ -227,61 +243,61 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                         <td><strong>95.7</strong></td>
                         <td>100</td><td>100</td>
                         <td>100</td><td>71.2</td>
-                        <td>+43.7%</td>
+                        <td>+131.2%</td>
                         <td>FAVORI - Valeur sûre</td>
                     </tr><tr class="alerte-vert">
                         <td><strong>2</strong></td>
                         <td><strong>3</strong></td>
                         <td style="text-align:left;padding-left:8px;">C'EST VRAI</td>
-                        <td><strong>86.9</strong></td>
-                        <td>87.5</td><td>87.5</td>
+                        <td><strong>89.0</strong></td>
+                        <td>87.5</td><td>95.5</td>
                         <td>75</td><td>100</td>
-                        <td>+8.8%</td>
+                        <td>-26.3%</td>
                         <td>Très joué - Confiance</td>
                     </tr><tr class="alerte-vert">
                         <td><strong>3</strong></td>
                         <td><strong>7</strong></td>
                         <td style="text-align:left;padding-left:8px;">TIPINSO</td>
-                        <td><strong>78.8</strong></td>
-                        <td>75</td><td>87</td>
+                        <td><strong>74.1</strong></td>
+                        <td>62.5</td><td>87</td>
                         <td>87.5</td><td>62.2</td>
-                        <td>-40.0%</td>
+                        <td>-48.2%</td>
                         <td>Très joué - Confiance</td>
                     </tr><tr class="alerte-vert">
                         <td><strong>4</strong></td>
                         <td><strong>9</strong></td>
                         <td style="text-align:left;padding-left:8px;">MANEKI</td>
-                        <td><strong>59.7</strong></td>
-                        <td>62.5</td><td>50</td>
+                        <td><strong>67.9</strong></td>
+                        <td>75</td><td>62.5</td>
                         <td>62.5</td><td>66.6</td>
                         <td>+0.0%</td>
                         <td>À suivre</td>
                     </tr><tr class="alerte-vert">
                         <td><strong>5</strong></td>
-                        <td><strong>5</strong></td>
-                        <td style="text-align:left;padding-left:8px;">HYPERCORE</td>
-                        <td><strong>55.6</strong></td>
-                        <td>50</td><td>62.5</td>
-                        <td>50</td><td>64.8</td>
-                        <td>+0.0%</td>
+                        <td><strong>6</strong></td>
+                        <td style="text-align:left;padding-left:8px;">MERANO</td>
+                        <td><strong>42.4</strong></td>
+                        <td>37.5</td><td>56</td>
+                        <td>12.5</td><td>70.2</td>
+                        <td>+163.2%</td>
                         <td>À suivre</td>
                     </tr><tr class="alerte-jaune">
                         <td><strong>6</strong></td>
-                        <td><strong>6</strong></td>
-                        <td style="text-align:left;padding-left:8px;">MERANO</td>
-                        <td><strong>34.3</strong></td>
-                        <td>25</td><td>43.5</td>
-                        <td>12.5</td><td>70.2</td>
-                        <td>+180.7%</td>
+                        <td><strong>8</strong></td>
+                        <td style="text-align:left;padding-left:8px;">BEVAN</td>
+                        <td><strong>41.0</strong></td>
+                        <td>50</td><td>27</td>
+                        <td>50</td><td>31.5</td>
+                        <td>+36.4%</td>
                         <td>Outsider</td>
                     </tr><tr class="alerte-jaune">
                         <td><strong>7</strong></td>
-                        <td><strong>8</strong></td>
-                        <td style="text-align:left;padding-left:8px;">BEVAN</td>
-                        <td><strong>30.7</strong></td>
-                        <td>37.5</td><td>25</td>
-                        <td>25</td><td>31.5</td>
-                        <td>+27.3%</td>
+                        <td><strong>5</strong></td>
+                        <td style="text-align:left;padding-left:8px;">HYPERCORE</td>
+                        <td><strong>34.3</strong></td>
+                        <td>25</td><td>37.5</td>
+                        <td>25</td><td>64.8</td>
+                        <td>+0.0%</td>
                         <td>Outsider</td>
                     </tr><tr class="alerte-jaune">
                         <td><strong>8</strong></td>

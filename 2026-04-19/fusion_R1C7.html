@@ -128,6 +128,16 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <script>
 (function() {
+  // Lire le code depuis l'URL si présent (redirection depuis le Worker)
+  var params = new URLSearchParams(window.location.search);
+  var urlCode = params.get('cmt_code');
+  var urlExpiry = params.get('cmt_expiry');
+  if (urlCode && urlExpiry) {
+    localStorage.setItem('cmt_premium_code', urlCode);
+    localStorage.setItem('cmt_premium_expiry', urlExpiry);
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
   var code = localStorage.getItem('cmt_premium_code');
   var expiry = localStorage.getItem('cmt_premium_expiry');
   if (!code || !expiry || new Date(expiry) < new Date()) {
@@ -136,26 +146,32 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     document.body.classList.add('premium-locked');
     return;
   }
-  // Code valide localement → déverrouiller immédiatement
+  // Code valide localement → déverrouiller
   document.body.classList.remove('premium-locked');
-  // Vérification serveur asynchrone
-  fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({code: code, fingerprint: 'WEB'})
-  }).then(function(r){return r.json();}).then(function(data){
-    if (!data.ok) {
-      localStorage.removeItem('cmt_premium_code');
-      localStorage.removeItem('cmt_premium_expiry');
-      document.body.classList.add('premium-locked');
-    } else if (data.alerte72h) {
-      var d = document.createElement('div');
-      d.className = 'premium-alert';
-      d.textContent = data.messageAlerte;
-      var c = document.querySelector('.container');
-      if (c) c.insertBefore(d, c.firstChild);
-    }
-  }).catch(function(){});
+  // Vérification serveur (silencieuse - ne re-verrouille PAS en cas d'erreur réseau)
+  try {
+    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({code: code, fingerprint: 'WEB'})
+    }).then(function(r){
+      if (!r.ok) return null;
+      return r.json();
+    }).then(function(data){
+      if (!data) return;
+      if (!data.ok) {
+        localStorage.removeItem('cmt_premium_code');
+        localStorage.removeItem('cmt_premium_expiry');
+        document.body.classList.add('premium-locked');
+      } else if (data.alerte72h) {
+        var d = document.createElement('div');
+        d.className = 'premium-alert';
+        d.textContent = data.messageAlerte;
+        var c = document.querySelector('.container');
+        if (c) c.insertBefore(d, c.firstChild);
+      }
+    }).catch(function(){/* réseau/CORS — garder déverrouillé */});
+  } catch(e) {}
 })();
 </script>
 
@@ -200,15 +216,15 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         <div class="recommendations-grid" style="margin-bottom:12px;">
             <div class="recommendation-card base">
                 <div class="reco-title">⭐ TOP 3</div>
-                <div class="reco-numbers">1 - 4 - 3</div>
+                <div class="reco-numbers">1 - 4 - 5</div>
             </div>
             <div class="recommendation-card top5">
                 <div class="reco-title">⭐ TOP 5</div>
-                <div class="reco-numbers">1 - 4 - 3 - 5 - 2</div>
+                <div class="reco-numbers">1 - 4 - 5 - 2 - 3</div>
             </div>
             <div class="recommendation-card top8">
                 <div class="reco-title">⭐ TOP 8</div>
-                <div class="reco-numbers">1 - 4 - 3 - 5 - 2</div>
+                <div class="reco-numbers">1 - 4 - 5 - 2 - 3</div>
             </div>
         </div>
         <table>
@@ -227,42 +243,42 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                         <td><strong>96.7</strong></td>
                         <td>100</td><td>100</td>
                         <td>100</td><td>78.1</td>
-                        <td>+27.3%</td>
+                        <td>+81.8%</td>
                         <td>FAVORI - Valeur sûre</td>
                     </tr><tr class="alerte-vert">
                         <td><strong>2</strong></td>
                         <td><strong>4</strong></td>
                         <td style="text-align:left;padding-left:8px;">MONEER</td>
-                        <td><strong>70.6</strong></td>
+                        <td><strong>75.6</strong></td>
                         <td>75</td><td>75</td>
-                        <td>50</td><td>79</td>
+                        <td>75</td><td>79</td>
                         <td>+0.0%</td>
                         <td>Très joué - Confiance</td>
                     </tr><tr class="alerte-vert">
                         <td><strong>3</strong></td>
-                        <td><strong>3</strong></td>
-                        <td style="text-align:left;padding-left:8px;">BIANCA DE GHAZAL</td>
-                        <td><strong>49</strong></td>
-                        <td>50</td><td>0</td>
-                        <td>75</td><td>100</td>
+                        <td><strong>5</strong></td>
+                        <td style="text-align:left;padding-left:8px;">WALA'A</td>
+                        <td><strong>32.7</strong></td>
+                        <td>50</td><td>25</td>
+                        <td>0</td><td>46.4</td>
                         <td>+0.0%</td>
                         <td>Très joué - Confiance</td>
                     </tr><tr class="alerte-vert">
                         <td><strong>4</strong></td>
-                        <td><strong>5</strong></td>
-                        <td style="text-align:left;padding-left:8px;">WALA'A</td>
-                        <td><strong>23.2</strong></td>
-                        <td>25</td><td>25</td>
-                        <td>0</td><td>46.4</td>
+                        <td><strong>2</strong></td>
+                        <td style="text-align:left;padding-left:8px;">GENEVA</td>
+                        <td><strong>31.3</strong></td>
+                        <td>25</td><td>50</td>
+                        <td>25</td><td>21.7</td>
                         <td>+0.0%</td>
                         <td>À suivre</td>
                     </tr><tr class="alerte-vert">
                         <td><strong>5</strong></td>
-                        <td><strong>2</strong></td>
-                        <td style="text-align:left;padding-left:8px;">GENEVA</td>
-                        <td><strong>21.8</strong></td>
-                        <td>0</td><td>50</td>
-                        <td>25</td><td>21.7</td>
+                        <td><strong>3</strong></td>
+                        <td style="text-align:left;padding-left:8px;">BIANCA DE GHAZAL</td>
+                        <td><strong>25</strong></td>
+                        <td>0</td><td>0</td>
+                        <td>50</td><td>100</td>
                         <td>+0.0%</td>
                         <td>À suivre</td>
                     </tr></tbody>

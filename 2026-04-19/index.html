@@ -118,6 +118,13 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <div class="container">
 
+    <script>
+    (function(){
+      var p=new URLSearchParams(window.location.search);
+      var c=p.get('cmt_code'),e=p.get('cmt_expiry');
+      if(c&&e){localStorage.setItem('cmt_premium_code',c);localStorage.setItem('cmt_premium_expiry',e);window.history.replaceState({},'',window.location.pathname);}
+    })();
+    </script>
     <div class="header-index">
         <div class="logo-section">
             <img src="logo.png" alt="Carr&eacute; Magique Turf" class="logo">

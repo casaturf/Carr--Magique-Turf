@@ -128,6 +128,16 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <script>
 (function() {
+  // Lire le code depuis l'URL si présent (redirection depuis le Worker)
+  var params = new URLSearchParams(window.location.search);
+  var urlCode = params.get('cmt_code');
+  var urlExpiry = params.get('cmt_expiry');
+  if (urlCode && urlExpiry) {
+    localStorage.setItem('cmt_premium_code', urlCode);
+    localStorage.setItem('cmt_premium_expiry', urlExpiry);
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
   var code = localStorage.getItem('cmt_premium_code');
   var expiry = localStorage.getItem('cmt_premium_expiry');
   if (!code || !expiry || new Date(expiry) < new Date()) {
@@ -136,26 +146,32 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     document.body.classList.add('premium-locked');
     return;
   }
-  // Code valide localement → déverrouiller immédiatement
+  // Code valide localement → déverrouiller
   document.body.classList.remove('premium-locked');
-  // Vérification serveur asynchrone
-  fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({code: code, fingerprint: 'WEB'})
-  }).then(function(r){return r.json();}).then(function(data){
-    if (!data.ok) {
-      localStorage.removeItem('cmt_premium_code');
-      localStorage.removeItem('cmt_premium_expiry');
-      document.body.classList.add('premium-locked');
-    } else if (data.alerte72h) {
-      var d = document.createElement('div');
-      d.className = 'premium-alert';
-      d.textContent = data.messageAlerte;
-      var c = document.querySelector('.container');
-      if (c) c.insertBefore(d, c.firstChild);
-    }
-  }).catch(function(){});
+  // Vérification serveur (silencieuse - ne re-verrouille PAS en cas d'erreur réseau)
+  try {
+    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({code: code, fingerprint: 'WEB'})
+    }).then(function(r){
+      if (!r.ok) return null;
+      return r.json();
+    }).then(function(data){
+      if (!data) return;
+      if (!data.ok) {
+        localStorage.removeItem('cmt_premium_code');
+        localStorage.removeItem('cmt_premium_expiry');
+        document.body.classList.add('premium-locked');
+      } else if (data.alerte72h) {
+        var d = document.createElement('div');
+        d.className = 'premium-alert';
+        d.textContent = data.messageAlerte;
+        var c = document.querySelector('.container');
+        if (c) c.insertBefore(d, c.firstChild);
+      }
+    }).catch(function(){/* réseau/CORS — garder déverrouillé */});
+  } catch(e) {}
 })();
 </script>
 
@@ -197,11 +213,11 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     </div>
     <div class="main-section">
         <div class="section-title">⭐ RECOMMANDATION CARRÉ MAGIQUE TURF - TOP 8</div>
-        <div style="font-size:18px; color:#00B4D8; font-weight:bold; margin-bottom:10px;">1 - 4 - 3 - 5 - 2</div>
+        <div style="font-size:18px; color:#00B4D8; font-weight:bold; margin-bottom:10px;">1 - 4 - 5 - 2 - 3</div>
         <table><thead><tr>
         <th>Rang</th><th>N°</th><th>Cheval</th><th>Mises</th>
         <th>Évol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th>
-    </tr></thead><tbody><tr class="alerte-vert"><td>1</td><td>1</td><td>HAJMAH</td><td>1608.4</td><td>+27.3%</td><td>↑↑</td><td>VERT</td><td>FAVORI - Valeur sure</td></tr><tr class="alerte-vert"><td>2</td><td>4</td><td>MONEER</td><td>366.8</td><td>+0.0%</td><td>→</td><td>VERT</td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>3</td><td>3</td><td>BIANCA DE GHAZAL</td><td>245.1</td><td>+0.0%</td><td>→</td><td>VERT</td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>4</td><td>5</td><td>WALA'A</td><td>239</td><td>+0.0%</td><td>→</td><td>VERT</td><td>A suivre</td></tr><tr class="alerte-vert"><td>5</td><td>2</td><td>GENEVA</td><td>175</td><td>+0.0%</td><td>→</td><td>VERT</td><td>A suivre</td></tr></tbody></table>
+    </tr></thead><tbody><tr class="alerte-vert"><td>1</td><td>1</td><td>HAJMAH</td><td>5538.9</td><td>+81.8%</td><td>↑↑</td><td>VERT</td><td>FAVORI - Valeur sure</td></tr><tr class="alerte-vert"><td>2</td><td>4</td><td>MONEER</td><td>3718.5</td><td>+0.0%</td><td>→</td><td>VERT</td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>3</td><td>5</td><td>WALA'A</td><td>1613</td><td>+0.0%</td><td>→</td><td>VERT</td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>4</td><td>2</td><td>GENEVA</td><td>1264.3</td><td>+0.0%</td><td>→</td><td>VERT</td><td>A suivre</td></tr><tr class="alerte-vert"><td>5</td><td>3</td><td>BIANCA DE GHAZAL</td><td>1000.1</td><td>+0.0%</td><td>→</td><td>VERT</td><td>A suivre</td></tr></tbody></table>
     </div>
     
 </div>
