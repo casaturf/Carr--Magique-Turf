@@ -6,7 +6,7 @@
   <title>R1-C1 Spécial PLAT - Carré Magique Turf</title>
   <meta name="description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta name="keywords" content="pronostic quinté du jour, pronostic PMU gratuit, quinté PMU, tiercé PMU, quarté PMU, partants PMU, résultats PMU, arrivée quinté, courses PMU aujourd'hui, carré magique turf, analyse hippique, cotes PMU temps réel, musique des chevaux, pronostic attelé, pronostic plat, pronostic obstacles, analyse courses chevaux, pronostic mathématique PMU, pronostic hippique gratuit aujourd'hui, meilleur pronostic quinté du jour">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, nofollow">
   <meta property="og:title" content="R1-C1 Spécial PLAT - Carré Magique Turf">
   <meta property="og:description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta property="og:type" content="website">
@@ -112,6 +112,43 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   </script>
 </head>
 <body>
+
+<script>
+(function() {
+  var code = localStorage.getItem('cmt_premium_code');
+  var expiry = localStorage.getItem('cmt_premium_expiry');
+  if (!code || !expiry || new Date(expiry) < new Date()) {
+    localStorage.removeItem('cmt_premium_code');
+    localStorage.removeItem('cmt_premium_expiry');
+    document.body.innerHTML = '<div style="text-align:center;padding:60px 20px;font-family:Segoe UI,sans-serif;">'
+      + '<img src="logo.png" alt="CMT" style="width:100px;margin-bottom:16px;" onerror="this.style.display=\'none\'">'
+      + '<h1 style="color:#FF6B6B;font-size:22px;margin-bottom:10px;">🔒 CONTENU PREMIUM</h1>'
+      + '<p style="color:#C8A882;margin-bottom:20px;">Cette section nécessite un abonnement Premium.</p>'
+      + '<a href="https://carre-magique-premium.casaturf007.workers.dev" style="display:inline-block;background:#00B4D8;color:#000;padding:14px 32px;border-radius:8px;font-weight:bold;text-decoration:none;font-size:15px;">ACCÉDER À L\'ESPACE PREMIUM</a>'
+      + '</div>';
+    return;
+  }
+  // Vérification serveur asynchrone
+  fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({code: code, fingerprint: 'WEB'})
+  }).then(function(r){return r.json();}).then(function(data){
+    if (!data.ok) {
+      localStorage.removeItem('cmt_premium_code');
+      localStorage.removeItem('cmt_premium_expiry');
+      window.location.href = 'https://carre-magique-premium.casaturf007.workers.dev';
+    } else if (data.alerte72h) {
+      var d = document.createElement('div');
+      d.style.cssText = 'background:rgba(255,215,0,0.15);border:2px solid #FFD700;color:#FFD700;padding:12px;border-radius:8px;text-align:center;margin-bottom:10px;font-weight:bold;';
+      d.textContent = data.messageAlerte;
+      var c = document.querySelector('.container');
+      if (c) c.insertBefore(d, c.firstChild);
+    }
+  }).catch(function(){});
+})();
+</script>
+
 <a class="back-button" href="reunion_R1.html">← Retour R1</a>
 <div class="container">
 
