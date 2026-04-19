@@ -102,6 +102,19 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .footer-links a:hover { color: #FF6B6B; }
 .footer-copy { font-size: 11px; color: #555; }
 </style>
+  
+<style>
+  .premium-wall { display: none; text-align:center; padding:80px 20px; font-family:'Segoe UI',sans-serif; min-height:80vh; }
+  .premium-wall img { width:100px; margin-bottom:16px; }
+  .premium-wall h1 { color:#FF6B6B; font-size:22px; margin-bottom:10px; }
+  .premium-wall p { color:#C8A882; margin-bottom:20px; }
+  .premium-wall a { display:inline-block; background:#00B4D8; color:#000; padding:14px 32px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:15px; }
+  .premium-wall a:hover { background:#0096B7; }
+  body.premium-locked .container, body.premium-locked .back-button, body.premium-locked .footer { display: none !important; }
+  body.premium-locked .premium-wall { display: block !important; }
+  .premium-alert { background:rgba(255,215,0,0.15); border:2px solid #FFD700; color:#FFD700; padding:12px; border-radius:8px; text-align:center; margin-bottom:10px; font-weight:bold; }
+</style>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QETD2M15"></script>
   <script>
@@ -111,7 +124,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('config', 'G-11QETD2M15');
   </script>
 </head>
-<body>
+<body class="premium-locked">
 
 <script>
 (function() {
@@ -120,14 +133,11 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   if (!code || !expiry || new Date(expiry) < new Date()) {
     localStorage.removeItem('cmt_premium_code');
     localStorage.removeItem('cmt_premium_expiry');
-    document.body.innerHTML = '<div style="text-align:center;padding:60px 20px;font-family:Segoe UI,sans-serif;">'
-      + '<img src="logo.png" alt="CMT" style="width:100px;margin-bottom:16px;" onerror="this.style.display=\'none\'">'
-      + '<h1 style="color:#FF6B6B;font-size:22px;margin-bottom:10px;">🔒 CONTENU PREMIUM</h1>'
-      + '<p style="color:#C8A882;margin-bottom:20px;">Cette section nécessite un abonnement Premium.</p>'
-      + '<a href="https://carre-magique-premium.casaturf007.workers.dev" style="display:inline-block;background:#00B4D8;color:#000;padding:14px 32px;border-radius:8px;font-weight:bold;text-decoration:none;font-size:15px;">ACCÉDER À L\'ESPACE PREMIUM</a>'
-      + '</div>';
+    document.body.classList.add('premium-locked');
     return;
   }
+  // Code valide localement → déverrouiller immédiatement
+  document.body.classList.remove('premium-locked');
   // Vérification serveur asynchrone
   fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
     method: 'POST',
@@ -137,10 +147,10 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     if (!data.ok) {
       localStorage.removeItem('cmt_premium_code');
       localStorage.removeItem('cmt_premium_expiry');
-      window.location.href = 'https://carre-magique-premium.casaturf007.workers.dev';
+      document.body.classList.add('premium-locked');
     } else if (data.alerte72h) {
       var d = document.createElement('div');
-      d.style.cssText = 'background:rgba(255,215,0,0.15);border:2px solid #FFD700;color:#FFD700;padding:12px;border-radius:8px;text-align:center;margin-bottom:10px;font-weight:bold;';
+      d.className = 'premium-alert';
       d.textContent = data.messageAlerte;
       var c = document.querySelector('.container');
       if (c) c.insertBefore(d, c.firstChild);
@@ -148,6 +158,14 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   }).catch(function(){});
 })();
 </script>
+
+
+<div class="premium-wall">
+  <img src="logo.png" alt="CMT" onerror="this.style.display='none'">
+  <h1>🔒 CONTENU PREMIUM</h1>
+  <p>Cette section nécessite un abonnement Premium.</p>
+  <a href="https://carre-magique-premium.casaturf007.workers.dev">ACCÉDER À L'ESPACE PREMIUM</a>
+</div>
 
 <a class="back-button" href="index.html">← Retour</a>
 <div class="container">
