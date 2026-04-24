@@ -15,8 +15,8 @@ echo.
 echo   Lancement FUSION SCORE + CLASSEMENT en parallele...
 echo.
 
-start "CMT Fusion" cmd /k "cd /d C:\Aspibet.Api\GitHub-Repo\Carr--Magique-Turf && python cmt_analyse_histo.py RAPPORTS\%DATE_ANALYSE% C:\Aspibet.Api\historique\historique_pmu.db %DATE_ANALYSE% && echo. && echo   TERMINE — Appuyez sur une touche... && pause > nul"
+start "CMT Fusion" cmd /c "cd /d C:\Aspibet.Api\GitHub-Repo\Carr--Magique-Turf && python cmt_analyse_histo.py RAPPORTS\%DATE_ANALYSE% C:\Aspibet.Api\historique\historique_pmu.db %DATE_ANALYSE%"
 
-start "CMT Classement" cmd /k "cd /d C:\Aspibet.Api\GitHub-Repo\Carr--Magique-Turf && python cmt_analyse_classement.py RAPPORTS\%DATE_ANALYSE% C:\Aspibet.Api\historique\historique_pmu.db %DATE_ANALYSE% && echo. && echo   TERMINE — Appuyez sur une touche... && pause > nul"
+start "CMT Classement" cmd /c "cd /d C:\Aspibet.Api\GitHub-Repo\Carr--Magique-Turf && python cmt_analyse_classement.py RAPPORTS\%DATE_ANALYSE% C:\Aspibet.Api\historique\historique_pmu.db %DATE_ANALYSE%"
 
 exit
