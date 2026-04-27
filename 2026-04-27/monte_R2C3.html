@@ -7,14 +7,14 @@
   <meta name="description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta name="keywords" content="carré magique turf, pronostic quinté du jour, pronostic PMU gratuit, quinté PMU, tiercé PMU, quarté PMU, partants PMU, résultats PMU, arrivée quinté, courses PMU aujourd'hui, analyse hippique, cotes PMU temps réel, musique des chevaux, pronostic attelé, pronostic plat, pronostic obstacles, analyse courses chevaux, pronostic hippique gratuit aujourd'hui, meilleur pronostic quinté du jour, base du jour turf, cheval de base PMU, tic 3 multi, multi PMU, pronostics turf gratuits">
   <meta name="author" content="Carré Magique Turf">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <meta property="og:title" content="R2-C3 Spécial MONTÉ - Carré Magique Turf">
   <meta property="og:description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://carremagique-turf.com/logo.png">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Carré Magique Turf">
-
+  <link rel="canonical" href="https://carremagique-turf.com/monte_R2C3.html">
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 0; margin: 0; }
@@ -108,18 +108,6 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .footer-copy { font-size: 11px; color: #555; }
 </style>
   
-<style>
-  .premium-wall { display: none; text-align:center; padding:80px 20px; font-family:'Segoe UI',sans-serif; min-height:80vh; }
-  .premium-wall img { width:100px; margin-bottom:16px; }
-  .premium-wall h1 { color:#FF6B6B; font-size:22px; margin-bottom:10px; }
-  .premium-wall p { color:#C8A882; margin-bottom:20px; }
-  .premium-wall a { display:inline-block; background:#00B4D8; color:#000; padding:14px 32px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:15px; }
-  .premium-wall a:hover { background:#0096B7; }
-  body.premium-locked .container, body.premium-locked .back-button, body.premium-locked .footer { display: none !important; }
-  body.premium-locked .premium-wall { display: block !important; }
-  .premium-alert { background:rgba(255,215,0,0.15); border:2px solid #FFD700; color:#FFD700; padding:12px; border-radius:8px; text-align:center; margin-bottom:10px; font-weight:bold; }
-</style>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QETD2M15"></script>
   <script>
@@ -129,80 +117,8 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('config', 'G-11QETD2M15');
   </script>
 </head>
-<body class="premium-locked">
+<body class="">
 
-<script>
-(function() {
-  var params = new URLSearchParams(window.location.search);
-  var urlCode = params.get('cmt_code');
-  var urlExpiry = params.get('cmt_expiry');
-  if (urlCode && urlExpiry) {
-    localStorage.setItem('cmt_premium_code', urlCode);
-    localStorage.setItem('cmt_premium_expiry', urlExpiry);
-    window.history.replaceState({}, '', window.location.pathname);
-  }
-
-  var code = localStorage.getItem('cmt_premium_code');
-  var expiry = localStorage.getItem('cmt_premium_expiry');
-  if (!code || !expiry || new Date(expiry) < new Date()) {
-    localStorage.removeItem('cmt_premium_code');
-    localStorage.removeItem('cmt_premium_expiry');
-    document.body.classList.add('premium-locked');
-    return;
-  }
-  document.body.classList.remove('premium-locked');
-  try {
-    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: 'WEB'})
-    }).then(function(r){
-      if (!r.ok) return null;
-      return r.json();
-    }).then(function(data){
-      if (!data) return;
-      if (!data.ok) {
-        localStorage.removeItem('cmt_premium_code');
-        localStorage.removeItem('cmt_premium_expiry');
-        document.body.classList.add('premium-locked');
-      } else if (data.alerte72h) {
-        var d = document.createElement('div');
-        d.className = 'premium-alert';
-        d.textContent = data.messageAlerte;
-        var c = document.querySelector('.container');
-        if (c) c.insertBefore(d, c.firstChild);
-      }
-      if (data.ok && data.nom) { afficherWatermark(data.nom); }
-    }).catch(function(){/* réseau/CORS — garder déverrouillé */});
-  } catch(e) {}
-
-  function afficherWatermark(nom) {
-    var wm = document.createElement('div');
-    wm.id = 'cmt-watermark';
-    wm.textContent = '★ CMT PREMIUM — ' + nom + ' ★  ★ CMT PREMIUM — ' + nom + ' ★  ★ CMT PREMIUM — ' + nom + ' ★';
-    wm.style.cssText = [
-      'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
-      'pointer-events:none', 'z-index:9999',
-      'display:flex', 'align-items:center', 'justify-content:center',
-      'font-size:22px', 'font-weight:bold',
-      'color:rgba(255,255,255,0.06)',
-      'transform:rotate(-35deg)',
-      'white-space:nowrap', 'overflow:hidden',
-      'user-select:none', '-webkit-user-select:none',
-      'letter-spacing:4px', 'text-transform:uppercase'
-    ].join(';');
-    document.body.appendChild(wm);
-  }
-})();
-</script>
-
-
-<div class="premium-wall">
-  <img src="logo.png" alt="CMT" onerror="this.style.display='none'">
-  <h1>🔒 CONTENU PREMIUM</h1>
-  <p>Cette section nécessite un abonnement Premium.</p>
-  <a href="https://carre-magique-premium.casaturf007.workers.dev">ACCÉDER À L'ESPACE PREMIUM</a>
-</div>
 
 <a class="back-button" href="reunion_R2.html">← Retour R2</a>
 <div class="container">
@@ -238,7 +154,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     <div class="main-section">
         <div class="section-title">🏄 RECOMMANDATION SPÉCIAL MONTÉ</div>
         <div style="font-size:18px; color:#00B4D8; font-weight:bold; margin-bottom:10px;">
-            ⭐ TOP 8 : 4 - 7 - 6 - 9 - 11 - 15 - 13 - 14
+            ⭐ TOP 8 : 4 - 6 - 7 - 15 - 14 - 13 - 9 - 11
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;padding:8px;background:#0D0D0D;border-radius:8px;border:1px solid #333;">
             <div style="display:flex;align-items:center;margin-right:8px;"><span style="font-size:13px;color:#FF6B6B;font-weight:bold;">🎛️ FILTRES</span></div>
@@ -251,7 +167,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 ↺ Reset
             </button>
         </div>
-        <table id="tableau-discipline"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Musique</th></tr></thead><tbody><tr class="top3" data-gains="11111700.0" data-score_mus="8.5" data-rg_musique="1.0"><td>1</td><td>4</td><td>CLICK STARLIGHT</td><td>11111700</td><td>8.5</td><td>1</td></tr><tr class="top3" data-gains="12306500.0" data-score_mus="7.2" data-rg_musique="2.0"><td>2</td><td>7</td><td>INDIANA TESS</td><td>12306500</td><td>7.2</td><td>2</td></tr><tr class="top3" data-gains="12275000.0" data-score_mus="6.5" data-rg_musique="3.0"><td>3</td><td>6</td><td>IDEAL DU GAZON</td><td>12275000</td><td>6.5</td><td>3</td></tr><tr class="top5" data-gains="12516500.0" data-score_mus="2.0" data-rg_musique="6.0"><td>4</td><td>9</td><td>GERONIMO STARDUST</td><td>12516500</td><td>2</td><td>6</td></tr><tr class="top5" data-gains="13282500.0" data-score_mus="1.25" data-rg_musique="8.0"><td>5</td><td>11</td><td>HERACLES DU LAYON</td><td>13282500</td><td>1.25</td><td>8</td></tr><tr class="top8" data-gains="13960000.0" data-score_mus="0.0" data-rg_musique="15.0"><td>6</td><td>15</td><td>IDYLLE COPAISE</td><td>13960000</td><td>0</td><td>15</td></tr><tr class="top8" data-gains="13665000.0" data-score_mus="0.8" data-rg_musique="10.0"><td>7</td><td>13</td><td>GUOPECK DE VIVOIN</td><td>13665000</td><td>0.8</td><td>10</td></tr><tr class="top8" data-gains="13701000.0" data-score_mus="2.0" data-rg_musique="7.0"><td>8</td><td>14</td><td>GO FOR BELLAY</td><td>13701000</td><td>2</td><td>7</td></tr><tr class="outsider" data-gains="12939000.0" data-score_mus="0.6" data-rg_musique="11.0"><td>9</td><td>10</td><td>IAGO DE SENOVILLE</td><td>12939000</td><td>0.6</td><td>11</td></tr><tr class="outsider" data-gains="12513500.0" data-score_mus="1.0" data-rg_musique="9.0"><td>10</td><td>8</td><td>IONA GENDREENNE</td><td>12513500</td><td>1</td><td>9</td></tr><tr class="outsider" data-gains="9318500.0" data-score_mus="3.4" data-rg_musique="4.0"><td>11</td><td>3</td><td>INTREPIDE NEMO</td><td>9318500</td><td>3.4</td><td>4</td></tr><tr class="outsider" data-gains="13433500.0" data-score_mus="0.0" data-rg_musique="14.0"><td>12</td><td>12</td><td>HESPERANCE ELTE</td><td>13433500</td><td>0</td><td>14</td></tr><tr class="outsider" data-gains="5521500.0" data-score_mus="2.0" data-rg_musique="5.0"><td>13</td><td>1</td><td>IRRESISTIBLE LOMIG</td><td>5521500</td><td>2</td><td>5</td></tr><tr class="outsider" data-gains="12245000.0" data-score_mus="0.0" data-rg_musique="13.0"><td>14</td><td>5</td><td>GOOD COMPUTER</td><td>12245000</td><td>0</td><td>13</td></tr><tr class="outsider" data-gains="6801500.0" data-score_mus="0.0" data-rg_musique="12.0"><td>15</td><td>2</td><td>INTIME COTERIE</td><td>6801500</td><td>0</td><td>12</td></tr></tbody></table>
+        <table id="tableau-discipline"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Musique</th></tr></thead><tbody><tr class="top3" data-gains="11111700.0" data-score_mus="8.5" data-rg_musique="1.0"><td>1</td><td>4</td><td>CLICK STARLIGHT</td><td>11111700</td><td>8.5</td><td>1</td></tr><tr class="top3" data-gains="12275000.0" data-score_mus="6.5" data-rg_musique="3.0"><td>2</td><td>6</td><td>IDEAL DU GAZON</td><td>12275000</td><td>6.5</td><td>3</td></tr><tr class="top3" data-gains="12306500.0" data-score_mus="7.2" data-rg_musique="2.0"><td>3</td><td>7</td><td>INDIANA TESS</td><td>12306500</td><td>7.2</td><td>2</td></tr><tr class="top5" data-gains="13960000.0" data-score_mus="0.0" data-rg_musique="15.0"><td>4</td><td>15</td><td>IDYLLE COPAISE</td><td>13960000</td><td>0</td><td>15</td></tr><tr class="top5" data-gains="13701000.0" data-score_mus="2.0" data-rg_musique="7.0"><td>5</td><td>14</td><td>GO FOR BELLAY</td><td>13701000</td><td>2</td><td>7</td></tr><tr class="top8" data-gains="13665000.0" data-score_mus="0.8" data-rg_musique="10.0"><td>6</td><td>13</td><td>GUOPECK DE VIVOIN</td><td>13665000</td><td>0.8</td><td>10</td></tr><tr class="top8" data-gains="12516500.0" data-score_mus="2.0" data-rg_musique="6.0"><td>7</td><td>9</td><td>GERONIMO STARDUST</td><td>12516500</td><td>2</td><td>6</td></tr><tr class="top8" data-gains="13282500.0" data-score_mus="1.25" data-rg_musique="8.0"><td>8</td><td>11</td><td>HERACLES DU LAYON</td><td>13282500</td><td>1.25</td><td>8</td></tr><tr class="outsider" data-gains="12939000.0" data-score_mus="0.6" data-rg_musique="11.0"><td>9</td><td>10</td><td>IAGO DE SENOVILLE</td><td>12939000</td><td>0.6</td><td>11</td></tr><tr class="outsider" data-gains="12513500.0" data-score_mus="1.0" data-rg_musique="9.0"><td>10</td><td>8</td><td>IONA GENDREENNE</td><td>12513500</td><td>1</td><td>9</td></tr><tr class="outsider" data-gains="9318500.0" data-score_mus="3.4" data-rg_musique="4.0"><td>11</td><td>3</td><td>INTREPIDE NEMO</td><td>9318500</td><td>3.4</td><td>4</td></tr><tr class="outsider" data-gains="13433500.0" data-score_mus="0.0" data-rg_musique="14.0"><td>12</td><td>12</td><td>HESPERANCE ELTE</td><td>13433500</td><td>0</td><td>14</td></tr><tr class="outsider" data-gains="5521500.0" data-score_mus="2.0" data-rg_musique="5.0"><td>13</td><td>1</td><td>IRRESISTIBLE LOMIG</td><td>5521500</td><td>2</td><td>5</td></tr><tr class="outsider" data-gains="12245000.0" data-score_mus="0.0" data-rg_musique="13.0"><td>14</td><td>5</td><td>GOOD COMPUTER</td><td>12245000</td><td>0</td><td>13</td></tr><tr class="outsider" data-gains="6801500.0" data-score_mus="0.0" data-rg_musique="12.0"><td>15</td><td>2</td><td>INTIME COTERIE</td><td>6801500</td><td>0</td><td>12</td></tr></tbody></table>
     </div>
     <script>
 function filtrerTableau() {

@@ -7,14 +7,14 @@
   <meta name="description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta name="keywords" content="carré magique turf, pronostic quinté du jour, pronostic PMU gratuit, quinté PMU, tiercé PMU, quarté PMU, partants PMU, résultats PMU, arrivée quinté, courses PMU aujourd'hui, analyse hippique, cotes PMU temps réel, musique des chevaux, pronostic attelé, pronostic plat, pronostic obstacles, analyse courses chevaux, pronostic hippique gratuit aujourd'hui, meilleur pronostic quinté du jour, base du jour turf, cheval de base PMU, tic 3 multi, multi PMU, pronostics turf gratuits">
   <meta name="author" content="Carré Magique Turf">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <meta property="og:title" content="R2-C4 Spécial ATTÉLÉ - Carré Magique Turf">
   <meta property="og:description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://carremagique-turf.com/logo.png">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Carré Magique Turf">
-
+  <link rel="canonical" href="https://carremagique-turf.com/attele_R2C4.html">
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 0; margin: 0; }
@@ -108,18 +108,6 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .footer-copy { font-size: 11px; color: #555; }
 </style>
   
-<style>
-  .premium-wall { display: none; text-align:center; padding:80px 20px; font-family:'Segoe UI',sans-serif; min-height:80vh; }
-  .premium-wall img { width:100px; margin-bottom:16px; }
-  .premium-wall h1 { color:#FF6B6B; font-size:22px; margin-bottom:10px; }
-  .premium-wall p { color:#C8A882; margin-bottom:20px; }
-  .premium-wall a { display:inline-block; background:#00B4D8; color:#000; padding:14px 32px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:15px; }
-  .premium-wall a:hover { background:#0096B7; }
-  body.premium-locked .container, body.premium-locked .back-button, body.premium-locked .footer { display: none !important; }
-  body.premium-locked .premium-wall { display: block !important; }
-  .premium-alert { background:rgba(255,215,0,0.15); border:2px solid #FFD700; color:#FFD700; padding:12px; border-radius:8px; text-align:center; margin-bottom:10px; font-weight:bold; }
-</style>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QETD2M15"></script>
   <script>
@@ -129,80 +117,8 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('config', 'G-11QETD2M15');
   </script>
 </head>
-<body class="premium-locked">
+<body class="">
 
-<script>
-(function() {
-  var params = new URLSearchParams(window.location.search);
-  var urlCode = params.get('cmt_code');
-  var urlExpiry = params.get('cmt_expiry');
-  if (urlCode && urlExpiry) {
-    localStorage.setItem('cmt_premium_code', urlCode);
-    localStorage.setItem('cmt_premium_expiry', urlExpiry);
-    window.history.replaceState({}, '', window.location.pathname);
-  }
-
-  var code = localStorage.getItem('cmt_premium_code');
-  var expiry = localStorage.getItem('cmt_premium_expiry');
-  if (!code || !expiry || new Date(expiry) < new Date()) {
-    localStorage.removeItem('cmt_premium_code');
-    localStorage.removeItem('cmt_premium_expiry');
-    document.body.classList.add('premium-locked');
-    return;
-  }
-  document.body.classList.remove('premium-locked');
-  try {
-    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: 'WEB'})
-    }).then(function(r){
-      if (!r.ok) return null;
-      return r.json();
-    }).then(function(data){
-      if (!data) return;
-      if (!data.ok) {
-        localStorage.removeItem('cmt_premium_code');
-        localStorage.removeItem('cmt_premium_expiry');
-        document.body.classList.add('premium-locked');
-      } else if (data.alerte72h) {
-        var d = document.createElement('div');
-        d.className = 'premium-alert';
-        d.textContent = data.messageAlerte;
-        var c = document.querySelector('.container');
-        if (c) c.insertBefore(d, c.firstChild);
-      }
-      if (data.ok && data.nom) { afficherWatermark(data.nom); }
-    }).catch(function(){/* réseau/CORS — garder déverrouillé */});
-  } catch(e) {}
-
-  function afficherWatermark(nom) {
-    var wm = document.createElement('div');
-    wm.id = 'cmt-watermark';
-    wm.textContent = '★ CMT PREMIUM — ' + nom + ' ★  ★ CMT PREMIUM — ' + nom + ' ★  ★ CMT PREMIUM — ' + nom + ' ★';
-    wm.style.cssText = [
-      'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
-      'pointer-events:none', 'z-index:9999',
-      'display:flex', 'align-items:center', 'justify-content:center',
-      'font-size:22px', 'font-weight:bold',
-      'color:rgba(255,255,255,0.06)',
-      'transform:rotate(-35deg)',
-      'white-space:nowrap', 'overflow:hidden',
-      'user-select:none', '-webkit-user-select:none',
-      'letter-spacing:4px', 'text-transform:uppercase'
-    ].join(';');
-    document.body.appendChild(wm);
-  }
-})();
-</script>
-
-
-<div class="premium-wall">
-  <img src="logo.png" alt="CMT" onerror="this.style.display='none'">
-  <h1>🔒 CONTENU PREMIUM</h1>
-  <p>Cette section nécessite un abonnement Premium.</p>
-  <a href="https://carre-magique-premium.casaturf007.workers.dev">ACCÉDER À L'ESPACE PREMIUM</a>
-</div>
 
 <a class="back-button" href="reunion_R2.html">← Retour R2</a>
 <div class="container">
@@ -253,7 +169,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 ↺ Reset
             </button>
         </div>
-        <table id="tableau-discipline"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3" data-gains="1663000.0" data-score_mus="7.0" data-rg_gains="9.0" data-rg_musique="1.0" data-score_f6="2.55"><td>1</td><td>6</td><td>MUSTANG D'ERI</td><td>1663000</td><td>7</td><td>9</td><td>1</td><td>2.55</td></tr><tr class="top3" data-gains="1609000.0" data-score_mus="6.5" data-rg_gains="13.0" data-rg_musique="3.0" data-score_f6="3.65"><td>2</td><td>2</td><td>MORPHEUS DE GUEZ</td><td>1609000</td><td>6.5</td><td>13</td><td>3</td><td>3.65</td></tr><tr class="top3" data-gains="1723000.0" data-score_mus="7.0" data-rg_gains="3.0" data-rg_musique="2.0" data-score_f6="4.6"><td>3</td><td>12</td><td>MAESTRO VET</td><td>1723000</td><td>7</td><td>3</td><td>2</td><td>4.6</td></tr><tr class="top5" data-gains="1718000.0" data-score_mus="6.0" data-rg_gains="5.0" data-rg_musique="5.0" data-score_f6="5.3"><td>4</td><td>10</td><td>MAGIC D'ESPACE</td><td>1718000</td><td>6</td><td>5</td><td>5</td><td>5.3</td></tr><tr class="top5" data-gains="1657500.0" data-score_mus="5.67" data-rg_gains="10.0" data-rg_musique="6.0" data-score_f6="5.5"><td>5</td><td>5</td><td>MELEUC DU DOUAROU</td><td>1657500</td><td>5.67</td><td>10</td><td>6</td><td>5.5</td></tr><tr class="top8" data-gains="1711500.0" data-score_mus="2.75" data-rg_gains="6.0" data-rg_musique="9.0" data-score_f6="5.9"><td>6</td><td>9</td><td>MAJOR AR CARAC</td><td>1711500</td><td>2.75</td><td>6</td><td>9</td><td>5.9</td></tr><tr class="top8" data-gains="1666500.0" data-score_mus="1.0" data-rg_gains="8.0" data-rg_musique="12.0" data-score_f6="7.95"><td>7</td><td>7</td><td>MY MILLION ATOUT</td><td>1666500</td><td>1</td><td>8</td><td>12</td><td>7.95</td></tr><tr class="top8" data-gains="1614500.0" data-score_mus="4.25" data-rg_gains="12.0" data-rg_musique="7.0" data-score_f6="8.15"><td>8</td><td>3</td><td>MENELAS DE CORBERY</td><td>1614500</td><td>4.25</td><td>12</td><td>7</td><td>8.15</td></tr><tr class="outsider" data-gains="1739000.0" data-score_mus="1.0" data-rg_gains="1.0" data-rg_musique="13.0" data-score_f6="8.6"><td>9</td><td>14</td><td>MONTE CARLO</td><td>1739000</td><td>1</td><td>1</td><td>13</td><td>8.6</td></tr><tr class="outsider" data-gains="1724500.0" data-score_mus="2.6" data-rg_gains="2.0" data-rg_musique="10.0" data-score_f6="8.85"><td>10</td><td>13</td><td>MON DE CHEVALERIE</td><td>1724500</td><td>2.6</td><td>2</td><td>10</td><td>8.85</td></tr><tr class="outsider" data-gains="1722000.0" data-score_mus="3.33" data-rg_gains="4.0" data-rg_musique="8.0" data-score_f6="9.75"><td>11</td><td>11</td><td>MARIO DE SIERRA</td><td>1722000</td><td>3.33</td><td>4</td><td>8</td><td>9.75</td></tr><tr class="outsider" data-gains="1398000.0" data-score_mus="6.0" data-rg_gains="14.0" data-rg_musique="4.0" data-score_f6="10.5"><td>12</td><td>1</td><td>MAGIC DE BELLA</td><td>1398000</td><td>6</td><td>14</td><td>4</td><td>10.5</td></tr><tr class="outsider" data-gains="1639000.0" data-score_mus="1.0" data-rg_gains="11.0" data-rg_musique="11.0" data-score_f6="11.25"><td>13</td><td>4</td><td>MICK DES PENDANTS</td><td>1639000</td><td>1</td><td>11</td><td>11</td><td>11.25</td></tr><tr class="outsider" data-gains="1695000.0" data-score_mus="0.75" data-rg_gains="7.0" data-rg_musique="14.0" data-score_f6="12.45"><td>14</td><td>8</td><td>MONNAIE DE VIETTE</td><td>1695000</td><td>0.75</td><td>7</td><td>14</td><td>12.45</td></tr></tbody></table>
+        <table id="tableau-discipline"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3" data-gains="1663000.0" data-score_mus="7.0" data-rg_gains="9.0" data-rg_musique="1.0" data-score_f6="2.45"><td>1</td><td>6</td><td>MUSTANG D'ERI</td><td>1663000</td><td>7</td><td>9</td><td>1</td><td>2.45</td></tr><tr class="top3" data-gains="1609000.0" data-score_mus="6.5" data-rg_gains="13.0" data-rg_musique="3.0" data-score_f6="3.6"><td>2</td><td>2</td><td>MORPHEUS DE GUEZ</td><td>1609000</td><td>6.5</td><td>13</td><td>3</td><td>3.6</td></tr><tr class="top3" data-gains="1723000.0" data-score_mus="7.0" data-rg_gains="3.0" data-rg_musique="2.0" data-score_f6="4.35"><td>3</td><td>12</td><td>MAESTRO VET</td><td>1723000</td><td>7</td><td>3</td><td>2</td><td>4.35</td></tr><tr class="top5" data-gains="1718000.0" data-score_mus="6.0" data-rg_gains="5.0" data-rg_musique="5.0" data-score_f6="4.9"><td>4</td><td>10</td><td>MAGIC D'ESPACE</td><td>1718000</td><td>6</td><td>5</td><td>5</td><td>4.9</td></tr><tr class="top5" data-gains="1657500.0" data-score_mus="5.67" data-rg_gains="10.0" data-rg_musique="6.0" data-score_f6="5.4"><td>5</td><td>5</td><td>MELEUC DU DOUAROU</td><td>1657500</td><td>5.67</td><td>10</td><td>6</td><td>5.4</td></tr><tr class="top8" data-gains="1711500.0" data-score_mus="2.75" data-rg_gains="6.0" data-rg_musique="9.0" data-score_f6="5.7"><td>6</td><td>9</td><td>MAJOR AR CARAC</td><td>1711500</td><td>2.75</td><td>6</td><td>9</td><td>5.7</td></tr><tr class="top8" data-gains="1666500.0" data-score_mus="1.0" data-rg_gains="8.0" data-rg_musique="12.0" data-score_f6="8.15"><td>7</td><td>7</td><td>MY MILLION ATOUT</td><td>1666500</td><td>1</td><td>8</td><td>12</td><td>8.15</td></tr><tr class="top8" data-gains="1614500.0" data-score_mus="4.25" data-rg_gains="12.0" data-rg_musique="7.0" data-score_f6="8.4"><td>8</td><td>3</td><td>MENELAS DE CORBERY</td><td>1614500</td><td>4.25</td><td>12</td><td>7</td><td>8.4</td></tr><tr class="outsider" data-gains="1739000.0" data-score_mus="1.0" data-rg_gains="1.0" data-rg_musique="13.0" data-score_f6="8.6"><td>9</td><td>14</td><td>MONTE CARLO</td><td>1739000</td><td>1</td><td>1</td><td>13</td><td>8.6</td></tr><tr class="outsider" data-gains="1724500.0" data-score_mus="2.6" data-rg_gains="2.0" data-rg_musique="10.0" data-score_f6="8.85"><td>10</td><td>13</td><td>MON DE CHEVALERIE</td><td>1724500</td><td>2.6</td><td>2</td><td>10</td><td>8.85</td></tr><tr class="outsider" data-gains="1722000.0" data-score_mus="3.33" data-rg_gains="4.0" data-rg_musique="8.0" data-score_f6="9.8"><td>11</td><td>11</td><td>MARIO DE SIERRA</td><td>1722000</td><td>3.33</td><td>4</td><td>8</td><td>9.8</td></tr><tr class="outsider" data-gains="1398000.0" data-score_mus="6.0" data-rg_gains="14.0" data-rg_musique="4.0" data-score_f6="10.75"><td>12</td><td>1</td><td>MAGIC DE BELLA</td><td>1398000</td><td>6</td><td>14</td><td>4</td><td>10.75</td></tr><tr class="outsider" data-gains="1639000.0" data-score_mus="1.0" data-rg_gains="11.0" data-rg_musique="11.0" data-score_f6="11.5"><td>13</td><td>4</td><td>MICK DES PENDANTS</td><td>1639000</td><td>1</td><td>11</td><td>11</td><td>11.5</td></tr><tr class="outsider" data-gains="1695000.0" data-score_mus="0.75" data-rg_gains="7.0" data-rg_musique="14.0" data-score_f6="12.55"><td>14</td><td>8</td><td>MONNAIE DE VIETTE</td><td>1695000</td><td>0.75</td><td>7</td><td>14</td><td>12.55</td></tr></tbody></table>
     </div>
     <script>
 function filtrerTableau() {
