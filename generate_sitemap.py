@@ -4,7 +4,7 @@ from datetime import datetime
 
 GITHUB_USER = "casaturf"
 GITHUB_REPO = "Carr--Magique-Turf"
-BASE_URL = "https://xn--carrmagique-turf-eqb.fr"
+BASE_URL = "https://carremagique-turf.com"
 BRANCH = "main"
 
 def get_all_files():
