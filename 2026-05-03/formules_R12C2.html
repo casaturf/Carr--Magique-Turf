@@ -41,6 +41,7 @@ tbody tr:hover { background: rgba(0, 180, 216, 0.1); }
 .top3     { background: rgba(198, 239, 206, 0.15) !important; }
 .top5     { background: rgba(0, 180, 216, 0.12) !important; }
 .top8     { background: rgba(200, 168, 130, 0.10) !important; }
+.masked   { background: rgba(50,50,50,0.3) !important; color: #555 !important; font-style: italic; }
 .outsider { background: rgba(255, 235, 156, 0.08) !important; }
 .nav-buttons { display: flex; gap: 8px; justify-content: center; margin: 10px 0; flex-wrap: wrap; }
 .nav-btn { background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
@@ -149,20 +150,11 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     
     <div class="main-section">
         <div class="section-title">⭐ RECOMMANDATION CARRÉ MAGIQUE TURF - TOP 8</div>
-        <div style="font-size:18px; color:#00B4D8; font-weight:bold; margin-bottom:10px;">1 - 7 - 2 - 3 - 4 - 5 - 8 - 14</div>
+        <div style="font-size:18px; color:#00B4D8; font-weight:bold; margin-bottom:10px;">1 - x - x - 3 - x - x - 8 - 14</div>
         <table><thead><tr>
         <th>Rang</th><th>N°</th><th>Cheval</th><th>Mises</th>
         <th>Évol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th>
-    </tr></thead><tbody><tr class="alerte-vert"><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>VERT</td><td>FAVORI - Valeur sure</td></tr><tr class="alerte-vert"><td>2</td><td>7</td><td></td><td></td><td></td><td></td><td>VERT</td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>3</td><td>2</td><td></td><td></td><td></td><td></td><td>VERT</td><td>Tres joue - Confiance</td></tr><tr class="alerte-vert"><td>4</td><td>3</td><td></td><td></td><td></td><td></td><td>VERT</td><td>A suivre</td></tr><tr class="alerte-vert"><td>5</td><td>4</td><td></td><td></td><td></td><td></td><td>VERT</td><td>A suivre</td></tr><tr class="alerte-jaune"><td>6</td><td>5</td><td></td><td></td><td></td><td></td><td>JAUNE</td><td>Outsider</td></tr><tr class="alerte-jaune"><td>7</td><td>8</td><td></td><td></td><td></td><td></td><td>JAUNE</td><td>Outsider</td></tr><tr class="alerte-jaune"><td>8</td><td>14</td><td></td><td></td><td></td><td></td><td>JAUNE</td><td>Outsider</td></tr></tbody></table>
-    </div>
-    
-    <div class="main-section">
-        <div class="section-title">📋 ACCESSIT</div>
-        <div style="font-size:18px; color:#C8A882; font-weight:bold; margin-bottom:10px;"></div>
-        <table><thead><tr>
-        <th>Rang</th><th>N°</th><th>Cheval</th><th>Mises</th>
-        <th>Évol. Cotes</th><th>Tendance</th><th>Alerte</th><th>Recommandation</th>
-    </tr></thead><tbody><tr class="alerte-orange"><td>9</td><td>12</td><td></td><td></td><td></td><td></td><td>ORANGE</td><td>Outsider a surveiller</td></tr><tr class="alerte-orange"><td>10</td><td>6</td><td></td><td></td><td></td><td></td><td>ORANGE</td><td>Outsider a surveiller</td></tr><tr class="alerte-orange"><td>11</td><td>10</td><td></td><td></td><td></td><td></td><td>ORANGE</td><td>Outsider a surveiller</td></tr><tr class="alerte-rouge"><td>12</td><td>13</td><td></td><td></td><td></td><td></td><td>ROUGE</td><td>Piege a eviter</td></tr><tr class="alerte-rouge"><td>13</td><td>9</td><td></td><td></td><td></td><td></td><td>ROUGE</td><td>Piege a eviter</td></tr><tr class="alerte-rouge"><td>14</td><td>11</td><td></td><td></td><td></td><td></td><td>ROUGE</td><td>Piege a eviter</td></tr></tbody></table>
+    </tr></thead><tbody><tr class="alerte-vert"><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>VERT</td><td>FAVORI - Valeur sure</td></tr><tr class="masked"><td>2</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td></tr><tr class="masked"><td>3</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td></tr><tr class="alerte-vert"><td>4</td><td>3</td><td></td><td></td><td></td><td></td><td>VERT</td><td>A suivre</td></tr><tr class="masked"><td>5</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td></tr><tr class="masked"><td>6</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td></tr><tr class="alerte-jaune"><td>7</td><td>8</td><td></td><td></td><td></td><td></td><td>JAUNE</td><td>Outsider</td></tr><tr class="alerte-jaune"><td>8</td><td>14</td><td></td><td></td><td></td><td></td><td>JAUNE</td><td>Outsider</td></tr></tbody></table>
     </div>
 </div>
 <footer class="footer">
