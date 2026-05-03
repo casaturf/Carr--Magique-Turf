@@ -7,14 +7,14 @@
   <meta name="description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta name="keywords" content="carré magique turf, pronostic quinté du jour, pronostic PMU gratuit, quinté PMU, tiercé PMU, quarté PMU, partants PMU, résultats PMU, arrivée quinté, courses PMU aujourd'hui, analyse hippique, cotes PMU temps réel, musique des chevaux, pronostic attelé, pronostic plat, pronostic obstacles, analyse courses chevaux, pronostic hippique gratuit aujourd'hui, meilleur pronostic quinté du jour, base du jour turf, cheval de base PMU, tic 3 multi, multi PMU, pronostics turf gratuits">
   <meta name="author" content="Carré Magique Turf">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, nofollow">
   <meta property="og:title" content="R3-C1 Participants - Carré Magique Turf">
   <meta property="og:description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://carremagique-turf.com/logo.png">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Carré Magique Turf">
-  <link rel="canonical" href="https://carremagique-turf.com/participants_R3C1.html">
+
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 0; margin: 0; }
@@ -109,6 +109,18 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .footer-copy { font-size: 11px; color: #555; }
 </style>
   
+<style>
+  .premium-wall { display: none; text-align:center; padding:80px 20px; font-family:'Segoe UI',sans-serif; min-height:80vh; }
+  .premium-wall img { width:100px; margin-bottom:16px; }
+  .premium-wall h1 { color:#FF6B6B; font-size:22px; margin-bottom:10px; }
+  .premium-wall p { color:#C8A882; margin-bottom:20px; }
+  .premium-wall a { display:inline-block; background:#00B4D8; color:#000; padding:14px 32px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:15px; }
+  .premium-wall a:hover { background:#0096B7; }
+  body.premium-locked .container, body.premium-locked .back-button, body.premium-locked .footer { display: none !important; }
+  body.premium-locked .premium-wall { display: block !important; }
+  .premium-alert { background:rgba(255,215,0,0.15); border:2px solid #FFD700; color:#FFD700; padding:12px; border-radius:8px; text-align:center; margin-bottom:10px; font-weight:bold; }
+</style>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QETD2M15"></script>
   <script>
@@ -118,8 +130,80 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('config', 'G-11QETD2M15');
   </script>
 </head>
-<body class="">
+<body class="premium-locked">
 
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var urlCode = params.get('cmt_code');
+  var urlExpiry = params.get('cmt_expiry');
+  if (urlCode && urlExpiry) {
+    localStorage.setItem('cmt_premium_code', urlCode);
+    localStorage.setItem('cmt_premium_expiry', urlExpiry);
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
+  var code = localStorage.getItem('cmt_premium_code');
+  var expiry = localStorage.getItem('cmt_premium_expiry');
+  if (!code || !expiry || new Date(expiry) < new Date()) {
+    localStorage.removeItem('cmt_premium_code');
+    localStorage.removeItem('cmt_premium_expiry');
+    document.body.classList.add('premium-locked');
+    return;
+  }
+  document.body.classList.remove('premium-locked');
+  try {
+    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({code: code, fingerprint: 'WEB'})
+    }).then(function(r){
+      if (!r.ok) return null;
+      return r.json();
+    }).then(function(data){
+      if (!data) return;
+      if (!data.ok) {
+        localStorage.removeItem('cmt_premium_code');
+        localStorage.removeItem('cmt_premium_expiry');
+        document.body.classList.add('premium-locked');
+      } else if (data.alerte72h) {
+        var d = document.createElement('div');
+        d.className = 'premium-alert';
+        d.textContent = data.messageAlerte;
+        var c = document.querySelector('.container');
+        if (c) c.insertBefore(d, c.firstChild);
+      }
+      if (data.ok && data.nom) { afficherWatermark(data.nom); }
+    }).catch(function(){/* réseau/CORS — garder déverrouillé */});
+  } catch(e) {}
+
+  function afficherWatermark(nom) {
+    var wm = document.createElement('div');
+    wm.id = 'cmt-watermark';
+    wm.textContent = '★ CMT PREMIUM — ' + nom + ' ★  ★ CMT PREMIUM — ' + nom + ' ★  ★ CMT PREMIUM — ' + nom + ' ★';
+    wm.style.cssText = [
+      'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
+      'pointer-events:none', 'z-index:9999',
+      'display:flex', 'align-items:center', 'justify-content:center',
+      'font-size:22px', 'font-weight:bold',
+      'color:rgba(255,255,255,0.06)',
+      'transform:rotate(-35deg)',
+      'white-space:nowrap', 'overflow:hidden',
+      'user-select:none', '-webkit-user-select:none',
+      'letter-spacing:4px', 'text-transform:uppercase'
+    ].join(';');
+    document.body.appendChild(wm);
+  }
+})();
+</script>
+
+
+<div class="premium-wall">
+  <img src="logo.png" alt="CMT" onerror="this.style.display='none'">
+  <h1>🔒 CONTENU PREMIUM</h1>
+  <p>Cette section nécessite un abonnement Premium.</p>
+  <a href="https://carre-magique-premium.casaturf007.workers.dev">ACCÉDER À L'ESPACE PREMIUM</a>
+</div>
 
 <a class="back-button" href="reunion_R3.html">← Retour R3</a>
 <div class="container">
