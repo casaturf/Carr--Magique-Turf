@@ -134,6 +134,66 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <script>
 (function() {
+  // ─── Fingerprint navigateur natif (sans bibliothèque) ───
+  function genererFingerprint() {
+    try {
+      var stored = localStorage.getItem('cmt_fp');
+      if (stored) return stored;
+
+      var data = [];
+      // Écran
+      data.push(screen.width + 'x' + screen.height + 'x' + screen.colorDepth);
+      data.push(screen.availWidth + 'x' + screen.availHeight);
+      // Timezone + langue
+      data.push(new Date().getTimezoneOffset());
+      data.push(navigator.language || '');
+      data.push((navigator.languages || []).join(','));
+      // User agent + plateforme
+      data.push(navigator.userAgent || '');
+      data.push(navigator.platform || '');
+      data.push(navigator.hardwareConcurrency || 0);
+      data.push(navigator.deviceMemory || 0);
+      // Canvas fingerprint (hash unique par GPU/navigateur)
+      try {
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        ctx.textBaseline = 'top';
+        ctx.font = '14px Arial';
+        ctx.fillStyle = '#f60';
+        ctx.fillRect(125, 1, 62, 20);
+        ctx.fillStyle = '#069';
+        ctx.fillText('CMT-FP-' + navigator.userAgent, 2, 15);
+        ctx.fillStyle = 'rgba(102,204,0,0.7)';
+        ctx.fillText('CMT-FP-' + navigator.userAgent, 4, 17);
+        data.push(canvas.toDataURL().substring(0, 100));
+      } catch(e) { data.push('nocanvas'); }
+      // WebGL renderer
+      try {
+        var gl = document.createElement('canvas').getContext('webgl');
+        if (gl) {
+          var dbg = gl.getExtension('WEBGL_debug_renderer_info');
+          if (dbg) {
+            data.push(gl.getParameter(dbg.UNMASKED_VENDOR_WEBGL) || '');
+            data.push(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) || '');
+          }
+        }
+      } catch(e) {}
+
+      // Hash simple (FNV-1a 32-bit)
+      var str = data.join('|');
+      var hash = 2166136261;
+      for (var i = 0; i < str.length; i++) {
+        hash ^= str.charCodeAt(i);
+        hash = (hash * 16777619) >>> 0;
+      }
+      var fp = 'fp_' + hash.toString(16);
+      localStorage.setItem('cmt_fp', fp);
+      return fp;
+    } catch(e) {
+      return 'fp_fallback';
+    }
+  }
+
   var params = new URLSearchParams(window.location.search);
   var urlCode = params.get('cmt_code');
   var urlExpiry = params.get('cmt_expiry');
@@ -152,16 +212,31 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     return;
   }
   document.body.classList.remove('premium-locked');
+  var fingerprint = genererFingerprint();
   try {
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: 'WEB'})
+      body: JSON.stringify({code: code, fingerprint: fingerprint})
     }).then(function(r){
-      if (!r.ok) return null;
+      if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
     }).then(function(data){
       if (!data) return;
+      // Cas 403 : Limite 2 appareils ou code invalide
+      if (data._status === 403) {
+        localStorage.removeItem('cmt_premium_code');
+        localStorage.removeItem('cmt_premium_expiry');
+        document.body.classList.add('premium-locked');
+        if (data.data && data.data.error) {
+          var alert_msg = document.createElement('div');
+          alert_msg.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#FF6B6B;color:#fff;padding:14px 24px;border-radius:8px;z-index:10000;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+          alert_msg.textContent = '🚫 ' + data.data.error;
+          document.body.appendChild(alert_msg);
+          setTimeout(function(){ if(alert_msg.parentNode) alert_msg.parentNode.removeChild(alert_msg); }, 6000);
+        }
+        return;
+      }
       if (!data.ok) {
         localStorage.removeItem('cmt_premium_code');
         localStorage.removeItem('cmt_premium_expiry');
@@ -173,14 +248,17 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         var c = document.querySelector('.container');
         if (c) c.insertBefore(d, c.firstChild);
       }
-      if (data.ok && data.nom) { afficherWatermark(data.nom); }
+      if (data.ok && data.nom) { afficherWatermark(data.nom, code); }
     }).catch(function(){/* réseau/CORS — garder déverrouillé */});
   } catch(e) {}
 
-  function afficherWatermark(nom) {
+  function afficherWatermark(nom, codeUser) {
+    // Identifiant compte = 4 derniers caractères du code (anti-partage)
+    var tag = codeUser ? codeUser.substring(codeUser.length - 4) : '';
+    var libelle = '★ CMT PREMIUM — ' + nom + (tag ? ' #' + tag : '') + ' ★';
     var wm = document.createElement('div');
     wm.id = 'cmt-watermark';
-    wm.textContent = '★ CMT PREMIUM — ' + nom + ' ★  ★ CMT PREMIUM — ' + nom + ' ★  ★ CMT PREMIUM — ' + nom + ' ★';
+    wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
     wm.style.cssText = [
       'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
       'pointer-events:none', 'z-index:9999',
@@ -339,7 +417,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
   <div class="sec"><div class="st">👤 TOP JOCKEYS / DRIVERS</div><table><thead><tr><th>N°</th><th>Cheval</th><th>Jockey/Driver</th><th>Taux Victoire</th></tr></thead><tbody><tr><td>1</td><td>IRUNDO</td><td>J.REVELEY</td><td><strong>20.6%V</strong></td></tr><tr><td>2</td><td>ETONNANT</td><td>T.SPORLI</td><td><strong>15.4%V</strong></td></tr><tr><td>4</td><td>HERMINE ALLEN</td><td>C.SMEULDERS</td><td><strong>7.9%V</strong></td></tr></tbody></table></div>
 
-  <small class="gen">Généré le 14/05/2026 à 21:47 — Carré Magique Turf</small>
+  <small class="gen">Généré le 14/05/2026 à 22:33 — Carré Magique Turf</small>
 </div>
     </div>
 </div>
