@@ -4,369 +4,350 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abonnement Premium — Carré Magique Turf</title>
-<meta name="description" content="Abonnez-vous à Carré Magique Turf Premium et accédez aux analyses hippiques exclusives. Paiement sécurisé par Orange Money, MTN Money, Wave et cartes bancaires.">
+<meta name="description" content="Abonnez-vous à Carré Magique Turf Premium. Paiement par Orange Money, CinetPay, Western Union, MoneyGram, RIA, CashPlus, Wafacash ou virement bancaire.">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 10px; }
-.container { max-width: 600px; margin: 0 auto; padding: 0 10px 20px; }
-.header { text-align: center; padding: 20px 0 15px; }
-.logo { width: 100px; height: auto; margin-bottom: 10px; }
-.title { font-size: 22px; color: #00B4D8; font-weight: bold; margin-bottom: 4px; }
-.subtitle { font-size: 13px; color: #C8A882; }
-
-/* Convertisseur */
-.converter-box { background: linear-gradient(135deg, #1A1A1A, #0D0D0D); border: 2px solid #00B4D8; border-radius: 10px; padding: 14px; margin-bottom: 16px; text-align: center; }
-.converter-box label { font-size: 13px; color: #C8A882; display: block; margin-bottom: 8px; }
-.converter-box select { background: #0D0D0D; border: 2px solid #00B4D8; color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 14px; cursor: pointer; outline: none; }
-.converter-result { margin-top: 10px; font-size: 15px; font-weight: bold; color: #FFD700; min-height: 22px; }
-
-/* Grille packs */
-.packs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-.pack-card { background: linear-gradient(135deg, #1A1A1A, #0D0D0D); border: 2px solid #00B4D8; border-radius: 10px; padding: 18px 12px; text-align: center; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
-.pack-card:hover, .pack-card.selected { border-color: #FF6B6B; box-shadow: 0 8px 25px rgba(255,107,107,0.3); transform: translateY(-2px); }
-.pack-card.popular { border-color: #FFD700; }
-.pack-card.popular::before { content: 'POPULAIRE'; position: absolute; top: 8px; right: -28px; background: #FFD700; color: #000; font-size: 8px; font-weight: bold; padding: 3px 30px; transform: rotate(45deg); letter-spacing: 1px; }
-.pack-label { font-size: 11px; color: #C8A882; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-.pack-duration { font-size: 28px; font-weight: bold; color: #fff; }
-.pack-duration span { font-size: 14px; color: #00B4D8; }
-.pack-price-eur { font-size: 20px; font-weight: bold; color: #FFD700; margin-top: 6px; }
-.pack-price-local { font-size: 12px; color: #888; margin-top: 4px; min-height: 18px; }
-.pack-check { display: none; position: absolute; top: 8px; left: 8px; color: #FF6B6B; font-size: 18px; }
-.pack-card.selected .pack-check { display: block; }
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap');
+:root{--bg:#000;--bg2:#0A0A0A;--bg3:#111;--cyan:#00B4D8;--red:#FF4757;--gold:#FFD700;--green:#2ED573;--text:#FFF;--muted:#888;--border:#1E1E1E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+.header{text-align:center;padding:28px 20px 18px;border-bottom:1px solid #111;}
+.logo{width:85px;height:auto;margin-bottom:10px;}
+.header h1{font-family:'Orbitron',sans-serif;font-size:20px;color:var(--cyan);letter-spacing:3px;margin-bottom:5px;}
+.header p{font-size:12px;color:var(--muted);}
+.wrap{max-width:620px;margin:0 auto;padding:20px 14px 40px;}
+.sec-title{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
+/* Packs */
+.packs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.pack{background:var(--bg3);border:2px solid #222;border-radius:12px;padding:16px 12px;text-align:center;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.pack:hover{border-color:var(--cyan);transform:translateY(-2px);}
+.pack.active{border-color:var(--red);box-shadow:0 0 18px rgba(255,71,87,.2);}
+.pack.pop{border-color:var(--gold);}
+.pack.pop::before{content:'MEILLEUR';position:absolute;top:8px;right:-28px;background:var(--gold);color:#000;font-size:7px;font-weight:700;padding:3px 32px;transform:rotate(45deg);letter-spacing:1px;}
+.pack-name{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:7px;}
+.pack-dur{font-family:'Orbitron',sans-serif;font-size:24px;font-weight:700;}
+.pack-dur span{font-size:12px;color:var(--cyan);font-family:'Exo 2',sans-serif;}
+.pack-eur{font-size:20px;font-weight:700;color:var(--gold);margin-top:7px;}
+.pack-local{font-size:11px;color:var(--muted);margin-top:3px;min-height:15px;}
+.pack-check{position:absolute;top:7px;left:9px;color:var(--red);font-size:15px;display:none;}
+.pack.active .pack-check{display:block;}
+/* Conv */
+.conv{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.conv label{font-size:12px;color:var(--muted);white-space:nowrap;}
+.conv select{flex:1;min-width:170px;background:#0D0D0D;border:1px solid #333;color:var(--text);padding:7px 11px;border-radius:7px;font-size:13px;font-family:'Exo 2',sans-serif;outline:none;cursor:pointer;}
+.conv-rate{font-size:12px;color:var(--gold);}
 /* Formulaire */
-.form-box { background: linear-gradient(135deg, #1A1A1A, #0D0D0D); border: 2px solid #00B4D8; border-radius: 10px; padding: 16px; margin-bottom: 16px; }
-.form-title { font-size: 16px; color: #FF6B6B; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #FF6B6B; }
-.form-group { margin-bottom: 12px; }
-.form-group label { font-size: 12px; color: #C8A882; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
-.form-group input { width: 100%; padding: 11px 14px; background: #0D0D0D; border: 2px solid #333; border-radius: 8px; color: #fff; font-size: 14px; outline: none; transition: all 0.3s; }
-.form-group input:focus { border-color: #00B4D8; box-shadow: 0 0 10px rgba(0,180,216,0.2); }
-.form-group input::placeholder { color: #555; }
-.required { color: #FF6B6B; }
-
-/* Résumé */
-.summary-box { background: rgba(0,180,216,0.08); border: 2px solid #00B4D8; border-radius: 10px; padding: 14px; margin-bottom: 16px; }
-.summary-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; color: #C8A882; }
-.summary-total { display: flex; justify-content: space-between; font-size: 16px; font-weight: bold; color: #FFD700; padding-top: 8px; border-top: 1px solid #333; margin-top: 6px; }
-
-/* Bouton payer */
-.btn-pay { width: 100%; padding: 16px; background: linear-gradient(135deg, #FF6B6B, #cc0000); border: none; border-radius: 10px; color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-.btn-pay:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,107,107,0.4); }
-.btn-pay:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
-/* Modes paiement */
-.payment-modes { text-align: center; margin-top: 12px; font-size: 11px; color: #555; }
-.payment-icons { display: flex; justify-content: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-.payment-icon { background: #1A1A1A; border: 1px solid #333; border-radius: 6px; padding: 4px 10px; font-size: 11px; color: #C8A882; }
-
-/* Messages */
-.msg { padding: 12px 16px; border-radius: 8px; margin-top: 12px; font-size: 13px; font-weight: bold; display: none; text-align: center; }
-.msg.error { background: rgba(255,107,107,0.15); border: 2px solid #FF6B6B; color: #FF6B6B; display: block; }
-.msg.success { background: rgba(0,180,216,0.15); border: 2px solid #00B4D8; color: #00B4D8; display: block; }
-
-/* Sécurité */
-.security-bar { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
-.security-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #555; }
-
-.spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid #fff; border-radius: 50%; animation: spin 0.7s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-
-.back-link { display: block; text-align: center; color: #555; font-size: 12px; text-decoration: none; margin-top: 20px; }
-.back-link:hover { color: #00B4D8; }
-
-@media (max-width: 480px) { .packs-grid { grid-template-columns: 1fr; } }
+.form-box{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px;}
+.form-box label{font-size:10px;color:var(--muted);display:block;margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;}
+.form-box input{width:100%;padding:10px 13px;background:#0D0D0D;border:1px solid #2A2A2A;border-radius:8px;color:var(--text);font-size:14px;font-family:'Exo 2',sans-serif;outline:none;transition:.2s;margin-bottom:12px;}
+.form-box input:last-child{margin-bottom:0;}
+.form-box input:focus{border-color:var(--cyan);}
+.form-box input::placeholder{color:#444;}
+.req{color:var(--red);}
+/* Summary */
+.summary{background:rgba(0,180,216,.05);border:1px solid rgba(0,180,216,.2);border-radius:10px;padding:12px 14px;margin-bottom:18px;display:none;}
+.sum-row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:5px;}
+.sum-total{display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:var(--gold);padding-top:9px;border-top:1px solid #1E1E1E;margin-top:3px;}
+/* Modes */
+.modes-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:20px;}
+.mode-btn{background:var(--bg3);border:2px solid #222;border-radius:10px;padding:12px 10px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:9px;}
+.mode-btn:hover{border-color:#444;transform:translateY(-1px);}
+.mode-btn.active{border-color:var(--cyan);background:rgba(0,180,216,.07);}
+.mode-icon{font-size:20px;flex-shrink:0;}
+.mode-info{text-align:left;}
+.mode-name{font-size:12px;font-weight:600;}
+.mode-sub{font-size:10px;color:var(--muted);margin-top:2px;}
+/* Instructions */
+.instructions{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:18px;display:none;}
+.instr-title{font-size:14px;font-weight:700;color:var(--cyan);margin-bottom:12px;}
+.instr-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:11px;}
+.step-num{background:var(--cyan);color:#000;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-text{font-size:13px;color:#CCC;line-height:1.5;}
+.step-text strong{color:var(--gold);}
+.copy-btn{background:#1A1A1A;border:1px solid #333;color:var(--cyan);padding:3px 9px;border-radius:5px;font-size:10px;cursor:pointer;margin-left:6px;transition:.2s;}
+.copy-btn:hover{background:var(--cyan);color:#000;}
+.btn-wa{width:100%;padding:14px;background:linear-gradient(135deg,#25D366,#1da851);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;font-family:'Exo 2',sans-serif;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;transition:.2s;margin-top:14px;}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.3);}
+.btn-cinetpay{width:100%;padding:14px;background:linear-gradient(135deg,var(--red),#cc0000);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;font-family:'Exo 2',sans-serif;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:9px;transition:.2s;margin-top:14px;}
+.btn-cinetpay:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,71,87,.3);}
+.btn-cinetpay:disabled{opacity:.5;cursor:not-allowed;}
+.badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px;}
+.badge{background:#111;border:1px solid #222;border-radius:5px;padding:4px 9px;font-size:10px;color:var(--muted);}
+.msg{padding:11px 14px;border-radius:8px;margin-top:12px;font-size:13px;font-weight:600;display:none;text-align:center;}
+.msg.ok{background:rgba(46,213,115,.1);border:1px solid var(--green);color:var(--green);display:block;}
+.msg.err{background:rgba(255,71,87,.1);border:1px solid var(--red);color:var(--red);display:block;}
+.spinner{display:inline-block;width:15px;height:15px;border:2px solid transparent;border-top:2px solid #fff;border-radius:50%;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.back{display:block;text-align:center;color:var(--muted);font-size:12px;text-decoration:none;margin-top:22px;}
+.back:hover{color:var(--cyan);}
+@media(max-width:480px){.packs,.modes-grid{grid-template-columns:1fr;}.conv{flex-direction:column;align-items:flex-start;}}
 </style>
 </head>
 <body>
-<div class="container">
+<div class="header">
+  <img src="logo.png" alt="Carré Magique Turf" class="logo" onerror="this.style.display='none'">
+  <h1>ABONNEMENT PREMIUM</h1>
+  <p>Accès aux analyses hippiques exclusives — 100% Algorithmique</p>
+</div>
+<div class="wrap">
 
-  <div class="header">
-    <img src="logo.png" alt="Carré Magique Turf" class="logo" onerror="this.style.display='none'">
-    <div class="title">🏆 ABONNEMENT PREMIUM</div>
-    <div class="subtitle">Accès aux analyses hippiques exclusives — 100% Algorithmique</div>
+  <div class="sec-title">Choisissez votre pack</div>
+  <div class="packs">
+    <div class="pack" onclick="selectPack(this,'jour',1.05)">
+      <div class="pack-check">✓</div>
+      <div class="pack-name">Accès test</div>
+      <div class="pack-dur">1 <span>jour</span></div>
+      <div class="pack-eur" id="p-jour">1,05 €</div>
+      <div class="pack-local" id="l-jour"></div>
+    </div>
+    <div class="pack" onclick="selectPack(this,'decouverte',10.50)">
+      <div class="pack-check">✓</div>
+      <div class="pack-name">Découverte</div>
+      <div class="pack-dur">7 <span>jours</span></div>
+      <div class="pack-eur" id="p-decouverte">10,50 €</div>
+      <div class="pack-local" id="l-decouverte"></div>
+    </div>
+    <div class="pack" onclick="selectPack(this,'quinzaine',21.00)">
+      <div class="pack-check">✓</div>
+      <div class="pack-name">Quinzaine</div>
+      <div class="pack-dur">15 <span>jours</span></div>
+      <div class="pack-eur" id="p-quinzaine">21,00 €</div>
+      <div class="pack-local" id="l-quinzaine"></div>
+    </div>
+    <div class="pack pop" onclick="selectPack(this,'mois',36.75)">
+      <div class="pack-check">✓</div>
+      <div class="pack-name">Mensuel</div>
+      <div class="pack-dur">30 <span>jours</span></div>
+      <div class="pack-eur" id="p-mois">36,75 €</div>
+      <div class="pack-local" id="l-mois"></div>
+    </div>
   </div>
 
-  <!-- Convertisseur devise -->
-  <div class="converter-box">
-    <label>💱 Afficher les prix dans ma devise :</label>
+  <div class="conv">
+    <label>💱 Afficher en :</label>
     <select id="deviseSelect" onchange="updatePrices()">
       <option value="EUR">Euro (EUR)</option>
       <option value="MAD">Dirham marocain (MAD)</option>
       <option value="XOF">Franc CFA Ouest (FCFA)</option>
       <option value="XAF">Franc CFA Centre (FCFA)</option>
-      <option value="DZD">Dinar algerien (DZD)</option>
+      <option value="DZD">Dinar algérien (DZD)</option>
       <option value="TND">Dinar tunisien (TND)</option>
-      <option value="USD">Dollar americain (USD)</option>
+      <option value="USD">Dollar américain (USD)</option>
       <option value="CAD">Dollar canadien (CAD)</option>
       <option value="CHF">Franc suisse (CHF)</option>
       <option value="GBP">Livre sterling (GBP)</option>
       <option value="SAR">Riyal saoudien (SAR)</option>
-      <option value="AED">Dirham emirats (AED)</option>
+      <option value="AED">Dirham EAU (AED)</option>
       <option value="MRU">Ouguiya mauritanien (MRU)</option>
-      <option value="GNF">Franc guineen (GNF)</option>
+      <option value="GNF">Franc guinéen (GNF)</option>
       <option value="MGA">Ariary malgache (MGA)</option>
     </select>
-    <div class="converter-result" id="tauxInfo"></div>
+    <div class="conv-rate" id="convRate"></div>
   </div>
 
-  <!-- Packs -->
-  <div class="packs-grid" id="packsGrid">
-    <div class="pack-card" onclick="selectPack(this, 'jour', 1.05)" data-pack="jour" data-eur="1.05">
-      <div class="pack-check">✓</div>
-      <div class="pack-label">Accès</div>
-      <div class="pack-duration">1 <span>jour</span></div>
-      <div class="pack-price-eur" id="price-jour">1,05 €</div>
-      <div class="pack-price-local" id="local-jour"></div>
-    </div>
-    <div class="pack-card" onclick="selectPack(this, 'decouverte', 10.50)" data-pack="decouverte" data-eur="10.50">
-      <div class="pack-check">✓</div>
-      <div class="pack-label">Découverte</div>
-      <div class="pack-duration">7 <span>jours</span></div>
-      <div class="pack-price-eur" id="price-decouverte">10,50 €</div>
-      <div class="pack-price-local" id="local-decouverte"></div>
-    </div>
-    <div class="pack-card popular" onclick="selectPack(this, 'quinzaine', 21.00)" data-pack="quinzaine" data-eur="21.00">
-      <div class="pack-check">✓</div>
-      <div class="pack-label">Quinzaine</div>
-      <div class="pack-duration">15 <span>jours</span></div>
-      <div class="pack-price-eur" id="price-quinzaine">21,00 €</div>
-      <div class="pack-price-local" id="local-quinzaine"></div>
-    </div>
-    <div class="pack-card" onclick="selectPack(this, 'mois', 36.75)" data-pack="mois" data-eur="36.75">
-      <div class="pack-check">✓</div>
-      <div class="pack-label">Mensuel</div>
-      <div class="pack-duration">30 <span>jours</span></div>
-      <div class="pack-price-eur" id="price-mois">36,75 €</div>
-      <div class="pack-price-local" id="local-mois"></div>
-    </div>
-  </div>
-
-  <!-- Formulaire -->
+  <div class="sec-title">Vos informations</div>
   <div class="form-box">
-    <div class="form-title">📋 Vos informations</div>
-    <div class="form-group">
-      <label>Nom complet <span class="required">*</span></label>
-      <input type="text" id="nomInput" placeholder="Ex: Ahmed Mohamed" required>
+    <label>Nom complet <span class="req">*</span></label>
+    <input type="text" id="nomInput" placeholder="Ex: Ahmed Mohamed" oninput="checkForm()">
+    <label>Email <span class="req">*</span></label>
+    <input type="email" id="emailInput" placeholder="Ex: ahmed@email.com" oninput="checkForm()">
+    <label>Numéro WhatsApp <span class="req">*</span></label>
+    <input type="tel" id="waInput" placeholder="Ex: +22670000000" oninput="checkForm()">
+  </div>
+
+  <div class="summary" id="summary">
+    <div class="sum-row"><span>Pack</span><span id="sumPack">—</span></div>
+    <div class="sum-row"><span>Durée</span><span id="sumDuree">—</span></div>
+    <div class="sum-total"><span>Total</span><span id="sumTotal">—</span></div>
+  </div>
+
+  <div class="sec-title">Mode de paiement</div>
+  <div class="modes-grid">
+    <div class="mode-btn" onclick="selectMode(this,'cinetpay')">
+      <div class="mode-icon">💳</div>
+      <div class="mode-info"><div class="mode-name">CinetPay</div><div class="mode-sub">Orange Money · Wave · MTN · Carte</div></div>
     </div>
-    <div class="form-group">
-      <label>Email <span class="required">*</span></label>
-      <input type="email" id="emailInput" placeholder="Ex: ahmed@email.com" required>
+    <div class="mode-btn" onclick="selectMode(this,'orange')">
+      <div class="mode-icon">🟠</div>
+      <div class="mode-info"><div class="mode-name">Orange Money</div><div class="mode-sub">Maroc direct</div></div>
     </div>
-    <div class="form-group">
-      <label>Numéro WhatsApp <span class="required">*</span></label>
-      <input type="tel" id="whatsappInput" placeholder="Ex: +22670000000" required>
+    <div class="mode-btn" onclick="selectMode(this,'western')">
+      <div class="mode-icon">🟡</div>
+      <div class="mode-info"><div class="mode-name">Western Union</div><div class="mode-sub">Transfert international</div></div>
+    </div>
+    <div class="mode-btn" onclick="selectMode(this,'moneygram')">
+      <div class="mode-icon">🔵</div>
+      <div class="mode-info"><div class="mode-name">MoneyGram</div><div class="mode-sub">Transfert international</div></div>
+    </div>
+    <div class="mode-btn" onclick="selectMode(this,'ria')">
+      <div class="mode-icon">🟢</div>
+      <div class="mode-info"><div class="mode-name">RIA</div><div class="mode-sub">Transfert international</div></div>
+    </div>
+    <div class="mode-btn" onclick="selectMode(this,'cashplus')">
+      <div class="mode-icon">🏧</div>
+      <div class="mode-info"><div class="mode-name">CashPlus</div><div class="mode-sub">Maroc</div></div>
+    </div>
+    <div class="mode-btn" onclick="selectMode(this,'wafacash')">
+      <div class="mode-icon">🏦</div>
+      <div class="mode-info"><div class="mode-name">Wafacash</div><div class="mode-sub">Maroc</div></div>
+    </div>
+    <div class="mode-btn" onclick="selectMode(this,'virement')">
+      <div class="mode-icon">🏛️</div>
+      <div class="mode-info"><div class="mode-name">Virement bancaire</div><div class="mode-sub">Sur demande</div></div>
     </div>
   </div>
 
-  <!-- Résumé -->
-  <div class="summary-box" id="summaryBox" style="display:none;">
-    <div class="summary-row"><span>Pack sélectionné</span><span id="sumPack">—</span></div>
-    <div class="summary-row"><span>Durée</span><span id="sumDuree">—</span></div>
-    <div class="summary-total"><span>Total à payer</span><span id="sumTotal">—</span></div>
-  </div>
-
-  <!-- Bouton payer -->
-  <button class="btn-pay" id="btnPay" onclick="payer()" disabled>
-    🔒 PAYER MAINTENANT
-  </button>
-
-  <!-- Modes de paiement -->
-  <div class="payment-modes">
-    <div>Moyens de paiement acceptés :</div>
-    <div class="payment-icons">
-      <div class="payment-icon">🟠 Orange Money</div>
-      <div class="payment-icon">🟡 MTN Money</div>
-      <div class="payment-icon">🔵 Wave</div>
-      <div class="payment-icon">💳 Carte bancaire</div>
-      <div class="payment-icon">💜 Moov Money</div>
-    </div>
-  </div>
-
+  <div class="instructions" id="instructions"></div>
   <div class="msg" id="msgBox"></div>
 
-  <!-- Sécurité -->
-  <div class="security-bar">
-    <div class="security-item">🔒 Paiement sécurisé SSL</div>
-    <div class="security-item">✅ Code reçu instantanément</div>
-    <div class="security-item">🛡️ CinetPay certifié PCI-DSS</div>
+  <div class="badges">
+    <div class="badge">🔒 Paiement sécurisé</div>
+    <div class="badge">✅ Code envoyé par WhatsApp</div>
+    <div class="badge">📞 Support 24/7</div>
   </div>
-
-  <a href="/" class="back-link">← Retour au site</a>
-
+  <a href="/" class="back">← Retour au site</a>
 </div>
 
 <script>
-// ─── Configuration ───────────────────────────────────────────
-const WORKER_URL = 'https://carre-magique-premium.casaturf007.workers.dev';
-const CINETPAY_SITE_ID = 'VOTRE_SITE_ID';      // À remplacer après activation CinetPay
-const CINETPAY_API_KEY = 'VOTRE_API_KEY';       // À remplacer après activation CinetPay
-const WHATSAPP_NUMERO  = '+212601972400';
+const WA_NUM='212601972400';
+const NOM_DEST='BOUNOUAR HICHAM';
+const TEL_OM='+212601972400';
+const CINETPAY_SITE_ID='VOTRE_SITE_ID';
+const CINETPAY_API_KEY='VOTRE_API_KEY';
+const WORKER_URL='https://carre-magique-premium.casaturf007.workers.dev';
+const PACKS={jour:{label:'1 jour',duree:'jour',eur:1.05},decouverte:{label:'7 jours',duree:'decouverte',eur:10.50},quinzaine:{label:'15 jours',duree:'quinzaine',eur:21.00},mois:{label:'30 jours',duree:'mois',eur:36.75}};
+const SYM={EUR:'€',MAD:' MAD',XOF:' FCFA',XAF:' FCFA',DZD:' DZD',TND:' TND',USD:'$',CAD:' CA$',CHF:' CHF',GBP:'£',SAR:' SAR',AED:' AED',MRU:' MRU',GNF:' GNF',MGA:' Ar'};
+let sel=null,mode=null,taux={};
 
-const PACKS = {
-  jour:       { label: '1 jour',    duree: 'jour',      eur: 1.05  },
-  decouverte: { label: '7 jours',   duree: 'decouverte', eur: 10.50  },
-  quinzaine:  { label: '15 jours',  duree: 'quinzaine', eur: 21.00 },
-  mois:       { label: '30 jours',  duree: 'mois',      eur: 36.75 },
-};
+async function chargerTaux(){
+  try{const r=await fetch('https://open.er-api.com/v6/latest/EUR');const d=await r.json();taux=d.rates||{};taux.EUR=1;}
+  catch(e){taux={EUR:1,MAD:10.9,XOF:655,XAF:655,DZD:147,TND:3.3,USD:1.08,CAD:1.47,CHF:0.97,GBP:0.86,SAR:4.05,AED:3.97,MRU:43,GNF:9300,MGA:5900};}
+  updatePrices();
+}
 
-let selectedPack = null;
-let taux = {};
+function fmt(eur,d){const t=taux[d]||1;const s=SYM[d]||' '+d;const v=eur*t;return(v>=100?Math.round(v):v.toFixed(1))+s;}
 
-// ─── Taux de change ──────────────────────────────────────────
-async function chargerTaux() {
-  try {
-    const r = await fetch('https://open.er-api.com/v6/latest/EUR');
-    const d = await r.json();
-    taux = d.rates || {};
-    taux.EUR = 1;
-    updatePrices();
-  } catch(e) {
-    taux = { EUR:1, MAD:10.9, XOF:655, DZD:147, TND:3.3, USD:1.08, CAD:1.47, CHF:0.97, GBP:0.86, SAR:4.05, AED:3.97, MRU:43, GNF:9300, XAF:655, MGA:5900 };
-    updatePrices();
+function updatePrices(){
+  const d=document.getElementById('deviseSelect').value;
+  const t=taux[d]||1;
+  document.getElementById('convRate').textContent=d!=='EUR'?'1 € = '+t.toFixed(2)+' '+d:'';
+  Object.keys(PACKS).forEach(k=>{const el=document.getElementById('l-'+k);if(el)el.textContent=d!=='EUR'?'≈ '+fmt(PACKS[k].eur,d):'';});
+  updateSum();
+}
+
+function selectPack(el,k,eur){
+  document.querySelectorAll('.pack').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');sel={k,eur};updateSum();checkForm();
+}
+
+function updateSum(){
+  const box=document.getElementById('summary');
+  if(!sel){box.style.display='none';return;}
+  const p=PACKS[sel.k];const d=document.getElementById('deviseSelect').value;
+  document.getElementById('sumPack').textContent=p.label;
+  document.getElementById('sumDuree').textContent=p.label+" d'accès";
+  document.getElementById('sumTotal').textContent=sel.eur.toFixed(2)+' €'+(d!=='EUR'?' ≈ '+fmt(sel.eur,d):'');
+  box.style.display='block';
+}
+
+function selectMode(el,m){
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');mode=m;afficherInstructions(m);
+}
+
+function afficherInstructions(m){
+  const box=document.getElementById('instructions');
+  const nom=document.getElementById('nomInput').value.trim()||'Votre nom';
+  const d=document.getElementById('deviseSelect').value;
+  const montant=sel?sel.eur.toFixed(2)+' €'+(d!=='EUR'?' ≈ '+fmt(sel.eur,d):''):'(sélectionnez un pack)';
+  const pack=sel?PACKS[sel.k].label:'(sélectionnez un pack)';
+  const waMsg=(txt)=>`https://wa.me/${WA_NUM}?text=${encodeURIComponent(txt)}`;
+
+  const steps=(title,stps,btn)=>`
+    <div class="instr-title">${title}</div>
+    ${stps.map((s,i)=>`<div class="instr-step"><div class="step-num">${i+1}</div><div class="step-text">${s}</div></div>`).join('')}
+    ${btn}`;
+
+  let html='';
+  if(m==='cinetpay'){
+    html=steps('💳 Paiement en ligne sécurisé — CinetPay',[
+      'Remplissez vos informations (nom, email, WhatsApp)',
+      'Cliquez sur <strong>PAYER MAINTENANT</strong> — redirection vers la page sécurisée',
+      'Choisissez : <strong>Orange Money · Wave · MTN · Carte bancaire</strong>',
+      'Votre code premium sera envoyé automatiquement sur WhatsApp ✅'
+    ],`<button class="btn-cinetpay" id="btnCp" onclick="payerCinetpay()" disabled>🔒 PAYER — ${montant}</button>`);
+  } else if(m==='orange'){
+    html=steps('🟠 Orange Money Maroc',[
+      `Envoyez <strong>${montant}</strong> au : <strong>${TEL_OM}</strong> <button class="copy-btn" onclick="cp('${TEL_OM}')">Copier</button>`,
+      `Nom bénéficiaire : <strong>${NOM_DEST}</strong>`,
+      `Envoyez le reçu + nom <strong>${nom}</strong> + pack <strong>${pack}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} sur Orange Money pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">📲 Envoyer le reçu WhatsApp</a>`);
+  } else if(m==='western'){
+    html=steps('🟡 Western Union',[
+      'Rendez-vous en agence Western Union ou utilisez l\'app',
+      `Envoyez <strong>${montant}</strong> à :<br>Nom : <strong>BOUNOUAR</strong> | Prénom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
+      `Envoyez le <strong>MTCN</strong> + pack <strong>${pack}</strong> + nom <strong>${nom}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via Western Union pour le pack ${pack}. Nom: ${nom}. MTCN: `)}" target="_blank">📲 Envoyer le MTCN WhatsApp</a>`);
+  } else if(m==='moneygram'){
+    html=steps('🔵 MoneyGram',[
+      'Rendez-vous en agence MoneyGram ou utilisez l\'app',
+      `Envoyez <strong>${montant}</strong> à :<br>Nom : <strong>BOUNOUAR</strong> | Prénom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
+      `Envoyez la <strong>référence</strong> + pack <strong>${pack}</strong> + nom <strong>${nom}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via MoneyGram pour le pack ${pack}. Nom: ${nom}. Ref: `)}" target="_blank">📲 Envoyer la référence WhatsApp</a>`);
+  } else if(m==='ria'){
+    html=steps('🟢 RIA Money Transfer',[
+      'Utilisez l\'app RIA ou une agence partenaire',
+      `Envoyez <strong>${montant}</strong> à :<br>Nom : <strong>BOUNOUAR</strong> | Prénom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
+      `Envoyez le <strong>numéro de transaction</strong> + pack <strong>${pack}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via RIA pour le pack ${pack}. Nom: ${nom}. Ref: `)}" target="_blank">📲 Envoyer la référence WhatsApp</a>`);
+  } else if(m==='cashplus'){
+    html=steps('🏧 CashPlus Maroc',[
+      'Allez dans une agence CashPlus au Maroc',
+      `Envoyez <strong>${montant}</strong> au numéro : <strong>${TEL_OM}</strong> <button class="copy-btn" onclick="cp('${TEL_OM}')">Copier</button><br>Nom : <strong>${NOM_DEST}</strong>`,
+      `Envoyez le reçu + pack <strong>${pack}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via CashPlus pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">📲 Envoyer le reçu WhatsApp</a>`);
+  } else if(m==='wafacash'){
+    html=steps('🏦 Wafacash Maroc',[
+      'Allez dans une agence Wafacash au Maroc',
+      `Envoyez <strong>${montant}</strong> au numéro : <strong>${TEL_OM}</strong> <button class="copy-btn" onclick="cp('${TEL_OM}')">Copier</button><br>Nom : <strong>${NOM_DEST}</strong>`,
+      `Envoyez le reçu + pack <strong>${pack}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via Wafacash pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">📲 Envoyer le reçu WhatsApp</a>`);
+  } else if(m==='virement'){
+    html=steps('🏛️ Virement Bancaire',[
+      'Le RIB est communiqué sur demande uniquement',
+      `Contactez-nous en précisant votre pack <strong>${pack}</strong> et nom <strong>${nom}</strong>`,
+      'Nous vous envoyons le RIB sous 30 minutes ⏱️'
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, je souhaite payer par virement bancaire pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">📲 Demander le RIB WhatsApp</a>`);
   }
+
+  box.innerHTML=html;
+  box.style.display=html?'block':'none';
+  const btn=document.getElementById('btnCp');
+  if(btn)btn.disabled=!(sel&&document.getElementById('nomInput').value.trim()&&document.getElementById('emailInput').value.trim()&&document.getElementById('waInput').value.trim());
 }
 
-function formatMontant(eur, devise) {
-  const t = taux[devise] || 1;
-  const montant = eur * t;
-  const symboles = { EUR:'€', MAD:' MAD', XOF:' FCFA', DZD:' DZD', TND:' TND', USD:'$', CAD:' CA$', CHF:' CHF', GBP:'£', SAR:' SAR', AED:' AED', MRU:' MRU', GNF:' GNF', XAF:' FCFA', MGA:' Ar' };
-  return montant.toFixed(0) + (symboles[devise] || ' ' + devise);
+function checkForm(){if(mode)afficherInstructions(mode);}
+
+async function payerCinetpay(){
+  const nom=document.getElementById('nomInput').value.trim();
+  const email=document.getElementById('emailInput').value.trim();
+  const wa=document.getElementById('waInput').value.trim();
+  const btn=document.getElementById('btnCp');
+  if(!nom||!email||!wa||!sel)return;
+  btn.disabled=true;btn.innerHTML='<div class="spinner"></div> Redirection...';
+  try{
+    const res=await fetch('https://api-checkout.cinetpay.com/v2/payment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({apikey:CINETPAY_API_KEY,site_id:CINETPAY_SITE_ID,transaction_id:'CMT-'+Date.now(),amount:Math.round(sel.eur*100),currency:'EUR',description:'Abonnement CMT '+PACKS[sel.k].label,customer_name:nom,customer_email:email,customer_phone_number:wa,notify_url:WORKER_URL+'/api/cinetpay/webhook',return_url:'https://carremagique-turf.com/abonnement.html?ok=1',channels:'ALL',metadata:JSON.stringify({nom,email,wa,pack:sel.k})})});
+    const data=await res.json();
+    if(data.code==='201'&&data.data?.payment_url)window.location.href=data.data.payment_url;
+    else throw new Error(data.message||'Erreur paiement');
+  }catch(e){showMsg('err','❌ '+e.message);btn.disabled=false;btn.innerHTML='🔒 PAYER MAINTENANT';}
 }
 
-function updatePrices() {
-  const devise = document.getElementById('deviseSelect').value;
-  const t = taux[devise] || 1;
-  document.getElementById('tauxInfo').textContent =
-    devise !== 'EUR' ? '1 € = ' + t.toFixed(2) + ' ' + devise : '';
+function cp(txt){navigator.clipboard.writeText(txt).then(()=>{showMsg('ok','✅ Copié : '+txt);setTimeout(()=>document.getElementById('msgBox').style.display='none',2000);});}
+function showMsg(t,txt){const el=document.getElementById('msgBox');el.className='msg '+t;el.textContent=txt;}
+function checkRetour(){if(new URLSearchParams(window.location.search).get('ok')==='1')showMsg('ok','✅ Paiement reçu ! Votre code premium sera envoyé sur WhatsApp dans quelques instants.');}
 
-  Object.keys(PACKS).forEach(key => {
-    const p = PACKS[key];
-    const localEl = document.getElementById('local-' + key);
-    if (localEl && devise !== 'EUR') {
-      localEl.textContent = '≈ ' + formatMontant(p.eur, devise);
-    } else if (localEl) {
-      localEl.textContent = '';
-    }
-  });
-
-  updateSummary();
-}
-
-// ─── Sélection pack ──────────────────────────────────────────
-function selectPack(el, packKey, prixEur) {
-  document.querySelectorAll('.pack-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  selectedPack = { key: packKey, eur: prixEur };
-  updateSummary();
-  checkForm();
-}
-
-function updateSummary() {
-  const box = document.getElementById('summaryBox');
-  if (!selectedPack) { box.style.display = 'none'; return; }
-  const devise = document.getElementById('deviseSelect').value;
-  const p = PACKS[selectedPack.key];
-  document.getElementById('sumPack').textContent = p.label;
-  document.getElementById('sumDuree').textContent = p.label + ' d\'accès';
-  document.getElementById('sumTotal').textContent =
-    selectedPack.eur.toFixed(2) + ' €' +
-    (devise !== 'EUR' ? ' ≈ ' + formatMontant(selectedPack.eur, devise) : '');
-  box.style.display = 'block';
-}
-
-// ─── Validation formulaire ───────────────────────────────────
-function checkForm() {
-  const nom = document.getElementById('nomInput').value.trim();
-  const email = document.getElementById('emailInput').value.trim();
-  const wa = document.getElementById('whatsappInput').value.trim();
-  const btn = document.getElementById('btnPay');
-  btn.disabled = !(nom && email && wa && selectedPack);
-}
-
-['nomInput','emailInput','whatsappInput'].forEach(id => {
-  document.getElementById(id).addEventListener('input', checkForm);
-});
-
-// ─── Paiement CinetPay ───────────────────────────────────────
-async function payer() {
-  const nom     = document.getElementById('nomInput').value.trim();
-  const email   = document.getElementById('emailInput').value.trim();
-  const wa      = document.getElementById('whatsappInput').value.trim();
-  const msgBox  = document.getElementById('msgBox');
-  const btnPay  = document.getElementById('btnPay');
-
-  if (!nom || !email || !wa) {
-    showMsg('error', '⚠️ Veuillez remplir tous les champs obligatoires.');
-    return;
-  }
-  if (!selectedPack) {
-    showMsg('error', '⚠️ Veuillez sélectionner un pack.');
-    return;
-  }
-
-  btnPay.disabled = true;
-  btnPay.innerHTML = '<div class="spinner"></div> Redirection vers le paiement...';
-
-  const transactionId = 'CMT-' + Date.now() + '-' + Math.random().toString(36).substring(2,7).toUpperCase();
-
-  try {
-    // Initialiser paiement CinetPay
-    const payload = {
-      apikey:         CINETPAY_API_KEY,
-      site_id:        CINETPAY_SITE_ID,
-      transaction_id: transactionId,
-      amount:         Math.round(selectedPack.eur * 100),  // en centimes EUR
-      currency:       'EUR',
-      description:    'Abonnement CMT ' + PACKS[selectedPack.key].label,
-      customer_name:  nom,
-      customer_email: email,
-      customer_phone_number: wa,
-      notify_url:     WORKER_URL + '/api/cinetpay/webhook',
-      return_url:     'https://carremagique-turf.com/abonnement.html?status=success',
-      channels:       'ALL',
-      metadata:       JSON.stringify({ nom, email, wa, pack: selectedPack.key }),
-    };
-
-    const res = await fetch('https://api-checkout.cinetpay.com/v2/payment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
-    const data = await res.json();
-
-    if (data.code === '201' && data.data && data.data.payment_url) {
-      // Rediriger vers la page de paiement CinetPay
-      window.location.href = data.data.payment_url;
-    } else {
-      throw new Error(data.message || 'Erreur initialisation paiement');
-    }
-
-  } catch(e) {
-    showMsg('error', '❌ Erreur : ' + e.message + '. Contactez-nous sur WhatsApp.');
-    btnPay.disabled = false;
-    btnPay.innerHTML = '🔒 PAYER MAINTENANT';
-  }
-}
-
-// ─── Gestion retour paiement ─────────────────────────────────
-function checkRetour() {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('status') === 'success') {
-    showMsg('success', '✅ Paiement reçu ! Votre code premium vous sera envoyé sur WhatsApp dans quelques instants.');
-    document.getElementById('btnPay').style.display = 'none';
-  }
-}
-
-function showMsg(type, text) {
-  const el = document.getElementById('msgBox');
-  el.className = 'msg ' + type;
-  el.textContent = text;
-}
-
-// ─── Init ────────────────────────────────────────────────────
-chargerTaux();
-checkRetour();
+chargerTaux();checkRetour();
 </script>
 </body>
 </html>
