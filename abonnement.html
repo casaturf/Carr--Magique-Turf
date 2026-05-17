@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abonnement Premium — Carré Magique Turf</title>
-<meta name="description" content="Abonnez-vous à Carré Magique Turf Premium. Paiement par Orange Money, CinetPay, Western Union, MoneyGram, RIA, CashPlus, Wafacash ou virement bancaire.">
+<title>Abonnement Premium â€” CarrÃ© Magique Turf</title>
+<meta name="description" content="Abonnez-vous Ã  CarrÃ© Magique Turf Premium. Paiement par Orange Money, CinetPay, Western Union, MoneyGram, RIA, CashPlus, Wafacash ou virement bancaire.">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap');
+
 :root{--bg:#000;--bg2:#0A0A0A;--bg3:#111;--cyan:#00B4D8;--red:#FF4757;--gold:#FFD700;--green:#2ED573;--text:#FFF;--muted:#888;--border:#1E1E1E;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 .header{text-align:center;padding:28px 20px 18px;border-bottom:1px solid #111;}
 .logo{width:85px;height:auto;margin-bottom:10px;}
-.header h1{font-family:'Orbitron',sans-serif;font-size:20px;color:var(--cyan);letter-spacing:3px;margin-bottom:5px;}
+.header h1{font-family:'Segoe UI',Tahoma,sans-serif;font-weight:700;font-size:20px;color:var(--cyan);letter-spacing:3px;margin-bottom:5px;}
 .header p{font-size:12px;color:var(--muted);}
 .wrap{max-width:620px;margin:0 auto;padding:20px 14px 40px;}
-.sec-title{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.sec-title{font-family:'Segoe UI',Tahoma,sans-serif;font-weight:700;font-size:11px;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
 .sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);}
 /* Packs */
 .packs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
@@ -25,8 +25,8 @@ body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-h
 .pack.pop{border-color:var(--gold);}
 .pack.pop::before{content:'MEILLEUR';position:absolute;top:8px;right:-28px;background:var(--gold);color:#000;font-size:7px;font-weight:700;padding:3px 32px;transform:rotate(45deg);letter-spacing:1px;}
 .pack-name{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:7px;}
-.pack-dur{font-family:'Orbitron',sans-serif;font-size:24px;font-weight:700;}
-.pack-dur span{font-size:12px;color:var(--cyan);font-family:'Exo 2',sans-serif;}
+.pack-dur{font-family:'Segoe UI',Tahoma,sans-serif;font-weight:700;font-size:24px;font-weight:700;}
+.pack-dur span{font-size:12px;color:var(--cyan);font-family:'Segoe UI',Tahoma,sans-serif;}
 .pack-eur{font-size:20px;font-weight:700;color:var(--gold);margin-top:7px;}
 .pack-local{font-size:11px;color:var(--muted);margin-top:3px;min-height:15px;}
 .pack-check{position:absolute;top:7px;left:9px;color:var(--red);font-size:15px;display:none;}
@@ -34,12 +34,12 @@ body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-h
 /* Conv */
 .conv{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .conv label{font-size:12px;color:var(--muted);white-space:nowrap;}
-.conv select{flex:1;min-width:170px;background:#0D0D0D;border:1px solid #333;color:var(--text);padding:7px 11px;border-radius:7px;font-size:13px;font-family:'Exo 2',sans-serif;outline:none;cursor:pointer;}
+.conv select{flex:1;min-width:170px;background:#0D0D0D;border:1px solid #333;color:var(--text);padding:7px 11px;border-radius:7px;font-size:13px;font-family:'Segoe UI',Tahoma,sans-serif;outline:none;cursor:pointer;}
 .conv-rate{font-size:12px;color:var(--gold);}
 /* Formulaire */
 .form-box{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px;}
 .form-box label{font-size:10px;color:var(--muted);display:block;margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;}
-.form-box input{width:100%;padding:10px 13px;background:#0D0D0D;border:1px solid #2A2A2A;border-radius:8px;color:var(--text);font-size:14px;font-family:'Exo 2',sans-serif;outline:none;transition:.2s;margin-bottom:12px;}
+.form-box input{width:100%;padding:10px 13px;background:#0D0D0D;border:1px solid #2A2A2A;border-radius:8px;color:var(--text);font-size:14px;font-family:'Segoe UI',Tahoma,sans-serif;outline:none;transition:.2s;margin-bottom:12px;}
 .form-box input:last-child{margin-bottom:0;}
 .form-box input:focus{border-color:var(--cyan);}
 .form-box input::placeholder{color:#444;}
@@ -66,9 +66,9 @@ body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-h
 .step-text strong{color:var(--gold);}
 .copy-btn{background:#1A1A1A;border:1px solid #333;color:var(--cyan);padding:3px 9px;border-radius:5px;font-size:10px;cursor:pointer;margin-left:6px;transition:.2s;}
 .copy-btn:hover{background:var(--cyan);color:#000;}
-.btn-wa{width:100%;padding:14px;background:linear-gradient(135deg,#25D366,#1da851);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;font-family:'Exo 2',sans-serif;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;transition:.2s;margin-top:14px;}
+.btn-wa{width:100%;padding:14px;background:linear-gradient(135deg,#25D366,#1da851);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;font-family:'Segoe UI',Tahoma,sans-serif;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;transition:.2s;margin-top:14px;}
 .btn-wa:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.3);}
-.btn-cinetpay{width:100%;padding:14px;background:linear-gradient(135deg,var(--red),#cc0000);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;font-family:'Exo 2',sans-serif;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:9px;transition:.2s;margin-top:14px;}
+.btn-cinetpay{width:100%;padding:14px;background:linear-gradient(135deg,var(--red),#cc0000);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;font-family:'Segoe UI',Tahoma,sans-serif;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:9px;transition:.2s;margin-top:14px;}
 .btn-cinetpay:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,71,87,.3);}
 .btn-cinetpay:disabled{opacity:.5;cursor:not-allowed;}
 .badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px;}
@@ -85,61 +85,61 @@ body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-h
 </head>
 <body>
 <div class="header">
-  <img src="logo.png" alt="Carré Magique Turf" class="logo" onerror="this.style.display='none'">
+  <img src="logo.png" alt="CarrÃ© Magique Turf" class="logo" onerror="this.style.display='none'">
   <h1>ABONNEMENT PREMIUM</h1>
-  <p>Accès aux analyses hippiques exclusives — 100% Algorithmique</p>
+  <p>AccÃ¨s aux analyses hippiques exclusives â€” 100% Algorithmique</p>
 </div>
 <div class="wrap">
 
   <div class="sec-title">Choisissez votre pack</div>
   <div class="packs">
     <div class="pack" onclick="selectPack(this,'jour',1.05)">
-      <div class="pack-check">✓</div>
-      <div class="pack-name">Accès test</div>
+      <div class="pack-check">âœ“</div>
+      <div class="pack-name">AccÃ¨s test</div>
       <div class="pack-dur">1 <span>jour</span></div>
-      <div class="pack-eur" id="p-jour">1,05 €</div>
+      <div class="pack-eur" id="p-jour">1,05 â‚¬</div>
       <div class="pack-local" id="l-jour"></div>
     </div>
     <div class="pack" onclick="selectPack(this,'decouverte',10.50)">
-      <div class="pack-check">✓</div>
-      <div class="pack-name">Découverte</div>
+      <div class="pack-check">âœ“</div>
+      <div class="pack-name">DÃ©couverte</div>
       <div class="pack-dur">7 <span>jours</span></div>
-      <div class="pack-eur" id="p-decouverte">10,50 €</div>
+      <div class="pack-eur" id="p-decouverte">10,50 â‚¬</div>
       <div class="pack-local" id="l-decouverte"></div>
     </div>
     <div class="pack" onclick="selectPack(this,'quinzaine',21.00)">
-      <div class="pack-check">✓</div>
+      <div class="pack-check">âœ“</div>
       <div class="pack-name">Quinzaine</div>
       <div class="pack-dur">15 <span>jours</span></div>
-      <div class="pack-eur" id="p-quinzaine">21,00 €</div>
+      <div class="pack-eur" id="p-quinzaine">21,00 â‚¬</div>
       <div class="pack-local" id="l-quinzaine"></div>
     </div>
     <div class="pack pop" onclick="selectPack(this,'mois',36.75)">
-      <div class="pack-check">✓</div>
+      <div class="pack-check">âœ“</div>
       <div class="pack-name">Mensuel</div>
       <div class="pack-dur">30 <span>jours</span></div>
-      <div class="pack-eur" id="p-mois">36,75 €</div>
+      <div class="pack-eur" id="p-mois">36,75 â‚¬</div>
       <div class="pack-local" id="l-mois"></div>
     </div>
   </div>
 
   <div class="conv">
-    <label>💱 Afficher en :</label>
+    <label>ðŸ’± Afficher en :</label>
     <select id="deviseSelect" onchange="updatePrices()">
       <option value="EUR">Euro (EUR)</option>
       <option value="MAD">Dirham marocain (MAD)</option>
       <option value="XOF">Franc CFA Ouest (FCFA)</option>
       <option value="XAF">Franc CFA Centre (FCFA)</option>
-      <option value="DZD">Dinar algérien (DZD)</option>
+      <option value="DZD">Dinar algÃ©rien (DZD)</option>
       <option value="TND">Dinar tunisien (TND)</option>
-      <option value="USD">Dollar américain (USD)</option>
+      <option value="USD">Dollar amÃ©ricain (USD)</option>
       <option value="CAD">Dollar canadien (CAD)</option>
       <option value="CHF">Franc suisse (CHF)</option>
       <option value="GBP">Livre sterling (GBP)</option>
       <option value="SAR">Riyal saoudien (SAR)</option>
       <option value="AED">Dirham EAU (AED)</option>
       <option value="MRU">Ouguiya mauritanien (MRU)</option>
-      <option value="GNF">Franc guinéen (GNF)</option>
+      <option value="GNF">Franc guinÃ©en (GNF)</option>
       <option value="MGA">Ariary malgache (MGA)</option>
     </select>
     <div class="conv-rate" id="convRate"></div>
@@ -151,48 +151,48 @@ body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-h
     <input type="text" id="nomInput" placeholder="Ex: Ahmed Mohamed" oninput="checkForm()">
     <label>Email <span class="req">*</span></label>
     <input type="email" id="emailInput" placeholder="Ex: ahmed@email.com" oninput="checkForm()">
-    <label>Numéro WhatsApp <span class="req">*</span></label>
+    <label>NumÃ©ro WhatsApp <span class="req">*</span></label>
     <input type="tel" id="waInput" placeholder="Ex: +22670000000" oninput="checkForm()">
   </div>
 
   <div class="summary" id="summary">
-    <div class="sum-row"><span>Pack</span><span id="sumPack">—</span></div>
-    <div class="sum-row"><span>Durée</span><span id="sumDuree">—</span></div>
-    <div class="sum-total"><span>Total</span><span id="sumTotal">—</span></div>
+    <div class="sum-row"><span>Pack</span><span id="sumPack">â€”</span></div>
+    <div class="sum-row"><span>DurÃ©e</span><span id="sumDuree">â€”</span></div>
+    <div class="sum-total"><span>Total</span><span id="sumTotal">â€”</span></div>
   </div>
 
   <div class="sec-title">Mode de paiement</div>
   <div class="modes-grid">
     <div class="mode-btn" onclick="selectMode(this,'cinetpay')">
-      <div class="mode-icon">💳</div>
-      <div class="mode-info"><div class="mode-name">CinetPay</div><div class="mode-sub">Orange Money · Wave · MTN · Carte</div></div>
+      <div class="mode-icon">ðŸ’³</div>
+      <div class="mode-info"><div class="mode-name">CinetPay</div><div class="mode-sub">Orange Money Â· Wave Â· MTN Â· Carte</div></div>
     </div>
     <div class="mode-btn" onclick="selectMode(this,'orange')">
-      <div class="mode-icon">🟠</div>
+      <div class="mode-icon">ðŸŸ </div>
       <div class="mode-info"><div class="mode-name">Orange Money</div><div class="mode-sub">Maroc direct</div></div>
     </div>
     <div class="mode-btn" onclick="selectMode(this,'western')">
-      <div class="mode-icon">🟡</div>
+      <div class="mode-icon">ðŸŸ¡</div>
       <div class="mode-info"><div class="mode-name">Western Union</div><div class="mode-sub">Transfert international</div></div>
     </div>
     <div class="mode-btn" onclick="selectMode(this,'moneygram')">
-      <div class="mode-icon">🔵</div>
+      <div class="mode-icon">ðŸ”µ</div>
       <div class="mode-info"><div class="mode-name">MoneyGram</div><div class="mode-sub">Transfert international</div></div>
     </div>
     <div class="mode-btn" onclick="selectMode(this,'ria')">
-      <div class="mode-icon">🟢</div>
+      <div class="mode-icon">ðŸŸ¢</div>
       <div class="mode-info"><div class="mode-name">RIA</div><div class="mode-sub">Transfert international</div></div>
     </div>
     <div class="mode-btn" onclick="selectMode(this,'cashplus')">
-      <div class="mode-icon">🏧</div>
+      <div class="mode-icon">ðŸ§</div>
       <div class="mode-info"><div class="mode-name">CashPlus</div><div class="mode-sub">Maroc</div></div>
     </div>
     <div class="mode-btn" onclick="selectMode(this,'wafacash')">
-      <div class="mode-icon">🏦</div>
+      <div class="mode-icon">ðŸ¦</div>
       <div class="mode-info"><div class="mode-name">Wafacash</div><div class="mode-sub">Maroc</div></div>
     </div>
     <div class="mode-btn" onclick="selectMode(this,'virement')">
-      <div class="mode-icon">🏛️</div>
+      <div class="mode-icon">ðŸ›ï¸</div>
       <div class="mode-info"><div class="mode-name">Virement bancaire</div><div class="mode-sub">Sur demande</div></div>
     </div>
   </div>
@@ -201,11 +201,11 @@ body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-h
   <div class="msg" id="msgBox"></div>
 
   <div class="badges">
-    <div class="badge">🔒 Paiement sécurisé</div>
-    <div class="badge">✅ Code envoyé par WhatsApp</div>
-    <div class="badge">📞 Support 24/7</div>
+    <div class="badge">ðŸ”’ Paiement sÃ©curisÃ©</div>
+    <div class="badge">âœ… Code envoyÃ© par WhatsApp</div>
+    <div class="badge">ðŸ“ž Support 24/7</div>
   </div>
-  <a href="/" class="back">← Retour au site</a>
+  <a href="/" class="back">â† Retour au site</a>
 </div>
 
 <script>
@@ -216,7 +216,7 @@ const CINETPAY_SITE_ID='VOTRE_SITE_ID';
 const CINETPAY_API_KEY='VOTRE_API_KEY';
 const WORKER_URL='https://carre-magique-premium.casaturf007.workers.dev';
 const PACKS={jour:{label:'1 jour',duree:'jour',eur:1.05},decouverte:{label:'7 jours',duree:'decouverte',eur:10.50},quinzaine:{label:'15 jours',duree:'quinzaine',eur:21.00},mois:{label:'30 jours',duree:'mois',eur:36.75}};
-const SYM={EUR:'€',MAD:' MAD',XOF:' FCFA',XAF:' FCFA',DZD:' DZD',TND:' TND',USD:'$',CAD:' CA$',CHF:' CHF',GBP:'£',SAR:' SAR',AED:' AED',MRU:' MRU',GNF:' GNF',MGA:' Ar'};
+const SYM={EUR:'â‚¬',MAD:' MAD',XOF:' FCFA',XAF:' FCFA',DZD:' DZD',TND:' TND',USD:'$',CAD:' CA$',CHF:' CHF',GBP:'Â£',SAR:' SAR',AED:' AED',MRU:' MRU',GNF:' GNF',MGA:' Ar'};
 let sel=null,mode=null,taux={};
 
 async function chargerTaux(){
@@ -230,8 +230,8 @@ function fmt(eur,d){const t=taux[d]||1;const s=SYM[d]||' '+d;const v=eur*t;retur
 function updatePrices(){
   const d=document.getElementById('deviseSelect').value;
   const t=taux[d]||1;
-  document.getElementById('convRate').textContent=d!=='EUR'?'1 € = '+t.toFixed(2)+' '+d:'';
-  Object.keys(PACKS).forEach(k=>{const el=document.getElementById('l-'+k);if(el)el.textContent=d!=='EUR'?'≈ '+fmt(PACKS[k].eur,d):'';});
+  document.getElementById('convRate').textContent=d!=='EUR'?'1 â‚¬ = '+t.toFixed(2)+' '+d:'';
+  Object.keys(PACKS).forEach(k=>{const el=document.getElementById('l-'+k);if(el)el.textContent=d!=='EUR'?'â‰ˆ '+fmt(PACKS[k].eur,d):'';});
   updateSum();
 }
 
@@ -245,8 +245,8 @@ function updateSum(){
   if(!sel){box.style.display='none';return;}
   const p=PACKS[sel.k];const d=document.getElementById('deviseSelect').value;
   document.getElementById('sumPack').textContent=p.label;
-  document.getElementById('sumDuree').textContent=p.label+" d'accès";
-  document.getElementById('sumTotal').textContent=sel.eur.toFixed(2)+' €'+(d!=='EUR'?' ≈ '+fmt(sel.eur,d):'');
+  document.getElementById('sumDuree').textContent=p.label+" d'accÃ¨s";
+  document.getElementById('sumTotal').textContent=sel.eur.toFixed(2)+' â‚¬'+(d!=='EUR'?' â‰ˆ '+fmt(sel.eur,d):'');
   box.style.display='block';
 }
 
@@ -259,8 +259,8 @@ function afficherInstructions(m){
   const box=document.getElementById('instructions');
   const nom=document.getElementById('nomInput').value.trim()||'Votre nom';
   const d=document.getElementById('deviseSelect').value;
-  const montant=sel?sel.eur.toFixed(2)+' €'+(d!=='EUR'?' ≈ '+fmt(sel.eur,d):''):'(sélectionnez un pack)';
-  const pack=sel?PACKS[sel.k].label:'(sélectionnez un pack)';
+  const montant=sel?sel.eur.toFixed(2)+' â‚¬'+(d!=='EUR'?' â‰ˆ '+fmt(sel.eur,d):''):'(sÃ©lectionnez un pack)';
+  const pack=sel?PACKS[sel.k].label:'(sÃ©lectionnez un pack)';
   const waMsg=(txt)=>`https://wa.me/${WA_NUM}?text=${encodeURIComponent(txt)}`;
 
   const steps=(title,stps,btn)=>`
@@ -270,54 +270,54 @@ function afficherInstructions(m){
 
   let html='';
   if(m==='cinetpay'){
-    html=steps('💳 Paiement en ligne sécurisé — CinetPay',[
+    html=steps('ðŸ’³ Paiement en ligne sÃ©curisÃ© â€” CinetPay',[
       'Remplissez vos informations (nom, email, WhatsApp)',
-      'Cliquez sur <strong>PAYER MAINTENANT</strong> — redirection vers la page sécurisée',
-      'Choisissez : <strong>Orange Money · Wave · MTN · Carte bancaire</strong>',
-      'Votre code premium sera envoyé automatiquement sur WhatsApp ✅'
-    ],`<button class="btn-cinetpay" id="btnCp" onclick="payerCinetpay()" disabled>🔒 PAYER — ${montant}</button>`);
+      'Cliquez sur <strong>PAYER MAINTENANT</strong> â€” redirection vers la page sÃ©curisÃ©e',
+      'Choisissez : <strong>Orange Money Â· Wave Â· MTN Â· Carte bancaire</strong>',
+      'Votre code premium sera envoyÃ© automatiquement sur WhatsApp âœ…'
+    ],`<button class="btn-cinetpay" id="btnCp" onclick="payerCinetpay()" disabled>ðŸ”’ PAYER â€” ${montant}</button>`);
   } else if(m==='orange'){
-    html=steps('🟠 Orange Money Maroc',[
+    html=steps('ðŸŸ  Orange Money Maroc',[
       `Envoyez <strong>${montant}</strong> au : <strong>${TEL_OM}</strong> <button class="copy-btn" onclick="cp('${TEL_OM}')">Copier</button>`,
-      `Nom bénéficiaire : <strong>${NOM_DEST}</strong>`,
-      `Envoyez le reçu + nom <strong>${nom}</strong> + pack <strong>${pack}</strong> sur WhatsApp`
-    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} sur Orange Money pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">📲 Envoyer le reçu WhatsApp</a>`);
+      `Nom bÃ©nÃ©ficiaire : <strong>${NOM_DEST}</strong>`,
+      `Envoyez le reÃ§u + nom <strong>${nom}</strong> + pack <strong>${pack}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyÃ© ${montant} sur Orange Money pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">ðŸ“² Envoyer le reÃ§u WhatsApp</a>`);
   } else if(m==='western'){
-    html=steps('🟡 Western Union',[
+    html=steps('ðŸŸ¡ Western Union',[
       'Rendez-vous en agence Western Union ou utilisez l\'app',
-      `Envoyez <strong>${montant}</strong> à :<br>Nom : <strong>BOUNOUAR</strong> | Prénom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
+      `Envoyez <strong>${montant}</strong> Ã  :<br>Nom : <strong>BOUNOUAR</strong> | PrÃ©nom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
       `Envoyez le <strong>MTCN</strong> + pack <strong>${pack}</strong> + nom <strong>${nom}</strong> sur WhatsApp`
-    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via Western Union pour le pack ${pack}. Nom: ${nom}. MTCN: `)}" target="_blank">📲 Envoyer le MTCN WhatsApp</a>`);
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyÃ© ${montant} via Western Union pour le pack ${pack}. Nom: ${nom}. MTCN: `)}" target="_blank">ðŸ“² Envoyer le MTCN WhatsApp</a>`);
   } else if(m==='moneygram'){
-    html=steps('🔵 MoneyGram',[
+    html=steps('ðŸ”µ MoneyGram',[
       'Rendez-vous en agence MoneyGram ou utilisez l\'app',
-      `Envoyez <strong>${montant}</strong> à :<br>Nom : <strong>BOUNOUAR</strong> | Prénom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
-      `Envoyez la <strong>référence</strong> + pack <strong>${pack}</strong> + nom <strong>${nom}</strong> sur WhatsApp`
-    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via MoneyGram pour le pack ${pack}. Nom: ${nom}. Ref: `)}" target="_blank">📲 Envoyer la référence WhatsApp</a>`);
+      `Envoyez <strong>${montant}</strong> Ã  :<br>Nom : <strong>BOUNOUAR</strong> | PrÃ©nom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
+      `Envoyez la <strong>rÃ©fÃ©rence</strong> + pack <strong>${pack}</strong> + nom <strong>${nom}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyÃ© ${montant} via MoneyGram pour le pack ${pack}. Nom: ${nom}. Ref: `)}" target="_blank">ðŸ“² Envoyer la rÃ©fÃ©rence WhatsApp</a>`);
   } else if(m==='ria'){
-    html=steps('🟢 RIA Money Transfer',[
+    html=steps('ðŸŸ¢ RIA Money Transfer',[
       'Utilisez l\'app RIA ou une agence partenaire',
-      `Envoyez <strong>${montant}</strong> à :<br>Nom : <strong>BOUNOUAR</strong> | Prénom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
-      `Envoyez le <strong>numéro de transaction</strong> + pack <strong>${pack}</strong> sur WhatsApp`
-    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via RIA pour le pack ${pack}. Nom: ${nom}. Ref: `)}" target="_blank">📲 Envoyer la référence WhatsApp</a>`);
+      `Envoyez <strong>${montant}</strong> Ã  :<br>Nom : <strong>BOUNOUAR</strong> | PrÃ©nom : <strong>HICHAM</strong><br>Pays : <strong>MAROC</strong> | Ville : <strong>CASABLANCA</strong>`,
+      `Envoyez le <strong>numÃ©ro de transaction</strong> + pack <strong>${pack}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyÃ© ${montant} via RIA pour le pack ${pack}. Nom: ${nom}. Ref: `)}" target="_blank">ðŸ“² Envoyer la rÃ©fÃ©rence WhatsApp</a>`);
   } else if(m==='cashplus'){
-    html=steps('🏧 CashPlus Maroc',[
+    html=steps('ðŸ§ CashPlus Maroc',[
       'Allez dans une agence CashPlus au Maroc',
-      `Envoyez <strong>${montant}</strong> au numéro : <strong>${TEL_OM}</strong> <button class="copy-btn" onclick="cp('${TEL_OM}')">Copier</button><br>Nom : <strong>${NOM_DEST}</strong>`,
-      `Envoyez le reçu + pack <strong>${pack}</strong> sur WhatsApp`
-    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via CashPlus pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">📲 Envoyer le reçu WhatsApp</a>`);
+      `Envoyez <strong>${montant}</strong> au numÃ©ro : <strong>${TEL_OM}</strong> <button class="copy-btn" onclick="cp('${TEL_OM}')">Copier</button><br>Nom : <strong>${NOM_DEST}</strong>`,
+      `Envoyez le reÃ§u + pack <strong>${pack}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyÃ© ${montant} via CashPlus pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">ðŸ“² Envoyer le reÃ§u WhatsApp</a>`);
   } else if(m==='wafacash'){
-    html=steps('🏦 Wafacash Maroc',[
+    html=steps('ðŸ¦ Wafacash Maroc',[
       'Allez dans une agence Wafacash au Maroc',
-      `Envoyez <strong>${montant}</strong> au numéro : <strong>${TEL_OM}</strong> <button class="copy-btn" onclick="cp('${TEL_OM}')">Copier</button><br>Nom : <strong>${NOM_DEST}</strong>`,
-      `Envoyez le reçu + pack <strong>${pack}</strong> sur WhatsApp`
-    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyé ${montant} via Wafacash pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">📲 Envoyer le reçu WhatsApp</a>`);
+      `Envoyez <strong>${montant}</strong> au numÃ©ro : <strong>${TEL_OM}</strong> <button class="copy-btn" onclick="cp('${TEL_OM}')">Copier</button><br>Nom : <strong>${NOM_DEST}</strong>`,
+      `Envoyez le reÃ§u + pack <strong>${pack}</strong> sur WhatsApp`
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, j'ai envoyÃ© ${montant} via Wafacash pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">ðŸ“² Envoyer le reÃ§u WhatsApp</a>`);
   } else if(m==='virement'){
-    html=steps('🏛️ Virement Bancaire',[
-      'Le RIB est communiqué sur demande uniquement',
-      `Contactez-nous en précisant votre pack <strong>${pack}</strong> et nom <strong>${nom}</strong>`,
-      'Nous vous envoyons le RIB sous 30 minutes ⏱️'
-    ],`<a class="btn-wa" href="${waMsg(`Bonjour, je souhaite payer par virement bancaire pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">📲 Demander le RIB WhatsApp</a>`);
+    html=steps('ðŸ›ï¸ Virement Bancaire',[
+      'Le RIB est communiquÃ© sur demande uniquement',
+      `Contactez-nous en prÃ©cisant votre pack <strong>${pack}</strong> et nom <strong>${nom}</strong>`,
+      'Nous vous envoyons le RIB sous 30 minutes â±ï¸'
+    ],`<a class="btn-wa" href="${waMsg(`Bonjour, je souhaite payer par virement bancaire pour le pack ${pack}. Nom: ${nom}`)}" target="_blank">ðŸ“² Demander le RIB WhatsApp</a>`);
   }
 
   box.innerHTML=html;
@@ -340,14 +340,15 @@ async function payerCinetpay(){
     const data=await res.json();
     if(data.code==='201'&&data.data?.payment_url)window.location.href=data.data.payment_url;
     else throw new Error(data.message||'Erreur paiement');
-  }catch(e){showMsg('err','❌ '+e.message);btn.disabled=false;btn.innerHTML='🔒 PAYER MAINTENANT';}
+  }catch(e){showMsg('err','âŒ '+e.message);btn.disabled=false;btn.innerHTML='ðŸ”’ PAYER MAINTENANT';}
 }
 
-function cp(txt){navigator.clipboard.writeText(txt).then(()=>{showMsg('ok','✅ Copié : '+txt);setTimeout(()=>document.getElementById('msgBox').style.display='none',2000);});}
+function cp(txt){navigator.clipboard.writeText(txt).then(()=>{showMsg('ok','âœ… CopiÃ© : '+txt);setTimeout(()=>document.getElementById('msgBox').style.display='none',2000);});}
 function showMsg(t,txt){const el=document.getElementById('msgBox');el.className='msg '+t;el.textContent=txt;}
-function checkRetour(){if(new URLSearchParams(window.location.search).get('ok')==='1')showMsg('ok','✅ Paiement reçu ! Votre code premium sera envoyé sur WhatsApp dans quelques instants.');}
+function checkRetour(){if(new URLSearchParams(window.location.search).get('ok')==='1')showMsg('ok','âœ… Paiement reÃ§u ! Votre code premium sera envoyÃ© sur WhatsApp dans quelques instants.');}
 
 chargerTaux();checkRetour();
 </script>
 </body>
 </html>
+
