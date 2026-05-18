@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R3-C3 Réducteur - Carré Magique Turf</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; }
+    .container { max-width: 1600px; margin: 0 auto; padding: 0 10px 10px 10px; }
+    .header { text-align: center; margin-bottom: 5px; padding: 0; }
+    .logo { width: 120px; height: auto; }
+    .back-button { position: absolute; top: 5px; left: 10px; background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 14px; font-weight: bold; text-decoration: none; z-index: 10; }
+    .back-button:hover { background: #00B4D8; color: #000; }
+    .main-section { background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%); border: 2px solid #00B4D8; border-radius: 10px; padding: 15px; margin-bottom: 6px; }
+    .course-title { font-size: 24px; color: #00B4D8; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
+    .course-info { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .info-badge { background: #1A1A1A; padding: 8px 16px; border-radius: 8px; font-size: 11px; border: 2px solid #C8A882; color: #C8A882; }
+    .nav-buttons { display: flex; gap: 8px; justify-content: center; margin: 10px 0; flex-wrap: wrap; }
+    .nav-btn { background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
+    .nav-btn:hover { background: #00B4D8; color: #000; }
+    .nav-reducteur { background: #D4AF37 !important; color: #000 !important; border-color: #D4AF37 !important; }
+    .footer { text-align: center; padding: 20px 10px; margin-top: 20px; border-top: 1px solid #2A2A2A; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
+    .footer-links a { color: #00B4D8; text-decoration: none; font-size: 12px; }
+    .footer-copy { font-size: 11px; color: #555; }
+    @media (max-width: 768px) {
+      .back-button { position: static; display: block; margin: 10px auto 20px; width: fit-content; }
+      .course-title { font-size: 18px; }
+      .nav-btn { padding: 6px 10px; font-size: 11px; }
+      .info-badge { font-size: 10px; padding: 6px 10px; }
+      .main-section { padding: 10px; }
+    }
+    .premium-wall { display: none; text-align:center; padding:80px 20px; min-height:80vh; }
+    .premium-wall img { width:100px; margin-bottom:16px; }
+    .premium-wall h1 { color:#FF6B6B; font-size:22px; margin-bottom:10px; }
+    .premium-wall p { color:#C8A882; margin-bottom:20px; }
+    .premium-wall a { display:inline-block; background:#00B4D8; color:#000; padding:14px 32px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:15px; }
+    body.premium-locked .container, body.premium-locked .back-button, body.premium-locked footer { display: none !important; }
+    body.premium-locked .premium-wall { display: block !important; }
+  </style>
+</head>
+<body class="premium-locked">
+<script>(function(){var p=new URLSearchParams(window.location.search);var uc=p.get("cmt_code"),ue=p.get("cmt_expiry");if(uc&&ue){localStorage.setItem("cmt_premium_code",uc);localStorage.setItem("cmt_premium_expiry",ue);}var c=localStorage.getItem("cmt_premium_code");var e=localStorage.getItem("cmt_premium_expiry");if(c&&e&&new Date(e)>=new Date()){document.body.classList.remove("premium-locked");}})()</script><div class="premium-wall"><img src="logo.png" alt="CMT"><h1>🔒 CONTENU PREMIUM</h1><p>Cette section nécessite un abonnement Premium.</p><a href="https://carre-magique-premium.casaturf007.workers.dev">ACCÉDER AU PREMIUM</a></div>
+<a class="back-button" href="reunion_R3.html">← Retour R3</a>
+<div class="container">
+    <div class="header">
+        <img src="logo.png" alt="Carré Magique Turf" class="logo">
+        <h1 class="course-title">R3-C3 - PRIX DE VAUMAS</h1>
+        <div style="font-size:13px;color:#00B4D8;letter-spacing:2px;margin-top:6px;">⚡ SYSTÈME RÉDUCTEUR</div>
+        <div class="course-info" style="margin-top:10px;">
+            <span class="info-badge">🕐 16:45</span>
+            <span class="info-badge">📏 2800m</span>
+            <span class="info-badge">🏆 1 partants classés</span>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a class="nav-btn" href="participants_R3C3.html">📎 Participants</a>
+        <a class="nav-btn" href="course_R3C3.html">📊 Classement</a>
+        <a class="nav-btn" href="formules_R3C3.html">⭐ Recommandation</a>
+        <a class="nav-btn" href="fusion_R3C3.html">⚡ Fusion Score</a>
+        <a class="nav-btn nav-reducteur" href="reducteur_R3C3.html">⚡ Réducteur</a>
+        <a class="nav-btn" href="fusion_histo_R3C3.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;">🔬 Fusion Histo</a>
+        <a class="nav-btn" href="classement_histo_R3C3.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;">📈 Classement Histo</a>
+    </div>
+
+    <div class="main-section" style="text-align:center;padding:40px 20px;">
+        <div style="font-size:48px;margin-bottom:20px;">⏳</div>
+        <div style="font-size:20px;color:#00B4D8;margin-bottom:15px;font-weight:bold;">Réducteur en préparation</div>
+        <div style="color:#AAA;font-size:14px;line-height:1.6;max-width:600px;margin:0 auto;">
+            Le classement de cette course n'est pas encore suffisamment complet pour générer un système réducteur fiable.<br><br>
+            Le système se met à jour <strong style="color:#D4AF37;">toutes les 15 minutes</strong> en fonction de l'évolution des mises et cotes.<br><br>
+            Revenez plus tard pour consulter vos 12 combinaisons optimales !
+        </div>
+    </div>
+
+    <div style="background:rgba(212,175,55,0.1);border:1px solid #D4AF37;border-radius:8px;padding:10px;margin-bottom:10px;text-align:center;">
+        <div style="color:#D4AF37;font-size:13px;font-weight:bold;">⚡ Système gratuit pour la phase de test - Bientôt Premium ⚡</div>
+    </div>
+</div>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/a-propos.html">À Propos</a>
+    <a href="/guide.html">Guide</a>
+    <a href="/methodologie.html">Méthodologie</a>
+    <a href="/politique-confidentialite.html">Politique de Confidentialité</a>
+    <a href="/bilans.html">📊 Bilans</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
+</footer>
+</body>
+</html>
