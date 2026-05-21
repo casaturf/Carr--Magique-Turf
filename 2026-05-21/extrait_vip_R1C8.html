@@ -130,7 +130,103 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('config', 'G-11QETD2M15');
   </script>
 </head>
-<body class="premium-locked">
+<body class="">
+
+<script>
+(function() {
+  function genererFingerprint() {
+    try {
+      var stored = localStorage.getItem('cmt_fp');
+      if (stored) return stored;
+      var data = [screen.width+'x'+screen.height, navigator.language||'', navigator.userAgent||''];
+      var str = data.join('|');
+      var hash = 2166136261;
+      for (var i = 0; i < str.length; i++) { hash ^= str.charCodeAt(i); hash = (hash * 16777619) >>> 0; }
+      var fp = 'fp_' + hash.toString(16);
+      localStorage.setItem('cmt_fp', fp);
+      return fp;
+    } catch(e) { return 'fp_fallback'; }
+  }
+
+  function lockVip(msg) {
+    document.body.classList.add('premium-locked');
+    var wall = document.getElementById('vip-wall');
+    if (wall) wall.style.display = 'block';
+    if (msg) { var e = document.getElementById('vip-code-error'); if (e) e.textContent = msg; }
+  }
+
+  function unlockVip(nom, code) {
+    document.body.classList.remove('premium-locked');
+    var wall = document.getElementById('vip-wall');
+    if (wall) wall.style.display = 'none';
+    var tag = code ? code.substring(code.length - 4) : '';
+    var libelle = '💎 CMT EXTRAIT VIP — ' + nom + (tag ? ' #' + tag : '') + ' 💎';
+    var wm = document.createElement('div');
+    wm.id = 'cmt-watermark';
+    wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
+    wm.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:rgba(255,215,0,0.06);transform:rotate(-35deg);white-space:nowrap;overflow:hidden;user-select:none;-webkit-user-select:none;letter-spacing:4px;text-transform:uppercase;';
+    document.body.appendChild(wm);
+  }
+
+  function verifierVip(code, onSuccess, onFail) {
+    var fp = genererFingerprint();
+    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({code: code, fingerprint: fp})
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if (data.ok && data.pack && data.pack.startsWith('vip')) {
+        onSuccess(data);
+      } else if (data.ok && data.pack && !data.pack.startsWith('vip')) {
+        onFail('⚠️ Votre abonnement Premium standard ne donne pas accès à l'Extrait VIP. Souscrivez à l'offre Extrait VIP.');
+      } else {
+        onFail(data.error || 'Code invalide');
+      }
+    }).catch(function(){ onSuccess({nom:'?', pack:'vip', alerte72h:false}); });
+  }
+
+  // Code depuis URL
+  var params = new URLSearchParams(window.location.search);
+  var urlCode = params.get('vip_code');
+  if (urlCode) {
+    localStorage.setItem('cmt_vip_code', urlCode.toUpperCase());
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
+  var code = localStorage.getItem('cmt_vip_code');
+  if (!code) { lockVip(); return; }
+
+  verifierVip(code,
+    function(data) {
+      unlockVip(data.nom || '?', code);
+      if (data.alerte72h && data.messageAlerte) {
+        var d = document.createElement('div');
+        d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#7A3500,#2D1F00);color:#FFD700;text-align:center;padding:10px;font-weight:bold;z-index:9998;font-size:13px;';
+        d.textContent = data.messageAlerte;
+        document.body.appendChild(d);
+      }
+    },
+    function(msg) { localStorage.removeItem('cmt_vip_code'); lockVip(msg); }
+  );
+
+  window.saisirCodeVip = function() {
+    var input = document.getElementById('vip-code-input');
+    if (!input || !input.value.trim()) return;
+    var code = input.value.trim().toUpperCase();
+    verifierVip(code,
+      function(data) {
+        localStorage.setItem('cmt_vip_code', code);
+        unlockVip(data.nom || '?', code);
+        var wall = document.getElementById('vip-wall');
+        if (wall) wall.style.display = 'none';
+        document.body.classList.remove('premium-locked');
+      },
+      function(msg) { document.getElementById('vip-code-error').textContent = '❌ ' + msg; }
+    );
+  };
+})();
+</script>
+
 
 <div class="premium-wall" id="vip-wall" style="display:none;">
   <img src="/logo.png" alt="CMT">
@@ -186,7 +282,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 <span class="info-badge">🏆 9 partants</span>
 </div>
         <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:6px 0 2px;"><a href="reunion_R1.html" title="ParisLongchamp" style="display:inline-block;background:#1A1A1A;color:#C8A882;border:2px solid #C8A882;padding:5px 10px;border-radius:8px;font-weight:bold;font-size:12px;text-decoration:none;background:#FFD700;color:#000;border-color:#FFD700;">R1</a><a href="reunion_R2.html" title="SALON DE PROVENCE" style="display:inline-block;background:#1A1A1A;color:#C8A882;border:2px solid #C8A882;padding:5px 10px;border-radius:8px;font-weight:bold;font-size:12px;text-decoration:none;">R2</a><a href="reunion_R3.html" title="LA CEPIERE" style="display:inline-block;background:#1A1A1A;color:#C8A882;border:2px solid #C8A882;padding:5px 10px;border-radius:8px;font-weight:bold;font-size:12px;text-decoration:none;">R3</a><a href="reunion_R4.html" title="LE MANS" style="display:inline-block;background:#1A1A1A;color:#C8A882;border:2px solid #C8A882;padding:5px 10px;border-radius:8px;font-weight:bold;font-size:12px;text-decoration:none;">R4</a><a href="reunion_R5.html" title="PALERMO" style="display:inline-block;background:#1A1A1A;color:#C8A882;border:2px solid #C8A882;padding:5px 10px;border-radius:8px;font-weight:bold;font-size:12px;text-decoration:none;">R5</a><a href="reunion_R6.html" title="LYON-PARILLY" style="display:inline-block;background:#1A1A1A;color:#C8A882;border:2px solid #C8A882;padding:5px 10px;border-radius:8px;font-weight:bold;font-size:12px;text-decoration:none;">R6</a></div>
-        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0;"><a href="participants_R1C1.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C1</a><a href="participants_R1C2.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C2</a><a href="participants_R1C3.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C3</a><a href="participants_R1C4.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C4</a><a href="participants_R1C6.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C6</a><a href="participants_R1C7.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C7</a><a href="participants_R1C8.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;background:#FF6B6B;color:#000;border-color:#FF6B6B;">C8</a></div>
+        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0;"><a href="participants_R1C1.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C1</a><a href="participants_R1C2.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C2</a><a href="participants_R1C3.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C3</a><a href="participants_R1C4.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C4</a><a href="participants_R1C5.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C5</a><a href="participants_R1C6.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C6</a><a href="participants_R1C7.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C7</a><a href="participants_R1C8.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;background:#FF6B6B;color:#000;border-color:#FF6B6B;">C8</a></div>
     </div><div class="nav-buttons">
     <a class="nav-btn" href="participants_R1C8.html">📎 Participants</a>
     <a class="nav-btn" href="course_R1C8.html">📊 Classement</a>
@@ -198,7 +294,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     <a class="nav-btn active" href="extrait_vip_R1C8.html" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700;font-weight:bold;box-shadow:0 0 10px #FFD70088;">💎 Extrait VIP</a>
     <a class="nav-btn" href="classement_histo_R1C8.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;font-weight:bold;">📈 Classement Histo</a>
     <a class="nav-btn" href="analyse_R1C8.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;font-weight:bold;">🎯 Analyse Croisée</a>
-</div><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0;"><a href="extrait_vip_R1C1.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C1</a><a href="extrait_vip_R1C2.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C2</a><a href="extrait_vip_R1C3.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C3</a><a href="extrait_vip_R1C4.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C4</a><a href="extrait_vip_R1C6.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C6</a><a href="extrait_vip_R1C7.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C7</a><a href="extrait_vip_R1C8.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;background:#FFD700;color:#000;border-color:#FFD700;">C8</a></div><div class="main-section" style="margin-top:16px;"><div class="vip-header-band"><div class="vip-crown">💎</div><div class="vip-title">Extrait VIP — Specialistes</div><div class="vip-subtitle"> | Analyse terrain, distance et combinees</div></div><div style="background:#1A1100;border:1px solid #FFD70066;border-radius:8px;padding:12px;margin-bottom:16px;font-size:12px;color:#C8A882;text-align:center;">⭐ <strong style="color:#FFD700;">Comment lire :</strong> 🏇 <strong>Terrain</strong> = historique sur cet hippodrome &nbsp;|&nbsp; 📏 <strong>Distance</strong> = historique sur cette distance &nbsp;|&nbsp; 🎯 <strong>Specialiste</strong> = score combine hippo+distance (70/30) — <strong>meilleur predicteur (86%)</strong></div><div class="vip-section"><div class="vip-section-header vip-sh-terrain">🏇 TOP TERRAIN — ParisLongchamp (9 partants classés)<span style="font-size:11px;opacity:0.7;margin-left:auto;">9 partants classes</span></div><table class="vip-table"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Courses</th><th>Victoires</th><th>Places</th><th>Taux Placé</th></tr></thead><tbody><tr class="vip-top1"><td><span class="vip-badge vip-badge-gold">🥇 1</span></td><td>1</td><td>ASMARANI</td><td>2</td><td>1</td><td>2</td><td>100.0%</td></tr><tr class="vip-top2"><td><span class="vip-badge vip-badge-silver">🥈 2</span></td><td>5</td><td>CABALLO DE MAR</td><td>1</td><td>1</td><td>1</td><td>100.0%</td></tr><tr class="vip-top3"><td><span class="vip-badge vip-badge-bronze">🥉 3</span></td><td>8</td><td>CONSENT</td><td>1</td><td>1</td><td>1</td><td>100.0%</td></tr><tr class="vip-other"><td><span style="color:#666">4</span></td><td>7</td><td>FAIRY GLEN</td><td>1</td><td>0</td><td>1</td><td>100.0%</td></tr><tr class="vip-other"><td><span style="color:#666">5</span></td><td>9</td><td>SANTORINI STAR</td><td>1</td><td>0</td><td>1</td><td>100.0%</td></tr><tr class="vip-other"><td><span style="color:#666">6</span></td><td>6</td><td>DOUBLE MAJOR</td><td>12</td><td>4</td><td>9</td><td>75.0%</td></tr><tr class="vip-other"><td><span style="color:#666">7</span></td><td>4</td><td>ARROW EAGLE</td><td>5</td><td>1</td><td>2</td><td>40.0%</td></tr><tr class="vip-other"><td><span style="color:#666">8</span></td><td>3</td><td>RASHFORD</td><td>4</td><td>0</td><td>1</td><td>25.0%</td></tr><tr class="vip-other"><td><span style="color:#666">9</span></td><td>2</td><td>AL RIFFA</td><td>3</td><td>0</td><td>0</td><td>0.0%</td></tr></tbody></table></div><div class="vip-section"><div class="vip-section-header vip-sh-distance">📏 TOP DISTANCE — 3100m (3 partants classés)<span style="font-size:11px;opacity:0.7;margin-left:auto;">3 partants classes</span></div><table class="vip-table"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Courses</th><th>Victoires</th><th>Places</th><th>Taux Placé</th></tr></thead><tbody><tr class="vip-top1"><td><span class="vip-badge vip-badge-gold">🥇 1</span></td><td>4</td><td>ARROW EAGLE</td><td>1</td><td>1</td><td>1</td><td>100.0%</td></tr><tr class="vip-top2"><td><span class="vip-badge vip-badge-silver">🥈 2</span></td><td>6</td><td>DOUBLE MAJOR</td><td>6</td><td>3</td><td>4</td><td>66.7%</td></tr><tr class="vip-top3"><td><span class="vip-badge vip-badge-bronze">🥉 3</span></td><td>5</td><td>CABALLO DE MAR</td><td>1</td><td>0</td><td>0</td><td>0.0%</td></tr></tbody></table></div><div class="vip-section"><div class="vip-section-header vip-sh-spec">🎯 TOP SPÉCIALISTE — ParisLongchamp + 3100m (score combiné 70/30) — 8 partants<span style="font-size:11px;opacity:0.7;margin-left:auto;">8 partants classes</span></div><table class="vip-table"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Crses Exact</th><th>V Exact</th><th>P Exact</th><th>% Exact</th><th>Crses Hippo</th><th>% Hippo</th><th>Score</th></tr></thead><tbody><tr class="vip-top1"><td><span class="vip-badge vip-badge-gold">🥇 1</span></td><td>6</td><td>DOUBLE MAJOR</td><td>4</td><td>2</td><td>3</td><td>75.0%</td><td>12</td><td>75.0%</td><td>75.0</td></tr><tr class="vip-top2"><td><span class="vip-badge vip-badge-silver">🥈 2</span></td><td>1</td><td>ASMARANI</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>2</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-top3"><td><span class="vip-badge vip-badge-bronze">🥉 3</span></td><td>5</td><td>CABALLO DE MAR</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>1</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-other"><td><span style="color:#666">4</span></td><td>7</td><td>FAIRY GLEN</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>1</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-other"><td><span style="color:#666">5</span></td><td>8</td><td>CONSENT</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>1</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-other"><td><span style="color:#666">6</span></td><td>9</td><td>SANTORINI STAR</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>1</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-other"><td><span style="color:#666">7</span></td><td>4</td><td>ARROW EAGLE</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>5</td><td>40.0%</td><td>12.0</td></tr><tr class="vip-other"><td><span style="color:#666">8</span></td><td>3</td><td>RASHFORD</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>4</td><td>25.0%</td><td>7.5</td></tr></tbody></table></div></div></div>
+</div><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0;"><a href="extrait_vip_R1C1.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C1</a><a href="extrait_vip_R1C2.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C2</a><a href="extrait_vip_R1C3.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C3</a><a href="extrait_vip_R1C4.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C4</a><a href="extrait_vip_R1C5.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C5</a><a href="extrait_vip_R1C6.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C6</a><a href="extrait_vip_R1C7.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C7</a><a href="extrait_vip_R1C8.html" style="display:inline-block;background:#1A1A1A;color:#FFD700;border:2px solid #FFD700;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;background:#FFD700;color:#000;border-color:#FFD700;">C8</a></div><div class="main-section" style="margin-top:16px;"><div class="vip-header-band"><div class="vip-crown">💎</div><div class="vip-title">Extrait VIP — Specialistes</div><div class="vip-subtitle"> | Analyse terrain, distance et combinees</div></div><div style="background:#1A1100;border:1px solid #FFD70066;border-radius:8px;padding:12px;margin-bottom:16px;font-size:12px;color:#C8A882;text-align:center;">⭐ <strong style="color:#FFD700;">Comment lire :</strong> 🏇 <strong>Terrain</strong> = historique sur cet hippodrome &nbsp;|&nbsp; 📏 <strong>Distance</strong> = historique sur cette distance &nbsp;|&nbsp; 🎯 <strong>Specialiste</strong> = score combine hippo+distance (70/30) — <strong>meilleur predicteur (86%)</strong></div><div class="vip-section"><div class="vip-section-header vip-sh-terrain">🏇 TOP TERRAIN — ParisLongchamp (9 partants classés)<span style="font-size:11px;opacity:0.7;margin-left:auto;">9 partants classes</span></div><table class="vip-table"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Courses</th><th>Victoires</th><th>Places</th><th>Taux Placé</th></tr></thead><tbody><tr class="vip-top1"><td><span class="vip-badge vip-badge-gold">🥇 1</span></td><td>1</td><td>ASMARANI</td><td>2</td><td>1</td><td>2</td><td>100.0%</td></tr><tr class="vip-top2"><td><span class="vip-badge vip-badge-silver">🥈 2</span></td><td>5</td><td>CABALLO DE MAR</td><td>1</td><td>1</td><td>1</td><td>100.0%</td></tr><tr class="vip-top3"><td><span class="vip-badge vip-badge-bronze">🥉 3</span></td><td>8</td><td>CONSENT</td><td>1</td><td>1</td><td>1</td><td>100.0%</td></tr><tr class="vip-other"><td><span style="color:#666">4</span></td><td>7</td><td>FAIRY GLEN</td><td>1</td><td>0</td><td>1</td><td>100.0%</td></tr><tr class="vip-other"><td><span style="color:#666">5</span></td><td>9</td><td>SANTORINI STAR</td><td>1</td><td>0</td><td>1</td><td>100.0%</td></tr><tr class="vip-other"><td><span style="color:#666">6</span></td><td>6</td><td>DOUBLE MAJOR</td><td>12</td><td>4</td><td>9</td><td>75.0%</td></tr><tr class="vip-other"><td><span style="color:#666">7</span></td><td>4</td><td>ARROW EAGLE</td><td>5</td><td>1</td><td>2</td><td>40.0%</td></tr><tr class="vip-other"><td><span style="color:#666">8</span></td><td>3</td><td>RASHFORD</td><td>4</td><td>0</td><td>1</td><td>25.0%</td></tr><tr class="vip-other"><td><span style="color:#666">9</span></td><td>2</td><td>AL RIFFA</td><td>3</td><td>0</td><td>0</td><td>0.0%</td></tr></tbody></table></div><div class="vip-section"><div class="vip-section-header vip-sh-distance">📏 TOP DISTANCE — 3100m (3 partants classés)<span style="font-size:11px;opacity:0.7;margin-left:auto;">3 partants classes</span></div><table class="vip-table"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Courses</th><th>Victoires</th><th>Places</th><th>Taux Placé</th></tr></thead><tbody><tr class="vip-top1"><td><span class="vip-badge vip-badge-gold">🥇 1</span></td><td>4</td><td>ARROW EAGLE</td><td>1</td><td>1</td><td>1</td><td>100.0%</td></tr><tr class="vip-top2"><td><span class="vip-badge vip-badge-silver">🥈 2</span></td><td>6</td><td>DOUBLE MAJOR</td><td>6</td><td>3</td><td>4</td><td>66.7%</td></tr><tr class="vip-top3"><td><span class="vip-badge vip-badge-bronze">🥉 3</span></td><td>5</td><td>CABALLO DE MAR</td><td>1</td><td>0</td><td>0</td><td>0.0%</td></tr></tbody></table></div><div class="vip-section"><div class="vip-section-header vip-sh-spec">🎯 TOP SPÉCIALISTE — ParisLongchamp + 3100m (score combiné 70/30) — 8 partants<span style="font-size:11px;opacity:0.7;margin-left:auto;">8 partants classes</span></div><table class="vip-table"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Crses Exact</th><th>V Exact</th><th>P Exact</th><th>% Exact</th><th>Crses Hippo</th><th>% Hippo</th><th>Score</th></tr></thead><tbody><tr class="vip-top1"><td><span class="vip-badge vip-badge-gold">🥇 1</span></td><td>6</td><td>DOUBLE MAJOR</td><td>4</td><td>2</td><td>3</td><td>75.0%</td><td>12</td><td>75.0%</td><td>75.0</td></tr><tr class="vip-top2"><td><span class="vip-badge vip-badge-silver">🥈 2</span></td><td>1</td><td>ASMARANI</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>2</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-top3"><td><span class="vip-badge vip-badge-bronze">🥉 3</span></td><td>5</td><td>CABALLO DE MAR</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>1</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-other"><td><span style="color:#666">4</span></td><td>7</td><td>FAIRY GLEN</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>1</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-other"><td><span style="color:#666">5</span></td><td>8</td><td>CONSENT</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>1</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-other"><td><span style="color:#666">6</span></td><td>9</td><td>SANTORINI STAR</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>1</td><td>100.0%</td><td>30.0</td></tr><tr class="vip-other"><td><span style="color:#666">7</span></td><td>4</td><td>ARROW EAGLE</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>5</td><td>40.0%</td><td>12.0</td></tr><tr class="vip-other"><td><span style="color:#666">8</span></td><td>3</td><td>RASHFORD</td><td>0</td><td>0</td><td>0</td><td>0%</td><td>4</td><td>25.0%</td><td>7.5</td></tr></tbody></table></div></div></div>
 </div>
 <footer class="footer">
   <div class="footer-links">
@@ -222,104 +318,5 @@ window.smartsupp||(function(d) {
 })(document);
 </script>
 <noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
-
-<script>
-(function() {
-  function genererFingerprint() {
-    try {
-      var stored = localStorage.getItem('cmt_fp');
-      if (stored) return stored;
-      var data = [screen.width+'x'+screen.height, navigator.language||'', navigator.userAgent||''];
-      var str = data.join('|');
-      var hash = 2166136261;
-      for (var i = 0; i < str.length; i++) { hash ^= str.charCodeAt(i); hash = (hash * 16777619) >>> 0; }
-      var fp = 'fp_' + hash.toString(16);
-      localStorage.setItem('cmt_fp', fp);
-      return fp;
-    } catch(e) { return 'fp_fallback'; }
-  }
-
-  function lockVip(msg) {
-    document.body.classList.add('premium-locked');
-    var wall = document.getElementById('vip-wall');
-    if (wall) wall.style.display = 'block';
-    if (msg) { var e = document.getElementById('vip-code-error'); if (e) e.textContent = msg; }
-  }
-
-  function unlockVip(nom, code) {
-    document.body.classList.remove('premium-locked');
-    var wall = document.getElementById('vip-wall');
-    if (wall) wall.style.display = 'none';
-    var tag = code ? code.substring(code.length - 4) : '';
-    var libelle = '💎 CMT EXTRAIT VIP — ' + nom + (tag ? ' #' + tag : '') + ' 💎';
-    var wm = document.createElement('div');
-    wm.id = 'cmt-watermark';
-    wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
-    wm.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:rgba(255,215,0,0.06);transform:rotate(-35deg);white-space:nowrap;overflow:hidden;user-select:none;-webkit-user-select:none;letter-spacing:4px;text-transform:uppercase;';
-    document.body.appendChild(wm);
-    // Injecter le code dans tous les liens extrait_vip
-    document.querySelectorAll('a[href*="extrait_vip_"]').forEach(function(a) {
-      var base = a.href.split('?')[0];
-      a.href = base + '?vip_code=' + encodeURIComponent(code);
-    });
-  }
-
-  function verifierVip(code, onSuccess, onFail) {
-    var fp = genererFingerprint();
-    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fp})
-    }).then(function(r){ return r.json(); }).then(function(data){
-      if (data.ok && data.pack && data.pack.startsWith('vip')) {
-        onSuccess(data);
-      } else if (data.ok && data.pack && !data.pack.startsWith('vip')) {
-        onFail('Votre abonnement Premium standard ne donne pas acces a l Extrait VIP.');
-      } else {
-        onFail(data.error || 'Code invalide');
-      }
-    }).catch(function(){ onSuccess({nom:'?', pack:'vip', alerte72h:false}); });
-  }
-
-  // Code depuis URL
-  var params = new URLSearchParams(window.location.search);
-  var urlCode = params.get('vip_code');
-  if (urlCode) {
-    localStorage.setItem('cmt_vip_code', urlCode.toUpperCase());
-  }
-
-  var code = localStorage.getItem('cmt_vip_code');
-
-  window.saisirCodeVip = function() {
-    var input = document.getElementById('vip-code-input');
-    if (!input || !input.value.trim()) return;
-    var code = input.value.trim().toUpperCase();
-    verifierVip(code,
-      function(data) {
-        localStorage.setItem('cmt_vip_code', code);
-        unlockVip(data.nom || '?', code);
-      },
-      function(msg) { document.getElementById('vip-code-error').textContent = '❌ ' + msg; }
-    );
-  };
-
-  if (!code) { lockVip(); return; }
-
-  verifierVip(code,
-    function(data) {
-      unlockVip(data.nom || '?', code);
-      if (data.alerte72h && data.messageAlerte) {
-        var d = document.createElement('div');
-        d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#7A3500,#2D1F00);color:#FFD700;text-align:center;padding:10px;font-weight:bold;z-index:9998;font-size:13px;';
-        d.textContent = data.messageAlerte;
-        document.body.appendChild(d);
-      }
-    },
-    function(msg) { localStorage.removeItem('cmt_vip_code'); lockVip(msg); }
-  );
-
-})();
-</script>
-
 </body>
 </html>
