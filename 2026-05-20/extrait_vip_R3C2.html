@@ -178,7 +178,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
       if (data.ok && data.pack && data.pack.startsWith('vip')) {
         onSuccess(data);
       } else if (data.ok && data.pack && !data.pack.startsWith('vip')) {
-        onFail('⚠️ Votre abonnement Premium standard ne donne pas accès à l'Extrait VIP. Souscrivez à l'offre Extrait VIP.');
+        onFail('Abonnement non valide pour Extrait VIP.');
       } else {
         onFail(data.error || 'Code invalide');
       }
