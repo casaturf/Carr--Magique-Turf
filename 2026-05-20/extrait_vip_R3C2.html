@@ -194,21 +194,6 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   }
 
   var code = localStorage.getItem('cmt_vip_code');
-  if (!code) { lockVip(); return; }
-
-  verifierVip(code,
-    function(data) {
-      unlockVip(data.nom || '?', code);
-      if (data.alerte72h && data.messageAlerte) {
-        var d = document.createElement('div');
-        d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#7A3500,#2D1F00);color:#FFD700;text-align:center;padding:10px;font-weight:bold;z-index:9998;font-size:13px;';
-        d.textContent = data.messageAlerte;
-        document.body.appendChild(d);
-      }
-    },
-    function(msg) { localStorage.removeItem('cmt_vip_code'); lockVip(msg); }
-  );
-
   window.saisirCodeVip = function() {
     var input = document.getElementById('vip-code-input');
     if (!input || !input.value.trim()) return;
@@ -224,6 +209,22 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
       function(msg) { document.getElementById('vip-code-error').textContent = '❌ ' + msg; }
     );
   };
+
+  if (!code) { lockVip(); return; }
+
+  verifierVip(code,
+    function(data) {
+      unlockVip(data.nom || '?', code);
+      if (data.alerte72h && data.messageAlerte) {
+        var d = document.createElement('div');
+        d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#7A3500,#2D1F00);color:#FFD700;text-align:center;padding:10px;font-weight:bold;z-index:9998;font-size:13px;';
+        d.textContent = data.messageAlerte;
+        document.body.appendChild(d);
+      }
+    },
+    function(msg) { localStorage.removeItem('cmt_vip_code'); lockVip(msg); }
+  );
+
 })();
 </script>
 
