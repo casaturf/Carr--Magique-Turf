@@ -257,6 +257,11 @@ window.smartsupp||(function(d) {
     wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
     wm.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:rgba(255,215,0,0.06);transform:rotate(-35deg);white-space:nowrap;overflow:hidden;user-select:none;-webkit-user-select:none;letter-spacing:4px;text-transform:uppercase;';
     document.body.appendChild(wm);
+    // Injecter le code dans tous les liens extrait_vip
+    document.querySelectorAll('a[href*="extrait_vip_"]').forEach(function(a) {
+      var base = a.href.split('?')[0];
+      a.href = base + '?vip_code=' + encodeURIComponent(code);
+    });
   }
 
   function verifierVip(code, onSuccess, onFail) {
@@ -269,7 +274,7 @@ window.smartsupp||(function(d) {
       if (data.ok && data.pack && data.pack.startsWith('vip')) {
         onSuccess(data);
       } else if (data.ok && data.pack && !data.pack.startsWith('vip')) {
-        onFail('⚠️ Votre abonnement Premium standard ne donne pas accès à l'Extrait VIP. Souscrivez à l'offre Extrait VIP.');
+        onFail('Votre abonnement Premium standard ne donne pas acces a l Extrait VIP.');
       } else {
         onFail(data.error || 'Code invalide');
       }
@@ -281,10 +286,10 @@ window.smartsupp||(function(d) {
   var urlCode = params.get('vip_code');
   if (urlCode) {
     localStorage.setItem('cmt_vip_code', urlCode.toUpperCase());
-    window.history.replaceState({}, '', window.location.pathname);
   }
 
   var code = localStorage.getItem('cmt_vip_code');
+
   window.saisirCodeVip = function() {
     var input = document.getElementById('vip-code-input');
     if (!input || !input.value.trim()) return;
@@ -293,9 +298,6 @@ window.smartsupp||(function(d) {
       function(data) {
         localStorage.setItem('cmt_vip_code', code);
         unlockVip(data.nom || '?', code);
-        var wall = document.getElementById('vip-wall');
-        if (wall) wall.style.display = 'none';
-        document.body.classList.remove('premium-locked');
       },
       function(msg) { document.getElementById('vip-code-error').textContent = '❌ ' + msg; }
     );
