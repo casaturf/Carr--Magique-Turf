@@ -133,7 +133,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 <body class="">
 
 <script>
-(function() {
+document.addEventListener("DOMContentLoaded", function() {
   function genererFingerprint() {
     try {
       var stored = localStorage.getItem('cmt_fp');
@@ -225,7 +225,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     function(msg) { localStorage.removeItem('cmt_vip_code'); lockVip(msg); }
   );
 
-})();
+});
 </script>
 
 
