@@ -130,103 +130,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('config', 'G-11QETD2M15');
   </script>
 </head>
-<body class="">
-
-<script>
-(function() {
-  function genererFingerprint() {
-    try {
-      var stored = localStorage.getItem('cmt_fp');
-      if (stored) return stored;
-      var data = [screen.width+'x'+screen.height, navigator.language||'', navigator.userAgent||''];
-      var str = data.join('|');
-      var hash = 2166136261;
-      for (var i = 0; i < str.length; i++) { hash ^= str.charCodeAt(i); hash = (hash * 16777619) >>> 0; }
-      var fp = 'fp_' + hash.toString(16);
-      localStorage.setItem('cmt_fp', fp);
-      return fp;
-    } catch(e) { return 'fp_fallback'; }
-  }
-
-  function lockVip(msg) {
-    document.body.classList.add('premium-locked');
-    var wall = document.getElementById('vip-wall');
-    if (wall) wall.style.display = 'block';
-    if (msg) { var e = document.getElementById('vip-code-error'); if (e) e.textContent = msg; }
-  }
-
-  function unlockVip(nom, code) {
-    document.body.classList.remove('premium-locked');
-    var wall = document.getElementById('vip-wall');
-    if (wall) wall.style.display = 'none';
-    var tag = code ? code.substring(code.length - 4) : '';
-    var libelle = '💎 CMT EXTRAIT VIP — ' + nom + (tag ? ' #' + tag : '') + ' 💎';
-    var wm = document.createElement('div');
-    wm.id = 'cmt-watermark';
-    wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
-    wm.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:rgba(255,215,0,0.06);transform:rotate(-35deg);white-space:nowrap;overflow:hidden;user-select:none;-webkit-user-select:none;letter-spacing:4px;text-transform:uppercase;';
-    document.body.appendChild(wm);
-  }
-
-  function verifierVip(code, onSuccess, onFail) {
-    var fp = genererFingerprint();
-    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fp})
-    }).then(function(r){ return r.json(); }).then(function(data){
-      if (data.ok && data.pack && data.pack.startsWith('vip')) {
-        onSuccess(data);
-      } else if (data.ok && data.pack && !data.pack.startsWith('vip')) {
-        onFail('⚠️ Votre abonnement Premium standard ne donne pas accès à l'Extrait VIP. Souscrivez à l'offre Extrait VIP.');
-      } else {
-        onFail(data.error || 'Code invalide');
-      }
-    }).catch(function(){ onSuccess({nom:'?', pack:'vip', alerte72h:false}); });
-  }
-
-  // Code depuis URL
-  var params = new URLSearchParams(window.location.search);
-  var urlCode = params.get('vip_code');
-  if (urlCode) {
-    localStorage.setItem('cmt_vip_code', urlCode.toUpperCase());
-    window.history.replaceState({}, '', window.location.pathname);
-  }
-
-  var code = localStorage.getItem('cmt_vip_code');
-  if (!code) { lockVip(); return; }
-
-  verifierVip(code,
-    function(data) {
-      unlockVip(data.nom || '?', code);
-      if (data.alerte72h && data.messageAlerte) {
-        var d = document.createElement('div');
-        d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#7A3500,#2D1F00);color:#FFD700;text-align:center;padding:10px;font-weight:bold;z-index:9998;font-size:13px;';
-        d.textContent = data.messageAlerte;
-        document.body.appendChild(d);
-      }
-    },
-    function(msg) { localStorage.removeItem('cmt_vip_code'); lockVip(msg); }
-  );
-
-  window.saisirCodeVip = function() {
-    var input = document.getElementById('vip-code-input');
-    if (!input || !input.value.trim()) return;
-    var code = input.value.trim().toUpperCase();
-    verifierVip(code,
-      function(data) {
-        localStorage.setItem('cmt_vip_code', code);
-        unlockVip(data.nom || '?', code);
-        var wall = document.getElementById('vip-wall');
-        if (wall) wall.style.display = 'none';
-        document.body.classList.remove('premium-locked');
-      },
-      function(msg) { document.getElementById('vip-code-error').textContent = '❌ ' + msg; }
-    );
-  };
-})();
-</script>
-
+<body class="premium-locked">
 
 <div class="premium-wall" id="vip-wall" style="display:none;">
   <img src="/logo.png" alt="CMT">
@@ -318,5 +222,102 @@ window.smartsupp||(function(d) {
 })(document);
 </script>
 <noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+
+<script>
+(function() {
+  function genererFingerprint() {
+    try {
+      var stored = localStorage.getItem('cmt_fp');
+      if (stored) return stored;
+      var data = [screen.width+'x'+screen.height, navigator.language||'', navigator.userAgent||''];
+      var str = data.join('|');
+      var hash = 2166136261;
+      for (var i = 0; i < str.length; i++) { hash ^= str.charCodeAt(i); hash = (hash * 16777619) >>> 0; }
+      var fp = 'fp_' + hash.toString(16);
+      localStorage.setItem('cmt_fp', fp);
+      return fp;
+    } catch(e) { return 'fp_fallback'; }
+  }
+
+  function lockVip(msg) {
+    document.body.classList.add('premium-locked');
+    var wall = document.getElementById('vip-wall');
+    if (wall) wall.style.display = 'block';
+    if (msg) { var e = document.getElementById('vip-code-error'); if (e) e.textContent = msg; }
+  }
+
+  function unlockVip(nom, code) {
+    document.body.classList.remove('premium-locked');
+    var wall = document.getElementById('vip-wall');
+    if (wall) wall.style.display = 'none';
+    var tag = code ? code.substring(code.length - 4) : '';
+    var libelle = '💎 CMT EXTRAIT VIP — ' + nom + (tag ? ' #' + tag : '') + ' 💎';
+    var wm = document.createElement('div');
+    wm.id = 'cmt-watermark';
+    wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
+    wm.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:rgba(255,215,0,0.06);transform:rotate(-35deg);white-space:nowrap;overflow:hidden;user-select:none;-webkit-user-select:none;letter-spacing:4px;text-transform:uppercase;';
+    document.body.appendChild(wm);
+  }
+
+  function verifierVip(code, onSuccess, onFail) {
+    var fp = genererFingerprint();
+    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({code: code, fingerprint: fp})
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if (data.ok && data.pack && data.pack.startsWith('vip')) {
+        onSuccess(data);
+      } else if (data.ok && data.pack && !data.pack.startsWith('vip')) {
+        onFail('⚠️ Votre abonnement Premium standard ne donne pas accès à l'Extrait VIP. Souscrivez à l'offre Extrait VIP.');
+      } else {
+        onFail(data.error || 'Code invalide');
+      }
+    }).catch(function(){ onSuccess({nom:'?', pack:'vip', alerte72h:false}); });
+  }
+
+  // Code depuis URL
+  var params = new URLSearchParams(window.location.search);
+  var urlCode = params.get('vip_code');
+  if (urlCode) {
+    localStorage.setItem('cmt_vip_code', urlCode.toUpperCase());
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
+  var code = localStorage.getItem('cmt_vip_code');
+  window.saisirCodeVip = function() {
+    var input = document.getElementById('vip-code-input');
+    if (!input || !input.value.trim()) return;
+    var code = input.value.trim().toUpperCase();
+    verifierVip(code,
+      function(data) {
+        localStorage.setItem('cmt_vip_code', code);
+        unlockVip(data.nom || '?', code);
+        var wall = document.getElementById('vip-wall');
+        if (wall) wall.style.display = 'none';
+        document.body.classList.remove('premium-locked');
+      },
+      function(msg) { document.getElementById('vip-code-error').textContent = '❌ ' + msg; }
+    );
+  };
+
+  if (!code) { lockVip(); return; }
+
+  verifierVip(code,
+    function(data) {
+      unlockVip(data.nom || '?', code);
+      if (data.alerte72h && data.messageAlerte) {
+        var d = document.createElement('div');
+        d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#7A3500,#2D1F00);color:#FFD700;text-align:center;padding:10px;font-weight:bold;z-index:9998;font-size:13px;';
+        d.textContent = data.messageAlerte;
+        document.body.appendChild(d);
+      }
+    },
+    function(msg) { localStorage.removeItem('cmt_vip_code'); lockVip(msg); }
+  );
+
+})();
+</script>
+
 </body>
 </html>
