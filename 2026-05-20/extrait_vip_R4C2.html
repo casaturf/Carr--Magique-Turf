@@ -239,7 +239,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   <div id="vip-code-form" style="display:none;margin-top:16px;">
     <input id="vip-code-input" type="text" placeholder="VIP-XXXX-XXXX-XXXX" style="padding:10px;border-radius:6px;border:1px solid #FFD700;background:#111;color:#FFD700;font-size:14px;width:260px;text-align:center;letter-spacing:2px;">
     <br><br>
-    <button onclick="saisirCodeVip()" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;padding:12px 32px;border-radius:8px;font-weight:bold;cursor:pointer;border:none;">VALIDER</button>
+    <button onclick="window.saisirCodeVip && window.saisirCodeVip()" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;padding:12px 32px;border-radius:8px;font-weight:bold;cursor:pointer;border:none;">VALIDER</button>
     <div id="vip-code-error" style="color:#FF6B6B;margin-top:8px;font-size:13px;"></div>
   </div>
 </div>
