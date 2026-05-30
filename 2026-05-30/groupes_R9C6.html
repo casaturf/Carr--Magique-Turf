@@ -134,6 +134,17 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <script>
 (function() {
+  // ─── Protection anti-copie (dissuasion) ───
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('copy', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('cut', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('dragstart', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('keydown', function(e){
+    // Bloque Ctrl+C / Ctrl+U (source) / Ctrl+S (sauvegarde) / F12 (devtools)
+    if ((e.ctrlKey || e.metaKey) && ['c','u','s','x'].indexOf((e.key||'').toLowerCase()) !== -1) { e.preventDefault(); }
+    if (e.key === 'F12') { e.preventDefault(); }
+  }, false);
+
   // ─── Fingerprint navigateur natif (sans bibliothèque) ───
   function genererFingerprint() {
     try {
@@ -291,21 +302,24 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   function afficherWatermark(nom, codeUser) {
     // Identifiant compte = 4 derniers caractères du code (anti-partage)
     var tag = codeUser ? codeUser.substring(codeUser.length - 4) : '';
-    var libelle = '★ CMT PREMIUM — ' + nom + (tag ? ' #' + tag : '') + ' ★';
+    var d = new Date();
+    var dateStr = ('0'+d.getDate()).slice(-2) + '/' + ('0'+(d.getMonth()+1)).slice(-2) + '/' + d.getFullYear() + ' ' + ('0'+d.getHours()).slice(-2) + ':' + ('0'+d.getMinutes()).slice(-2);
+    var libelle = '★ CMT — ' + nom + (tag ? ' #' + tag : '') + ' · ' + dateStr + ' ★';
+    if (document.getElementById('cmt-watermark')) return;
     var wm = document.createElement('div');
     wm.id = 'cmt-watermark';
-    wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
     wm.style.cssText = [
       'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
-      'pointer-events:none', 'z-index:9999',
-      'display:flex', 'align-items:center', 'justify-content:center',
-      'font-size:22px', 'font-weight:bold',
-      'color:rgba(255,255,255,0.06)',
-      'transform:rotate(-35deg)',
-      'white-space:nowrap', 'overflow:hidden',
-      'user-select:none', '-webkit-user-select:none',
-      'letter-spacing:4px', 'text-transform:uppercase'
+      'pointer-events:none', 'z-index:9999', 'overflow:hidden',
+      'user-select:none', '-webkit-user-select:none'
     ].join(';');
+    // Mosaique : plusieurs lignes repetees sur toute la hauteur
+    var inner = '';
+    for (var i = 0; i < 14; i++) {
+      inner += '<div style="white-space:nowrap;font-size:16px;font-weight:bold;color:rgba(255,255,255,0.11);letter-spacing:3px;text-transform:uppercase;margin:34px 0;transform:rotate(-32deg);">'
+             + (libelle + '   ').repeat(6) + '</div>';
+    }
+    wm.innerHTML = inner;
     document.body.appendChild(wm);
   }
 })();
@@ -363,6 +377,10 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         <div style="font-size:22px;font-weight:bold;color:#FF6B35;text-transform:uppercase;letter-spacing:2px;">GROUPES CMT + IA</div>
     </div>
     
+    <div class="arrivee-box">
+        <div class="arrivee-label">🏆 ARRIVÉE OFFICIELLE</div>
+        <div class="arrivee-nums">6 - 12 - 14 - 13 - 7 - 8</div>
+    </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:16px;">
         <div style="background:linear-gradient(135deg,#002200,#003300);border:2px solid #00FF88;border-radius:10px;padding:12px;text-align:center;">
             <div style="font-size:12px;color:#00FF88;font-weight:bold;margin-bottom:4px;">⭐ SÉLECTION IA / GROUPE</div>

@@ -134,6 +134,17 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <script>
 (function() {
+  // ─── Protection anti-copie (dissuasion) ───
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('copy', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('cut', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('dragstart', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('keydown', function(e){
+    // Bloque Ctrl+C / Ctrl+U (source) / Ctrl+S (sauvegarde) / F12 (devtools)
+    if ((e.ctrlKey || e.metaKey) && ['c','u','s','x'].indexOf((e.key||'').toLowerCase()) !== -1) { e.preventDefault(); }
+    if (e.key === 'F12') { e.preventDefault(); }
+  }, false);
+
   // ─── Fingerprint navigateur natif (sans bibliothèque) ───
   function genererFingerprint() {
     try {
@@ -291,21 +302,24 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   function afficherWatermark(nom, codeUser) {
     // Identifiant compte = 4 derniers caractères du code (anti-partage)
     var tag = codeUser ? codeUser.substring(codeUser.length - 4) : '';
-    var libelle = '★ CMT PREMIUM — ' + nom + (tag ? ' #' + tag : '') + ' ★';
+    var d = new Date();
+    var dateStr = ('0'+d.getDate()).slice(-2) + '/' + ('0'+(d.getMonth()+1)).slice(-2) + '/' + d.getFullYear() + ' ' + ('0'+d.getHours()).slice(-2) + ':' + ('0'+d.getMinutes()).slice(-2);
+    var libelle = '★ CMT — ' + nom + (tag ? ' #' + tag : '') + ' · ' + dateStr + ' ★';
+    if (document.getElementById('cmt-watermark')) return;
     var wm = document.createElement('div');
     wm.id = 'cmt-watermark';
-    wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
     wm.style.cssText = [
       'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
-      'pointer-events:none', 'z-index:9999',
-      'display:flex', 'align-items:center', 'justify-content:center',
-      'font-size:22px', 'font-weight:bold',
-      'color:rgba(255,255,255,0.06)',
-      'transform:rotate(-35deg)',
-      'white-space:nowrap', 'overflow:hidden',
-      'user-select:none', '-webkit-user-select:none',
-      'letter-spacing:4px', 'text-transform:uppercase'
+      'pointer-events:none', 'z-index:9999', 'overflow:hidden',
+      'user-select:none', '-webkit-user-select:none'
     ].join(';');
+    // Mosaique : plusieurs lignes repetees sur toute la hauteur
+    var inner = '';
+    for (var i = 0; i < 14; i++) {
+      inner += '<div style="white-space:nowrap;font-size:16px;font-weight:bold;color:rgba(255,255,255,0.11);letter-spacing:3px;text-transform:uppercase;margin:34px 0;transform:rotate(-32deg);">'
+             + (libelle + '   ').repeat(6) + '</div>';
+    }
+    wm.innerHTML = inner;
     document.body.appendChild(wm);
   }
 })();
@@ -420,7 +434,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     <span style="color:#C8A882;font-size:12px;text-transform:uppercase;letter-spacing:1px;">🎯 Signal Fort</span>
     <div style="margin-top:6px;"><em style="color:#888;">Aucun signal fort</em></div>
   </div>
-  <div style="margin-bottom:10px;"><span style="color:#C8A882;font-size:12px;text-transform:uppercase;letter-spacing:1px;">🤖 Top 5 IA Global</span><div style="margin-top:6px;"><span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°12</span> <span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°8</span> <span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°2</span> <span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°11</span> <span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°5</span></div></div>
+  <div style="margin-bottom:10px;"><span style="color:#C8A882;font-size:12px;text-transform:uppercase;letter-spacing:1px;">🤖 Top 5 IA Global</span><div style="margin-top:6px;"><span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°11</span> <span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°12</span> <span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°10</span> <span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°2</span> <span style="background:#1A1A1A;border:1px solid #00CED1;color:#00CED1;padding:3px 10px;border-radius:12px;margin:2px;">N°8</span></div></div>
   <div style="margin-top:12px;padding-top:10px;border-top:1px solid #1A1A1A;font-size:11px;color:#888;">
     ⚠️ Ne jamais éliminer un cheval — même un tocard peut casser le jeu placé !
   </div>
@@ -441,60 +455,60 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         <th style="padding:7px 6px;text-align:center;">ScIA</th><th style="padding:7px 6px;text-align:center;">RgIA</th>
       </tr></thead><tbody>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
-          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">12</td>
-          <td style="padding:7px 6px;text-align:left;font-weight:normal;">HARLEM LOCA</td>
-          <td style="padding:7px 6px;text-align:center;">2.7</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">11</td>
+          <td style="padding:7px 6px;text-align:left;font-weight:normal;">JAZZ MELODY</td>
+          <td style="padding:7px 6px;text-align:center;">3.6</td>
           <td style="padding:7px 6px;text-align:center;">🔵 FAVORI</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">54.2</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#1</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">65.2</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#1</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
-          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">8</td>
-          <td style="padding:7px 6px;text-align:left;font-weight:normal;">JEWEL OF SEBHA</td>
-          <td style="padding:7px 6px;text-align:center;">2.7</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">12</td>
+          <td style="padding:7px 6px;text-align:left;font-weight:normal;">HARLEM LOCA</td>
+          <td style="padding:7px 6px;text-align:center;">2.1</td>
           <td style="padding:7px 6px;text-align:center;">🔵 FAVORI</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">53.3</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#2</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">55.5</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#2</td>
+        </tr>
+        <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
+          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">10</td>
+          <td style="padding:7px 6px;text-align:left;font-weight:normal;">IBANA DE MONTI</td>
+          <td style="padding:7px 6px;text-align:center;">7.3</td>
+          <td style="padding:7px 6px;text-align:center;">🔵 FAVORI</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">55.0</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#3</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">2</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">JOVIAL</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">48.4</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#3</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">48.4</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#4</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
-          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">11</td>
-          <td style="padding:7px 6px;text-align:left;font-weight:normal;">JAZZ MELODY</td>
-          <td style="padding:7px 6px;text-align:center;">0.0</td>
-          <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">47.2</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#4</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">8</td>
+          <td style="padding:7px 6px;text-align:left;font-weight:normal;">JEWEL OF SEBHA</td>
+          <td style="padding:7px 6px;text-align:center;">7.3</td>
+          <td style="padding:7px 6px;text-align:center;">🔵 FAVORI</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">44.8</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#5</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">5</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">INZAGHY</td>
-          <td style="padding:7px 6px;text-align:center;">6.8</td>
-          <td style="padding:7px 6px;text-align:center;">🔵 FAVORI</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">45.7</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#5</td>
-        </tr>
-        <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
-          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">10</td>
-          <td style="padding:7px 6px;text-align:left;font-weight:normal;">IBANA DE MONTI</td>
-          <td style="padding:7px 6px;text-align:center;">0.0</td>
-          <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">42.0</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#6</td>
-        </tr>
-        <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
-          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">7</td>
-          <td style="padding:7px 6px;text-align:left;font-weight:normal;">HAPPY</td>
-          <td style="padding:7px 6px;text-align:center;">6.8</td>
-          <td style="padding:7px 6px;text-align:center;">🔵 FAVORI</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">35.8</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#7</td>
+          <td style="padding:7px 6px;text-align:center;">18.0</td>
+          <td style="padding:7px 6px;text-align:center;">🟡 OUTSIDER</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">41.1</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#6</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">13</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">IMPACTDARCHE</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">34.2</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#8</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">34.2</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#7</td>
+        </tr>
+        <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
+          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">7</td>
+          <td style="padding:7px 6px;text-align:left;font-weight:normal;">HAPPY</td>
+          <td style="padding:7px 6px;text-align:center;">18.0</td>
+          <td style="padding:7px 6px;text-align:center;">🟡 OUTSIDER</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">30.9</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#8</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">9</td>
@@ -504,25 +518,25 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
           <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">26.8</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#9</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
-          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">6</td>
-          <td style="padding:7px 6px;text-align:left;font-weight:normal;">HOTLINE JAVANAISE</td>
-          <td style="padding:7px 6px;text-align:center;">6.8</td>
-          <td style="padding:7px 6px;text-align:center;">🔵 FAVORI</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">25.0</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#10</td>
-        </tr>
-        <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">14</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">HOMMAGE DU TRIO</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">24.0</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#11</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">24.0</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#10</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">1</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">JEWEL D'AUCHY</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">20.2</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#12</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">20.2</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#11</td>
+        </tr>
+        <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
+          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">6</td>
+          <td style="padding:7px 6px;text-align:left;font-weight:normal;">HOTLINE JAVANAISE</td>
+          <td style="padding:7px 6px;text-align:center;">18.0</td>
+          <td style="padding:7px 6px;text-align:center;">🟡 OUTSIDER</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">17.5</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#12</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">4</td>

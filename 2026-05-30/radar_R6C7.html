@@ -134,6 +134,17 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
 <script>
 (function() {
+  // ─── Protection anti-copie (dissuasion) ───
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('copy', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('cut', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('dragstart', function(e){ e.preventDefault(); }, false);
+  document.addEventListener('keydown', function(e){
+    // Bloque Ctrl+C / Ctrl+U (source) / Ctrl+S (sauvegarde) / F12 (devtools)
+    if ((e.ctrlKey || e.metaKey) && ['c','u','s','x'].indexOf((e.key||'').toLowerCase()) !== -1) { e.preventDefault(); }
+    if (e.key === 'F12') { e.preventDefault(); }
+  }, false);
+
   // ─── Fingerprint navigateur natif (sans bibliothèque) ───
   function genererFingerprint() {
     try {
@@ -291,21 +302,24 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   function afficherWatermark(nom, codeUser) {
     // Identifiant compte = 4 derniers caractères du code (anti-partage)
     var tag = codeUser ? codeUser.substring(codeUser.length - 4) : '';
-    var libelle = '★ CMT PREMIUM — ' + nom + (tag ? ' #' + tag : '') + ' ★';
+    var d = new Date();
+    var dateStr = ('0'+d.getDate()).slice(-2) + '/' + ('0'+(d.getMonth()+1)).slice(-2) + '/' + d.getFullYear() + ' ' + ('0'+d.getHours()).slice(-2) + ':' + ('0'+d.getMinutes()).slice(-2);
+    var libelle = '★ CMT — ' + nom + (tag ? ' #' + tag : '') + ' · ' + dateStr + ' ★';
+    if (document.getElementById('cmt-watermark')) return;
     var wm = document.createElement('div');
     wm.id = 'cmt-watermark';
-    wm.textContent = libelle + '  ' + libelle + '  ' + libelle;
     wm.style.cssText = [
       'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
-      'pointer-events:none', 'z-index:9999',
-      'display:flex', 'align-items:center', 'justify-content:center',
-      'font-size:22px', 'font-weight:bold',
-      'color:rgba(255,255,255,0.06)',
-      'transform:rotate(-35deg)',
-      'white-space:nowrap', 'overflow:hidden',
-      'user-select:none', '-webkit-user-select:none',
-      'letter-spacing:4px', 'text-transform:uppercase'
+      'pointer-events:none', 'z-index:9999', 'overflow:hidden',
+      'user-select:none', '-webkit-user-select:none'
     ].join(';');
+    // Mosaique : plusieurs lignes repetees sur toute la hauteur
+    var inner = '';
+    for (var i = 0; i < 14; i++) {
+      inner += '<div style="white-space:nowrap;font-size:16px;font-weight:bold;color:rgba(255,255,255,0.11);letter-spacing:3px;text-transform:uppercase;margin:34px 0;transform:rotate(-32deg);">'
+             + (libelle + '   ').repeat(6) + '</div>';
+    }
+    wm.innerHTML = inner;
     document.body.appendChild(wm);
   }
 })();
@@ -441,63 +455,63 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">SWEET TREASURE</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">74.8</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#1</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">74.6</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#1</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">7</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">IN THE STARS</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">73.7</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#2</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">73.6</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#2</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">5</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">PROCTOR STREET</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">73.4</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#3</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">73.3</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#3</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">4</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">MEDORO</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">72.3</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#4</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">72.4</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#4</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">3</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">PIN UP BETTY</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">66.2</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#5</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">66.0</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#5</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">2</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">FAVORITE MEMORY</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">63.7</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#6</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">63.5</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#6</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">1</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">CHARLENE'S DREAM</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">59.1</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#7</td>
-        </tr>
-        <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
-          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">9</td>
-          <td style="padding:7px 6px;text-align:left;font-weight:normal;">STYLISH SUE</td>
-          <td style="padding:7px 6px;text-align:center;">0.0</td>
-          <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">57.6</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#8</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">58.7</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#7</td>
         </tr>
         <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
           <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">6</td>
           <td style="padding:7px 6px;text-align:left;font-weight:normal;">VINA ARANA</td>
           <td style="padding:7px 6px;text-align:center;">0.0</td>
           <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
-          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">57.5</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#9</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">57.3</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#8</td>
+        </tr>
+        <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid #1A1A1A;">
+          <td style="padding:7px 6px;text-align:center;font-weight:bold;color:#888888;font-size:15px;">9</td>
+          <td style="padding:7px 6px;text-align:left;font-weight:normal;">STYLISH SUE</td>
+          <td style="padding:7px 6px;text-align:center;">0.0</td>
+          <td style="padding:7px 6px;text-align:center;">⚪ ?</td>
+          <td style="padding:7px 6px;text-align:center;font-weight:normal;color:#00CED1;">57.1</td><td style="padding:7px 6px;text-align:center;color:#C8A882;">#9</td>
         </tr>
       </tbody></table></div></div></div>
 </div>
