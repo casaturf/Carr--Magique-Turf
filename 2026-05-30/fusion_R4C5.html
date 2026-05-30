@@ -194,6 +194,37 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     }
   }
 
+  // ─── Device ID UUID persistant (identique au login) ───
+  function getDeviceId() {
+    var KEY = 'cmt_device_id';
+    var id = null;
+    try { id = localStorage.getItem(KEY); } catch(e) {}
+    if (!id) { try { id = sessionStorage.getItem(KEY); } catch(e) {} }
+    if (!id) {
+      try {
+        var m = document.cookie.match('(?:^|;)\s*' + KEY + '=([^;]+)');
+        if (m) id = decodeURIComponent(m[1]);
+      } catch(e) {}
+    }
+    if (!id) {
+      id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0;
+        var v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+      try { localStorage.setItem(KEY, id); } catch(e) {}
+      try { sessionStorage.setItem(KEY, id); } catch(e) {}
+      try {
+        var exp = new Date(Date.now() + 365*24*60*60*1000).toUTCString();
+        document.cookie = KEY + '=' + encodeURIComponent(id) + '; expires=' + exp + '; path=/; SameSite=Strict';
+      } catch(e) {}
+    } else {
+      try { if (!localStorage.getItem(KEY)) localStorage.setItem(KEY, id); } catch(e) {}
+      try { if (!sessionStorage.getItem(KEY)) sessionStorage.setItem(KEY, id); } catch(e) {}
+    }
+    return id;
+  }
+
   var params = new URLSearchParams(window.location.search);
   var urlCode = params.get('cmt_code');
   var urlExpiry = params.get('cmt_expiry');
@@ -211,18 +242,19 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     document.body.classList.add('premium-locked');
     return;
   }
-  document.body.classList.remove('premium-locked');
+  // FAIL-CLOSED : on reste verrouille tant que le worker n'a pas confirme ok:true
+  document.body.classList.add('premium-locked');
   var fingerprint = genererFingerprint();
   try {
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
     }).then(function(data){
-      if (!data) return;
+      if (!data) { document.body.classList.add('premium-locked'); return; }
       // Cas 403 : Limite 2 appareils ou code invalide
       if (data._status === 403) {
         localStorage.removeItem('cmt_premium_code');
@@ -241,16 +273,20 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         localStorage.removeItem('cmt_premium_code');
         localStorage.removeItem('cmt_premium_expiry');
         document.body.classList.add('premium-locked');
-      } else if (data.alerte72h) {
-        var d = document.createElement('div');
-        d.className = 'premium-alert';
-        d.textContent = data.messageAlerte;
-        var c = document.querySelector('.container');
-        if (c) c.insertBefore(d, c.firstChild);
+      } else {
+        // Succes confirme par le worker : on deverrouille
+        document.body.classList.remove('premium-locked');
+        if (data.alerte72h) {
+          var d = document.createElement('div');
+          d.className = 'premium-alert';
+          d.textContent = data.messageAlerte;
+          var c = document.querySelector('.container');
+          if (c) c.insertBefore(d, c.firstChild);
+        }
+        if (data.nom) { afficherWatermark(data.nom, code); }
       }
-      if (data.ok && data.nom) { afficherWatermark(data.nom, code); }
-    }).catch(function(){/* réseau/CORS — garder déverrouillé */});
-  } catch(e) {}
+    }).catch(function(){/* reseau/CORS — FAIL-CLOSED : rester verrouille */ document.body.classList.add('premium-locked'); });
+  } catch(e) { document.body.classList.add('premium-locked'); }
 
   function afficherWatermark(nom, codeUser) {
     // Identifiant compte = 4 derniers caractères du code (anti-partage)
