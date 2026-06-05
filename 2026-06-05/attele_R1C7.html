@@ -7,7 +7,7 @@
   <meta name="description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta name="keywords" content="carré magique turf, pronostic quinté du jour, pronostic PMU gratuit, quinté PMU, tiercé PMU, quarté PMU, partants PMU, résultats PMU, arrivée quinté, courses PMU aujourd'hui, analyse hippique, cotes PMU temps réel, musique des chevaux, pronostic attelé, pronostic plat, pronostic obstacles, analyse courses chevaux, pronostic hippique gratuit aujourd'hui, meilleur pronostic quinté du jour, base du jour turf, cheval de base PMU, tic 3 multi, multi PMU, pronostics turf gratuits">
   <meta name="author" content="Carré Magique Turf">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <meta property="og:title" content="R1-C7 Spécial ATTÉLÉ - Carré Magique Turf">
   <meta property="og:description" content="Carré Magique Turf - Pronostics hippiques gratuits, analyse PMU en temps réel, quinté du jour, tiercé, quarté. Meilleurs pronostics courses chevaux.">
   <meta property="og:type" content="website">
@@ -109,18 +109,6 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .footer-copy { font-size: 11px; color: #555; }
 </style>
   
-<style>
-  .premium-wall { display: none; text-align:center; padding:80px 20px; font-family:'Segoe UI',sans-serif; min-height:80vh; }
-  .premium-wall img { width:100px; margin-bottom:16px; }
-  .premium-wall h1 { color:#FF6B6B; font-size:22px; margin-bottom:10px; }
-  .premium-wall p { color:#C8A882; margin-bottom:20px; }
-  .premium-wall a { display:inline-block; background:#00B4D8; color:#000; padding:14px 32px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:15px; }
-  .premium-wall a:hover { background:#0096B7; }
-  body.premium-locked .container, body.premium-locked .back-button, body.premium-locked .footer { display: none !important; }
-  body.premium-locked .premium-wall { display: block !important; }
-  .premium-alert { background:rgba(255,215,0,0.15); border:2px solid #FFD700; color:#FFD700; padding:12px; border-radius:8px; text-align:center; margin-bottom:10px; font-weight:bold; }
-</style>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QETD2M15"></script>
   <script>
@@ -130,210 +118,8 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('config', 'G-11QETD2M15');
   </script>
 </head>
-<body class="premium-locked">
+<body class="">
 
-<script>
-(function() {
-  // ─── Protection anti-copie (dissuasion) ───
-  document.addEventListener('contextmenu', function(e){ e.preventDefault(); }, false);
-  document.addEventListener('copy', function(e){ e.preventDefault(); }, false);
-  document.addEventListener('cut', function(e){ e.preventDefault(); }, false);
-  document.addEventListener('dragstart', function(e){ e.preventDefault(); }, false);
-  document.addEventListener('keydown', function(e){
-    // Bloque Ctrl+C / Ctrl+U (source) / Ctrl+S (sauvegarde) / F12 (devtools)
-    if ((e.ctrlKey || e.metaKey) && ['c','u','s','x'].indexOf((e.key||'').toLowerCase()) !== -1) { e.preventDefault(); }
-    if (e.key === 'F12') { e.preventDefault(); }
-  }, false);
-
-  // ─── Fingerprint navigateur natif (sans bibliothèque) ───
-  function genererFingerprint() {
-    try {
-      var stored = localStorage.getItem('cmt_fp');
-      if (stored) return stored;
-
-      var data = [];
-      // Écran
-      data.push(screen.width + 'x' + screen.height + 'x' + screen.colorDepth);
-      data.push(screen.availWidth + 'x' + screen.availHeight);
-      // Timezone + langue
-      data.push(new Date().getTimezoneOffset());
-      data.push(navigator.language || '');
-      data.push((navigator.languages || []).join(','));
-      // User agent + plateforme
-      data.push(navigator.userAgent || '');
-      data.push(navigator.platform || '');
-      data.push(navigator.hardwareConcurrency || 0);
-      data.push(navigator.deviceMemory || 0);
-      // Canvas fingerprint (hash unique par GPU/navigateur)
-      try {
-        var canvas = document.createElement('canvas');
-        var ctx = canvas.getContext('2d');
-        ctx.textBaseline = 'top';
-        ctx.font = '14px Arial';
-        ctx.fillStyle = '#f60';
-        ctx.fillRect(125, 1, 62, 20);
-        ctx.fillStyle = '#069';
-        ctx.fillText('CMT-FP-' + navigator.userAgent, 2, 15);
-        ctx.fillStyle = 'rgba(102,204,0,0.7)';
-        ctx.fillText('CMT-FP-' + navigator.userAgent, 4, 17);
-        data.push(canvas.toDataURL().substring(0, 100));
-      } catch(e) { data.push('nocanvas'); }
-      // WebGL renderer
-      try {
-        var gl = document.createElement('canvas').getContext('webgl');
-        if (gl) {
-          var dbg = gl.getExtension('WEBGL_debug_renderer_info');
-          if (dbg) {
-            data.push(gl.getParameter(dbg.UNMASKED_VENDOR_WEBGL) || '');
-            data.push(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) || '');
-          }
-        }
-      } catch(e) {}
-
-      // Hash simple (FNV-1a 32-bit)
-      var str = data.join('|');
-      var hash = 2166136261;
-      for (var i = 0; i < str.length; i++) {
-        hash ^= str.charCodeAt(i);
-        hash = (hash * 16777619) >>> 0;
-      }
-      var fp = 'fp_' + hash.toString(16);
-      localStorage.setItem('cmt_fp', fp);
-      return fp;
-    } catch(e) {
-      return 'fp_fallback';
-    }
-  }
-
-  // ─── Device ID UUID persistant (identique au login) ───
-  function getDeviceId() {
-    var KEY = 'cmt_device_id';
-    var id = null;
-    try { id = localStorage.getItem(KEY); } catch(e) {}
-    if (!id) { try { id = sessionStorage.getItem(KEY); } catch(e) {} }
-    if (!id) {
-      try {
-        var m = document.cookie.match('(?:^|;)\s*' + KEY + '=([^;]+)');
-        if (m) id = decodeURIComponent(m[1]);
-      } catch(e) {}
-    }
-    if (!id) {
-      id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0;
-        var v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-      });
-      try { localStorage.setItem(KEY, id); } catch(e) {}
-      try { sessionStorage.setItem(KEY, id); } catch(e) {}
-      try {
-        var exp = new Date(Date.now() + 365*24*60*60*1000).toUTCString();
-        document.cookie = KEY + '=' + encodeURIComponent(id) + '; expires=' + exp + '; path=/; SameSite=Strict';
-      } catch(e) {}
-    } else {
-      try { if (!localStorage.getItem(KEY)) localStorage.setItem(KEY, id); } catch(e) {}
-      try { if (!sessionStorage.getItem(KEY)) sessionStorage.setItem(KEY, id); } catch(e) {}
-    }
-    return id;
-  }
-
-  var params = new URLSearchParams(window.location.search);
-  var urlCode = params.get('cmt_code');
-  var urlExpiry = params.get('cmt_expiry');
-  if (urlCode && urlExpiry) {
-    localStorage.setItem('cmt_premium_code', urlCode);
-    localStorage.setItem('cmt_premium_expiry', urlExpiry);
-    window.history.replaceState({}, '', window.location.pathname);
-  }
-
-  var code = localStorage.getItem('cmt_premium_code');
-  var expiry = localStorage.getItem('cmt_premium_expiry');
-  if (!code || !expiry || new Date(expiry) < new Date()) {
-    localStorage.removeItem('cmt_premium_code');
-    localStorage.removeItem('cmt_premium_expiry');
-    document.body.classList.add('premium-locked');
-    return;
-  }
-  // FAIL-CLOSED : on reste verrouille tant que le worker n'a pas confirme ok:true
-  document.body.classList.add('premium-locked');
-  var fingerprint = genererFingerprint();
-  try {
-    fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
-    }).then(function(r){
-      if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
-      return r.json();
-    }).then(function(data){
-      if (!data) { document.body.classList.add('premium-locked'); return; }
-      // Cas 403 : Limite 2 appareils ou code invalide
-      if (data._status === 403) {
-        localStorage.removeItem('cmt_premium_code');
-        localStorage.removeItem('cmt_premium_expiry');
-        document.body.classList.add('premium-locked');
-        if (data.data && data.data.error) {
-          var alert_msg = document.createElement('div');
-          alert_msg.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#FF6B6B;color:#fff;padding:14px 24px;border-radius:8px;z-index:10000;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
-          alert_msg.textContent = '🚫 ' + data.data.error;
-          document.body.appendChild(alert_msg);
-          setTimeout(function(){ if(alert_msg.parentNode) alert_msg.parentNode.removeChild(alert_msg); }, 6000);
-        }
-        return;
-      }
-      if (!data.ok) {
-        localStorage.removeItem('cmt_premium_code');
-        localStorage.removeItem('cmt_premium_expiry');
-        document.body.classList.add('premium-locked');
-      } else {
-        // Succes confirme par le worker : on deverrouille
-        document.body.classList.remove('premium-locked');
-        if (data.alerte72h) {
-          var d = document.createElement('div');
-          d.className = 'premium-alert';
-          d.textContent = data.messageAlerte;
-          var c = document.querySelector('.container');
-          if (c) c.insertBefore(d, c.firstChild);
-        }
-        if (data.nom) { afficherWatermark(data.nom, code); }
-      }
-    }).catch(function(){/* reseau/CORS — FAIL-CLOSED : rester verrouille */ document.body.classList.add('premium-locked'); });
-  } catch(e) { document.body.classList.add('premium-locked'); }
-
-  function afficherWatermark(nom, codeUser) {
-    // Identifiant compte = 4 derniers caractères du code (anti-partage)
-    var tag = codeUser ? codeUser.substring(codeUser.length - 4) : '';
-    var d = new Date();
-    var dateStr = ('0'+d.getDate()).slice(-2) + '/' + ('0'+(d.getMonth()+1)).slice(-2) + '/' + d.getFullYear() + ' ' + ('0'+d.getHours()).slice(-2) + ':' + ('0'+d.getMinutes()).slice(-2);
-    var libelle = '★ CMT — ' + nom + (tag ? ' #' + tag : '') + ' · ' + dateStr + ' ★';
-    if (document.getElementById('cmt-watermark')) return;
-    var wm = document.createElement('div');
-    wm.id = 'cmt-watermark';
-    wm.style.cssText = [
-      'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
-      'pointer-events:none', 'z-index:9999', 'overflow:hidden',
-      'user-select:none', '-webkit-user-select:none'
-    ].join(';');
-    // Mosaique : plusieurs lignes repetees sur toute la hauteur
-    var inner = '';
-    for (var i = 0; i < 14; i++) {
-      inner += '<div style="white-space:nowrap;font-size:16px;font-weight:bold;color:rgba(255,255,255,0.11);letter-spacing:3px;text-transform:uppercase;margin:34px 0;transform:rotate(-32deg);">'
-             + (libelle + '   ').repeat(6) + '</div>';
-    }
-    wm.innerHTML = inner;
-    document.body.appendChild(wm);
-  }
-})();
-</script>
-
-
-<div class="premium-wall">
-  <img src="logo.png" alt="CMT" onerror="this.style.display='none'">
-  <h1>🔒 CONTENU PREMIUM</h1>
-  <p>Cette section nécessite un abonnement Premium.</p>
-  <a href="https://carremagique-turf.com/abonnement.html">🎯 S'ABONNER MAINTENANT</a>
-  <br><br>
-  <a href="https://carre-magique-premium.casaturf007.workers.dev" style="background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;margin-top:10px;">🔑 J'AI DÉJÀ UN CODE</a>
-</div>
 
 <a class="back-button" href="reunion_R1.html">← Retour R1</a>
 <div class="container">
@@ -374,10 +160,14 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     <a class="nav-btn" href="synthese_R1C7.html" style="background:linear-gradient(135deg,#6C3483,#4A235A);color:#E8D5FF;border-color:#A855F7;font-weight:bold;">📋 Synthèse</a>
 </div>
     
+    <div class="arrivee-box">
+        <div class="arrivee-label">🏆 ARRIVÉE OFFICIELLE</div>
+        <div class="arrivee-nums">10 - 6 - 7 - 5</div>
+    </div>
     <div class="main-section">
         <div class="section-title">🏊 RECOMMANDATION SPÉCIAL ATTÉLÉ</div>
         <div style="font-size:18px; color:#00B4D8; font-weight:bold; margin-bottom:10px;">
-            ⭐ TOP 8 : 10 - 7 - 13 - 8 - 6 - 12 - 5 - 11
+            ⭐ TOP 8 : 10 - 7 - 13 - 8 - 12 - 5 - 6 - 11
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;padding:8px;background:#0D0D0D;border-radius:8px;border:1px solid #333;">
             <div style="display:flex;align-items:center;margin-right:8px;"><span style="font-size:13px;color:#FF6B6B;font-weight:bold;">🎛️ FILTRES</span></div>
@@ -392,7 +182,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 ↺ Reset
             </button>
         </div>
-        <table id="tableau-discipline"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3" data-gains="6508500.0" data-score_mus="10.0" data-rg_gains="4.0" data-rg_musique="1.0" data-score_f6="2.3"><td>1</td><td>10</td><td>NEBRASKA DE GINIER</td><td>6508500</td><td>10</td><td>4</td><td>1</td><td>2.3</td></tr><tr class="top3" data-gains="5587500.0" data-score_mus="8.75" data-rg_gains="7.0" data-rg_musique="2.0" data-score_f6="3.0"><td>2</td><td>7</td><td>NOTHINGELSEMATTERS</td><td>5587500</td><td>8.75</td><td>7</td><td>2</td><td>3</td></tr><tr class="top3" data-gains="7393000.0" data-score_mus="4.2" data-rg_gains="1.0" data-rg_musique="7.0" data-score_f6="4.6"><td>3</td><td>13</td><td>NICE SPEED</td><td>7393000</td><td>4.2</td><td>1</td><td>7</td><td>4.6</td></tr><tr class="top5" data-gains="5647500.0" data-score_mus="6.0" data-rg_gains="6.0" data-rg_musique="3.0" data-score_f6="4.85"><td>4</td><td>8</td><td>NIKY ELDE</td><td>5647500</td><td>6</td><td>6</td><td>3</td><td>4.85</td></tr><tr class="top5" data-gains="5099000.0" data-score_mus="4.4" data-rg_gains="8.0" data-rg_musique="6.0" data-score_f6="6.15"><td>5</td><td>6</td><td>NEMROD BUROIS</td><td>5099000</td><td>4.4</td><td>8</td><td>6</td><td>6.15</td></tr><tr class="top8" data-gains="7299500.0" data-score_mus="1.4" data-rg_gains="2.0" data-rg_musique="12.0" data-score_f6="6.45"><td>6</td><td>12</td><td>NET MONEY</td><td>7299500</td><td>1.4</td><td>2</td><td>12</td><td>6.45</td></tr><tr class="top8" data-gains="4565000.0" data-score_mus="5.4" data-rg_gains="9.0" data-rg_musique="5.0" data-score_f6="7.05"><td>7</td><td>5</td><td>NICE TO SEE YOU</td><td>4565000</td><td>5.4</td><td>9</td><td>5</td><td>7.05</td></tr><tr class="top8" data-gains="7138000.0" data-score_mus="1.4" data-rg_gains="3.0" data-rg_musique="11.0" data-score_f6="7.95"><td>8</td><td>11</td><td>NAUTILIO BELLO</td><td>7138000</td><td>1.4</td><td>3</td><td>11</td><td>7.95</td></tr><tr class="outsider" data-gains="2179000.0" data-score_mus="5.6" data-rg_gains="12.0" data-rg_musique="4.0" data-score_f6="8.1"><td>9</td><td>2</td><td>ICEBERG BI</td><td>2179000</td><td>5.6</td><td>12</td><td>4</td><td>8.1</td></tr><tr class="outsider" data-gains="132000.0" data-score_mus="1.5" data-rg_gains="13.0" data-rg_musique="10.0" data-score_f6="9.55"><td>10</td><td>1</td><td>ITSELF KRONOS</td><td>132000</td><td>1.5</td><td>13</td><td>10</td><td>9.55</td></tr><tr class="outsider" data-gains="6004000.0" data-score_mus="0.25" data-rg_gains="5.0" data-rg_musique="13.0" data-score_f6="10.2"><td>11</td><td>9</td><td>NELSON DE BUSSET</td><td>6004000</td><td>0.25</td><td>5</td><td>13</td><td>10.2</td></tr><tr class="outsider" data-gains="4496500.0" data-score_mus="2.0" data-rg_gains="11.0" data-rg_musique="8.0" data-score_f6="10.35"><td>12</td><td>3</td><td>NANO UP STAR</td><td>4496500</td><td>2</td><td>11</td><td>8</td><td>10.35</td></tr><tr class="outsider" data-gains="4503000.0" data-score_mus="1.6" data-rg_gains="10.0" data-rg_musique="9.0" data-score_f6="10.45"><td>13</td><td>4</td><td>NECTAR DE LA FYE</td><td>4503000</td><td>1.6</td><td>10</td><td>9</td><td>10.45</td></tr></tbody></table>
+        <table id="tableau-discipline"><thead><tr><th>Rang</th><th>N°</th><th>Cheval</th><th>Gains</th><th>Score Mus</th><th>Rg Gains</th><th>Rg Musique</th><th>Score F6</th></tr></thead><tbody><tr class="top3" data-gains="6508500.0" data-score_mus="10.0" data-rg_gains="4.0" data-rg_musique="1.0" data-score_f6="2.3"><td>1</td><td>10</td><td>NEBRASKA DE GINIER</td><td>6508500</td><td>10</td><td>4</td><td>1</td><td>2.3</td></tr><tr class="top3" data-gains="5587500.0" data-score_mus="8.75" data-rg_gains="7.0" data-rg_musique="2.0" data-score_f6="3.0"><td>2</td><td>7</td><td>NOTHINGELSEMATTERS</td><td>5587500</td><td>8.75</td><td>7</td><td>2</td><td>3</td></tr><tr class="top3" data-gains="7393000.0" data-score_mus="4.2" data-rg_gains="1.0" data-rg_musique="7.0" data-score_f6="4.6"><td>3</td><td>13</td><td>NICE SPEED</td><td>7393000</td><td>4.2</td><td>1</td><td>7</td><td>4.6</td></tr><tr class="top5" data-gains="5647500.0" data-score_mus="6.0" data-rg_gains="6.0" data-rg_musique="3.0" data-score_f6="4.85"><td>4</td><td>8</td><td>NIKY ELDE</td><td>5647500</td><td>6</td><td>6</td><td>3</td><td>4.85</td></tr><tr class="top5" data-gains="7299500.0" data-score_mus="1.4" data-rg_gains="2.0" data-rg_musique="12.0" data-score_f6="6.45"><td>5</td><td>12</td><td>NET MONEY</td><td>7299500</td><td>1.4</td><td>2</td><td>12</td><td>6.45</td></tr><tr class="top8" data-gains="4565000.0" data-score_mus="5.4" data-rg_gains="9.0" data-rg_musique="5.0" data-score_f6="6.55"><td>6</td><td>5</td><td>NICE TO SEE YOU</td><td>4565000</td><td>5.4</td><td>9</td><td>5</td><td>6.55</td></tr><tr class="top8" data-gains="5099000.0" data-score_mus="4.4" data-rg_gains="8.0" data-rg_musique="6.0" data-score_f6="6.65"><td>7</td><td>6</td><td>NEMROD BUROIS</td><td>5099000</td><td>4.4</td><td>8</td><td>6</td><td>6.65</td></tr><tr class="top8" data-gains="7138000.0" data-score_mus="1.4" data-rg_gains="3.0" data-rg_musique="11.0" data-score_f6="7.95"><td>8</td><td>11</td><td>NAUTILIO BELLO</td><td>7138000</td><td>1.4</td><td>3</td><td>11</td><td>7.95</td></tr><tr class="outsider" data-gains="2179000.0" data-score_mus="5.6" data-rg_gains="12.0" data-rg_musique="4.0" data-score_f6="8.1"><td>9</td><td>2</td><td>ICEBERG BI</td><td>2179000</td><td>5.6</td><td>12</td><td>4</td><td>8.1</td></tr><tr class="outsider" data-gains="132000.0" data-score_mus="1.5" data-rg_gains="13.0" data-rg_musique="10.0" data-score_f6="9.55"><td>10</td><td>1</td><td>ITSELF KRONOS</td><td>132000</td><td>1.5</td><td>13</td><td>10</td><td>9.55</td></tr><tr class="outsider" data-gains="6004000.0" data-score_mus="0.25" data-rg_gains="5.0" data-rg_musique="13.0" data-score_f6="10.2"><td>11</td><td>9</td><td>NELSON DE BUSSET</td><td>6004000</td><td>0.25</td><td>5</td><td>13</td><td>10.2</td></tr><tr class="outsider" data-gains="4496500.0" data-score_mus="2.0" data-rg_gains="11.0" data-rg_musique="8.0" data-score_f6="10.35"><td>12</td><td>3</td><td>NANO UP STAR</td><td>4496500</td><td>2</td><td>11</td><td>8</td><td>10.35</td></tr><tr class="outsider" data-gains="4503000.0" data-score_mus="1.6" data-rg_gains="10.0" data-rg_musique="9.0" data-score_f6="10.45"><td>13</td><td>4</td><td>NECTAR DE LA FYE</td><td>4503000</td><td>1.6</td><td>10</td><td>9</td><td>10.45</td></tr></tbody></table>
     </div>
     <script>
 function filtrerTableau() {
