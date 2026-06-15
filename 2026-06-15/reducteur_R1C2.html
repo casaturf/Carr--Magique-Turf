@@ -4,32 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>R1-C2 Réducteur - Carré Magique Turf</title>
+  <meta name="description" content="Système Réducteur Carré Magique Turf - 12 combinaisons optimales pour Quinté+, Quarté+, Tiercé">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #FFFFFF; min-height: 100vh; padding: 0; margin: 0; }
     .container { max-width: 1600px; margin: 0 auto; padding: 0 10px 10px 10px; }
-    .header { text-align: center; margin-bottom: 5px; padding: 0; }
-    .logo { width: 120px; height: auto; }
-    .back-button { position: absolute; top: 5px; left: 10px; background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 14px; font-weight: bold; text-decoration: none; z-index: 10; }
-    .back-button:hover { background: #00B4D8; color: #000; }
+    .header { text-align: center; margin-bottom: 5px; margin-top: 0; padding: 0; }
+    .logo { width: 120px; height: auto; margin-bottom: 0; margin-top: 0; }
+    .back-button { position: absolute; top: 5px; left: 10px; background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 14px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; z-index: 10; }
+    .back-button:hover { background: #00B4D8; color: #000000; transform: translateX(-5px); }
     .main-section { background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%); border: 2px solid #00B4D8; border-radius: 10px; padding: 15px; margin-bottom: 6px; }
+    .section-title { font-size: 20px; color: #FF6B6B; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid #FF6B6B; }
     .course-title { font-size: 24px; color: #00B4D8; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 180, 216, 0.5); }
-    .course-info { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .course-info { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 3px; }
     .info-badge { background: #1A1A1A; padding: 8px 16px; border-radius: 8px; font-size: 11px; border: 2px solid #C8A882; color: #C8A882; }
+    .arrivee-box { background: linear-gradient(135deg, #0D2D1A 0%, #0A1A0D 100%); border: 2px solid #00FF88; border-radius: 10px; padding: 12px 20px; margin-bottom: 10px; text-align: center; }
+    .arrivee-box .arrivee-label { font-size: 13px; color: #00FF88; font-weight: bold; margin-bottom: 4px; }
+    .arrivee-box .arrivee-nums { font-size: 22px; font-weight: bold; color: #FFFFFF; letter-spacing: 2px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    thead th { background: #00B4D8; color: #000000; padding: 10px 8px; text-align: center; font-weight: bold; font-size: 13px; }
+    tbody td { padding: 10px 6px; text-align: center; border-bottom: 1px solid #2A2A2A; font-size: 13px; }
+    tbody tr { transition: all 0.2s ease; }
+    tbody tr:hover { background: rgba(0, 180, 216, 0.1); }
     .nav-buttons { display: flex; gap: 8px; justify-content: center; margin: 10px 0; flex-wrap: wrap; }
-    .nav-btn { background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
-    .nav-btn:hover { background: #00B4D8; color: #000; }
+    .nav-btn { background: #1A1A1A; color: #00B4D8; border: 2px solid #00B4D8; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
+    .nav-btn:hover { background: #00B4D8; color: #000000; }
+    .nav-btn.active { background: #00B4D8; color: #000000; }
     .nav-reducteur { background: #D4AF37 !important; color: #000 !important; border-color: #D4AF37 !important; }
+    .nav-reducteur.active { background: #D4AF37 !important; color: #000 !important; }
+    .synthese-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+    .synthese-label { font-size: 11px; font-weight: bold; padding: 4px 14px; border-radius: 12px; min-width: 90px; text-align: center; }
+    .synthese-label.top8 { border: 1px solid #1D9E75; color: #1D9E75; }
+    .synthese-label.outs { border: 1px solid #D4AF37; color: #D4AF37; }
+    .synthese-label.surp { border: 1px solid #E04545; color: #E04545; }
+    .synthese-value { font-size: 15px; color: #FFF; letter-spacing: 2px; font-weight: bold; word-break: break-all; }
+    .premium-note { background: rgba(212,175,55,0.1); border: 1px solid #D4AF37; border-radius: 8px; padding: 10px; margin-bottom: 10px; text-align: center; color: #D4AF37; font-size: 13px; font-weight: bold; }
+    .btn-copier { background: #00B4D8; color: #000; border: none; padding: 12px 24px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 14px; font-family: inherit; }
+    .btn-copier:hover { background: #00A0C0; }
+    .msg-copie { text-align: center; margin-top: 10px; color: #1D9E75; font-weight: bold; display: none; }
     .footer { text-align: center; padding: 20px 10px; margin-top: 20px; border-top: 1px solid #2A2A2A; }
     .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
     .footer-links a { color: #00B4D8; text-decoration: none; font-size: 12px; }
     .footer-copy { font-size: 11px; color: #555; }
+
     @media (max-width: 768px) {
       .back-button { position: static; display: block; margin: 10px auto 20px; width: fit-content; }
       .course-title { font-size: 18px; }
+      .nav-buttons { gap: 5px; }
       .nav-btn { padding: 6px 10px; font-size: 11px; }
+      table { font-size: 11px; }
+      thead th, tbody td { padding: 6px 3px; }
+      .synthese-row { gap: 8px; }
+      .synthese-label { min-width: 70px; font-size: 10px; padding: 3px 8px; }
+      .synthese-value { font-size: 12px; letter-spacing: 1px; }
       .info-badge { font-size: 10px; padding: 6px 10px; }
       .main-section { padding: 10px; }
+      .section-title { font-size: 16px; }
     }
     .premium-wall { display: none; text-align:center; padding:80px 20px; min-height:80vh; }
     .premium-wall img { width:100px; margin-bottom:16px; }
@@ -51,9 +81,13 @@
         
         <div class="course-info" style="margin-top:10px;">
             <span class="info-badge">🕐 15:03</span>
-            <span class="info-badge">📏 1400m</span>
-            <span class="info-badge">🏆 3 partants classés</span>
+<span class="info-badge">🏇 PLAT</span>
+<span class="info-badge">📏 1400m</span>
+<span class="info-badge">💰 18200€</span>
+<span class="info-badge">🏆 14 partants</span>
+
         </div>
+        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0;"><a href="reducteur_R1C1.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C1</a><a href="reducteur_R1C2.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;background:#FF6B6B;color:#000;border-color:#FF6B6B;">C2</a><a href="reducteur_R1C3.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C3</a><a href="reducteur_R1C4.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C4</a><a href="reducteur_R1C5.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C5</a><a href="reducteur_R1C6.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C6</a><a href="reducteur_R1C7.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C7</a><a href="reducteur_R1C8.html" style="display:inline-block;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">C8</a></div>
     </div>
 
     <div class="nav-buttons">
@@ -62,7 +96,7 @@
         <a class="nav-btn" href="formules_R1C2.html">⭐ Recommandation</a>
         <a class="nav-btn" href="plat_R1C2.html" style="background:linear-gradient(135deg,#E74C3C,#C0392B);color:#fff;border-color:#E74C3C;font-weight:bold;">🏆 Spécial PLAT</a>
         <a class="nav-btn" href="fusion_R1C2.html">⚡ Fusion Score</a>
-        <a class="nav-btn nav-reducteur" href="reducteur_R1C2.html">⚡ Réducteur</a>
+        <a class="nav-btn nav-reducteur active" href="reducteur_R1C2.html">⚡ Réducteur</a>
         <a class="nav-btn" href="fusion_histo_R1C2.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;">🔬 Fusion Histo</a>
         <a class="nav-btn" href="specialistes_R1C2.html" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700;font-weight:bold;">🎯 Spécialistes</a>
         <a class="nav-btn" href="cmt_selection_R1C2.html" style="background:linear-gradient(135deg,#00B4D8,#0077B6);color:#fff;border-color:#00B4D8;font-weight:bold;">🎯 CMT Selection</a>
@@ -72,19 +106,166 @@
         <a class="nav-btn" href="radar_R1C2.html" style="background:linear-gradient(135deg,#00CED1,#008B8B);color:#000;border-color:#00CED1;font-weight:bold;">📡 Radar CMT</a>
         <a class="nav-btn" href="synthese_R1C2.html" style="background:linear-gradient(135deg,#6C3483,#4A235A);color:#E8D5FF;border-color:#A855F7;font-weight:bold;">📋 Synthèse</a>
     </div>
+    
+    <div class="premium-note">
+        ⚡ Système gratuit pour la phase de test - Bientôt Premium ⚡
+    </div>
 
-    <div class="main-section" style="text-align:center;padding:40px 20px;">
-        <div style="font-size:48px;margin-bottom:20px;">⏳</div>
-        <div style="font-size:20px;color:#00B4D8;margin-bottom:15px;font-weight:bold;">Réducteur en préparation</div>
-        <div style="color:#AAA;font-size:14px;line-height:1.6;max-width:600px;margin:0 auto;">
-            Le classement de cette course n'est pas encore suffisamment complet pour générer un système réducteur fiable.<br><br>
-            Le système se met à jour <strong style="color:#D4AF37;">toutes les 15 minutes</strong> en fonction de l'évolution des mises et cotes.<br><br>
-            Revenez plus tard pour consulter vos 12 combinaisons optimales !
+    <div class="main-section">
+        <div class="section-title">📊 SYNTHÈSE DU CLASSEMENT</div>
+        <div style="padding:10px;">
+            <div class="synthese-row">
+                <span class="synthese-label top8">TOP 8</span>
+                <span class="synthese-value">10 - 11 - 1 - 6 - 14</span>
+            </div>
+            <div class="synthese-row">
+                <span class="synthese-label outs">OUTSIDERS</span>
+                <span class="synthese-value">Aucun</span>
+            </div>
+            <div class="synthese-row">
+                <span class="synthese-label surp">SURPRISE</span>
+                <span class="synthese-value">Aucun</span>
+            </div>
         </div>
     </div>
 
-    <div style="background:rgba(212,175,55,0.1);border:1px solid #D4AF37;border-radius:8px;padding:10px;margin-bottom:10px;text-align:center;">
-        <div style="color:#D4AF37;font-size:13px;font-weight:bold;">⚡ Système gratuit pour la phase de test - Bientôt Premium ⚡</div>
+    <div class="main-section" style="border-color:#FF69B4;">
+        <div class="section-title" style="color:#FF69B4;border-color:#FF69B4;">🧠 CLASSIFICATION INTELLIGENTE</div>
+        <div style="padding:10px;">
+            
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;">
+                <span style="font-size:11px;font-weight:bold;padding:4px 14px;border-radius:12px;min-width:110px;text-align:center;border:1px solid #E04545;color:#E04545;background:#2D0A0A;">BASES</span>
+                <span style="font-size:15px;color:#FFF;letter-spacing:2px;font-weight:bold;">11 - 6 - 1 - 10 - 14</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;">
+                <span style="font-size:11px;font-weight:bold;padding:4px 14px;border-radius:12px;min-width:110px;text-align:center;border:1px solid #00B4D8;color:#00B4D8;background:#0A1A2D;">OUTSIDER</span>
+                <span style="font-size:15px;color:#FFF;letter-spacing:2px;font-weight:bold;">2</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;">
+                <span style="font-size:11px;font-weight:bold;padding:4px 14px;border-radius:12px;min-width:110px;text-align:center;border:1px solid #FF8C00;color:#FF8C00;background:#2D1A0A;">SURPRISE</span>
+                <span style="font-size:15px;color:#FFF;letter-spacing:2px;font-weight:bold;">9 - 7</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-section" style="border-color:#D4AF37;">
+        <div class="section-title" style="color:#D4AF37;border-color:#D4AF37;">🎯 12 COMBINAISONS (triées par score)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>RANG</th>
+                    <th>BASES + X</th>
+                    <th>FIXES</th>
+                    <th>REMPLAÇANTS</th>
+                    <th>FIN</th>
+                    <th>SCORE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background:rgba(29,158,117,0.15);">
+                    <td style="color:#1D9E75;font-weight:bold;">🥇1</td>
+                    <td style="color:#00B4D8;font-weight:bold;">10 x 11 x 14</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">34</td>
+                </tr>
+                <tr style="background:rgba(29,158,117,0.15);">
+                    <td style="color:#1D9E75;font-weight:bold;">🥈2</td>
+                    <td style="color:#00B4D8;font-weight:bold;">10 x 11 x 0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">14</td>
+                    <td style="color:#1D9E75;font-weight:bold;">34</td>
+                </tr>
+                <tr style="background:rgba(29,158,117,0.15);">
+                    <td style="color:#1D9E75;font-weight:bold;">🥉3</td>
+                    <td style="color:#00B4D8;font-weight:bold;">10 x 1 x 14</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">33</td>
+                </tr>
+                <tr style="background:rgba(212,175,55,0.08);">
+                    <td style="color:#D4AF37;font-weight:bold;">4</td>
+                    <td style="color:#00B4D8;font-weight:bold;">10 x 1 x 0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">14</td>
+                    <td style="color:#D4AF37;font-weight:bold;">33</td>
+                </tr>
+                <tr style="background:rgba(212,175,55,0.08);">
+                    <td style="color:#D4AF37;font-weight:bold;">5</td>
+                    <td style="color:#00B4D8;font-weight:bold;">10 x 6 x 14</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">32</td>
+                </tr>
+                <tr style="background:rgba(212,175,55,0.08);">
+                    <td style="color:#D4AF37;font-weight:bold;">6</td>
+                    <td style="color:#00B4D8;font-weight:bold;">11 x 1 x 14</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">32</td>
+                </tr>
+                <tr style="background:transparent;">
+                    <td style="color:#888;font-weight:bold;">7</td>
+                    <td style="color:#00B4D8;font-weight:bold;">10 x 6 x 0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">14</td>
+                    <td style="color:#888;font-weight:bold;">32</td>
+                </tr>
+                <tr style="background:transparent;">
+                    <td style="color:#888;font-weight:bold;">8</td>
+                    <td style="color:#00B4D8;font-weight:bold;">11 x 1 x 0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">14</td>
+                    <td style="color:#888;font-weight:bold;">32</td>
+                </tr>
+                <tr style="background:transparent;">
+                    <td style="color:#888;font-weight:bold;">9</td>
+                    <td style="color:#00B4D8;font-weight:bold;">11 x 6 x 14</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0</td>
+                    <td style="color:#888;font-weight:bold;">31</td>
+                </tr>
+                <tr style="background:transparent;">
+                    <td style="color:#888;font-weight:bold;">10</td>
+                    <td style="color:#00B4D8;font-weight:bold;">11 x 6 x 0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">14</td>
+                    <td style="color:#888;font-weight:bold;">31</td>
+                </tr>
+                <tr style="background:transparent;">
+                    <td style="color:#888;font-weight:bold;">11</td>
+                    <td style="color:#00B4D8;font-weight:bold;">1 x 6 x 14</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0</td>
+                    <td style="color:#888;font-weight:bold;">30</td>
+                </tr>
+                <tr style="background:transparent;">
+                    <td style="color:#888;font-weight:bold;">12</td>
+                    <td style="color:#00B4D8;font-weight:bold;">1 x 6 x 0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">0 0</td>
+                    <td style="color:#D4AF37;font-weight:bold;">9,2,7,0,0</td>
+                    <td style="color:#1D9E75;font-weight:bold;">14</td>
+                    <td style="color:#888;font-weight:bold;">30</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin-top:15px;text-align:center;">
+            <button onclick="copierTicket()" class="btn-copier">
+                📋 COPIER VOTRE TICKET
+            </button>
+        </div>
+        <div id="msg-copie" class="msg-copie">✓ Ticket copié !</div>
     </div>
 </div>
 <footer class="footer">
@@ -97,5 +278,27 @@
   </div>
   <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
 </footer>
+<script>
+function copierTicket() {
+    var rows = document.querySelectorAll('tbody tr');
+    var texte = 'SYSTÈME RÉDUCTEUR CMT\n';
+    texte += 'R1-C2 - PRIX DU QUAI DE JEMMAPES\n';
+    texte += 'TOP 8: 10 - 11 - 1 - 6 - 14\n';
+    texte += 'OUTSIDERS: Aucun\n';
+    texte += 'SURPRISE: Aucun\n\n';
+    texte += '12 COMBINAISONS:\n';
+    rows.forEach(function(r, i) {
+        var cells = r.querySelectorAll('td');
+        if (cells.length >= 5) {
+            texte += (i+1).toString().padStart(2, ' ') + ' | ' + cells[1].innerText + ' | Fixes: ' + cells[2].innerText + ' | Remp: ' + cells[3].innerText + ' | Fin: ' + cells[4].innerText + '\n';
+        }
+    });
+    navigator.clipboard.writeText(texte).then(function() {
+        var msg = document.getElementById('msg-copie');
+        msg.style.display = 'block';
+        setTimeout(function() { msg.style.display = 'none'; }, 3000);
+    });
+}
+</script>
 </body>
 </html>
