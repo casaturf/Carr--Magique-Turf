@@ -93,32 +93,25 @@ body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-h
 
   <div class="sec-title">Choisissez votre pack</div>
   <div class="packs">
-    <div class="pack" onclick="selectPack(this,'jour',1.05)">
+    <div class="pack" onclick="selectPack(this,'jour',1)">
       <div class="pack-check">✓</div>
       <div class="pack-name">Accès test</div>
       <div class="pack-dur">1 <span>jour</span></div>
-      <div class="pack-eur" id="p-jour">1,05 €</div>
+      <div class="pack-eur" id="p-jour">1,00 €</div>
       <div class="pack-local" id="l-jour"></div>
     </div>
-    <div class="pack" onclick="selectPack(this,'decouverte',10.50)">
+    <div class="pack" onclick="selectPack(this,'decouverte',15)">
       <div class="pack-check">✓</div>
       <div class="pack-name">Découverte</div>
       <div class="pack-dur">7 <span>jours</span></div>
-      <div class="pack-eur" id="p-decouverte">10,50 €</div>
+      <div class="pack-eur" id="p-decouverte">15,00 €</div>
       <div class="pack-local" id="l-decouverte"></div>
     </div>
-    <div class="pack" onclick="selectPack(this,'quinzaine',21.00)">
-      <div class="pack-check">✓</div>
-      <div class="pack-name">Quinzaine</div>
-      <div class="pack-dur">15 <span>jours</span></div>
-      <div class="pack-eur" id="p-quinzaine">21,00 €</div>
-      <div class="pack-local" id="l-quinzaine"></div>
-    </div>
-    <div class="pack pop" onclick="selectPack(this,'mois',36.75)">
+    <div class="pack pop" onclick="selectPack(this,'mois',50)">
       <div class="pack-check">✓</div>
       <div class="pack-name">Mensuel</div>
       <div class="pack-dur">30 <span>jours</span></div>
-      <div class="pack-eur" id="p-mois">36,75 €</div>
+      <div class="pack-eur" id="p-mois">50,00 €</div>
       <div class="pack-local" id="l-mois"></div>
     </div>
   </div>
@@ -215,7 +208,7 @@ const TEL_OM='+212601972400';
 const CINETPAY_SITE_ID='VOTRE_SITE_ID';
 const CINETPAY_API_KEY='VOTRE_API_KEY';
 const WORKER_URL='https://carre-magique-premium.casaturf007.workers.dev';
-const PACKS={jour:{label:'1 jour',duree:'jour',eur:1.05},decouverte:{label:'7 jours',duree:'decouverte',eur:10.50},quinzaine:{label:'15 jours',duree:'quinzaine',eur:21.00},mois:{label:'30 jours',duree:'mois',eur:36.75}};
+const PACKS={jour:{label:'1 jour',duree:'jour',eur:1},decouverte:{label:'7 jours',duree:'decouverte',eur:15},mois:{label:'30 jours',duree:'mois',eur:50}};
 const SYM={EUR:'€',MAD:' MAD',XOF:' FCFA',XAF:' FCFA',DZD:' DZD',TND:' TND',USD:'$',CAD:' CA$',CHF:' CHF',GBP:'£',SAR:' SAR',AED:' AED',MRU:' MRU',GNF:' GNF',MGA:' Ar'};
 let sel=null,mode=null,taux={};
 
