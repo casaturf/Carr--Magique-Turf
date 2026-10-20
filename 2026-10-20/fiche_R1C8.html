@@ -129,7 +129,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('js', new Date());
     gtag('config', 'G-11QETD2M15');
   </script>
-<meta name="fv-gen" content="2026-10-20T15:20:16">
+<meta name="fv-gen" content="2026-10-20T15:40:16">
 <style>
 .fv{color:#fff;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
 .fv .barre{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0;font-size:13px;color:#C8A882}
@@ -159,6 +159,10 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 .fv .pie{color:#FF6B6B;font-weight:bold}
 .fv #fvup{display:none;background:rgba(255,215,0,.15);border:2px solid #FFD700;color:#FFD700;padding:8px;border-radius:8px;text-align:center;margin:8px 0;font-weight:bold}
 .fv .note{font-size:11px;color:#888;margin-top:8px}
+.fv #fvarr{display:none;background:linear-gradient(135deg,#0D2D1A 0%,#0A1A0D 100%);border:2px solid #00FF88;border-radius:10px;padding:12px 20px;margin:8px 0;text-align:center}
+.fv #fvarr .al{font-size:13px;color:#00FF88;font-weight:bold;margin-bottom:4px}
+.fv #fvarr .an{font-size:22px;font-weight:bold;color:#fff;letter-spacing:2px}
+.fv table.fvt td.ar{font-weight:bold;color:#00FF88}
 </style>
 </head>
 <body class="premium-locked">
@@ -291,6 +295,7 @@ document.getElementById('fvcode').addEventListener('keypress',function(e){if(e.k
 </div>
 <div class="main-section fv" style="margin-top:12px;">
 <div id="fvup">🔄 Nouvelle mise à jour disponible — <button id="fvrel">Recharger</button></div>
+<div id="fvarr"><div class="al">🏆 ARRIVÉE OFFICIELLE</div><div class="an" id="fvarrn"></div></div>
 <div class="barre"><span>💎 FICHE VIP <b id="fvrc"></b></span><span>Dernière mise à jour des données : <b id="fvgen"></b></span></div>
 <div class="barre">
  <span>Classer par : <select id="fvcrit"><option value="mm">Mes méthodes</option><option value="clh">Classement historique</option><option value="sig">Signaux</option><option value="sp">Score Paires</option><option value="vip">Points VIP</option><option value="hist">Points Hist</option></select></span>
@@ -310,10 +315,11 @@ document.getElementById('fvcode').addEventListener('keypress',function(e){if(e.k
 <div class="tw"><table class="fvt" id="t"><thead><tr id="fvh"></tr><tr class="flt" id="fvf"></tr></thead><tbody id="fvb"></tbody></table></div>
 <div class="note">Case du numéro décochée = non-partant (barré, en bas). Case « Écarter » cochée = cheval écarté par toi : il reste affiché avec son classement historique mais sort du classement et du top. Tes choix (méthodes, écartés, non-partants, critère) sont mémorisés sur cet appareil. Pronostic indicatif — jouez avec modération.</div>
 </div>
-<script type="application/json" id="cmtdata">{"meth": ["analyse croisee", "classement", "classement histo", "cmt selection", "fusion histo", "fusion score", "groupes cmt", "radar cmt", "reducteur", "special plat", "specialistes", "verdict final"], "rows": [{"n": 4, "vip": "", "hist": "", "hist_v": "", "sp": "13.43 (2)", "sp_v": "13.43", "groupe": "PIEGE", "alerte": "PIEGE FORT", "chute": "", "chute_v": "", "signaux": 8, "meth": 7, "verdict": "surprise potentielle", "clh": "", "m": [0, 2, 4, 6, 8, 10, 11]}, {"n": 1, "vip": "", "hist": "", "hist_v": "", "sp": "14.30 (1)", "sp_v": "14.30", "groupe": "OUTSIDER", "alerte": "", "chute": "", "chute_v": "", "signaux": 7, "meth": 8, "verdict": "outsider +", "clh": "", "m": [0, 1, 2, 4, 5, 6, 8, 9]}, {"n": 7, "vip": "", "hist": "", "hist_v": "", "sp": "10.97 (3)", "sp_v": "10.97", "groupe": "BASE", "alerte": "", "chute": "", "chute_v": "", "signaux": 6, "meth": 10, "verdict": "base solide", "clh": "", "m": [0, 1, 3, 5, 6, 7, 8, 9, 10, 11]}, {"n": 8, "vip": "", "hist": "", "hist_v": "", "sp": "10.07 (4)", "sp_v": "10.07", "groupe": "BASE", "alerte": "", "chute": "", "chute_v": "", "signaux": 5, "meth": 8, "verdict": "outsider +", "clh": "", "m": [0, 1, 3, 5, 6, 7, 8, 11]}, {"n": 5, "vip": "", "hist": "", "hist_v": "", "sp": "5.92 (8)", "sp_v": "5.92", "groupe": "COMPLEM.", "alerte": "", "chute": "", "chute_v": "", "signaux": 4, "meth": 10, "verdict": "outsider +", "clh": "", "m": [0, 1, 2, 3, 5, 6, 7, 8, 9, 11]}, {"n": 6, "vip": "", "hist": "", "hist_v": "", "sp": "5.70 (9)", "sp_v": "5.70", "groupe": "COMPLEM.", "alerte": "", "chute": "", "chute_v": "", "signaux": 4, "meth": 11, "verdict": "base secondaire", "clh": "", "m": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]}, {"n": 9, "vip": "", "hist": "", "hist_v": "", "sp": "6.30 (7)", "sp_v": "6.30", "groupe": "COMPLEM.", "alerte": "", "chute": "", "chute_v": "", "signaux": 4, "meth": 12, "verdict": "base solide", "clh": "", "m": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]}, {"n": 10, "vip": "", "hist": "", "hist_v": "", "sp": "6.36 (6)", "sp_v": "6.36", "groupe": "BASE", "alerte": "", "chute": "", "chute_v": "", "signaux": 4, "meth": 7, "verdict": "champ elargi", "clh": "", "m": [1, 3, 5, 6, 7, 8, 9]}, {"n": 12, "vip": "", "hist": "", "hist_v": "", "sp": "6.40 (5)", "sp_v": "6.40", "groupe": "BASE", "alerte": "", "chute": "", "chute_v": "", "signaux": 4, "meth": 5, "verdict": "champ elargi", "clh": "", "m": [1, 3, 6, 8, 9]}, {"n": 2, "vip": "", "hist": "", "hist_v": "", "sp": "5.12 (11)", "sp_v": "5.12", "groupe": "COMPLEM.", "alerte": "", "chute": "", "chute_v": "", "signaux": 3, "meth": 12, "verdict": "anomalie", "clh": "", "m": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]}, {"n": 3, "vip": "", "hist": "", "hist_v": "", "sp": "5.15 (10)", "sp_v": "5.15", "groupe": "OUTSIDER", "alerte": "", "chute": "", "chute_v": "", "signaux": 3, "meth": 4, "verdict": "champ elargi", "clh": "", "m": [1, 6, 8, 10]}, {"n": 11, "vip": "", "hist": "", "hist_v": "", "sp": "4.91 (12)", "sp_v": "4.91", "groupe": "OUTSIDER", "alerte": "", "chute": "", "chute_v": "", "signaux": 3, "meth": 4, "verdict": "champ elargi", "clh": "", "m": [1, 5, 6, 8]}], "date": "2026-10-20", "rc": "R1C8", "gen": "2026-10-20T15:20:16", "genlbl": "20/10 15:20"}</script>
+<script type="application/json" id="cmtdata">{"meth": ["analyse croisee", "classement", "classement histo", "cmt selection", "fusion histo", "fusion score", "groupes cmt", "radar cmt", "reducteur", "special plat", "specialistes", "verdict final"], "rows": [{"n": 4, "vip": "", "hist": "", "hist_v": "", "sp": "13.43 (2)", "sp_v": "13.43", "groupe": "PIEGE", "alerte": "PIEGE FORT", "chute": "", "chute_v": "", "signaux": 28, "meth": 7, "verdict": "surprise potentielle", "clh": "", "m": [0, 2, 4, 6, 8, 10, 11]}, {"n": 12, "vip": "", "hist": "", "hist_v": "", "sp": "6.40 (5)", "sp_v": "6.40", "groupe": "OUTSIDER", "alerte": "", "chute": "", "chute_v": "", "signaux": 22, "meth": 5, "verdict": "outsider", "clh": "", "m": [0, 1, 6, 8, 9]}, {"n": 1, "vip": "", "hist": "", "hist_v": "", "sp": "14.30 (1)", "sp_v": "14.30", "groupe": "BASE", "alerte": "", "chute": "", "chute_v": "", "signaux": 21, "meth": 9, "verdict": "surprise serieuse", "clh": "", "m": [0, 1, 2, 3, 4, 5, 6, 8, 9]}, {"n": 7, "vip": "", "hist": "", "hist_v": "", "sp": "10.97 (3)", "sp_v": "10.97", "groupe": "BASE", "alerte": "", "chute": "", "chute_v": "", "signaux": 21, "meth": 9, "verdict": "champ elargi", "clh": "", "m": [1, 3, 5, 6, 7, 8, 9, 10, 11]}, {"n": 11, "vip": "", "hist": "", "hist_v": "", "sp": "4.91 (12)", "sp_v": "4.91", "groupe": "OUTSIDER", "alerte": "", "chute": "", "chute_v": "", "signaux": 19, "meth": 4, "verdict": "champ elargi", "clh": "", "m": [1, 5, 6, 8]}, {"n": 9, "vip": "", "hist": "", "hist_v": "", "sp": "6.30 (7)", "sp_v": "6.30", "groupe": "COMPLEM.", "alerte": "", "chute": "", "chute_v": "", "signaux": 18, "meth": 12, "verdict": "base solide", "clh": "", "m": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]}, {"n": 5, "vip": "", "hist": "", "hist_v": "", "sp": "5.92 (8)", "sp_v": "5.92", "groupe": "COMPLEM.", "alerte": "", "chute": "", "chute_v": "", "signaux": 17, "meth": 10, "verdict": "anomalie", "clh": "", "m": [0, 1, 2, 3, 5, 6, 7, 8, 9, 11]}, {"n": 8, "vip": "", "hist": "", "hist_v": "", "sp": "10.07 (4)", "sp_v": "10.07", "groupe": "BASE", "alerte": "", "chute": "", "chute_v": "", "signaux": 17, "meth": 8, "verdict": "outsider +", "clh": "", "m": [0, 1, 3, 5, 6, 7, 8, 11]}, {"n": 2, "vip": "", "hist": "", "hist_v": "", "sp": "5.12 (11)", "sp_v": "5.12", "groupe": "COMPLEM.", "alerte": "", "chute": "", "chute_v": "", "signaux": 16, "meth": 12, "verdict": "anomalie", "clh": "", "m": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]}, {"n": 3, "vip": "", "hist": "", "hist_v": "", "sp": "5.15 (10)", "sp_v": "5.15", "groupe": "OUTSIDER", "alerte": "", "chute": "", "chute_v": "", "signaux": 16, "meth": 4, "verdict": "champ elargi", "clh": "", "m": [1, 6, 8, 10]}, {"n": 6, "vip": "", "hist": "", "hist_v": "", "sp": "5.70 (9)", "sp_v": "5.70", "groupe": "COMPLEM.", "alerte": "", "chute": "", "chute_v": "", "signaux": 15, "meth": 11, "verdict": "base solide", "clh": "", "m": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]}, {"n": 10, "vip": "", "hist": "", "hist_v": "", "sp": "6.36 (6)", "sp_v": "6.36", "groupe": "BASE", "alerte": "", "chute": "", "chute_v": "", "signaux": 11, "meth": 8, "verdict": "outsider +", "clh": "", "m": [0, 1, 3, 5, 6, 7, 8, 9]}], "date": "2026-10-20", "rc": "R1C8", "gen": "2026-10-20T15:40:16", "genlbl": "20/10 15:40", "arr": []}</script>
 <script>
 (function(){
-var D=JSON.parse(document.getElementById('cmtdata').textContent),METH=D.meth,ROWS=D.rows;
+var D=JSON.parse(document.getElementById('cmtdata').textContent),METH=D.meth,ROWS=D.rows,ARR=(D.arr||[]).map(Number);
+if(ARR.length){document.getElementById('fvarr').style.display='block';document.getElementById('fvarrn').textContent=ARR.slice(0,6).join(' - ');}
 function $(i){return document.getElementById(i);}
 function LS(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){}return null;}
 function J(k,d){try{return JSON.parse(LS(k)||'')||d;}catch(e){return d;}}
@@ -322,7 +328,7 @@ var off=J(KNP,{}),ecart=J(KEC,{}),moff=J('cmt_vip_moff',{}),crit=LS('cmt_vip_cri
 if(['mm','clh','sig','sp','vip','hist'].indexOf(crit)<0)crit='mm';
 if([5,8,10,12].indexOf(topn)<0)topn=10;
 $('fvrc').textContent=D.rc;$('fvgen').textContent=D.genlbl;$('fvcrit').value=crit;$('fvtopn').value=String(topn);
-var COLS=['N°','Écarter','Rang','Mes méth.','Méth.','Signaux','PtsVIP','PtsHist','Cl. Hist.','Score Paires (rang)','Groupe','Alerte','Chute cote','Verdict'];
+var COLS=['N°','Écarter','Rang','Mes méth.','Arr.','Méth.','Signaux','PtsVIP','PtsHist','Cl. Hist.','Score Paires (rang)','Groupe','Alerte','Chute cote','Verdict'];
 var H=$('fvh'),F=$('fvf'),B=$('fvb'),sens={};
 function val(tr,i){var c=tr.cells[i],v=c.getAttribute('data-v');if(v===null)v=c.textContent;return v;}
 function bas(){
@@ -362,6 +368,7 @@ var R=ROWS.map(function(r){
   var te=document.createElement('td');te.className='e';te.setAttribute('data-v','0');
   var ce=document.createElement('input');ce.type='checkbox';ce.title='écarter ce cheval du classement (il reste affiché)';te.appendChild(ce);tr.appendChild(te);
   cel('','','rk');cel('','');
+  var pa=ARR.indexOf(r.n),ca=cel(pa>=0&&pa<6?String(pa+1):'',pa>=0&&pa<6?pa+1:'','ar');
   cel(r.meth,r.meth);cel(r.signaux,r.signaux);cel(r.vip,r.vip);cel(r.hist,r.hist_v);cel(r.clh,r.clh);cel(r.sp,r.sp_v);cel(r.groupe);
   cel(r.alerte,null,r.alerte.indexOf('OUTSIDER')===0?'out':(r.alerte.indexOf('PIEGE')===0?'pie':''));
   cel(r.chute,r.chute_v);cel(r.verdict);
