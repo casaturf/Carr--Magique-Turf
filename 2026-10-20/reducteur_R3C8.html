@@ -303,3 +303,11 @@ function copierTicket() {
         }
     });
     navigator.clipboard.writeText(texte).then(function() {
+        var msg = document.getElementById('msg-copie');
+        msg.style.display = 'block';
+        setTimeout(function() { msg.style.display = 'none'; }, 3000);
+    });
+}
+</script>
+</body>
+</html>
