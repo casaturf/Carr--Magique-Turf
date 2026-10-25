@@ -130,7 +130,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     gtag('config', 'G-11QETD2M15');
   </script>
 <meta name="fv-gen" content="">
-<meta name="fv-tpl" content="live2">
+<meta name="fv-tpl" content="live3">
 <style>
 .fv{color:#fff;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
 .fv .barre{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0;font-size:13px;color:#C8A882}
@@ -304,6 +304,7 @@ document.getElementById('fvcode').addEventListener('keypress',function(e){if(e.k
  <button id="bcop">Copier --np</button><button id="brst">Tout réactiver</button>
 </div>
 <div class="barre">Top <b id="fvtn"></b> : <b id="fvtop"></b> <button id="fvcpt">Copier</button></div>
+<div class="barre">Sélection (méthodes cochées, ordre des numéros) : <b id="fvsel"></b> <span id="fvseln"></span> <button id="fvcps">Copier</button></div>
 <details id="fvdet"><summary>⚙️ Mes méthodes (<span id="fvmc"></span>)</summary>
  <div class="barre" style="margin-top:8px"><input type="text" id="fvmq" placeholder="chercher une méthode..." style="background:#0D0D0D;color:#fff;border:1px solid #333;border-radius:4px;padding:4px"><button id="fvm1">Toutes</button><button id="fvm0">Aucune</button></div>
  <div id="fvml"></div>
@@ -402,6 +403,8 @@ function maj(){
   sens={};fleches(-1,1);
   $('fvtn').textContent=topn;
   $('fvtop').textContent=part.slice(0,topn).map(function(o){return o.r.n;}).join(' - ');
+  var sel=R.filter(function(o){return !o.np&&o.mm>0;}).map(function(o){return o.r.n;}).sort(function(a,b){return a-b;});
+  $('fvsel').textContent=sel.length?sel.join(' - '):'aucun';$('fvseln').textContent='('+sel.length+')';
   var l=R.filter(function(o){return o.np;}).map(function(o){return o.r.n;}).sort(function(a,b){return a-b;});
   var e=R.filter(function(o){return o.ec;}).map(function(o){return o.r.n;}).sort(function(a,b){return a-b;});
   $('npl').textContent=l.length?l.join(','):'aucun';$('npn').textContent=(R.length-l.length)+' partants';
@@ -424,6 +427,7 @@ $('fvg12').addEventListener('click',function(){lastPart.forEach(function(o,i){if
 $('fvec0').addEventListener('click',function(){ecart={};LS(KEC,'{}');maj();});
 $('brst').addEventListener('click',function(){off={};LS(KNP,'{}');maj();});
 $('bcop').addEventListener('click',function(){var t=$('npl').textContent;if(t==='aucun')return;try{navigator.clipboard.writeText('--np '+t);}catch(e){}});
+$('fvcps').addEventListener('click',function(){var t=$('fvsel').textContent;if(t==='aucun')return;try{navigator.clipboard.writeText(t.replace(/ - /g,'-'));}catch(e){}});
 $('fvcpt').addEventListener('click',function(){try{navigator.clipboard.writeText($('fvtop').textContent.replace(/ - /g,'-'));}catch(e){}});
 $('fvrel').addEventListener('click',function(){location.reload();});
 function charge(P){
