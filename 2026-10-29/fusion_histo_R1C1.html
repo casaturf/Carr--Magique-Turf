@@ -191,6 +191,52 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   </div>
   <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
 </footer>
+<script>
+(function(){
+function nb(t){
+  t=(t||'').replace(/\s+/g,' ').trim();
+  if(!t)return null;
+  var neg=t.charAt(0)==='▼';
+  var s=t.replace(/^[▲▼]/,'').replace(/[%€\s ]/g,'').replace(',','.');
+  if(/^[+-]?\d+(\.\d+)?$/.test(s)){var v=parseFloat(s);return neg?-v:v;}
+  return null;
+}
+function init(tb){
+  if(tb.hasAttribute('data-nosort')||tb.classList.contains('fvt')||tb.closest('.fv'))return;
+  var th=tb.tHead;if(!th||th.rows.length!==1||tb.tBodies.length!==1)return;
+  var b=tb.tBodies[0],hr=th.rows[0],n=hr.cells.length;
+  if(n<2||b.rows.length<2)return;
+  for(var i=0;i<n;i++){var h=hr.cells[i];if(h.colSpan>1||h.rowSpan>1||h.getAttribute('onclick'))return;}
+  for(var r=0;r<b.rows.length;r++){var ro=b.rows[r];if(ro.cells.length!==n)return;
+    for(var c=0;c<n;c++){if(ro.cells[c].colSpan>1||ro.cells[c].rowSpan>1)return;}}
+  var orig=[].slice.call(b.rows),col=-1,dir=0;
+  [].forEach.call(hr.cells,function(h,i){
+    var sp=document.createElement('span');sp.className='cmt-tri';sp.textContent=' ▲▼';sp.style.cssText='font-size:10px;opacity:.6';
+    h.appendChild(sp);h.style.cursor='pointer';h.style.userSelect='none';h.title='Cliquer pour trier';
+    h.addEventListener('click',function(){
+      dir=(col===i)?(dir===1?-1:(dir===-1?0:1)):1;col=i;
+      var rows;
+      if(!dir)rows=orig.slice();
+      else{
+        rows=orig.map(function(ro,k){var t=ro.cells[i].textContent.trim();return {r:ro,k:k,t:t,v:nb(t)};});
+        rows.sort(function(a,z){
+          if((a.t==='')!==(z.t===''))return a.t===''?1:-1;
+          var d;
+          if(a.v!==null&&z.v!==null)d=a.v-z.v;
+          else if(a.v!==null)d=-1;else if(z.v!==null)d=1;
+          else d=a.t.localeCompare(z.t,'fr',{numeric:true});
+          return d*dir||a.k-z.k;});
+        rows=rows.map(function(x){return x.r;});
+      }
+      rows.forEach(function(ro){b.appendChild(ro);});
+      [].forEach.call(hr.cells,function(h2,j){var s=h2.querySelector('.cmt-tri');if(!s)return;
+        var on=(j===i&&dir!==0);s.textContent=on?(dir===1?' ▲':' ▼'):' ▲▼';s.style.opacity=on?'1':'.6';});
+    });
+  });
+}
+[].forEach.call(document.querySelectorAll('table'),init);
+})();
+</script>
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};

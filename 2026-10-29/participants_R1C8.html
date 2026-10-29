@@ -182,7 +182,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             <tbody>
             <tr>
                 <td>1</td><td>JOURNEY OF DREAM</td><td>A.A. BOULARD</td>
-                <td>R. DERIEUX</td><td>1a1a0a0a(25)3a7a1a7a2a</td><td>110</td>
+                <td>R. DERIEUX</td><td>1a1a0a0a(25)3a7a1a7a2a</td><td>114</td>
                 <td style="font-weight:bold;color:#FFD700">—</td>
                 <td>—</td>
             </tr>
@@ -194,7 +194,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             </tr>
             <tr>
                 <td>3</td><td>GOLD D'ECROVILLE</td><td>M. LEGROS</td>
-                <td>B. MARIE</td><td>Da5aDaDaDa7a5a0aDa6a</td><td>62</td>
+                <td>B. MARIE</td><td>Da5aDaDaDa7a5a0aDa6a</td><td>60</td>
                 <td style="font-weight:bold;color:#FFD700">—</td>
                 <td>—</td>
             </tr>
@@ -206,19 +206,19 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             </tr>
             <tr>
                 <td>5</td><td>JIPET DE CREPIN</td><td>S. ERNAULT</td>
-                <td>S. ERNAULT</td><td>7a0a2a1a7aGa4a1a1a1a</td><td>2.8</td>
+                <td>S. ERNAULT</td><td>7a0a2a1a7aGa4a1a1a1a</td><td>2.9</td>
                 <td style="font-weight:bold;color:#FFD700">—</td>
                 <td>—</td>
             </tr>
             <tr>
                 <td>6</td><td>INFERNO PIPER</td><td>S. FERRARA</td>
-                <td>V. MARTENS</td><td>9a1a8a3a(25)0a3a1a1a2a</td><td>120</td>
+                <td>V. MARTENS</td><td>9a1a8a3a(25)0a3a1a1a2a</td><td>124</td>
                 <td style="font-weight:bold;color:#FFD700">—</td>
                 <td>—</td>
             </tr>
             <tr>
                 <td>7</td><td>JASON</td><td>M. MOTTIER <span title="5 courses/jour">🔥🔥🔥</span></td>
-                <td>P. LEVESQUE</td><td>1a5a3a0a8a0a(25)5a3a5a</td><td>4.7</td>
+                <td>P. LEVESQUE</td><td>1a5a3a0a8a0a(25)5a3a5a</td><td>4.5</td>
                 <td style="font-weight:bold;color:#FFD700">—</td>
                 <td>—</td>
             </tr>
@@ -248,7 +248,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             </tr>
             <tr>
                 <td>12</td><td>ILEO PIERJI</td><td>A. BARRIER <span title="5 courses/jour">🔥🔥🔥</span></td>
-                <td>CH.A. MARY</td><td>3a2a5a6a4a5a5aDa1aDm</td><td>8.1</td>
+                <td>CH.A. MARY</td><td>3a2a5a6a4a5a5aDa1aDm</td><td>8.3</td>
                 <td style="font-weight:bold;color:#FFD700">—</td>
                 <td>—</td>
             </tr></tbody>
@@ -265,6 +265,52 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
   </div>
   <div class="footer-copy">&copy; 2026 Carré Magique Turf - Tous droits réservés</div>
 </footer>
+<script>
+(function(){
+function nb(t){
+  t=(t||'').replace(/\s+/g,' ').trim();
+  if(!t)return null;
+  var neg=t.charAt(0)==='▼';
+  var s=t.replace(/^[▲▼]/,'').replace(/[%€\s ]/g,'').replace(',','.');
+  if(/^[+-]?\d+(\.\d+)?$/.test(s)){var v=parseFloat(s);return neg?-v:v;}
+  return null;
+}
+function init(tb){
+  if(tb.hasAttribute('data-nosort')||tb.classList.contains('fvt')||tb.closest('.fv'))return;
+  var th=tb.tHead;if(!th||th.rows.length!==1||tb.tBodies.length!==1)return;
+  var b=tb.tBodies[0],hr=th.rows[0],n=hr.cells.length;
+  if(n<2||b.rows.length<2)return;
+  for(var i=0;i<n;i++){var h=hr.cells[i];if(h.colSpan>1||h.rowSpan>1||h.getAttribute('onclick'))return;}
+  for(var r=0;r<b.rows.length;r++){var ro=b.rows[r];if(ro.cells.length!==n)return;
+    for(var c=0;c<n;c++){if(ro.cells[c].colSpan>1||ro.cells[c].rowSpan>1)return;}}
+  var orig=[].slice.call(b.rows),col=-1,dir=0;
+  [].forEach.call(hr.cells,function(h,i){
+    var sp=document.createElement('span');sp.className='cmt-tri';sp.textContent=' ▲▼';sp.style.cssText='font-size:10px;opacity:.6';
+    h.appendChild(sp);h.style.cursor='pointer';h.style.userSelect='none';h.title='Cliquer pour trier';
+    h.addEventListener('click',function(){
+      dir=(col===i)?(dir===1?-1:(dir===-1?0:1)):1;col=i;
+      var rows;
+      if(!dir)rows=orig.slice();
+      else{
+        rows=orig.map(function(ro,k){var t=ro.cells[i].textContent.trim();return {r:ro,k:k,t:t,v:nb(t)};});
+        rows.sort(function(a,z){
+          if((a.t==='')!==(z.t===''))return a.t===''?1:-1;
+          var d;
+          if(a.v!==null&&z.v!==null)d=a.v-z.v;
+          else if(a.v!==null)d=-1;else if(z.v!==null)d=1;
+          else d=a.t.localeCompare(z.t,'fr',{numeric:true});
+          return d*dir||a.k-z.k;});
+        rows=rows.map(function(x){return x.r;});
+      }
+      rows.forEach(function(ro){b.appendChild(ro);});
+      [].forEach.call(hr.cells,function(h2,j){var s=h2.querySelector('.cmt-tri');if(!s)return;
+        var on=(j===i&&dir!==0);s.textContent=on?(dir===1?' ▲':' ▼'):' ▲▼';s.style.opacity=on?'1':'.6';});
+    });
+  });
+}
+[].forEach.call(document.querySelectorAll('table'),init);
+})();
+</script>
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};
