@@ -248,13 +248,24 @@ async function chargerTaux(){
   updatePrices();
 }
 
-function fmt(eur,d){const t=taux[d]||1;const s=SYM[d]||' '+d;const v=eur*t;return(v>=100?Math.round(v):v.toFixed(1))+s;}
+function fmt(eur,d){const t=taux[d]||1;const s=SYM[d]||' '+d;const v=eur*t;let r;
+  if(v>=100)r=(Math.round(v/10)*10).toLocaleString('fr-FR');
+  else if(v>=10)r=String(Math.round(v));
+  else r=v.toFixed(1).replace('.',',');
+  return r+s;}
+function eurTxt(eur){return eur.toFixed(2).replace('.',',')+' €';}
+function montantTxt(eur,d){return d==='EUR'?eurTxt(eur):fmt(eur,d)+' (= '+eurTxt(eur)+')';}
 
 function updatePrices(){
   const d=document.getElementById('deviseSelect').value;
   const t=taux[d]||1;
   document.getElementById('convRate').textContent=d!=='EUR'?'1 € = '+t.toFixed(2)+' '+d:'';
-  Object.keys(PACKS).forEach(k=>{const el=document.getElementById('l-'+k);if(el)el.textContent=d!=='EUR'?'≈ '+fmt(PACKS[k].eur,d):'';});
+  Object.keys(PACKS).forEach(k=>{
+    const e=PACKS[k].eur,big=document.getElementById('p-'+k),el=document.getElementById('l-'+k);
+    if(big)big.textContent=d!=='EUR'?fmt(e,d):eurTxt(e);
+    if(el)el.textContent=d!=='EUR'?'= '+eurTxt(e):'';
+  });
+  if(mode)afficherInstructions(mode);
   updateSum();
 }
 
@@ -269,7 +280,7 @@ function updateSum(){
   const p=PACKS[sel.k];const d=document.getElementById('deviseSelect').value;
   document.getElementById('sumPack').textContent=p.label;
   document.getElementById('sumDuree').textContent=p.label+" d'accès";
-  document.getElementById('sumTotal').textContent=sel.eur.toFixed(2)+' €'+(d!=='EUR'?' ≈ '+fmt(sel.eur,d):'');
+  document.getElementById('sumTotal').textContent=montantTxt(sel.eur,d);
   box.style.display='block';
 }
 
@@ -282,7 +293,7 @@ function afficherInstructions(m){
   const box=document.getElementById('instructions');
   const nom=document.getElementById('nomInput').value.trim()||'Votre nom';
   const d=document.getElementById('deviseSelect').value;
-  const montant=sel?sel.eur.toFixed(2)+' €'+(d!=='EUR'?' ≈ '+fmt(sel.eur,d):''):'(sélectionnez un pack)';
+  const montant=sel?montantTxt(sel.eur,d):'(sélectionnez un pack)';
   const pack=sel?PACKS[sel.k].label:'(sélectionnez un pack)';
   const waMsg=(txt)=>`https://wa.me/${WA_NUM}?text=${encodeURIComponent(txt)}`;
 
