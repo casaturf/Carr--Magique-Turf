@@ -249,8 +249,8 @@ async function chargerTaux(){
 }
 
 function fmt(eur,d){const t=taux[d]||1;const s=SYM[d]||' '+d;const v=eur*t;let r;
-  if(v>=100)r=(Math.round(v/10)*10).toLocaleString('fr-FR');
-  else if(v>=10)r=String(Math.round(v));
+  if(v>=100)r=(Math.ceil(v/10-1e-9)*10).toLocaleString('fr-FR');
+  else if(v>=10)r=String(Math.ceil(v-1e-9));
   else r=v.toFixed(1).replace('.',',');
   return r+s;}
 function eurTxt(eur){return eur.toFixed(2).replace('.',',')+' €';}
