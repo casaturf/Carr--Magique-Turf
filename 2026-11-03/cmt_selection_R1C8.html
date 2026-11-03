@@ -260,7 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId(), url: location.pathname})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
@@ -410,9 +410,9 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>1</td><td><strong>7</strong></td>
                 <td style="text-align:left;padding-left:8px;">LIPA STAR</td>
                 <td>22</td>
-                <td>23.3%</td>
+                <td>22.9%</td>
                 <td>+0% →</td>
-                <td>3.6</td>
+                <td>3.7</td>
                 <td>1</td>
                 <td></td>
                 <td>🥇 BASE</td>
@@ -420,9 +420,9 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>2</td><td><strong>3</strong></td>
                 <td style="text-align:left;padding-left:8px;">LARA DE CHENU</td>
                 <td>27</td>
-                <td>14.3%</td>
+                <td>13.9%</td>
                 <td>+0% →</td>
-                <td>6.0</td>
+                <td>6.1</td>
                 <td>2</td>
                 <td></td>
                 <td>🥇 BASE</td>
@@ -430,9 +430,9 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>3</td><td><strong>16</strong></td>
                 <td style="text-align:left;padding-left:8px;">LOUANGE CASTELETS</td>
                 <td>32</td>
-                <td>9.8%</td>
+                <td>10.4%</td>
                 <td>+0% →</td>
-                <td>8.7</td>
+                <td>8.2</td>
                 <td>3</td>
                 <td></td>
                 <td>🥇 BASE</td>
@@ -450,7 +450,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>5</td><td><strong>13</strong></td>
                 <td style="text-align:left;padding-left:8px;">LADY BIRD JENILAT</td>
                 <td>42</td>
-                <td>6.8%</td>
+                <td>7.0%</td>
                 <td>+0% →</td>
                 <td>12.0</td>
                 <td>5</td>
@@ -459,7 +459,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             </tr><tr class="sel-ok">
                 <td>6</td><td><strong>10</strong></td>
                 <td style="text-align:left;padding-left:8px;">LYANA D'ARC</td>
-                <td>49</td>
+                <td>48</td>
                 <td>6.1%</td>
                 <td>+0% →</td>
                 <td>14.0</td>
@@ -479,10 +479,10 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             </tr><tr class="sel-ok">
                 <td>8</td><td><strong>8</strong></td>
                 <td style="text-align:left;padding-left:8px;">LA DAME DE COEUR</td>
-                <td>56</td>
-                <td>5.7%</td>
+                <td>57</td>
+                <td>5.6%</td>
                 <td>+0% →</td>
-                <td>14.0</td>
+                <td>15.0</td>
                 <td>8</td>
                 <td></td>
                 <td>✅</td>
@@ -490,7 +490,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>9</td><td><strong>12</strong></td>
                 <td style="text-align:left;padding-left:8px;">LOLA DU CAMPUS</td>
                 <td>62</td>
-                <td>4.3%</td>
+                <td>4.2%</td>
                 <td>+0% →</td>
                 <td>20.0</td>
                 <td>9</td>
@@ -502,7 +502,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>67</td>
                 <td>3.6%</td>
                 <td>+0% →</td>
-                <td>23.0</td>
+                <td>24.0</td>
                 <td>10</td>
                 <td></td>
                 <td>❌</td>
@@ -510,9 +510,9 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>11</td><td><strong>6</strong></td>
                 <td style="text-align:left;padding-left:8px;">LAREDO BAY</td>
                 <td>72</td>
-                <td>2.8%</td>
+                <td>2.9%</td>
                 <td>+0% →</td>
-                <td>30.0</td>
+                <td>29.0</td>
                 <td>11</td>
                 <td></td>
                 <td>❌</td>

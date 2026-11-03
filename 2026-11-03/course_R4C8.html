@@ -260,7 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId(), url: location.pathname})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
@@ -392,28 +392,28 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             <tbody>
         <tr class="alerte-vert">
             <td>1</td><td>1</td><td>REGAL RESOLVE</td>
-            <td>51585</td><td>47.1%</td><td>+63.6%</td>
+            <td>51985</td><td>42.7%</td><td>+81.8%</td>
             <td>↑↑</td><td>VERT</td><td>FAVORI - Valeur sure</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>2</td><td>4</td><td>FRANKISH</td>
-            <td>29500</td><td>26.9%</td><td>+0.0%</td>
+            <td>29700</td><td>24.4%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>3</td><td>3</td><td>CITY SOLACE</td>
-            <td>15050</td><td>13.7%</td><td>+0.0%</td>
+            <td>26550</td><td>21.8%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>4</td><td>2</td><td>HATANKA FAL</td>
-            <td>13501</td><td>12.3%</td><td>+0.0%</td>
+            <td>13501</td><td>11.1%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>A suivre</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>

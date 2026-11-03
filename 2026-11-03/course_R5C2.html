@@ -260,7 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId(), url: location.pathname})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
@@ -392,14 +392,14 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             <tbody>
         <tr class="alerte-vert">
             <td>1</td><td>9</td><td>HOKKAIDO JIEL</td>
-            <td>81300</td><td>73.0%</td><td>+0.0%</td>
+            <td>81300</td><td>72.8%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>FAVORI - Valeur sure</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>2</td><td>8</td><td>OSCAR VAN HALBEEK</td>
-            <td>10350</td><td>9.3%</td><td>+0.0%</td>
+            <td>10450</td><td>9.4%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
@@ -434,7 +434,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         </tr>
         <tr class="alerte-jaune">
             <td>7</td><td>5</td><td>KALENCIO FLAC</td>
-            <td>1600</td><td>1.4%</td><td>+0.0%</td>
+            <td>1700</td><td>1.5%</td><td>+0.0%</td>
             <td>→</td><td>JAUNE</td><td>Outsider</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>

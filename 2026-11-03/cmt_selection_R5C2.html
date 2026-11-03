@@ -260,7 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId(), url: location.pathname})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
@@ -410,7 +410,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>1</td><td><strong>9</strong></td>
                 <td style="text-align:left;padding-left:8px;">HOKKAIDO JIEL</td>
                 <td>15</td>
-                <td>73.0%</td>
+                <td>72.8%</td>
                 <td>+0% →</td>
                 <td>1.1</td>
                 <td>1</td>
@@ -420,9 +420,9 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>2</td><td><strong>8</strong></td>
                 <td style="text-align:left;padding-left:8px;">OSCAR VAN HALBEEK</td>
                 <td>20</td>
-                <td>9.3%</td>
+                <td>9.4%</td>
                 <td>+0% →</td>
-                <td>9.2</td>
+                <td>9.1</td>
                 <td>2</td>
                 <td></td>
                 <td>🥇 BASE</td>
@@ -470,9 +470,9 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
                 <td>7</td><td><strong>5</strong></td>
                 <td style="text-align:left;padding-left:8px;">KALENCIO FLAC</td>
                 <td>45</td>
-                <td>1.4%</td>
+                <td>1.5%</td>
                 <td>+0% →</td>
-                <td>59.0</td>
+                <td>56.0</td>
                 <td>7</td>
                 <td></td>
                 <td>✅</td>

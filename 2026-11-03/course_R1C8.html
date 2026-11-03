@@ -260,7 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId(), url: location.pathname})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
@@ -392,112 +392,112 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             <tbody>
         <tr class="alerte-vert">
             <td>1</td><td>7</td><td>LIPA STAR</td>
-            <td>276293</td><td>23.3%</td><td>+0.0%</td>
+            <td>282993</td><td>22.9%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>FAVORI - Valeur sure</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>2</td><td>3</td><td>LARA DE CHENU</td>
-            <td>169660</td><td>14.3%</td><td>+0.0%</td>
+            <td>171460</td><td>13.9%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>3</td><td>16</td><td>LOUANGE CASTELETS</td>
-            <td>116578</td><td>9.8%</td><td>+0.0%</td>
+            <td>128378</td><td>10.4%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>4</td><td>15</td><td>LITTLE ITALY</td>
-            <td>109368</td><td>9.2%</td><td>+132.5%</td>
+            <td>113668</td><td>9.2%</td><td>+132.5%</td>
             <td>↑↑</td><td>VERT</td><td>A suivre</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>5</td><td>13</td><td>LADY BIRD JENILAT</td>
-            <td>81028</td><td>6.8%</td><td>+0.0%</td>
+            <td>86028</td><td>7.0%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>A suivre</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-jaune">
             <td>6</td><td>10</td><td>LYANA D'ARC</td>
-            <td>72380</td><td>6.1%</td><td>+900.0%</td>
+            <td>74780</td><td>6.1%</td><td>+900.0%</td>
             <td>↑↑</td><td>JAUNE</td><td>Outsider</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-jaune">
             <td>7</td><td>2</td><td>LUTELLIA MONNERIE</td>
-            <td>68565</td><td>5.8%</td><td>+0.0%</td>
+            <td>71365</td><td>5.8%</td><td>+0.0%</td>
             <td>→</td><td>JAUNE</td><td>Outsider</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-jaune">
             <td>8</td><td>8</td><td>LA DAME DE COEUR</td>
-            <td>68208</td><td>5.7%</td><td>+0.0%</td>
+            <td>69708</td><td>5.6%</td><td>+0.0%</td>
             <td>→</td><td>JAUNE</td><td>Outsider</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-orange">
             <td>9</td><td>12</td><td>LOLA DU CAMPUS</td>
-            <td>50510</td><td>4.3%</td><td>+0.0%</td>
+            <td>51910</td><td>4.2%</td><td>+0.0%</td>
             <td>→</td><td>ORANGE</td><td>Outsider a surveiller</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-orange">
             <td>10</td><td>5</td><td>LAMIE DU MESNIL</td>
-            <td>42550</td><td>3.6%</td><td>+0.0%</td>
+            <td>43850</td><td>3.6%</td><td>+0.0%</td>
             <td>→</td><td>ORANGE</td><td>Outsider a surveiller</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-orange">
             <td>11</td><td>6</td><td>LAREDO BAY</td>
-            <td>33790</td><td>2.8%</td><td>+0.0%</td>
+            <td>35890</td><td>2.9%</td><td>+0.0%</td>
             <td>→</td><td>ORANGE</td><td>Outsider a surveiller</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-rouge">
             <td>12</td><td>14</td><td>LOUISA D'ATOUT</td>
-            <td>29730</td><td>2.5%</td><td>+0.0%</td>
+            <td>32230</td><td>2.6%</td><td>+0.0%</td>
             <td>→</td><td>ROUGE</td><td>Piege a eviter</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-rouge">
             <td>13</td><td>11</td><td>LETTRE D'AMOUR</td>
-            <td>28533</td><td>2.4%</td><td>+0.0%</td>
+            <td>29824</td><td>2.4%</td><td>+0.0%</td>
             <td>→</td><td>ROUGE</td><td>Piege a eviter</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-rouge">
             <td>14</td><td>4</td><td>LOUNA DU LOCHEUR</td>
-            <td>18842</td><td>1.6%</td><td>+0.0%</td>
+            <td>19330</td><td>1.6%</td><td>+0.0%</td>
             <td>→</td><td>ROUGE</td><td>Piege a eviter</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-rouge">
             <td>15</td><td>1</td><td>LAVALLOISE GIRL</td>
-            <td>10738</td><td>0.9%</td><td>+0.0%</td>
+            <td>11998</td><td>1.0%</td><td>+0.0%</td>
             <td>→</td><td>ROUGE</td><td>Piege a eviter</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-rouge">
             <td>16</td><td>9</td><td>LEA D'ATOUT</td>
-            <td>10295</td><td>0.9%</td><td>+2325.0%</td>
+            <td>11224</td><td>0.9%</td><td>+2225.0%</td>
             <td>↑↑</td><td>ROUGE</td><td>Piege a eviter</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>

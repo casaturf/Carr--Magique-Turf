@@ -260,7 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId(), url: location.pathname})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
@@ -392,49 +392,49 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             <tbody>
         <tr class="alerte-vert">
             <td>1</td><td>4</td><td>ASTROPARK</td>
-            <td>421274</td><td>44.1%</td><td>+72.7%</td>
+            <td>470772</td><td>40.5%</td><td>+90.9%</td>
             <td>↑↑</td><td>VERT</td><td>FAVORI - Valeur sure</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>2</td><td>1</td><td>KLIFF BERE</td>
-            <td>143562</td><td>15.0%</td><td>+0.0%</td>
+            <td>260862</td><td>22.4%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>3</td><td>5</td><td>ZAHYANA</td>
-            <td>110682</td><td>11.6%</td><td>+0.0%</td>
+            <td>123782</td><td>10.6%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>4</td><td>3</td><td>GOLDEN WEAVER</td>
-            <td>107010</td><td>11.2%</td><td>+0.0%</td>
+            <td>114589</td><td>9.8%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>A suivre</td>
-            <td style="font-weight:bold;color:#FFD700">—</td>
+            <td style="font-weight:bold;color:#FFD700">1.30</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>5</td><td>2</td><td>ZAKHAROVA</td>
-            <td>75215</td><td>7.9%</td><td>+0.0%</td>
+            <td>84915</td><td>7.3%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>A suivre</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-jaune">
             <td>6</td><td>7</td><td>BONNIE MOON</td>
-            <td>55843</td><td>5.8%</td><td>+0.0%</td>
+            <td>63635</td><td>5.5%</td><td>+0.0%</td>
             <td>→</td><td>JAUNE</td><td>Outsider</td>
-            <td style="font-weight:bold;color:#FFD700">—</td>
+            <td style="font-weight:bold;color:#FFD700">1.30</td>
             <td>—</td>
         </tr>
         <tr class="alerte-jaune">
             <td>7</td><td>6</td><td>CARDINAL POINT</td>
-            <td>42364</td><td>4.4%</td><td>+0.0%</td>
+            <td>44842</td><td>3.9%</td><td>+0.0%</td>
             <td>→</td><td>JAUNE</td><td>Outsider</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>

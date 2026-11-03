@@ -260,7 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId(), url: location.pathname})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
@@ -392,35 +392,35 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
             <tbody>
         <tr class="alerte-vert">
             <td>1</td><td>3</td><td>OTTO BEUCKENSWIJK</td>
-            <td>5300</td><td>19.6%</td><td>+0.0%</td>
+            <td>5300</td><td>19.5%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>FAVORI - Valeur sure</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>2</td><td>10</td><td>SNOW BIRD LOVE</td>
-            <td>5300</td><td>19.6%</td><td>+0.0%</td>
+            <td>5300</td><td>19.5%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>3</td><td>15</td><td>FEELS LIKE FOREVER (SE)</td>
-            <td>4200</td><td>15.5%</td><td>+400.0%</td>
+            <td>4200</td><td>15.4%</td><td>+400.0%</td>
             <td>↑↑</td><td>VERT</td><td>Tres joue - Confiance</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>4</td><td>5</td><td>SILVER JACK</td>
-            <td>4050</td><td>15.0%</td><td>+0.0%</td>
+            <td>4150</td><td>15.2%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>A suivre</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-vert">
             <td>5</td><td>7</td><td>LEADER DE VAUVILLE</td>
-            <td>2450</td><td>9.1%</td><td>+0.0%</td>
+            <td>2450</td><td>9.0%</td><td>+0.0%</td>
             <td>→</td><td>VERT</td><td>A suivre</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
@@ -434,21 +434,21 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         </tr>
         <tr class="alerte-jaune">
             <td>7</td><td>12</td><td>LITTLEBOY D'HOLLOW</td>
-            <td>1100</td><td>4.1%</td><td>+0.0%</td>
+            <td>1100</td><td>4.0%</td><td>+0.0%</td>
             <td>→</td><td>JAUNE</td><td>Outsider</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-jaune">
             <td>8</td><td>2</td><td>TEQUILA E</td>
-            <td>1018</td><td>3.8%</td><td>+0.0%</td>
+            <td>1018</td><td>3.7%</td><td>+0.0%</td>
             <td>→</td><td>JAUNE</td><td>Outsider</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
         </tr>
         <tr class="alerte-orange">
             <td>9</td><td>11</td><td>RODDY MOM</td>
-            <td>700</td><td>2.6%</td><td>+0.0%</td>
+            <td>800</td><td>2.9%</td><td>+0.0%</td>
             <td>→</td><td>ORANGE</td><td>Outsider a surveiller</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>
@@ -476,7 +476,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
         </tr>
         <tr class="alerte-rouge">
             <td>13</td><td>9</td><td>MANCHESTER</td>
-            <td>197</td><td>0.7%</td><td>+0.0%</td>
+            <td>199</td><td>0.7%</td><td>+0.0%</td>
             <td>→</td><td>ROUGE</td><td>Piege a eviter</td>
             <td style="font-weight:bold;color:#FFD700">—</td>
             <td>—</td>

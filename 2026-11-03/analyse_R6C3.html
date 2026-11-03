@@ -260,7 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
     fetch('https://carre-magique-premium.casaturf007.workers.dev/api/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId()})
+      body: JSON.stringify({code: code, fingerprint: fingerprint, deviceId: getDeviceId(), url: location.pathname})
     }).then(function(r){
       if (!r.ok) return r.json().then(function(d){ return {_status: r.status, data: d}; }).catch(function(){ return null; });
       return r.json();
@@ -479,7 +479,7 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7) sepi
 
   
 
-  <small class="gen">Généré le 03/11/2026 à 14:07 — Carré Magique Turf</small>
+  <small class="gen">Généré le 03/11/2026 à 14:22 — Carré Magique Turf</small>
 </div>
     </div>
     
