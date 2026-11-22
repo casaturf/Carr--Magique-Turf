@@ -1,0 +1,481 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Choix Final VIP R13-C6 - Carré Magique Turf</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/logo.png">
+<style>
+body{background:#0b0d12;color:#e6e6e6;font-family:Segoe UI,Arial,sans-serif;margin:0;padding:14px}
+h1{font-size:21px;margin:0 0 4px;color:#4fc3f7}
+.sous{color:#aaa;font-size:13px}.arr{color:#7ee787;font-weight:bold}
+#infos{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.bdg{background:#161a22;border:1px solid #c9a227;color:#f1e3b0;border-radius:8px;padding:4px 10px;font-size:13px}
+#chrono{font-size:24px;font-weight:bold;color:#00e676;font-variant-numeric:tabular-nums}
+#chrono.orange{color:#ffa726}#chrono.rouge{color:#ff5252}#chrono.parti{color:#9e9e9e;font-size:19px}
+#chrono small{font-size:13px;color:#aaa;font-weight:normal;margin-left:8px}
+#cloture{font-size:18px;font-weight:bold;margin:2px 0;color:#ffd54f;font-variant-numeric:tabular-nums}
+#cloture.orange{color:#ffa726}#cloture.rouge{color:#ff5252;animation:cl 1s steps(2) infinite}#cloture.ferme{color:#9e9e9e}
+@keyframes cl{50%{opacity:.35}}
+#cloture small{font-size:12px;color:#aaa;font-weight:normal;margin-left:8px}
+.bdg.retard{border-color:#ff5252;color:#ff8a80;font-weight:bold}
+.jeux{display:inline-flex;flex-wrap:wrap;gap:5px;align-items:center;border:1px solid #ff5252;border-radius:8px;padding:4px 8px;font-size:12px;color:#ffcdd2}
+.jeu{border-radius:6px;padding:2px 8px;font-weight:bold;font-style:italic;color:#fff;background:#00838f}
+.jeu.sg{background:#6a1b9a}.jeu.jm{background:#e65100}.jeu.tr{background:#c9a227;color:#1a1300}.jeu.mu{background:#1565c0}.jeu.qu{background:#c62828}
+#faible{display:none;margin:0 0 10px;padding:6px 12px;border-radius:8px;background:#3a2600;border:1px solid #ffa726;color:#ffcc80;font-weight:bold;font-size:13px}
+#etat{display:inline-block;margin:6px 0 10px;padding:5px 12px;border-radius:8px;background:#1a0a0a;border:1px solid #ff4d4d;color:#ffd700;font-weight:bold;font-size:13px}
+.grille{display:grid;gap:12px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g3b{grid-template-columns:1.1fr 1fr 1.2fr}
+@media(max-width:1100px){.g3,.g3b{grid-template-columns:1fr}}
+.carte{background:#11151c;border:1px solid #2b3240;border-radius:10px;overflow:hidden}
+.carte h2{margin:0;padding:9px 12px;font-size:18px;color:#fff}
+.pmu h2{background:#1565c0}.zet h2{background:#2e7d32}.sor h2{background:#c62828}.ch h2{background:#5e35b1}
+.syn h2{background:#263238}.top h2{background:#263238}.rep h2{background:#263238}.fiche h2{background:#00838f}
+table{border-collapse:collapse;width:100%}
+th{background:#1c2330;color:#cfd8dc;font-size:12px;padding:6px 5px;text-align:center}
+td{border-top:1px solid #222a36;padding:5px;text-align:center;font-size:14px;font-variant-numeric:tabular-nums}
+td.nom{text-align:left;font-weight:600;white-space:nowrap}
+.h{color:#ff5252;font-weight:bold}.b{color:#00e676;font-weight:bold}.z{color:#777}
+.barre{height:8px;border-radius:4px;background:#7c4dff;display:block;margin-top:3px}
+#tPMU td:first-child,#tSOR td:first-child,#tZET td:first-child,#tCH td:first-child,#tTOP td:first-child,#tFIC td:first-child{white-space:nowrap}
+.catd{display:inline-block;width:11px;height:11px;border-radius:50%;margin:0 4px 0 3px;vertical-align:middle;box-shadow:0 0 4px rgba(255,255,255,.25)}
+.alr{border-color:#FF6B6B!important}.alr h2{background:#3D0000;color:#FF8A80}
+.fav td{background:#14261a}
+#tFIC th.tri{cursor:pointer;user-select:none}#tFIC th.tri:hover{color:#fff}#tFIC th.act{color:#ffd54f}
+#btnTri{margin-left:12px;font-size:13px;padding:4px 10px;border-radius:6px;border:1px solid #556;background:#1c2330;color:#cfd8dc;cursor:pointer;vertical-align:middle}#btnTri.on{background:#ff9800;color:#111;border-color:#ff9800;font-weight:bold}
+tr.ec td{background:#3d2a12!important;color:#ffb74d!important}
+input.cbe{cursor:pointer;accent-color:#ff9800;margin-right:4px}
+.lab{display:inline-block;border-radius:6px;padding:1px 7px;font-size:12px;font-weight:bold}
+.cb{background:#1b5e20;color:#b9f6ca}.chs{background:#7f1d1d;color:#ffcdd2}.dv{background:#e65100;color:#fff}
+.vei h2{background:#283593}
+.Base{color:#ffd54f}.ere{color:#4fc3f7}.Couvrir{color:#ef9a9a}
+.ten-H{color:#7ee787;font-weight:bold}.ten-B{color:#ff7b72;font-weight:bold}.ten-S{color:#c9d1d9}
+.syn td{text-align:left}.syn td.v{text-align:right;font-weight:bold}
+.rep li{margin:5px 0;font-size:14px}.rep ul{padding:0 14px 0 28px;margin:8px 0}
+.note{font-size:12px;color:#888;margin:10px 0}
+.wrap{overflow-x:auto}
+body{background:#05070a}
+.entete{text-align:center;margin:2px 0 8px;position:relative}
+.retour{position:absolute;left:0;top:0;border:1px solid #00bcd4;color:#4dd0e1;border-radius:10px;padding:6px 14px;text-decoration:none;font-weight:bold;font-size:14px;background:#08161a}
+.logo{width:110px;height:110px;object-fit:contain;display:block;margin:0 auto;border-radius:50%}
+h1.titre{color:#00bcd4;font-size:25px;margin:8px 0 2px}
+.entete .sous{color:#aaa}
+#infos{justify-content:center}
+#chrono,#cloture,.centre{text-align:center}
+.nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:6px 0}
+.nav a{min-width:30px;text-align:center;padding:4px 10px;border-radius:8px;border:1px solid #c9a227;color:#f1e3b0;text-decoration:none;font-size:13px;font-weight:bold;background:#161a22;cursor:pointer}
+.nav.c a{border-color:#00bcd4;color:#4dd0e1;border-radius:10px;padding:7px 16px;font-size:14px}
+.nav a.act{background:#ffd600;color:#111;border-color:#ffd600}.nav.c a.act{background:#ff6b6b;color:#fff;border-color:#ff6b6b}
+#navMsg{text-align:center;font-size:12px;color:#ffa726;min-height:14px}
+.jeuxbox{border:1px solid #ff5252;border-radius:10px;padding:8px 10px;margin:8px auto 10px;max-width:880px;text-align:center}
+.jeuxbox .jt{color:#ff8a80;font-weight:bold;font-size:13px;margin-bottom:6px}
+.jeuxbox .jeu{display:inline-block;margin:2px}
+.carte{border-color:#00838f}
+.arrbox{border:1px solid #00c853;border-radius:10px;background:#07200f;text-align:center;padding:12px 8px;margin:6px 0 12px}
+.arrbox .at{color:#69f0ae;font-weight:bold;font-size:13px;letter-spacing:.5px}
+.arrbox .an{color:#fff;font-size:27px;font-weight:bold;letter-spacing:3px;margin-top:6px}
+.pied{text-align:center;color:#888;font-size:12px;margin:22px 0 6px;border-top:1px solid #222;padding-top:12px}
+.carte.syn{display:flex;flex-direction:column}
+.bandeau{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;max-width:360px;margin:auto auto;padding:10px 18px;border-radius:14px;background:linear-gradient(135deg,#1A1406 0%,#0D0D0D 100%);border:2px solid #FFD700;box-shadow:0 0 18px rgba(255,215,0,.18)}
+.bandeau img{width:72px;height:72px;object-fit:cover;flex:0 0 auto;border-radius:50%;border:2px solid #FFD700}
+.bandeau span{color:#FFD700;font-weight:bold;font-size:17px;line-height:1.3;text-align:center}
+@media (max-width:1100px){.bandeau{margin:14px auto}}
+.bandeau.bh{flex-direction:row;max-width:none;gap:16px;padding:12px 20px}
+.bandeau.bh span{text-align:left}
+.carte.syn .bandeau.bh{margin:auto 14px;align-self:stretch}
+.repflex{display:flex;align-items:center;gap:14px}
+.repflex #REP{flex:1 1 auto;min-width:0}
+.repflex .bandeau.bh{flex:0 0 42%;margin:10px 16px 10px 0}
+@media (max-width:1100px){.carte.syn .bandeau.bh{margin:14px}}
+@media (max-width:900px){.repflex{flex-direction:column;align-items:stretch}.repflex .bandeau.bh{margin:4px 12px 12px}}
+/* ===== STYLE DU SITE carremagique-turf.com (assets/cmt.954520beab.css) ===== */
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#000;color:#fff;margin:0;padding:0}
+.container{max-width:1600px;margin:0 auto;padding:0 10px 10px 10px}
+.entete{text-align:center;margin:0 0 5px;position:static}
+.retour{position:absolute;top:5px;left:10px;background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 16px;border-radius:15px;font-size:14px;font-weight:bold;text-decoration:none;transition:all .3s ease;z-index:10}
+.retour:hover{background:#00B4D8;color:#000;transform:translateX(-5px)}
+.logo{width:120px;height:auto;border-radius:0;display:inline-block;margin:0}
+h1.titre{font-size:24px;color:#00B4D8;margin:0 0 2px;text-shadow:0 0 20px rgba(0,180,216,.5)}
+.entete .sous{font-size:12px;color:#C8A882}
+#infos{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:4px 0 3px}
+.bdg{background:#1A1A1A;padding:8px 16px;border-radius:8px;font-size:11px;border:2px solid #C8A882;color:#C8A882}
+.bdg.retard{border-color:#FF6B6B;color:#FF6B6B;font-weight:bold}
+.nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:6px 0 2px}
+.nav a{display:inline-block;min-width:0;background:#1A1A1A;color:#C8A882;border:2px solid #C8A882;padding:5px 10px;border-radius:8px;font-weight:bold;font-size:12px;text-decoration:none}
+.nav a.act{background:#FFD700;color:#000;border-color:#FFD700}
+.nav a.so{color:#FFD700;border-color:#FFD700}
+.nav.c{gap:8px;margin:10px 0}
+.nav.c a{color:#00B4D8;border:2px solid #00B4D8;padding:8px 14px;border-radius:8px;font-size:14px}
+.nav.c a.act{background:#FF6B6B;color:#000;border-color:#FF6B6B}
+.jeuxbox{margin:6px auto 10px;padding:8px 12px;border-radius:10px;background:#111;border:1px solid #C1272D;text-align:center;max-width:1100px}
+.jeuxbox .jt{color:#FFD700;font-weight:bold;font-size:13px;margin-bottom:6px}
+.jeuxbox .jeu{display:inline-block;margin:3px;padding:4px 10px;border-radius:8px;font-size:12px;font-weight:bold;font-style:italic;color:#fff}
+.jeu.sg{background:#5E2B97}.jeu.jm{background:#E8651A}.jeu.tr{background:#2E9E3A;color:#fff}.jeu.qa{background:#1565C0}.jeu.mu{background:#1565C0}.jeu.qu{background:#C62828}
+.arrbox{background:linear-gradient(135deg,#0D2D1A 0%,#0A1A0D 100%);border:2px solid #00FF88;border-radius:10px;padding:12px 20px;margin:0 0 10px;text-align:center}
+.arrbox .at{font-size:13px;color:#00FF88;font-weight:bold;margin-bottom:4px;letter-spacing:0}
+.arrbox .an{font-size:22px;font-weight:bold;color:#fff;letter-spacing:2px;margin-top:0}
+.centre{text-align:center}
+#etat{display:block;margin:6px 0 10px;padding:6px 10px;border-radius:8px;background:#1a0a0a;border:1px solid #ff4d4d;color:#FFD700;font-size:12px;font-weight:bold;text-align:center}
+.carte{background:linear-gradient(135deg,#1A1A1A 0%,#0D0D0D 100%);border:2px solid #00B4D8;border-radius:10px}
+.carte h2{font-size:17px}
+table{border-collapse:collapse;width:100%}
+th{background:#00B4D8;color:#000;padding:10px 8px;text-align:center;font-weight:bold;font-size:13px}
+td{padding:8px 6px;text-align:center;border-top:0;border-bottom:1px solid #2A2A2A;font-size:13px}
+tr:hover td{background:rgba(0,180,216,.1)}
+.h{color:#FF6B6B;font-weight:bold}.b{color:#00FF88;font-weight:bold}.z{color:#777}
+#tFIC th.tri:hover{color:#fff}#tFIC th.act{background:#0077B6;color:#fff}
+.rep li{font-size:13px}
+.note{font-size:11px;color:#888}
+.nav-buttons{display:flex;gap:8px;justify-content:center;margin:10px 0;flex-wrap:wrap}
+.nav-btn{background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:bold;text-decoration:none;transition:all .3s ease}
+.nav-btn:hover{background:#00B4D8;color:#000}.nav-btn.active{background:#00B4D8;color:#000}
+.footer{text-align:center;padding:20px 10px;margin-top:20px;border-top:1px solid #2A2A2A}
+.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+.footer-links a{color:#00B4D8;text-decoration:none;font-size:12px}
+.footer-links a:hover{color:#FF6B6B}
+.footer-copy{font-size:11px;color:#555}
+@media (max-width:768px){.retour{position:static;display:block;margin:0 auto 20px;width:fit-content}h1.titre{font-size:20px}table{font-size:12px}th,td{padding:8px 5px}}
+</style></head><body class="premium-locked">
+<style>
+body.premium-locked .container,body.premium-locked .footer{display:none!important}
+.cf-mur{display:none;max-width:560px;margin:40px auto;text-align:center;background:linear-gradient(135deg,#2D1F00,#0D0D0D);border:2px solid #FFD700;border-radius:14px;padding:26px 20px;box-shadow:0 0 25px #FFD70044;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#fff}
+body.premium-locked .cf-mur{display:block}
+.cf-mur img{width:110px}.cf-mur h1{color:#FFD700;font-size:22px;margin:10px 0}.cf-mur p{color:#ddd;font-size:14px;line-height:1.5;margin:0 0 14px}
+.cf-mur input{display:block;margin:0 auto 12px;width:min(320px,90%);padding:12px;background:#0D0D0D;border:2px solid #FFD700;border-radius:8px;color:#FFD700;font-size:15px;text-align:center;letter-spacing:2px}
+.cf-mur a.bt{display:inline-block;margin:4px;padding:11px 22px;border-radius:8px;font-weight:bold;text-decoration:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000}
+.cf-mur a.ab{background:#1A1A1A;color:#00B4D8;border:2px solid #00B4D8}
+#cfmsg{margin:12px auto;max-width:420px;color:#FF6B6B;font-weight:bold;min-height:18px}
+.cf-wm{position:fixed;bottom:6px;left:0;right:0;text-align:center;color:rgba(255,215,0,.35);font-size:11px;pointer-events:none;z-index:9999}
+</style>
+<div class="cf-mur" id="cfmur">
+<img src="data:image/jpeg;base64,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" alt="CMT">
+<h1>💎 PAGE RÉSERVÉE AUX ABONNÉS VIP</h1>
+<p>Le <b>Choix Final VIP</b> de cette course est réservé à l'offre <b>Extrat VIP</b>.<br>Il sera <b>ouvert à tous après l'arrivée</b>.</p>
+<input type="text" id="cfcode" placeholder="Entrez votre code VIP" maxlength="40" autocomplete="off" spellcheck="false">
+<a href="#" class="bt" id="cfbtn">🔑 VALIDER</a>
+<div id="cfmsg"></div>
+<a href="https://carremagique-turf.com/abonnement.html" class="bt ab">🎯 S'ABONNER (VIP)</a>
+</div>
+<script>
+(function(){
+var W='https://carre-magique-premium.casaturf007.workers.dev',RC='R13C6-CF',DT='2026-11-22',KC='cmt_vip_code';
+function gi(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function si(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function ri(k){try{localStorage.removeItem(k);}catch(e){}}
+function devId(){var K='cmt_device_id',id=null;try{id=localStorage.getItem(K);}catch(e){}
+ if(!id){try{id=sessionStorage.getItem(K);}catch(e){}}
+ if(!id){try{var m=document.cookie.match('(?:^|;)\\s*'+K+'=([^;]+)');if(m)id=decodeURIComponent(m[1]);}catch(e){}}
+ if(!id){id='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c==='x'?r:(r&0x3|0x8);return v.toString(16);});
+  try{localStorage.setItem(K,id);}catch(e){}try{sessionStorage.setItem(K,id);}catch(e){}
+  try{document.cookie=K+'='+encodeURIComponent(id)+'; expires='+new Date(Date.now()+365*864e5).toUTCString()+'; path=/; SameSite=Strict';}catch(e){}}
+ return id;}
+function fp(){var s=[navigator.userAgent,navigator.language,screen.width+'x'+screen.height,new Date().getTimezoneOffset()].join('|'),h=2166136261;
+ for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=(h*16777619)>>>0;}return 'fp_'+h.toString(16);}
+function msg(t){var e=document.getElementById('cfmsg');if(e)e.textContent=t||'';}
+function marquer(nom,code){if(document.getElementById('cmt-watermark'))return;var d=new Date(),p=function(x){return ('0'+x).slice(-2);};
+ var w=document.createElement('div');w.id='cmt-watermark';w.className='cf-wm';
+ w.textContent='💎 CMT VIP — '+nom+(code?' #'+code.slice(-4):'')+' · '+p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear()+' '+p(d.getHours())+':'+p(d.getMinutes())+' 💎';
+ document.body.appendChild(w);}
+function lire(code,nom){
+ fetch(W+'/api/fiche/get',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,deviceId:devId(),date:DT,rc:RC})})
+ .then(function(r){return r.json();}).then(function(x){
+   if(x&&x.ok&&x.payload){document.body.classList.remove('premium-locked');if(nom)marquer(nom,code);if(window.CF_DEMARRER)window.CF_DEMARRER(x.payload);}
+   else if(x&&x.ok){msg('Le Choix Final VIP de cette course n\'est pas encore prêt. Réessayez dans quelques minutes.');}
+   else{msg((x&&x.error)||'Accès refusé.');}
+ }).catch(function(){msg('Erreur de connexion. Réessayez.');});}
+function verifier(code){
+ fetch(W+'/api/verify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,fingerprint:fp(),deviceId:devId(),page:'fiche',url:location.pathname})})
+ .then(function(r){return r.json().then(function(d){return {s:r.status,d:d};}).catch(function(){return {s:r.status,d:null};});})
+ .then(function(x){var d=x.d;
+   if(d&&d.ok){si(KC,code);msg('Chargement...');lire(code,d.nom);}
+   else{if(x.s===403||x.s===401)ri(KC);msg(d&&d.error?d.error:'Code refusé.');}
+ }).catch(function(){msg('Erreur de connexion. Réessayez.');});}
+var c0=gi(KC);if(c0)verifier(c0);
+function go(e){if(e)e.preventDefault();var v=(document.getElementById('cfcode').value||'').trim().toUpperCase();if(!v){msg('Veuillez entrer votre code.');return;}msg('Vérification...');verifier(v);}
+document.getElementById('cfbtn').addEventListener('click',go);
+document.getElementById('cfcode').addEventListener('keydown',function(e){if(e.key==='Enter')go(e);});
+})();
+</script>
+<div class="container">
+<div class="entete">
+<a class="retour" href="reunion_R13.html">← Retour R13</a>
+<img class="logo" src="data:image/jpeg;base64,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" alt="Carré Magique Turf">
+<h1 class="titre">🎯 💎 Choix Final VIP — R13-C6 - PRIX LA CAVE DE VILLERS - VILLERS (GR B)</h1>
+<div class="sous">22/11/2026 · signaux : PMU + Sorec · ZEturf affiché sans calcul </div>
+</div>
+<div id="infos"></div>
+<div class="nav" id="navR"></div>
+<div class="nav c" id="navC"></div>
+<div id="navMsg"></div>
+<div class="jeuxbox" id="jeux"></div>
+<div class="nav-buttons">
+    <a class="nav-btn" href="participants_R13C6.html">📎 Participants</a>
+    <a class="nav-btn" href="base_solide_R13C6.html" style="background:linear-gradient(135deg,#1565C0,#0D47A1);color:#fff;border-color:#1565C0;font-weight:bold;box-shadow:0 0 10px #1565C088;">🔵 Base Solide</a>
+    <a class="nav-btn" href="verdict_R13C6.html" style="background:linear-gradient(135deg,#D4AF37,#8B6914);color:#000;border-color:#D4AF37;font-weight:bold;box-shadow:0 0 10px #D4AF3788;">🏆 Verdict Final</a>
+    <a class="nav-btn" href="course_R13C6.html">📊 Classement</a>
+    <a class="nav-btn" href="international_R13C6.html">🌍 F5 International</a>
+    <a class="nav-btn" href="fusion_histo_R13C6.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;font-weight:bold;">🔬 Fusion Histo</a>
+    <a class="nav-btn" href="specialistes_R13C6.html" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700;font-weight:bold;box-shadow:0 0 10px #FFD70088;">🎯 Spécialistes</a>
+    <a class="nav-btn" href="cmt_selection_R13C6.html" style="background:linear-gradient(135deg,#00B4D8,#0077B6);color:#fff;border-color:#00B4D8;font-weight:bold;">🎯 CMT Selection</a>
+    <a class="nav-btn" href="classement_histo_R13C6.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;font-weight:bold;">📈 Classement Histo</a>
+    <a class="nav-btn" href="groupes_R13C6.html" style="background:linear-gradient(135deg,#FF6B35,#F7C59F);color:#000;border-color:#FF6B35;font-weight:bold;">📊 Groupes CMT</a>
+    <a class="nav-btn" href="radar_R13C6.html" style="background:linear-gradient(135deg,#00CED1,#006994);color:#fff;border-color:#00CED1;font-weight:bold;">📡 Radar CMT</a>
+    <a class="nav-btn" href="groupes_crack_R13C6.html" style="background:#1A3A1A;border-color:#4CAF50;color:#4CAF50;">&#128202; Crack Classement</a>
+    <a class="nav-btn" href="crack_R13C6.html" style="background:linear-gradient(135deg,#8B5A2B,#5A3A1A);color:#fff;border-color:#8B5A2B;font-weight:bold;">&#127942; Crack</a>
+    <a class="nav-btn" href="synthese_R13C6.html" style="background:linear-gradient(135deg,#6C3483,#4A235A);color:#E8D5FF;border-color:#A855F7;font-weight:bold;">📋 Synthèse</a>
+    <a class="nav-btn active" href="choix_final_R13C6.html" style="background:linear-gradient(135deg,#00B4D8,#7B2FBE);color:#fff;border-color:#FFD700;font-weight:bold;box-shadow:0 0 10px #FFD70088;">🎯 💎 Choix Final VIP</a>
+</div>
+
+<div id="chrono"></div>
+<div id="cloture"></div>
+<div class="centre"><div id="etat"></div></div>
+<div id="faible"></div>
+<div id="ALR"></div>
+<div class="grille g3">
+ <div class="carte pmu"><h2>PMU</h2><div class="wrap"><table id="tPMU"></table></div></div>
+ <div class="carte sor"><h2>🇲🇦 Sorec</h2><div class="wrap"><table id="tSOR"></table></div></div>
+ <div class="carte zet"><h2>🇫🇷 ZEturf</h2><div class="wrap"><table id="tZET"></table></div></div>
+</div>
+<div class="grille g3" style="margin-top:12px">
+ <div class="carte ch"><h2>🎲 Chance réelle (d'après les cotes)</h2><div class="wrap"><table id="tCH"></table></div></div>
+ <div class="carte syn"><h2>📈 Synthèse des mouvements</h2><table id="tSYN"></table><div class="bandeau bh"><img src="data:image/jpeg;base64,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" alt="CMT"><span>Profitez des mouvements de cotes pour affiner votre stratégie !</span></div></div>
+ <div class="carte top"><h2>📶 Top variations</h2><table id="tTOP"></table></div>
+</div>
+<div class="carte rep" style="margin-top:12px"><h2>💡 Repères (information)</h2><div class="repflex"><div id="REP"></div><div class="bandeau bh"><img src="data:image/jpeg;base64,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" alt="CMT"><span>Les dernières cotes PMU et Sorec au service de votre choix final.</span></div></div></div>
+<div class="carte rep vei" style="margin-top:12px"><h2>🌙 Prono veille (sans cotes)</h2><div id="VEI"></div></div>
+<div class="carte fiche" style="margin-top:12px"><h2>📋 Tableau complet par cheval <button id="btnTri" type="button">Tri global : désactivé</button></h2><div class="wrap"><table id="tFIC"></table></div></div>
+<div class="note">Évol PMU = cote actuelle comparée à la cote de référence PMU (matin). Évol Sorec = comparée à la cote d'ouverture Sorec ; si elle manque (ou si la même cote d'ouverture est répétée sur plusieurs chevaux), comparée à la 1re cote Sorec vue par cette page (marquée *) ; si aucun mouvement n'a encore été vu, comparée à la cote précédente envoyée par la Sorec (marquée °, dernier saut seulement).
+Chance réelle = 1/cote ramené à 100 % sur les partants. Cote Sorec peu fiable = cote de moins de 20 partagée par 3 chevaux ou plus : la Sorec est ignorée pour ces chevaux seulement. Marché Sorec faible = moins de la moitié des partants cotés : la Sorec est ignorée pour toute la course. Évol ZEturf = cote simple gagnant ZEturf comparée à la 1re cote ZEturf vue par cette page (*) ; si aucun mouvement n'a encore été vu, comparée à la cote de référence ZEturf (°). Mouvement significatif = 5 % ou plus. Consensus baisse = au moins 2 marchés en baisse et aucun en hausse (PMU, Sorec fiable, ZEturf) ; Consensus hausse = au moins 2 en hausse et aucun en baisse ; Divergence = au moins un en baisse et un en hausse.
+Outsider en forte baisse = cote PMU 10 ou plus et baisse de 15 % ou plus au PMU, à la Sorec ou chez ZEturf. Musique = SCORE et tendance comme les classeurs Excel. Case devant le N° = écarter le cheval : il passe en bas en orange et sort de toutes les analyses (chance réelle recalculée, synthèse, top, repères), sur les 4 versions de la page. Tri : clic sur un titre du Tableau complet (▲ croissant, ▼ décroissant, 3e clic = ordre normal) ; bouton Tri global désactivé = seul ce tableau change ; activé = cartes, chance réelle, synthèse et repères suivent aussi l'ordre du tri. Le tri ne change ni les groupes ni aucun calcul. Rien ici n'est une règle d'élimination.</div>
+</div>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="https://carremagique-turf.com/a-propos.html">À Propos</a>
+    <a href="https://carremagique-turf.com/guide.html">Guide</a>
+    <a href="https://carremagique-turf.com/methodologie.html">Méthodologie</a>
+    <a href="https://carremagique-turf.com/politique-confidentialite.html">Politique de Confidentialité</a>
+    <a href="https://carremagique-turf.com/bilans.html">📊 Bilans</a>
+  </div>
+  <div class="footer-copy">© 2026 Carré Magique Turf - Tous droits réservés</div>
+</footer>
+<script>
+var D={"date": "2026-11-22", "code": "R13C6", "chevaux": [], "infos": {"heure": "13:35", "discipline": "ATTELE", "distance": "2800m", "allocation": "15000€", "partants": "14 partants"}, "marches": ["pmu", "sorec"], "veille": null, "zaff": true, "prog": {"1": [1], "2": [1], "3": [1], "4": [1], "5": [1], "6": [1], "7": [1], "8": [1], "9": [1], "10": [1], "11": [1], "12": [1], "13": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "14": [1], "15": [1], "16": [1]}, "variante": "site", "zdep": null, "site": true, "alertes": [], "sorecOnly": [["S16", "🌍", "ZIA PARK"], ["S15", "🌍", "DEL MAR"], ["S12", "🌍", "BELMONT PARK"], ["S9", "🇲🇦", "Anfa"]], "verrou": true};
+var LIVE="https://cmt-live.casaturf007.workers.dev/live/",FIGE=30*60000,CLOTURE_AVANT=2*60000,SEUIL=0.05,timer=null,fini=false,partiA=null,pmu=null,sorec=null,zet=null,zetOk=null,ZURL="";
+function f1(x){return (Math.round(x*10)/10).toFixed(1);}
+function fc(x){if(x==null)return'—';var r=Math.round(x*100)/100;return r%1===0?String(r):(r>=100?r.toFixed(1):r.toFixed(2).replace(/0$/,''));}
+function pc(x){if(x==null)return'<span class="z">—</span>';var p=x*100;if(Math.abs(p)<0.05)return'<span class="z">0 %</span>';return p<0?'<span class="b">▼ '+f1(p)+' %</span>':'<span class="h">▲ +'+f1(p)+' %</span>';}
+function ftev(x){if(x==null)return'<span class="z">—</span>';if(Math.abs(x)<0.05)return'<span class="z">0.0</span>';return x<0?'<span class="b">'+x.toFixed(1)+'</span>':'<span class="h">+'+x.toFixed(1)+'</span>';}
+function pr(x){return x==null?'—':f1(x*100)+' %';}
+function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+var VR={};((D.veille&&D.veille.ordre)||[]).forEach(function(n,i){VR[String(n)]=i+1;});
+function vtag(o){if(!o.vr)return'<span class="z">—</span>';return (o.vr<=3?'🔑 ':o.vr<=8?'🟡 ':'⚪ ')+o.vr;}
+var GN={"Base":"🎯 Base","1ere":"⭐ 1ère ch.","Couvrir":"💥 Couvrir"},GC={"Base":"Base","1ere":"ere","Couvrir":"Couvrir"};
+var PREMK='tc_prem_'+D.date+'_'+D.code,PREM={};try{PREM=JSON.parse(localStorage.getItem(PREMK)||'{}')||{};}catch(e){PREM={};}
+function noterPrem(){if(!(sorec&&sorec.c)||fini)return;var ch=false,h=new Date().toTimeString().slice(0,5);for(var k in sorec.c){var v=sorec.c[k];if(v&&v[0]!=null&&!PREM[k]){PREM[k]=[v[0],h];ch=true;}}if(ch){try{localStorage.setItem(PREMK,JSON.stringify(PREM));}catch(e){}}}
+var PREMZK='tc_premz_'+D.date+'_'+D.code,PREMZ={};try{PREMZ=JSON.parse(localStorage.getItem(PREMZK)||'{}')||{};}catch(e){PREMZ={};}
+function noterPremZ(){if(!(zet&&zet.c)||fini)return;var ch=false,h=new Date().toTimeString().slice(0,5);for(var k in zet.c){var v=zet.c[k];if(v&&v.sg!=null&&!PREMZ[k]){PREMZ[k]=[v.sg,h];ch=true;}}if(ch){try{localStorage.setItem(PREMZK,JSON.stringify(PREMZ));}catch(e){}}}
+function M(k){return (D.marches||['pmu','sorec','zeturf']).indexOf(k)>=0;}
+function MZ(){return M('zeturf')||!!D.zaff;}
+var ECK='tc_ec_'+D.date+'_'+D.code,EC={};function lireEC(){try{EC=JSON.parse(localStorage.getItem(ECK)||'{}')||{};}catch(e){EC={};}}lireEC();
+var CATC={'FAVORI':'#2196F3','BASE':'#4CAF50','OUTSIDER':'#FFC107','SURPRISE':'#FF9800','GROS LOT':'#F44336'},CATO={'FAVORI':0,'BASE':1,'OUTSIDER':2,'SURPRISE':3,'GROS LOT':4};
+function catD(o){return (o&&CATC[o.cat])?'<span class="catd" style="background:'+CATC[o.cat]+'" title="'+o.cat+'"></span>':'';}
+function cb(o){return o.np?catD(o)+String(o.num):'<input type="checkbox" class="cbe" title="Écarter" data-n="'+o.num+'"'+(o.ec?' checked':'')+'>'+catD(o)+o.num;}
+function ce(o){return o.ec?' class="ec"':'';}
+function ouvRepetees(){var n={};if(!(sorec&&sorec.c))return n;for(var k in sorec.c){var v=sorec.c[k];if(v&&v[2]!=null&&v[3]!==0){var x=String(v[2]);n[x]=(n[x]||0)+1;}}return n;}
+function lignes(){
+  var rep=ouvRepetees();
+  var L=D.chevaux.map(function(c){
+    var o={num:c.num,nom:c.nom,groupe:c.groupe,score:c.score,tend:c.tend,cat:c.cat||'',np:false,vr:VR[String(c.num)]||null};
+    var p=pmu&&pmu.c&&pmu.c[c.num];
+    if(p){o.cp=p[0];o.ref=p[1];if(p[3]===0)o.np=true;}else{o.cp=c.cote;o.ref=null;}
+    o.ep=(o.cp!=null&&o.ref)?(o.cp-o.ref)/o.ref:null;
+    var s=sorec&&sorec.c&&sorec.c[c.num];
+    if(s){o.cs=s[0];o.ouv=(s[2]!=null&&!(rep[String(s[2])]>1))?s[2]:null;if(s[3]===0)o.np=true;}else{o.cs=c.sorec;o.ouv=null;}
+    o.refVue=null;o.refPrec=false;if(o.ouv==null&&PREM[c.num]){o.ouv=PREM[c.num][0];o.refVue=PREM[c.num][1];}
+    if(s&&s[0]!=null&&s[1]!=null&&s[1]!==s[0]&&(o.ouv==null||(o.refVue&&o.cs===o.ouv))){o.ouv=s[1];o.refVue=null;o.refPrec=true;}
+    o.es=(o.cs!=null&&o.ouv)?(o.cs-o.ouv)/o.ouv:null;
+    var tp=(o.cp!=null&&o.ref!=null)?o.cp-o.ref:null,tsr=(s&&s[0]!=null&&s[1]!=null)?s[0]-s[1]:null;
+    o.tev=(tp==null&&tsr==null)?null:Math.round(((tp||0)+(tsr||0))*10)/10;
+    var z=zet&&zet.c&&zet.c[c.num];o.cz=z?z.sg:null;o.oz=null;o.zVue=null;o.zRef=false;
+    if(z&&z.sg!=null){if(PREMZ[c.num]){o.oz=PREMZ[c.num][0];o.zVue=PREMZ[c.num][1];}
+      if((o.oz==null||o.oz===o.cz)&&z.ref!=null&&z.ref!==z.sg){o.oz=z.ref;o.zVue=null;o.zRef=true;}}
+    o.ez=(o.cz!=null&&o.oz)?(o.cz-o.oz)/o.oz:null;
+    if(c.npPMU)o.np=true;
+    return o;});
+  L.forEach(function(o){o.ec=!o.np&&!!EC[o.num];});
+  var P=L.filter(function(o){return !o.np&&!o.ec;}),E=L.filter(function(o){return o.ec;});
+  var cnt={},nS=0;P.forEach(function(o){if(o.cs!=null){nS++;if(o.cs<20)cnt[o.cs]=(cnt[o.cs]||0)+1;}});
+  var faible=!nS||nS<P.length*0.5;
+  P.forEach(function(o){o.sf=!faible&&o.cs!=null&&o.cs<20&&cnt[o.cs]>=3;});
+  var SF=P.filter(function(o){return o.sf;});
+  function chance(k,dest){var t=0;P.forEach(function(o){if(o[k])t+=1/o[k];});P.forEach(function(o){o[dest]=(o[k]&&t)?(1/o[k])/t:null;});}
+  chance('cp','chP');chance('cs','chS');chance('cz','chZ');
+  P.forEach(function(o){var a=[];if(M('pmu'))a.push(o.chP);if(M('sorec')&&!(faible||o.sf))a.push(o.chS);if(M('zeturf'))a.push(o.chZ);a=a.filter(function(x){return x!=null;});o.chM=a.length?a.reduce(function(s,x){return s+x;},0)/a.length:null;
+    var sp=o.ep!=null&&Math.abs(o.ep)>=SEUIL?Math.sign(o.ep):0,ss=o.es!=null&&Math.abs(o.es)>=SEUIL?Math.sign(o.es):0;
+    if(!M('pmu'))sp=0;if(!M('sorec')||faible||o.sf)ss=0;
+    var sz=M('zeturf')&&o.ez!=null&&Math.abs(o.ez)>=SEUIL?Math.sign(o.ez):0;
+    var ng=[sp,ss,sz].filter(function(x){return x<0;}).length,ps=[sp,ss,sz].filter(function(x){return x>0;}).length;
+    o.mv=(ng&&ps)?'DV':(ng>=2?'CB':(ps>=2?'CH':''));
+    if(M('sorec')&&o.sf&&!o.mv)o.mv='SF';
+    o.outs=o.cp!=null&&o.cp>=10&&((M('pmu')&&o.ep!=null&&o.ep<=-0.15)||(M('sorec')&&!faible&&!o.sf&&o.es!=null&&o.es<=-0.15)||(M('zeturf')&&o.ez!=null&&o.ez<=-0.15));});
+  return {L:L,P:P,E:E,faible:faible,SF:SF};
+}
+function lab(o){return o.mv==='CB'?'<span class="lab cb">Consensus baisse</span>':o.mv==='CH'?'<span class="lab chs">Consensus hausse</span>':o.mv==='DV'?'<span class="lab dv">Divergence</span>':o.mv==='SF'?'<span class="z">— Sorec faible</span>':'';}
+function ten(o){if(!o.tend)return'<span class="z">—</span>';var k=o.tend==='EN HAUSSE'?'H':o.tend==='EN BAISSE'?'B':'S';return'<span class="ten-'+k+'">'+(k==='H'?'↗ ':k==='B'?'↘ ':'→ ')+o.score+'</span>';}
+function par(k){return function(a,b){var x=a[k],y=b[k];if(x==null&&y==null)return a.num-b.num;if(x==null)return 1;if(y==null)return -1;return x-y||a.num-b.num;};}
+var TRI={k:null,d:1},TRIG=false;try{TRI=JSON.parse(localStorage.getItem('tc_tri')||'null')||TRI;TRIG=localStorage.getItem('tc_trig')==='1';}catch(e){}
+function garderTri(){try{localStorage.setItem('tc_tri',JSON.stringify(TRI));localStorage.setItem('tc_trig',TRIG?'1':'');}catch(e){}}
+var OG={'Base':0,'1ere':1,'Couvrir':2},OM={'CB':0,'DV':1,'CH':2,'SF':3};
+function vt(o,k){if(k==='num')return o.num;if(k==='nom')return String(o.nom||'');if(k==='grp')return OG[o.groupe]!=null?OG[o.groupe]:3;if(k==='mv')return OM[o.mv]!=null?OM[o.mv]:4;if(k==='outs')return o.outs?0:1;if(k==='score')return o.score;if(k==='cat')return CATO[o.cat]!=null?CATO[o.cat]:5;return o[k];}
+function cmpTri(a,b){if(!TRI.k)return par('cp')(a,b);var x=vt(a,TRI.k),y=vt(b,TRI.k);if(x==null&&y==null)return a.num-b.num;if(x==null)return 1;if(y==null)return -1;var r=(typeof x==='string')?x.localeCompare(y):(x-y);return r*TRI.d||a.num-b.num;}
+function ord(k){return (TRIG&&TRI.k)?cmpTri:par(k);}
+var COLS_T=[['num','N°'],['cat','Cat'],['nom','Cheval'],['grp','Groupe'],['cp','Cote PMU'],['ep','Évol PMU'],['cs','Cote Sorec'],['es','Évol Sorec'],['cz','Cote ZEturf'],['ez','Évol ZEturf'],['chM','Chance moy.'],['tev','Total évol'],['mv','Mouvement'],['outs','Outsider ↓'],['score','Musique'],['vr','Veille']];
+function afficher(){if(D.verrou)return;
+  var R=lignes(),P=R.P,E=R.E,fav=P.slice().sort(par('cp'))[0];
+  var bt=document.getElementById('btnTri');bt.className=TRIG?'on':'';bt.textContent='Tri global : '+(TRIG?'activé':'désactivé');
+  var tp='<tr><th>N°</th><th>Cheval</th><th>Cote matin</th><th>Cote actuelle</th><th>Évol %</th></tr>';
+  P.slice().sort(ord('cp')).concat(E.slice().sort(ord('cp'))).forEach(function(o){tp+='<tr'+(o.ec?' class="ec"':(o===fav?' class="fav"':''))+'><td>'+cb(o)+'</td><td class="nom">'+esc(o.nom)+'</td><td>'+fc(o.ref)+'</td><td><b>'+fc(o.cp)+'</b></td><td>'+pc(o.ep)+'</td></tr>';});
+  document.getElementById('tPMU').innerHTML=tp;
+  var AL=D.alertes||[],ae=document.getElementById('ALR');
+  ae.innerHTML=AL.length?'<div class="carte alr" style="margin:10px 0"><h2>🚨 Alertes clés</h2><div style="padding:10px 12px">'+AL.map(function(a){return '<div style="'+String(a[0]).replace(/"/g,'')+'">'+esc(a[1])+'</div>';}).join('')+'</div></div>':'';
+  var ts='<tr><th>N°</th><th>Cheval</th><th>Cote ouv.</th><th>Cote actuelle</th><th>Évol %</th></tr>';
+  P.slice().sort(ord('cs')).concat(E.slice().sort(ord('cs'))).forEach(function(o){ts+='<tr'+ce(o)+'><td>'+cb(o)+'</td><td class="nom">'+esc(o.nom)+'</td><td>'+fc(o.ouv)+(o.refVue?'<span title="1re cote vue à '+o.refVue+'" style="color:#ffa726"> *</span>':'')+(o.refPrec?'<span title="cote précédente Sorec (dernier saut)" style="color:#4fc3f7"> °</span>':'')+'</td><td><b>'+fc(o.cs)+'</b></td><td>'+pc(o.es)+'</td></tr>';});
+  var vues=P.filter(function(o){return o.refVue;});
+  if(vues.length){var hv=vues.map(function(o){return o.refVue;}).sort()[0];ts+='<tr><td colspan="5" style="text-align:left;color:#ffa726;font-size:12px">* Pas de cote d\'ouverture Sorec : référence = 1re cote vue par cette page (à partir de '+hv+')</td></tr>';}
+  if(P.some(function(o){return o.refPrec;}))ts+='<tr><td colspan="5" style="text-align:left;color:#4fc3f7;font-size:12px">° Aucun mouvement vu par cette page : référence = cote précédente envoyée par la Sorec (dernier saut seulement, comme sur le site)</td></tr>';
+  document.getElementById('tSOR').innerHTML=ts;
+  var tz='<tr><th>N°</th><th>Cheval</th><th>Cote réf.</th><th>Cote SG</th><th>Évol %</th></tr>';
+  if(!MZ()){tz+='<tr><td colspan="5" class="z">'+(D.site?'ZEturf non disponible sur le site':'ZEturf non utilisé dans cette version (--marches)')+'</td></tr>';}
+  else if(!zet){tz+='<tr><td colspan="5" class="z">'+(zetFige?'Pas de cote ZEturf enregistrée avant le départ (les cotes d\'après-course ne sont pas utilisées)':zetOk===false?'ZEturf indisponible (laissez la fenêtre tableau_cotes.py ouverte)':'Pas de cotes ZEturf pour cette course')+'</td></tr>';}
+  else{P.filter(function(o){return o.cz!=null;}).sort(ord('cz')).concat(E.filter(function(o){return o.cz!=null;}).sort(ord('cz'))).forEach(function(o){tz+='<tr'+ce(o)+'><td>'+cb(o)+'</td><td class="nom">'+esc(o.nom)+'</td><td>'+fc(o.oz)+(o.zVue?'<span title="1re cote vue à '+o.zVue+'" style="color:#ffa726"> *</span>':'')+(o.zRef?'<span title="cote de référence ZEturf" style="color:#4fc3f7"> °</span>':'')+'</td><td><b>'+fc(o.cz)+'</b></td><td>'+pc(o.ez)+'</td></tr>';});}
+  document.getElementById('tZET').innerHTML=tz;
+  var mx=Math.max.apply(null,P.map(function(o){return o.chM||0;}).concat([0.0001]));
+  var tc='<tr><th>N°</th><th>Cheval</th><th>PMU</th><th>Sorec</th><th>ZEturf</th><th>Moyenne</th></tr>';
+  P.slice().sort((TRIG&&TRI.k)?cmpTri:function(a,b){return (b.chM||0)-(a.chM||0)||a.num-b.num;}).concat(E.slice().sort(ord('cp'))).forEach(function(o){tc+='<tr'+ce(o)+'><td>'+cb(o)+'</td><td class="nom">'+esc(o.nom)+'</td><td>'+pr(o.chP)+'</td><td>'+pr(o.chS)+'</td><td>'+pr(o.chZ)+'</td><td style="min-width:90px"><b>'+pr(o.chM)+'</b><span class="barre" style="width:'+Math.round(100*(o.chM||0)/mx)+'%"></span></td></tr>';});
+  document.getElementById('tCH').innerHTML=tc;
+  function cnt(k,s){return P.filter(function(o){return o[k]!=null&&(s<0?o[k]<=-SEUIL:s>0?o[k]>=SEUIL:Math.abs(o[k])<SEUIL);}).length;}
+  function nums(f){var a=P.filter(f).sort(ord('cp')).map(function(o){return o.num;});return a.length?a.join(' - '):'—';}
+  var sy='<tr><th></th><th>PMU</th><th>Sorec</th><th>ZEturf</th></tr>';
+  sy+='<tr><td>▼ Chevaux en baisse (≥ 5 %)</td><td class="v b">'+cnt('ep',-1)+'</td><td class="v b">'+cnt('es',-1)+'</td><td class="v b">'+cnt('ez',-1)+'</td></tr>';
+  sy+='<tr><td>▲ Chevaux en hausse (≥ 5 %)</td><td class="v h">'+cnt('ep',1)+'</td><td class="v h">'+cnt('es',1)+'</td><td class="v h">'+cnt('ez',1)+'</td></tr>';
+  sy+='<tr><td>= Stables</td><td class="v">'+cnt('ep',0)+'</td><td class="v">'+cnt('es',0)+'</td><td class="v">'+cnt('ez',0)+'</td></tr>';
+  sy+='<tr><td colspan="4"><span class="lab cb">Consensus baisse</span> '+nums(function(o){return o.mv==='CB';})+'</td></tr>';
+  sy+='<tr><td colspan="4"><span class="lab chs">Consensus hausse</span> '+nums(function(o){return o.mv==='CH';})+'</td></tr>';
+  sy+='<tr><td colspan="4"><span class="lab dv">Divergence</span> '+nums(function(o){return o.mv==='DV';})+'</td></tr>';
+  document.getElementById('tSYN').innerHTML=sy;
+  var V=[];P.forEach(function(o){if(o.ep!=null)V.push({o:o,m:'PMU',v:o.ep});if(o.es!=null)V.push({o:o,m:'Sorec',v:o.es});if(o.ez!=null&&M('zeturf'))V.push({o:o,m:'ZEturf',v:o.ez});});
+  function top(f,n){return V.filter(f).sort(function(a,b){return Math.abs(b.v)-Math.abs(a.v);}).slice(0,n);}
+  var tt='<tr><th>N°</th><th>Cheval</th><th>Masse</th><th>Variation</th></tr><tr><td colspan="4" style="text-align:left;color:#00e676">Plus fortes baisses</td></tr>';
+  top(function(x){return x.v<0;},5).forEach(function(x){tt+='<tr><td>'+catD(x.o)+x.o.num+'</td><td class="nom">'+esc(x.o.nom)+'</td><td>'+x.m+'</td><td>'+pc(x.v)+'</td></tr>';});
+  tt+='<tr><td colspan="4" style="text-align:left;color:#ff5252">Plus fortes hausses</td></tr>';
+  top(function(x){return x.v>0;},5).forEach(function(x){tt+='<tr><td>'+catD(x.o)+x.o.num+'</td><td class="nom">'+esc(x.o.nom)+'</td><td>'+x.m+'</td><td>'+pc(x.v)+'</td></tr>';});
+  document.getElementById('tTOP').innerHTML=tt;
+  var favS=P.slice().sort(par('cs'))[0];
+  var ordre=P.slice().sort(par('cp')).map(function(o){return o.num;});
+  var ordreT=(TRIG&&TRI.k)?P.slice().sort(cmpTri).map(function(o){return o.num;}):null;
+  var r='<ul>';
+  r+='<li>🏇 <b>Favori PMU</b> : '+(fav?fav.num+' '+esc(fav.nom)+' ('+fc(fav.cp)+', chance '+pr(fav.chP)+')':'—')+'</li>';
+  r+='<li>🇲🇦 <b>Favori Sorec</b> : '+(favS&&favS.cs!=null?favS.num+' '+esc(favS.nom)+' ('+fc(favS.cs)+', chance '+pr(favS.chS)+')':'—')+'</li>';
+  var favZ=P.filter(function(o){return o.cz!=null;}).sort(par('cz'))[0];
+  r+='<li>🇫🇷 <b>Favori ZEturf</b> : '+(favZ?favZ.num+' '+esc(favZ.nom)+' ('+fc(favZ.cz)+', chance '+pr(favZ.chZ)+')'+(M('zeturf')?'':' <span class="z">— affichage seul, hors calculs</span>'):'—')+'</li>';
+  r+='<li>🔥 <b>Outsiders en forte baisse</b> : '+nums(function(o){return o.outs;})+'</li>';
+  r+='<li>🎵 <b>Musique en hausse</b> : '+nums(function(o){return o.tend==='EN HAUSSE';})+' · <b>en baisse</b> : '+nums(function(o){return o.tend==='EN BAISSE';})+'</li>';
+  ['Base','1ere','Couvrir'].forEach(function(g){r+='<li><span class="'+GC[g]+'">'+GN[g]+'</span> : '+nums(function(o){return o.groupe===g;})+'</li>';});
+  r+='<li>📋 <b>Favoris au départ</b> (cote PMU croissante) : '+ordre.join(' - ')+'</li>';
+  if(D.veille&&D.veille.ordre){var h8=D.veille.ordre.slice(0,8).map(String);r+='<li>🌙 <b>8 chevaux veille par groupe</b> : '+['Base','1ere','Couvrir'].map(function(g){var a=P.filter(function(o){return o.groupe===g&&h8.indexOf(String(o.num))>=0;}).sort(function(a,b){return a.vr-b.vr;}).map(function(o){return o.num;});return '<span class="'+GC[g]+'">'+GN[g]+'</span> '+a.length+(a.length?' ('+a.join('-')+')':'');}).join(' · ')+'</li>';}
+  if(ordreT){var nt=(COLS_T.filter(function(c){return c[0]===TRI.k;})[0]||['',''])[1];r+='<li>↕️ <b>Ordre du tri global</b> ('+esc(nt)+(TRI.d<0?' ▼':' ▲')+') : '+ordreT.join(' - ')+'</li>';}
+  r+='</ul>';
+  document.getElementById('REP').innerHTML=r;
+  var VE=document.getElementById('VEI');
+  if(!(D.veille&&D.veille.ordre&&D.veille.ordre.length)){VE.innerHTML='<div class="note" style="padding:0 14px">Pas de prono veille pour cette course (partants pas encore publiés par le PMU ou course hors programme).</div>';}
+  else{var byN={};R.L.forEach(function(o){byN[String(o.num)]=o;});
+    var fmt=function(a){return a.length?a.map(function(n){var o=byN[String(n)],t=String(n);if(o&&o.np)return'<s style="opacity:.45" title="non-partant">'+t+'</s>';if(o&&o.ec)return'<span style="color:#ffb74d" title="écarté">'+t+'</span>';return'<b>'+t+'</b>';}).join(' - '):'—';};
+    var O=D.veille.ordre,v='<ul>';
+    v+='<li>🔑 <b>Base</b> : '+fmt(O.slice(0,3))+'</li>';
+    v+='<li>🟡 <b>Complément</b> : '+fmt(O.slice(3,8))+'</li>';
+    v+='<li>⚪ <b>Outsiders veille</b> : '+fmt(O.slice(8))+'</li></ul>';
+    v+='<div class="note" style="padding:0 14px">'+(D.veille.fige?'Calculé la veille ('+esc(D.veille.calc)+') et figé':'⚠️ Pas de prono figé de la veille : calculé à l\'ouverture de la page ('+esc(D.veille.calc)+')')+' · musique + paire + jockey, sans cotes · barré = non-partant, orange = écarté (le prono veille ne change pas).</div>';
+    VE.innerHTML=v;}
+  var tf='<tr>'+COLS_T.map(function(c){var a=TRI.k===c[0];return '<th class="tri'+(a?' act':'')+'" data-k="'+c[0]+'">'+c[1]+(a?(TRI.d<0?' ▼':' ▲'):' ▲▼')+'</th>';}).join('')+'</tr>';
+  R.L.slice().sort(function(a,b){return (a.np-b.np)||(a.ec-b.ec)||cmpTri(a,b);}).forEach(function(o){
+    tf+='<tr'+ce(o)+(o.np?' style="opacity:.35;text-decoration:line-through"':'')+'><td>'+cb(o)+'</td><td>'+(catD(o)||'<span class="z">—</span>')+'</td><td class="nom">'+esc(o.nom)+'</td><td class="'+(GC[o.groupe]||'')+'">'+(GN[o.groupe]||'')+'</td><td><b>'+fc(o.cp)+'</b></td><td>'+pc(o.ep)+'</td><td><b>'+fc(o.cs)+'</b></td><td>'+pc(o.es)+'</td><td><b>'+fc(o.cz)+'</b></td><td>'+pc(o.ez)+'</td><td>'+pr(o.chM)+'</td><td>'+ftev(o.tev)+'</td><td>'+lab(o)+'</td><td>'+(o.outs?'🔥':'')+'</td><td>'+ten(o)+'</td><td>'+vtag(o)+'</td></tr>';});
+  document.getElementById('tFIC').innerHTML=tf;
+  var fb=document.getElementById('faible');
+  if(!M('sorec')){fb.style.display='none';}
+  else if(R.faible&&sorec){fb.style.display='block';fb.textContent='⚠️ Marché Sorec faible (moins de la moitié des partants cotés) : Chance moyenne et Consensus / Divergence calculés sur le PMU seul.';}
+  else if(R.SF.length){fb.style.display='block';fb.textContent='⚠️ Cotes Sorec peu fiables pour les n° '+R.SF.slice().sort(par('cp')).map(function(o){return o.num+' ('+fc(o.cs)+')';}).join(' - ')+' : 3 chevaux ou plus à la même cote. La Sorec est ignorée pour ces chevaux seulement (Chance moyenne et Mouvement).';}
+  else{fb.style.display='none';}
+  var e=[];if(pmu&&pmu.maj)e.push('PMU '+pmu.maj);if(sorec&&sorec.maj)e.push('Sorec '+sorec.maj);if(zet&&zet.maj)e.push('ZEturf '+zet.maj);
+  var t2=(pmu&&pmu.t)||(sorec&&sorec.t);
+  var fige=(pmu&&pmu.statut==='FIN')||(sorec&&(sorec.statut==='OFFICIAL'||sorec.fin===1))||(t2&&Date.now()>t2+FIGE);
+  document.getElementById('etat').textContent=e.length?((fige?'🏁 Cotes au départ — ':'🔴 Cotes en direct — ')+e.join(' · ')):'⚠️ Pas de cotes en direct pour cette course : cotes de la page Verdict';
+  if(fige&&!fini){fini=true;if(timer)clearTimeout(timer);partiA=(pmu&&pmu.statut==='FIN'&&pmu.maj)?pmu.maj:null;}
+  var I=D.infos||{},b=[];
+  if(I.heure)b.push('🕐 '+I.heure);if(I.discipline)b.push('🏇 '+I.discipline);if(I.distance)b.push('📏 '+I.distance);if(I.allocation)b.push('💰 '+I.allocation);
+  b.push('🏆 '+P.length+' partants'+(E.length?' ('+E.length+' écartés : '+E.slice().sort(par('cp')).map(function(o){return o.num;}).join(' - ')+')':''));
+  var h=b.map(function(t){return'<span class="bdg">'+esc(t)+'</span>';}).join('');
+  var dr=(pmu&&pmu.dep)||'';
+  if(dr&&I.heure&&dr!==I.heure)h+='<span class="bdg retard">⏱ Départ réel prévu '+esc(dr)+'</span>';
+  var J=(sorec&&sorec.j)||[];
+  document.getElementById('jeux').innerHTML='<div class="jt">🇲🇦 JEUX SOREC</div>'+(J.length?J.map(function(j){return '<span class="jeu '+classeJeu(j)+'">'+esc(j)+'</span>';}).join(''):'<span class="z">'+(sorec?'—':'course non proposée chez Sorec')+'</span>');
+  document.getElementById('infos').innerHTML=h;
+  chrono();
+}
+function depMs(){
+  if(pmu&&pmu.t)return +pmu.t;if(sorec&&sorec.t)return +sorec.t;
+  var h=(D.infos&&D.infos.heure)||'',m=h.match(/(\d{1,2})[:h](\d{2})/);if(!m)return null;
+  var d=new Date(D.date+'T00:00:00');d.setHours(+m[1],+m[2],0,0);return d.getTime();
+}
+function classeJeu(j){var t=String(j).toLowerCase();if(t.indexOf('simple')>=0)return 'sg';if(t.indexOf('jumel')>=0||t.indexOf('coupl')>=0)return 'jm';if(t.indexOf('trio')>=0||t.indexOf('tierc')>=0)return 'tr';if(t.indexOf('multi')>=0)return 'mu';if(t.indexOf('quart')>=0)return 'qa';if(t.indexOf('quint')>=0||t.indexOf('pick')>=0)return 'qu';return '';}
+function prevuMs(){var h=(D.infos&&D.infos.heure)||'',m=h.match(/(\d{1,2})[:h](\d{2})/);if(!m)return null;var d=new Date(D.date+'T00:00:00');d.setHours(+m[1],+m[2],0,0);if(+m[1]<3)d.setDate(d.getDate()+1);return d.getTime();}
+function cloture(){
+  var el=document.getElementById('cloture'),p=prevuMs();
+  if(fini||!sorec||!p){el.className='';el.innerHTML='';return;}
+  var c=p-CLOTURE_AVANT,r=c-Date.now(),hc=new Date(c).toTimeString().slice(0,5);
+  if(r>0){el.className=r<=2*60000?'rouge':(r<=5*60000?'orange':'');el.innerHTML='⏰ Clôture Sorec dans '+mmss(r)+'<small>validez avant '+hc+' (heure prévue '+new Date(p).toTimeString().slice(0,5)+' − 2 min, estimation)</small>';}
+  else{el.className='ferme';el.innerHTML='⛔ Paris Sorec probablement fermés<small>heure prévue '+new Date(p).toTimeString().slice(0,5)+' — les cotes continuent jusqu\'au vrai départ</small>';}
+}
+function mmss(ms){var s=Math.floor(Math.abs(ms)/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+(m<10?'0':''):'')+m+':'+(x<10?'0':'')+x;}
+function chrono(){
+  cloture();
+  var el=document.getElementById('chrono'),dep=depMs();
+  if(fini){el.className='parti';el.innerHTML='🏁 Parti'+(partiA?' à '+partiA:'');return;}
+  if(!dep){el.textContent='';return;}
+  var r=dep-Date.now(),hd=new Date(dep).toTimeString().slice(0,5);
+  if(r>0){el.className=r<=2*60000?'rouge':(r<=5*60000?'orange':'');el.innerHTML='⏳ Départ dans '+mmss(r)+'<small>départ '+hd+'</small>';}
+  else{el.className='rouge';el.innerHTML='⚠️ Départ en retard : +'+mmss(r)+'<small>prévu '+hd+'</small>';}
+}
+function lire(src){
+  return fetch(LIVE+src+'/'+D.date+'/'+D.code+'.json?m='+Math.floor(Date.now()/10000),{cache:'no-store'})
+    .then(function(r){return r.ok?r.json():null;}).then(function(d){return d&&d.c?d:null;}).catch(function(){return null;});
+}
+function lireZ(){return fetch(ZURL+'/zeturf/'+D.date+'/'+D.code+'?m='+Math.floor(Date.now()/10000),{cache:'no-store'}).then(function(r){zetOk=true;return r.ok?r.json():null;}).then(function(d){return d&&d.c?d:null;}).catch(function(){zetOk=false;return null;});}
+function estParti(){var t2=(pmu&&pmu.t)||(sorec&&sorec.t);return !!((pmu&&pmu.statut==='FIN')||(sorec&&(sorec.statut==='OFFICIAL'||sorec.statut==='RUNNING'||sorec.statut==='FINISHED'||sorec.fin===1))||(t2&&Date.now()>t2+FIGE));}
+var zetFige=false;
+function charger(){if(fini||D.verrou)return;Promise.all([lire('pmu'),lire('sorec'),D.site?lire('zeturf'):(MZ()?lireZ():Promise.resolve(null))]).then(function(r){if(r[0])pmu=r[0];if(r[1]){sorec=r[1];noterPrem();}
+  if(estParti()){if(!zetFige){zetFige=true;if(!zet&&D.zdep)zet=D.zdep;}}else if(r[2]){zet=r[2];noterPremZ();}
+  if(D.site){if(r[2])zet=r[2];else if(!zet&&D.zdep)zet=D.zdep;}
+  afficher();planifier();});}
+function planifier(){if(fini)return;if(timer)clearTimeout(timer);var dep=depMs(),r=dep?dep-Date.now():null;timer=setTimeout(charger,(r!=null&&r<5*60000&&r>-FIGE)?20000:60000);}
+function nav(){
+  var P=D.prog||{},m=D.code.match(/R(\d+)C(\d+)/),r0=m?m[1]:'',c0=m?m[2]:'',hr='',hc='';
+  if(D.site){
+    Object.keys(P).sort(function(a,b){return a-b;}).forEach(function(r){hr+='<a href="reunion_R'+r+'.html"'+(r===r0?' class="act"':'')+'>R'+r+'</a>';});
+    (D.sorecOnly||[]).forEach(function(x){hr+='<a class="so" href="sorec_reunion_'+x[0]+'.html" title="'+esc(x[2]||'')+'">'+x[1]+' '+x[0]+'</a>';});
+    (P[r0]||[]).forEach(function(c){hc+='<a href="choix_final_R'+r0+'C'+c+'.html"'+(String(c)===c0?' class="act"':'')+'>C'+c+'</a>';});
+    document.getElementById('navR').innerHTML=hr;document.getElementById('navC').innerHTML=hc;return;
+  }
+  Object.keys(P).sort(function(a,b){return a-b;}).forEach(function(r){hr+='<a data-code="R'+r+'C'+(P[r][0]||1)+'"'+(r===r0?' class="act"':'')+'>R'+r+'</a>';});
+  (P[r0]||[]).forEach(function(c){hc+='<a data-code="R'+r0+'C'+c+'"'+(String(c)===c0?' class="act"':'')+'>C'+c+'</a>';});
+  document.getElementById('navR').innerHTML=hr;document.getElementById('navC').innerHTML=hc;
+}
+document.addEventListener('click',function(e){if(D.site)return;var a=e.target&&e.target.closest&&e.target.closest('.nav a');if(!a)return;e.preventDefault();var code=a.getAttribute('data-code');if(!code||code===D.code)return;
+  var msg=document.getElementById('navMsg');msg.textContent='Ouverture de '+code+' dans un nouvel onglet…';
+  fetch(ZURL+'/ouvrir/'+D.variante+'/'+(D.marches||[]).join('_')+'/'+D.date+'/'+code,{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){msg.textContent=d&&d.ok?'Page '+code+' en cours d\'ouverture (nouvel onglet)':'Impossible d\'ouvrir '+code;}).catch(function(){msg.textContent='Fenêtre du script fermée : relancez tableau_cotes pour naviguer entre les courses.';});});
+var DEMARRE=false;
+function demarrer(){if(DEMARRE)return;DEMARRE=true;VR={};((D.veille&&D.veille.ordre)||[]).forEach(function(n,i){VR[String(n)]=i+1;});nav();afficher();charger();setInterval(chrono,1000);}
+window.CF_DEMARRER=function(p){p=p||{};for(var k in p){if(Object.prototype.hasOwnProperty.call(p,k))D[k]=p[k];}D.verrou=false;demarrer();};
+nav();if(!D.verrou)demarrer();
+document.addEventListener('change',function(e){var x=e.target;if(!x.classList||!x.classList.contains('cbe'))return;var n=x.getAttribute('data-n');if(x.checked)EC[n]=1;else delete EC[n];try{localStorage.setItem(ECK,JSON.stringify(EC));}catch(err){}afficher();});
+window.addEventListener('storage',function(e){if(e.key===ECK){lireEC();afficher();}});
+document.addEventListener('click',function(e){var t=e.target;if(t&&t.id==='btnTri'){TRIG=!TRIG;garderTri();afficher();return;}var th=t&&t.closest&&t.closest('#tFIC th.tri');if(!th)return;var k=th.getAttribute('data-k');if(TRI.k!==k){TRI={k:k,d:1};}else if(TRI.d===1){TRI.d=-1;}else{TRI={k:null,d:1};}garderTri();afficher();});
+document.addEventListener('visibilitychange',function(){if(!document.hidden)charger();});
+</script></body></html>
