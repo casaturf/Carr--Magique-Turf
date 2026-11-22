@@ -209,9 +209,11 @@ document.getElementById('cfcode').addEventListener('keydown',function(e){if(e.ke
 <div class="nav-buttons">
     <a class="nav-btn" href="participants_R14C9.html">📎 Participants</a>
     <a class="nav-btn" href="base_solide_R14C9.html" style="background:linear-gradient(135deg,#1565C0,#0D47A1);color:#fff;border-color:#1565C0;font-weight:bold;box-shadow:0 0 10px #1565C088;">🔵 Base Solide</a>
+    <a class="nav-btn" href="numeros_cles_R14C9.html" style="background:linear-gradient(135deg,#1565C0,#F9A825);color:#000;border-color:#1565C0;font-weight:bold;box-shadow:0 0 10px #1565C088;">🔑 Numéros Clés</a>
     <a class="nav-btn" href="verdict_R14C9.html" style="background:linear-gradient(135deg,#D4AF37,#8B6914);color:#000;border-color:#D4AF37;font-weight:bold;box-shadow:0 0 10px #D4AF3788;">🏆 Verdict Final</a>
     <a class="nav-btn" href="course_R14C9.html">📊 Classement</a>
-    <a class="nav-btn" href="international_R14C9.html">🌍 F5 International</a>
+    <a class="nav-btn" href="attele_R14C9.html">🏊 Spécial ATTÉLÉ</a>
+    <a class="nav-btn" href="fusion_R14C9.html">⚡ Fusion Score</a>
     <a class="nav-btn" href="fusion_histo_R14C9.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;font-weight:bold;">🔬 Fusion Histo</a>
     <a class="nav-btn" href="specialistes_R14C9.html" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700;font-weight:bold;box-shadow:0 0 10px #FFD70088;">🎯 Spécialistes</a>
     <a class="nav-btn" href="cmt_selection_R14C9.html" style="background:linear-gradient(135deg,#00B4D8,#0077B6);color:#fff;border-color:#00B4D8;font-weight:bold;">🎯 CMT Selection</a>
@@ -219,6 +221,8 @@ document.getElementById('cfcode').addEventListener('keydown',function(e){if(e.ke
     <a class="nav-btn" href="analyse_R14C9.html" style="background:#7B2FBE;color:#fff;border-color:#7B2FBE;font-weight:bold;">🎯 Analyse Croisée</a>
     <a class="nav-btn" href="groupes_R14C9.html" style="background:linear-gradient(135deg,#FF6B35,#F7C59F);color:#000;border-color:#FF6B35;font-weight:bold;">📊 Groupes CMT</a>
     <a class="nav-btn" href="radar_R14C9.html" style="background:linear-gradient(135deg,#00CED1,#006994);color:#fff;border-color:#00CED1;font-weight:bold;">📡 Radar CMT</a>
+    <a class="nav-btn" href="iacote_R14C9.html" style="background:linear-gradient(135deg,#D4AF37,#8B6914);color:#000;border-color:#D4AF37;font-weight:bold;">&#127919; Score IA-Cote</a>
+    <a class="nav-btn" href="combine_R14C9.html" style="background:linear-gradient(135deg,#4CAF50,#1B5E20);color:#fff;border-color:#4CAF50;font-weight:bold;">&#128640; Combine</a>
     <a class="nav-btn" href="signaux_R14C9.html" style="background:linear-gradient(135deg,#0096C7,#023E8A);color:#fff;border-color:#0096C7;font-weight:bold;">&#128201; Signaux</a>
     <a class="nav-btn" href="groupes_crack_R14C9.html" style="background:#1A3A1A;border-color:#4CAF50;color:#4CAF50;">&#128202; Crack Classement</a>
     <a class="nav-btn" href="crack_R14C9.html" style="background:linear-gradient(135deg,#8B5A2B,#5A3A1A);color:#fff;border-color:#8B5A2B;font-weight:bold;">&#127942; Crack</a>
@@ -286,7 +290,7 @@ function ouvRepetees(){var n={};if(!(sorec&&sorec.c))return n;for(var k in sorec
 function lignes(){
   var rep=ouvRepetees();
   var L=D.chevaux.map(function(c){
-    var o={num:c.num,nom:c.nom,groupe:c.groupe,score:c.score,tend:c.tend,cat:c.cat||'',np:false,vr:VR[String(c.num)]||null};
+    var o={num:c.num,nom:c.nom,groupe:c.groupe,score:c.score,tend:c.tend,cat:c.cat||'',np:false,vr:VR[String(c.num)]||null,crack:c.crack,jr:c.jr,er:c.er,rec:c.rec};
     var p=pmu&&pmu.c&&pmu.c[c.num];
     if(p){o.cp=p[0];o.ref=p[1];if(p[3]===0)o.np=true;}else{o.cp=c.cote;o.ref=null;}
     o.ep=(o.cp!=null&&o.ref)?(o.cp-o.ref)/o.ref:null;
@@ -305,6 +309,9 @@ function lignes(){
     return o;});
   L.forEach(function(o){o.ec=!o.np&&!!EC[o.num];});
   var P=L.filter(function(o){return !o.np&&!o.ec;}),E=L.filter(function(o){return o.ec;});
+  function rk(k,cle,desc){var V=P.filter(function(o){return o[cle]!=null;});L.forEach(function(o){o[k]=null;});V.forEach(function(o){o[k]=1+V.filter(function(x){return desc?x[cle]>o[cle]:x[cle]<o[cle];}).length;});}
+  rk('rC','crack',true);rk('rJ','jr',false);rk('rE','er',false);rk('rR','rec',false);
+  L.forEach(function(o){o.star=!o.np&&!o.ec&&((o.rC&&o.rC<=3)||(o.rJ&&o.rJ<=3)||(o.rE&&o.rE<=3));});
   var cnt={},nS=0;P.forEach(function(o){if(o.cs!=null){nS++;if(o.cs<20)cnt[o.cs]=(cnt[o.cs]||0)+1;}});
   var faible=!nS||nS<P.length*0.5;
   P.forEach(function(o){o.sf=!faible&&o.cs!=null&&o.cs<20&&cnt[o.cs]>=3;});
@@ -321,16 +328,18 @@ function lignes(){
     o.outs=o.cp!=null&&o.cp>=10&&((M('pmu')&&o.ep!=null&&o.ep<=-0.15)||(M('sorec')&&!faible&&!o.sf&&o.es!=null&&o.es<=-0.15)||(M('zeturf')&&o.ez!=null&&o.ez<=-0.15));});
   return {L:L,P:P,E:E,faible:faible,SF:SF};
 }
+function rtxt(ms){if(!ms)return null;var t=Math.round(ms/100);var s=Math.floor((t%600)/10);return Math.floor(t/600)+"'"+(s<10?'0':'')+s+'"'+(t%10);}
+function recT(o){var t=rtxt(o.rec);if(!t)return'<span class="z">—</span>';return (o.rR&&o.rR<=3)?'<b style="color:#00e676">'+t+'</b>':t;}
 function lab(o){return o.mv==='CB'?'<span class="lab cb">Consensus baisse</span>':o.mv==='CH'?'<span class="lab chs">Consensus hausse</span>':o.mv==='DV'?'<span class="lab dv">Divergence</span>':o.mv==='SF'?'<span class="z">— Sorec faible</span>':'';}
 function ten(o){if(!o.tend)return'<span class="z">—</span>';var k=o.tend==='EN HAUSSE'?'H':o.tend==='EN BAISSE'?'B':'S';return'<span class="ten-'+k+'">'+(k==='H'?'↗ ':k==='B'?'↘ ':'→ ')+o.score+'</span>';}
 function par(k){return function(a,b){var x=a[k],y=b[k];if(x==null&&y==null)return a.num-b.num;if(x==null)return 1;if(y==null)return -1;return x-y||a.num-b.num;};}
 var TRI={k:null,d:1},TRIG=false;try{TRI=JSON.parse(localStorage.getItem('tc_tri')||'null')||TRI;TRIG=localStorage.getItem('tc_trig')==='1';}catch(e){}
 function garderTri(){try{localStorage.setItem('tc_tri',JSON.stringify(TRI));localStorage.setItem('tc_trig',TRIG?'1':'');}catch(e){}}
 var OG={'Base':0,'1ere':1,'Couvrir':2},OM={'CB':0,'DV':1,'CH':2,'SF':3};
-function vt(o,k){if(k==='num')return o.num;if(k==='nom')return String(o.nom||'');if(k==='grp')return OG[o.groupe]!=null?OG[o.groupe]:3;if(k==='mv')return OM[o.mv]!=null?OM[o.mv]:4;if(k==='outs')return o.outs?0:1;if(k==='score')return o.score;if(k==='cat')return CATO[o.cat]!=null?CATO[o.cat]:5;return o[k];}
+function vt(o,k){if(k==='num')return o.num;if(k==='nom')return String(o.nom||'');if(k==='grp')return OG[o.groupe]!=null?OG[o.groupe]:3;if(k==='mv')return OM[o.mv]!=null?OM[o.mv]:4;if(k==='outs')return o.outs?0:1;if(k==='score')return o.score;if(k==='cat')return CATO[o.cat]!=null?CATO[o.cat]:5;if(k==='star')return o.star?0:1;return o[k];}
 function cmpTri(a,b){if(!TRI.k)return par('cp')(a,b);var x=vt(a,TRI.k),y=vt(b,TRI.k);if(x==null&&y==null)return a.num-b.num;if(x==null)return 1;if(y==null)return -1;var r=(typeof x==='string')?x.localeCompare(y):(x-y);return r*TRI.d||a.num-b.num;}
 function ord(k){return (TRIG&&TRI.k)?cmpTri:par(k);}
-var COLS_T=[['num','N°'],['cat','Cat'],['nom','Cheval'],['grp','Groupe'],['cp','Cote PMU'],['ep','Évol PMU'],['cs','Cote Sorec'],['es','Évol Sorec'],['cz','Cote ZEturf'],['ez','Évol ZEturf'],['chM','Chance moy.'],['tev','Total évol'],['mv','Mouvement'],['outs','Outsider ↓'],['score','Musique'],['vr','Veille']];
+var COLS_T=[['num','N°'],['cat','Cat'],['nom','Cheval'],['grp','Groupe'],['cp','Cote PMU'],['ep','Évol PMU'],['cs','Cote Sorec'],['es','Évol Sorec'],['cz','Cote ZEturf'],['ez','Évol ZEturf'],['chM','Chance moy.'],['tev','Total évol'],['mv','Mouvement'],['outs','Outsider ↓'],['star','⭐ Crack'],['rec','⏱ Record'],['score','Musique'],['vr','Veille']];
 function repFiche(P){
   var FV=D.fiche||[],ok={};P.forEach(function(o){ok[String(o.num)]=1;});
   var A=FV.filter(function(x){return ok[String(x.n)];});
@@ -421,7 +430,7 @@ function afficher(){if(D.verrou)return;
     VE.innerHTML=v;}
   var tf='<tr>'+COLS_T.map(function(c){var a=TRI.k===c[0];return '<th class="tri'+(a?' act':'')+'" data-k="'+c[0]+'">'+c[1]+(a?(TRI.d<0?' ▼':' ▲'):' ▲▼')+'</th>';}).join('')+'</tr>';
   R.L.slice().sort(function(a,b){return (a.np-b.np)||(a.ec-b.ec)||cmpTri(a,b);}).forEach(function(o){
-    tf+='<tr'+ce(o)+(o.np?' style="opacity:.35;text-decoration:line-through"':'')+'><td>'+cb(o)+'</td><td>'+(catD(o)||'<span class="z">—</span>')+'</td><td class="nom">'+esc(o.nom)+'</td><td class="'+(GC[o.groupe]||'')+'">'+(GN[o.groupe]||'')+'</td><td><b>'+fc(o.cp)+'</b></td><td>'+pc(o.ep)+'</td><td><b>'+fc(o.cs)+'</b></td><td>'+pc(o.es)+'</td><td><b>'+fc(o.cz)+'</b></td><td>'+pc(o.ez)+'</td><td>'+pr(o.chM)+'</td><td>'+ftev(o.tev)+'</td><td>'+lab(o)+'</td><td>'+(o.outs?'🔥':'')+'</td><td>'+ten(o)+'</td><td>'+vtag(o)+'</td></tr>';});
+    tf+='<tr'+ce(o)+(o.np?' style="opacity:.35;text-decoration:line-through"':'')+'><td>'+cb(o)+'</td><td>'+(catD(o)||'<span class="z">—</span>')+'</td><td class="nom">'+esc(o.nom)+'</td><td class="'+(GC[o.groupe]||'')+'">'+(GN[o.groupe]||'')+'</td><td><b>'+fc(o.cp)+'</b></td><td>'+pc(o.ep)+'</td><td><b>'+fc(o.cs)+'</b></td><td>'+pc(o.es)+'</td><td><b>'+fc(o.cz)+'</b></td><td>'+pc(o.ez)+'</td><td>'+pr(o.chM)+'</td><td>'+ftev(o.tev)+'</td><td>'+lab(o)+'</td><td>'+(o.outs?'🔥':'')+'</td><td>'+(o.star?'⭐':'')+'</td><td>'+recT(o)+'</td><td>'+ten(o)+'</td><td>'+vtag(o)+'</td></tr>';});
   document.getElementById('tFIC').innerHTML=tf;
   var fb=document.getElementById('faible');
   if(!M('sorec')){fb.style.display='none';}
