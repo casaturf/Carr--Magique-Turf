@@ -413,9 +413,9 @@ function repFiche(P,E){E=E||[];
   var tous={},ecs={};P.forEach(function(o){tous[String(o.num)]=1;});E.forEach(function(o){tous[String(o.num)]=1;ecs[String(o.num)]=1;});
   var B=FV.filter(function(x){return tous[String(x.n)];}),vu={},cr=[];
   [['meth',-1],['sig',-1],['vip',-1],['hist',-1],['clh',1],['spr',1]].forEach(function(k){
-    B.filter(function(x){return x[k[0]]!=null;}).sort(function(a,b){return (k[1]<0?b[k[0]]-a[k[0]]:a[k[0]]-b[k[0]])||c2(a,b);}).slice(0,3)
+    B.filter(function(x){return x[k[0]]!=null;}).sort(function(a,b){return (k[1]<0?b[k[0]]-a[k[0]]:a[k[0]]-b[k[0]])||c2(a,b);}).slice(0,4)
      .forEach(function(x){if(!vu[x.n]){vu[x.n]=1;cr.push(x.n);}});});
-  r+='<li style="list-style:none;margin:10px 0 6px"><div class="crm"><div class="crmt">🎯 Conclusion réduite des méthodes <span>(3 premiers de chaque méthode, avant écarts)</span></div><div class="crmn">'
+  r+='<li style="list-style:none;margin:10px 0 6px"><div class="crm"><div class="crmt">🎯 Conclusion réduite des méthodes <span>(4 premiers de chaque méthode, avant écarts)</span></div><div class="crmn">'
     +(cr.length?cr.map(function(n){return '<span class="crmb'+(ecs[String(n)]?' ec':'')+'"'+(ecs[String(n)]?' title="écarté"':'')+'>'+n+'</span>';}).join(''):'<span class="z">—</span>')+'</div></div></li>';
   return r;
 }
