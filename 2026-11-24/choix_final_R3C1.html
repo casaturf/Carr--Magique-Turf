@@ -64,6 +64,9 @@ input.cbe{cursor:pointer;accent-color:#ff9800;margin-right:4px}
 .crmn{margin-top:8px;display:flex;gap:9px;flex-wrap:wrap}
 .crmb{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 4px;border-radius:50%;background:#ffd54f;color:#111;font-weight:bold;font-size:19px}
 .crmb.ec{background:#ff9800;color:#3e2000;text-decoration:line-through}
+.crmb.nv{background:#fff59d;box-shadow:0 0 0 3px #00e676}
+.crm0{margin-top:8px;font-size:12px;color:#bdbdbd}.crms{display:inline-block;min-width:22px;padding:1px 5px;margin:0 3px;border-radius:10px;background:#3a3420;color:#ffd54f;text-align:center;font-weight:bold}
+.crms.ec{background:#ff9800;color:#3e2000;text-decoration:line-through}
 .ncmflex{display:flex;gap:18px;flex-wrap:wrap;padding:8px 14px;align-items:flex-start}.ncmtab{flex:1 1 1000px;overflow-x:auto}.ncmtab th{background:#00acc1;color:#fff;font-size:11px;padding:5px 6px;white-space:nowrap}.ncmtab td{white-space:nowrap}.ncmtab table{width:100%;border-collapse:collapse}
 .ncmtab td{padding:5px 8px;border-bottom:1px solid #222}.ncmrad{flex:0 1 400px;text-align:center;margin:0 auto}#NCM tr.ncml{cursor:pointer}#NCM tr.ncml:hover td{background-color:#1c2433}
 #NCM tr.sel td{box-shadow:inset 0 2px 0 #ffd54f,inset 0 -2px 0 #ffd54f}
@@ -350,12 +353,15 @@ function repFiche(P,E){E=E||[];
   r+='<li>🚨 <b>Alertes</b> : '+ta+'</li>';
   r+='<li>📉 <b>Chute cote</b> : '+(ch.length?ch.join(' - '):'—')+'</li>';
   var tous={},ecs={};P.forEach(function(o){tous[String(o.num)]=1;});E.forEach(function(o){tous[String(o.num)]=1;ecs[String(o.num)]=1;});
-  var B=FV.filter(function(x){return tous[String(x.n)];}),vu={},cr=[];
-  [['meth',-1],['sig',-1],['vip',-1],['hist',-1],['clh',1],['spr',1]].forEach(function(k){
-    B.filter(function(x){return x[k[0]]!=null;}).sort(function(a,b){return (k[1]<0?b[k[0]]-a[k[0]]:a[k[0]]-b[k[0]])||c2(a,b);}).slice(0,4)
-     .forEach(function(x){if(!vu[x.n]){vu[x.n]=1;cr.push(x.n);}});});
-  r+='<li style="list-style:none;margin:10px 0 6px"><div class="crm"><div class="crmt">🎯 Conclusion réduite des méthodes <span>(4 premiers de chaque méthode, avant écarts)</span></div><div class="crmn">'
-    +(cr.length?cr.map(function(n){return '<span class="crmb'+(ecs[String(n)]?' ec':'')+'"'+(ecs[String(n)]?' title="écarté"':'')+'>'+n+'</span>';}).join(''):'<span class="z">—</span>')+'</div></div></li>';
+  function concl(set){var B=FV.filter(function(x){return set[String(x.n)];}),vu={},cr=[];
+    [['meth',-1],['sig',-1],['vip',-1],['hist',-1],['clh',1],['spr',1]].forEach(function(k){
+      B.filter(function(x){return x[k[0]]!=null;}).sort(function(a,b){return (k[1]<0?b[k[0]]-a[k[0]]:a[k[0]]-b[k[0]])||c2(a,b);}).slice(0,4)
+       .forEach(function(x){if(!vu[x.n]){vu[x.n]=1;cr.push(x.n);}});});return cr;}
+  var cr0=concl(tous),cr=concl(ok),nE=Object.keys(ecs).length,i0={};cr0.forEach(function(n){i0[n]=1;});
+  r+='<li style="list-style:none;margin:10px 0 6px"><div class="crm"><div class="crmt">🎯 Conclusion réduite des méthodes <span>(4 premiers de chaque méthode'+(nE?', écartés remplacés':'')+')</span></div><div class="crmn">'
+    +(cr.length?cr.map(function(n){var nv=nE&&!i0[n];return '<span class="crmb'+(nv?' nv':'')+'"'+(nv?' title="remplaçant (entré après vos écarts)"':'')+'>'+n+'</span>';}).join(''):'<span class="z">—</span>')+'</div>'
+    +(nE&&cr0.some(function(n){return ecs[String(n)];})?'<div class="crm0">Avant écarts : '+cr0.map(function(n){return '<span class="crms'+(ecs[String(n)]?' ec':'')+'">'+n+'</span>';}).join('')+'</div>':'')
+    +'</div></li>';
   return r;
 }
 var NCM_LEG=false,NCM_SEL=null,NCM_AX=['Forme','Historique','Méthodes','Signaux','Marché','Tandem','Vitesse','Paires'];
