@@ -203,6 +203,9 @@ function verifier(code){
    if(d&&d.ok){si(KC,code);msg('Chargement...');lire(code,d.nom);}
    else{if(x.s===403||x.s===401)ri(KC);msg(d&&d.error?d.error:'Code refusé.');}
  }).catch(function(){msg('Erreur de connexion. Réessayez.');});}
+window.CF_CYCLE=function(){var c=gi(KC);if(!c)return Promise.resolve(null);
+ return fetch(W+'/api/fiche/get',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:c,deviceId:devId(),date:DT,rc:RC})})
+  .then(function(r){return r.json();}).then(function(x){return (x&&x.ok&&x.payload)?x.payload:null;}).catch(function(){return null;});};
 window.CF_FICHE=function(){var c=gi(KC);if(!c)return Promise.resolve(null);
  return fetch(W+'/api/fiche/get',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:c,deviceId:devId(),date:DT,rc:RC.replace(/-CF$/,'')})})
   .then(function(r){return r.json();}).then(function(x){return (x&&x.ok&&x.payload&&x.payload.rows)?x.payload.rows:null;}).catch(function(){return null;});};
@@ -298,7 +301,7 @@ document.getElementById('cfcode').addEventListener('keydown',function(e){if(e.ke
 <li><b>Case devant le N°</b> = écarter le cheval : il passe en bas en <span style="color:#ffb74d;font-weight:bold">orange</span> et sort de toutes les analyses (chance réelle, synthèse, top, repères, étoiles, records). Ligne barrée = non-partant.</li>
 <li><b>Tri</b> : clic sur un titre du Tableau complet (▲ croissant, ▼ décroissant, 3e clic = ordre normal). Bouton <b>Tri global</b> désactivé = seul ce tableau change ; activé = cartes, chance réelle, synthèse et repères suivent aussi l'ordre du tri. Le tri ne change ni les groupes ni aucun calcul.</li>
 <li>⏳ <b>Départ dans</b> = compte à rebours jusqu'au départ · <b>Clôture Sorec</b> = heure limite estimée pour valider votre jeu à la Sorec.</li>
-<li>Rien sur cette page n'est une règle d'élimination : ce sont des informations pour votre choix final.</li></ul>
+<li>Les groupes, catégories, alertes, prono veille, Crack, records et musique sont repris de la dernière analyse toutes les 5 minutes jusqu'au départ (sans recharger la page).</li><li>Rien sur cette page n'est une règle d'élimination : ce sont des informations pour votre choix final.</li></ul>
 </div></details>
 </div>
 <footer class="footer">
@@ -546,7 +549,7 @@ function afficher(){if(D.verrou)return;
   var t2=(pmu&&pmu.t)||(sorec&&sorec.t);
   var fige=(pmu&&pmu.statut==='FIN')||(sorec&&(sorec.statut==='OFFICIAL'||sorec.fin===1))||(t2&&Date.now()>t2+FIGE);
   document.getElementById('etat').textContent=e.length?((fige?'🏁 Cotes au départ — ':'🔴 Cotes en direct — ')+e.join(' · ')):'⚠️ Pas de cotes en direct pour cette course : cotes de la page Verdict';
-  if(fige&&!fini){fini=true;if(timer)clearTimeout(timer);partiA=(pmu&&pmu.statut==='FIN'&&pmu.maj)?pmu.maj:null;}
+  if(fige&&!fini){if(!figeA)figeA=Date.now();if((CH_OK&&Date.now()-figeA>=60000)||Date.now()-figeA>=600000){fini=true;if(timer)clearTimeout(timer);partiA=(pmu&&pmu.statut==='FIN'&&pmu.maj)?pmu.maj:null;}}
   var I=D.infos||{},b=[];
   if(I.heure)b.push('🕐 '+I.heure);if(I.discipline)b.push('🏇 '+I.discipline);if(I.distance)b.push('📏 '+I.distance);if(I.allocation)b.push('💰 '+I.allocation);
   b.push('🏆 '+P.length+' partants'+(E.length?' ('+E.length+' écartés : '+E.slice().sort(par('cp')).map(function(o){return o.num;}).join(' - ')+')':''));
@@ -576,7 +579,7 @@ function mmss(ms){var s=Math.floor(Math.abs(ms)/1000),h=Math.floor(s/3600),m=Mat
 function chrono(){
   cloture();
   var el=document.getElementById('chrono'),dep=depMs();
-  if(fini){el.className='parti';el.innerHTML='🏁 Parti'+(partiA?' à '+partiA:'');return;}
+  if(fini||figeA){var pa=partiA||((pmu&&pmu.statut==='FIN'&&pmu.maj)?pmu.maj:null);el.className='parti';el.innerHTML='🏁 Parti'+(pa?' à '+pa:'');return;}
   if(!dep){el.textContent='';return;}
   var r=dep-Date.now(),hd=new Date(dep).toTimeString().slice(0,5);
   if(r>0){el.className=r<=2*60000?'rouge':(r<=5*60000?'orange':'');el.innerHTML='⏳ Départ dans '+mmss(r)+'<small>départ '+hd+'</small>';}
@@ -589,10 +592,12 @@ function lire(src){
 function lireZ(){return fetch(ZURL+'/zeturf/'+D.date+'/'+D.code+'?m='+Math.floor(Date.now()/10000),{cache:'no-store'}).then(function(r){zetOk=true;return r.ok?r.json():null;}).then(function(d){return d&&d.c?d:null;}).catch(function(){zetOk=false;return null;});}
 function estParti(){var t2=(pmu&&pmu.t)||(sorec&&sorec.t);return !!((pmu&&pmu.statut==='FIN')||(sorec&&(sorec.statut==='OFFICIAL'||sorec.statut==='RUNNING'||sorec.statut==='FINISHED'||sorec.fin===1))||(t2&&Date.now()>t2+FIGE));}
 var zetFige=false;
-function charger(){if(fini||D.verrou)return;Promise.all([lire('pmu'),lire('sorec'),D.site?lire('zeturf'):(MZ()?lireZ():Promise.resolve(null))]).then(function(r){if(r[0])pmu=r[0];if(r[1]){sorec=r[1];noterPrem();}
+var figeA=null,CH_OK=false,CH_EC=false;
+function charger(){if(fini||D.verrou||CH_EC)return;CH_EC=true;var avS=!!sorec,avZ=!!zet;Promise.all([lire('pmu'),lire('sorec'),D.site?lire('zeturf'):(MZ()?lireZ():Promise.resolve(null))]).then(function(r){if(r[0])pmu=r[0];if(r[1]){sorec=r[1];noterPrem();}
   if(estParti()){if(!zetFige){zetFige=true;if(!zet&&D.zdep)zet=D.zdep;}}else if(r[2]){zet=r[2];noterPremZ();}
   if(D.site){if(r[2])zet=r[2];else if(!zet&&D.zdep)zet=D.zdep;}
-  afficher();planifier();});}
+  CH_OK=!!r[0]&&(!avS||!!r[1])&&(!D.site||!avZ||!!r[2]);
+  CH_EC=false;afficher();planifier();}).catch(function(){CH_EC=false;planifier();});}
 function planifier(){if(fini)return;if(timer)clearTimeout(timer);var dep=depMs(),r=dep?dep-Date.now():null;timer=setTimeout(charger,(r!=null&&r<5*60000&&r>-FIGE)?20000:60000);}
 function nav(){
   var P=D.prog||{},m=D.code.match(/R(\d+)C(\d+)/),r0=m?m[1]:'',c0=m?m[2]:'',hr='',hc='';
@@ -615,12 +620,26 @@ function ficheConv(rows){function fn(x){if(x==null||x==='')return null;var v=par
     return {n:parseInt(r.n,10),meth:fn(r.meth),sig:fn(r.signaux),vip:fn(r.vip),hist:fn(r.hist_v),clh:fn(r.clh),spr:m?+m[1]:null,al:String(r.alerte||'').trim(),ch:c?Math.abs(c):null};})
     .filter(function(x){return !isNaN(x.n);});}
 var FICHE_T=null;
-function majFiche(){if(fini||D.verrou){return;}
+var FI_EC=false,CY_EC=false;
+function majFiche(){if(fini||D.verrou||FI_EC){return;}FI_EC=true;
   var pr=D.site?(window.CF_FICHE?window.CF_FICHE().then(function(rows){return rows?ficheConv(rows):null;}):Promise.resolve(null))
     :fetch(ZURL+'/fiche/'+D.date+'/'+D.code+'?m='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){return d&&d.fiche&&d.fiche.length?d.fiche:null;}).catch(function(){return null;});
   pr.then(function(fv){if(fv&&fv.length&&JSON.stringify(fv)!==JSON.stringify(D.fiche||[])){D.fiche=fv;afficher();}})
-    .then(function(){if(!fini){var dp=depMs(),rr=dp?dp-Date.now():null;FICHE_T=setTimeout(majFiche,(rr!=null&&rr<=10*60000)?60000:120000);}});}
-function demarrer(){if(DEMARRE)return;DEMARRE=true;setTimeout(majFiche,8000);VR={};((D.veille&&D.veille.ordre)||[]).forEach(function(n,i){VR[String(n)]=i+1;});nav();afficher();charger();setInterval(chrono,1000);}
+    .catch(function(){}).then(function(){FI_EC=false;if(!fini){if(FICHE_T)clearTimeout(FICHE_T);var dp=depMs(),rr=dp?dp-Date.now():null;FICHE_T=setTimeout(majFiche,(rr!=null&&rr<=10*60000)?60000:120000);}});}
+var CYC_T=null;
+function appliquerCycle(p){if(!p||!p.chevaux||!p.chevaux.length)return;var avant=JSON.stringify([D.chevaux,D.veille,D.alertes]);
+  ['chevaux','veille','alertes','zdep'].forEach(function(k){if(p[k]!==undefined&&p[k]!==null)D[k]=p[k];});
+  if(p.fiche&&p.fiche.length&&!(D.fiche&&D.fiche.length))D.fiche=p.fiche;
+  if(JSON.stringify([D.chevaux,D.veille,D.alertes])!==avant){VR={};((D.veille&&D.veille.ordre)||[]).forEach(function(n,i){VR[String(n)]=i+1;});afficher();}}
+function majCycle(){if(fini||D.verrou||CY_EC)return;CY_EC=true;
+  var pr=D.site?(window.CF_CYCLE?window.CF_CYCLE():Promise.resolve(null))
+    :fetch(ZURL+'/donnees/'+(D.marches||['pmu','sorec']).join('_')+'/'+D.date+'/'+D.code+'?m='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
+  pr.then(appliquerCycle).catch(function(){}).then(function(){CY_EC=false;if(!fini){if(CYC_T)clearTimeout(CYC_T);CYC_T=setTimeout(majCycle,300000);}});}
+var REPRISE_A=0;
+function reprise(){if(document.hidden||D.verrou||!DEMARRE||fini)return;var t=Date.now();if(t-REPRISE_A<5000)return;REPRISE_A=t;
+  if(timer)clearTimeout(timer);charger();majFiche();if(t-(window.CYC_DER||0)>60000){window.CYC_DER=t;majCycle();}}
+document.addEventListener('visibilitychange',reprise);window.addEventListener('pageshow',reprise);window.addEventListener('focus',reprise);
+function demarrer(){if(DEMARRE)return;DEMARRE=true;setTimeout(majFiche,8000);CYC_T=setTimeout(majCycle,300000);VR={};((D.veille&&D.veille.ordre)||[]).forEach(function(n,i){VR[String(n)]=i+1;});nav();afficher();charger();setInterval(chrono,1000);}
 window.CF_DEMARRER=function(p){p=p||{};for(var k in p){if(Object.prototype.hasOwnProperty.call(p,k))D[k]=p[k];}D.verrou=false;demarrer();};
 nav();if(!D.verrou)demarrer();
 document.addEventListener('change',function(e){var x=e.target;if(!x.classList||!x.classList.contains('cbe'))return;var n=x.getAttribute('data-n');if(x.checked)EC[n]=1;else delete EC[n];try{localStorage.setItem(ECK,JSON.stringify(EC));}catch(err){}afficher();});
