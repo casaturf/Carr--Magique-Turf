@@ -59,8 +59,8 @@ input.cbe{cursor:pointer;accent-color:#ff9800;margin-right:4px}
 .lg ul{margin:0;padding-left:22px}.lg li{margin:4px 0}
 .ld{display:inline-block;width:12px;height:12px;border-radius:50%;margin:0 5px 0 2px;vertical-align:middle}
 .wrap{overflow-x:auto}
-.ncmflex{display:flex;gap:18px;flex-wrap:wrap;padding:8px 14px;align-items:flex-start}.ncmtab{flex:1 1 700px;overflow-x:auto}.ncmtab th{background:#00acc1;color:#fff;font-size:11px;padding:5px 6px;white-space:nowrap}.ncmtab td{white-space:nowrap}.ncmtab table{width:100%;border-collapse:collapse}
-.ncmtab td{padding:5px 8px;border-bottom:1px solid #222}.ncmrad{flex:0 1 400px;text-align:center}#NCM tr.ncml{cursor:pointer}#NCM tr.ncml:hover td{background-color:#1c2433}
+.ncmflex{display:flex;gap:18px;flex-wrap:wrap;padding:8px 14px;align-items:flex-start}.ncmtab{flex:1 1 1000px;overflow-x:auto}.ncmtab th{background:#00acc1;color:#fff;font-size:11px;padding:5px 6px;white-space:nowrap}.ncmtab td{white-space:nowrap}.ncmtab table{width:100%;border-collapse:collapse}
+.ncmtab td{padding:5px 8px;border-bottom:1px solid #222}.ncmrad{flex:0 1 400px;text-align:center;margin:0 auto}#NCM tr.ncml{cursor:pointer}#NCM tr.ncml:hover td{background-color:#1c2433}
 #NCM tr.sel td{box-shadow:inset 0 2px 0 #ffd54f,inset 0 -2px 0 #ffd54f}
 body{background:#05070a}
 .entete{text-align:center;margin:2px 0 8px;position:relative}
@@ -437,8 +437,10 @@ function afficherNote(P,E){E=E||[];var C=document.getElementById('NCMC');if(!C)r
   var T0={};ncmNotes(P.concat(E)).forEach(function(t){T0[t.o.num]=t;});
   if(NCM_SEL==null||!(T.some(function(t){return t.o.num===NCM_SEL;})||T0[NCM_SEL]&&E.some(function(o){return o.num===NCM_SEL;})))NCM_SEL=T[0].o.num;
   var sel=T.filter(function(t){return t.o.num===NCM_SEL;})[0]||T0[NCM_SEL];
-  function ncmInfo(o){return '<td>'+ftev(o.tev)+'</td><td>'+(lab(o)||'')+'</td><td>'+(o.outs?'🔥':'')+'</td><td>'+(o.star?'⭐':'')+'</td><td>'+recT(o)+'</td><td>'+ten(o)+'</td><td>'+vtag(o)+'</td>';}
-  var h='<div class="ncmflex"><div class="ncmtab"><table><tr class="ncmh"><th>Note</th><th>N°</th><th>Cheval</th><th>Total évol</th><th>Mouvement</th><th>Outsider</th><th>⭐ Crack</th><th>⏱ Record</th><th>Musique</th><th>Veille</th><th>Arrivée</th></tr>';
+  function ncmEv(x){if(x==null)return'';var q=Math.round(x*100);if(!q)return' <span class="z">0 %</span>';return q<0?' <span class="b">▼'+(-q)+' %</span>':' <span class="h">▲'+q+' %</span>';}
+  function ncmCote(c,e){return '<td>'+(c==null?'<span class="z">—</span>':'<b>'+fc(c)+'</b>'+ncmEv(e))+'</td>';}
+  function ncmInfo(o){return ncmCote(o.cp,o.ep)+ncmCote(o.cs,o.es)+ncmCote(o.cz,o.ez)+'<td>'+ftev(o.tev)+'</td><td>'+(lab(o)||'')+'</td><td>'+(o.outs?'🔥':'')+'</td><td>'+(o.star?'⭐':'')+'</td><td>'+recT(o)+'</td><td>'+ten(o)+'</td><td>'+vtag(o)+'</td>';}
+  var h='<div class="ncmflex"><div class="ncmtab"><table><tr class="ncmh"><th>Note</th><th>N°</th><th>Cheval</th><th>PMU</th><th>Sorec</th><th>ZEturf</th><th>Total évol</th><th>Mouvement</th><th>Outsider</th><th>⭐ Crack</th><th>⏱ Record</th><th>Musique</th><th>Veille</th><th>Arrivée</th></tr>';
   T.forEach(function(t){var pl=arr.indexOf(t.o.num);
     h+='<tr class="ncml'+(t.o.num===NCM_SEL?' sel':'')+'" data-n="'+t.o.num+'"><td title="'+t.k+'/8 axes" style="background:'+ncmCoul(t.note)+';color:#fff;font-weight:bold;text-align:center;width:80px">'+(t.note==null?'—':f1(t.note)+'/20')+'</td><td style="width:70px;white-space:nowrap"><b>'+cb(t.o)+'</b></td><td class="nom" style="text-align:left">'+esc(t.o.nom)+'</td>'+ncmInfo(t.o)+'<td style="color:#4fc3f7;font-weight:bold;width:40px">'+(pl<0?'':pl===0?'1er':(pl+1)+'e')+'</td></tr>';});
   E.slice().sort(function(a,b){return a.num-b.num;}).forEach(function(o){var pl=arr.indexOf(o.num);
@@ -449,7 +451,7 @@ function afficherNote(P,E){E=E||[];var C=document.getElementById('NCMC');if(!C)r
    +'<h3>🧮 Calcul</h3><ul><li>Chaque axe donne une note de <b>0 à 20</b> selon le rang du cheval parmi les chevaux restants (1er de l\'axe = 20, dernier = 0).</li><li>La <b>note sur 20</b> est la moyenne des axes disponibles pour ce cheval (survolez la note pour voir le nombre d\'axes).</li><li>Les 8 axes ont le même poids.</li></ul>'
    +'<h3>📐 Les 8 axes du radar</h3><ul><li><b>Forme</b> : musique · <b>Historique</b> : classement historique · <b>Méthodes</b> : Méthodes + Points VIP · <b>Signaux</b></li><li><b>Marché</b> : cotes PMU et Sorec · <b>Tandem</b> : rangs du cheval, du jockey et de l\'entraîneur · <b>Vitesse</b> : record · <b>Paires</b> : Score Paires</li></ul>'
    +'<h3>🎨 Couleur de la note</h3><ul><li><span style="background:#2e7d32;color:#fff;padding:0 6px;border-radius:4px">12 et plus</span> · <span style="background:#558b2f;color:#fff;padding:0 6px;border-radius:4px">10 à 12</span> · <span style="background:#ef6c00;color:#fff;padding:0 6px;border-radius:4px">7 à 10</span> · <span style="background:#c62828;color:#fff;padding:0 6px;border-radius:4px">moins de 7</span></li></ul>'
-   +'<h3>📋 Colonnes</h3><ul><li><b>Total évol, Mouvement, Outsider, ⭐ Crack, ⏱ Record, Musique, Veille</b> : information seulement, elles ne changent pas la note (même signification que dans le Tableau complet).</li></ul>'
+   +'<h3>📋 Colonnes</h3><ul><li><b>PMU, Sorec, ZEturf</b> : cote actuelle en direct et son évolution (▼ vert = joué, ▲ rouge = délaissé), figées au départ. ZEturf est affiché pour information.</li><li><b>Total évol, Mouvement, Outsider, ⭐ Crack, ⏱ Record, Musique, Veille</b> : information seulement, elles ne changent pas la note (même signification que dans le Tableau complet).</li></ul>'
    +'<h3>🖱️ Utilisation</h3><ul><li>Clic sur un cheval = son radar.</li><li><b>Case devant le N°</b> = écarter le cheval : il passe en bas en <span style="color:#ffb74d;font-weight:bold">orange</span> avec sa note calculée sans écart, et les notes des autres chevaux sont recalculées (même écart que dans les autres tableaux de la page).</li><li>Les cotes sont suivies en direct : la note (axe Marché), le Total évol et le Mouvement bougent jusqu\'au départ, puis se figent.</li></ul></div></details>';
   document.getElementById('NCM').innerHTML=h;
   var lg=document.getElementById('NCMLEG');if(lg)lg.addEventListener('toggle',function(){NCM_LEG=lg.open;});
