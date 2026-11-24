@@ -229,7 +229,7 @@ tr:hover td{background:rgba(0,180,216,.1)}
 <li><b>Veille</b> : rang du cheval dans le prono de la veille, calculé sans cotes et figé : 🔑 rangs 1 à 3 (Base) · 🟡 rangs 4 à 8 (Complément) · ⚪ rang 9 et plus (Outsiders veille).</li></ul>
 <h3>💡 Repères et 📑 Fiche VIP</h3><ul>
 <li>Favoris PMU / Sorec / ZEturf, outsiders en forte baisse, musiques, groupes et favoris au départ : résumé de la page.</li>
-<li>Lignes <b>Fiche VIP</b> (mises à jour en direct toutes les 2 minutes jusqu'au départ), toujours du meilleur au pire et sans vos chevaux écartés : <b>Méthodes</b> (nombre de méthodes qui retiennent le cheval) · <b>Signaux</b> · <b>Points VIP</b> · <b>Points historiques</b> · <b>Classement historique</b> · <b>Score Paires</b> (rang) · <b>Alertes</b> (<span style="color:#00e676;font-weight:bold">Outsider fort</span>, <span style="color:#ff5252;font-weight:bold">Piège fort</span>…) · <b>Chute cote</b> (de la plus forte à la plus faible).</li>
+<li>Lignes <b>Fiche VIP</b> (mises à jour en direct toutes les 2 minutes, chaque minute dans les 10 dernières minutes, jusqu'au départ), toujours du meilleur au pire et sans vos chevaux écartés : <b>Méthodes</b> (nombre de méthodes qui retiennent le cheval) · <b>Signaux</b> · <b>Points VIP</b> · <b>Points historiques</b> · <b>Classement historique</b> · <b>Score Paires</b> (rang) · <b>Alertes</b> (<span style="color:#00e676;font-weight:bold">Outsider fort</span>, <span style="color:#ff5252;font-weight:bold">Piège fort</span>…) · <b>Chute cote</b> (de la plus forte à la plus faible).</li>
 <li>🚨 <b>Alertes clés</b> : détecteur de piège, difficulté de la course et alertes importantes sur les chevaux.</li></ul>
 <h3>🖱️ Utilisation</h3><ul>
 <li><b>Case devant le N°</b> = écarter le cheval : il passe en bas en <span style="color:#ffb74d;font-weight:bold">orange</span> et sort de toutes les analyses (chance réelle, synthèse, top, repères, étoiles, records). Ligne barrée = non-partant.</li>
@@ -556,7 +556,7 @@ function majFiche(){if(fini||D.verrou){return;}
   var pr=D.site?(window.CF_FICHE?window.CF_FICHE().then(function(rows){return rows?ficheConv(rows):null;}):Promise.resolve(null))
     :fetch(ZURL+'/fiche/'+D.date+'/'+D.code+'?m='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){return d&&d.fiche&&d.fiche.length?d.fiche:null;}).catch(function(){return null;});
   pr.then(function(fv){if(fv&&fv.length&&JSON.stringify(fv)!==JSON.stringify(D.fiche||[])){D.fiche=fv;afficher();}})
-    .then(function(){if(!fini)FICHE_T=setTimeout(majFiche,120000);});}
+    .then(function(){if(!fini){var dp=depMs(),rr=dp?dp-Date.now():null;FICHE_T=setTimeout(majFiche,(rr!=null&&rr<=10*60000)?60000:120000);}});}
 function demarrer(){if(DEMARRE)return;DEMARRE=true;setTimeout(majFiche,8000);VR={};((D.veille&&D.veille.ordre)||[]).forEach(function(n,i){VR[String(n)]=i+1;});nav();afficher();charger();setInterval(chrono,1000);}
 window.CF_DEMARRER=function(p){p=p||{};for(var k in p){if(Object.prototype.hasOwnProperty.call(p,k))D[k]=p[k];}D.verrou=false;demarrer();};
 nav();if(!D.verrou)demarrer();
