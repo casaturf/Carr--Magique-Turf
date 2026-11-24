@@ -59,6 +59,11 @@ input.cbe{cursor:pointer;accent-color:#ff9800;margin-right:4px}
 .lg ul{margin:0;padding-left:22px}.lg li{margin:4px 0}
 .ld{display:inline-block;width:12px;height:12px;border-radius:50%;margin:0 5px 0 2px;vertical-align:middle}
 .wrap{overflow-x:auto}
+.crm{display:inline-block;border:2px solid #ffd54f;border-radius:10px;padding:8px 14px;background:#1d1906;box-shadow:0 0 10px rgba(255,213,79,.25)}
+.crmt{color:#ffd54f;font-weight:bold;font-size:16px}.crmt span{font-weight:normal;font-size:11px;color:#bdbdbd}
+.crmn{margin-top:8px;display:flex;gap:9px;flex-wrap:wrap}
+.crmb{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 4px;border-radius:50%;background:#ffd54f;color:#111;font-weight:bold;font-size:19px}
+.crmb.ec{background:#ff9800;color:#3e2000;text-decoration:line-through}
 .ncmflex{display:flex;gap:18px;flex-wrap:wrap;padding:8px 14px;align-items:flex-start}.ncmtab{flex:1 1 1000px;overflow-x:auto}.ncmtab th{background:#00acc1;color:#fff;font-size:11px;padding:5px 6px;white-space:nowrap}.ncmtab td{white-space:nowrap}.ncmtab table{width:100%;border-collapse:collapse}
 .ncmtab td{padding:5px 8px;border-bottom:1px solid #222}.ncmrad{flex:0 1 400px;text-align:center;margin:0 auto}#NCM tr.ncml{cursor:pointer}#NCM tr.ncml:hover td{background-color:#1c2433}
 #NCM tr.sel td{box-shadow:inset 0 2px 0 #ffd54f,inset 0 -2px 0 #ffd54f}
@@ -320,7 +325,7 @@ function vt(o,k){if(k==='num')return o.num;if(k==='nom')return String(o.nom||'')
 function cmpTri(a,b){if(!TRI.k)return par('cp')(a,b);var x=vt(a,TRI.k),y=vt(b,TRI.k);if(x==null&&y==null)return a.num-b.num;if(x==null)return 1;if(y==null)return -1;var r=(typeof x==='string')?x.localeCompare(y):(x-y);return r*TRI.d||a.num-b.num;}
 function ord(k){return (TRIG&&TRI.k)?cmpTri:par(k);}
 var COLS_T=[['num','N°'],['cat','Cat'],['nom','Cheval'],['grp','Groupe'],['cp','Cote PMU'],['ep','Évol PMU'],['cs','Cote Sorec'],['es','Évol Sorec'],['cz','Cote ZEturf'],['ez','Évol ZEturf'],['chM','Chance moy.'],['tev','Total évol'],['mv','Mouvement'],['outs','Outsider ↓'],['star','⭐ Crack'],['rec','⏱ Record'],['score','Musique'],['vr','Veille']];
-function repFiche(P){
+function repFiche(P,E){E=E||[];
   var FV=D.fiche||[],ok={};P.forEach(function(o){ok[String(o.num)]=1;});
   var A=FV.filter(function(x){return ok[String(x.n)];});
   if(!FV.length)return '<li>📑 <b>Fiche VIP</b> : <span class="z">pas encore de données pour cette course</span></li>';
@@ -339,6 +344,13 @@ function repFiche(P){
   r+='<li>🔗 <b>Score Paires (rang)</b> : '+lst('spr',1)+'</li>';
   r+='<li>🚨 <b>Alertes</b> : '+ta+'</li>';
   r+='<li>📉 <b>Chute cote</b> : '+(ch.length?ch.join(' - '):'—')+'</li>';
+  var tous={},ecs={};P.forEach(function(o){tous[String(o.num)]=1;});E.forEach(function(o){tous[String(o.num)]=1;ecs[String(o.num)]=1;});
+  var B=FV.filter(function(x){return tous[String(x.n)];}),vu={},cr=[];
+  [['meth',-1],['sig',-1],['vip',-1],['hist',-1],['clh',1],['spr',1]].forEach(function(k){
+    B.filter(function(x){return x[k[0]]!=null;}).sort(function(a,b){return (k[1]<0?b[k[0]]-a[k[0]]:a[k[0]]-b[k[0]])||c2(a,b);}).slice(0,3)
+     .forEach(function(x){if(!vu[x.n]){vu[x.n]=1;cr.push(x.n);}});});
+  r+='<li style="list-style:none;margin:10px 0 6px"><div class="crm"><div class="crmt">🎯 Conclusion réduite des méthodes <span>(3 premiers de chaque méthode, avant écarts)</span></div><div class="crmn">'
+    +(cr.length?cr.map(function(n){return '<span class="crmb'+(ecs[String(n)]?' ec':'')+'"'+(ecs[String(n)]?' title="écarté"':'')+'>'+n+'</span>';}).join(''):'<span class="z">—</span>')+'</div></div></li>';
   return r;
 }
 var NCM_LEG=false,NCM_SEL=null,NCM_AX=['Forme','Historique','Méthodes','Signaux','Marché','Tandem','Vitesse','Paires'];
@@ -444,7 +456,7 @@ function afficher(){if(D.verrou)return;
   ['Base','1ere','Couvrir'].forEach(function(g){r+='<li><span class="'+GC[g]+'">'+GN[g]+'</span> : '+nums(function(o){return o.groupe===g;})+'</li>';});
   r+='<li>📋 <b>Favoris au départ</b> (cote PMU croissante) : '+ordre.join(' - ')+'</li>';
   if(D.veille&&D.veille.ordre){var h8=D.veille.ordre.slice(0,8).map(String);r+='<li>🌙 <b>8 chevaux veille par groupe</b> : '+['Base','1ere','Couvrir'].map(function(g){var a=P.filter(function(o){return o.groupe===g&&h8.indexOf(String(o.num))>=0;}).sort(function(a,b){return a.vr-b.vr;}).map(function(o){return o.num;});return '<span class="'+GC[g]+'">'+GN[g]+'</span> '+a.length+(a.length?' ('+a.join('-')+')':'');}).join(' · ')+'</li>';}
-  r+=repFiche(P);
+  r+=repFiche(P,E);
   if(ordreT){var nt=(COLS_T.filter(function(c){return c[0]===TRI.k;})[0]||['',''])[1];r+='<li>↕️ <b>Ordre du tri global</b> ('+esc(nt)+(TRI.d<0?' ▼':' ▲')+') : '+ordreT.join(' - ')+'</li>';}
   r+='</ul>';
   document.getElementById('REP').innerHTML=r;afficherNote(P,E);
