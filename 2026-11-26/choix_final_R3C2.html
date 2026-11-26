@@ -64,6 +64,7 @@ input.cbe{cursor:pointer;accent-color:#ff9800;margin-right:4px}
 .crmn{margin-top:8px;display:flex;gap:9px;flex-wrap:wrap}
 .crmb{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 4px;border-radius:50%;background:#ffd54f;color:#111;font-weight:bold;font-size:19px}
 .k{display:inline-block;font-size:9px;font-weight:bold;font-style:normal;border-radius:4px;padding:1px 3px;line-height:11px;color:#fff;text-decoration:none;letter-spacing:.3px;vertical-align:middle}.kr{background:#8e24aa}.kf{background:#ef6c00}.kh{background:#2e7d32}.kj{background:#1565c0}.tgs{display:inline-flex;gap:2px;margin-left:5px;vertical-align:middle}.crmb{position:relative}.crmb .tgs{position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%);margin:0}.crmc{border-color:#ab47bc;background:#1a0f24;box-shadow:0 0 10px rgba(171,71,188,.25);flex:1 1 100%}.crmc .crmt{color:#ce93d8}.crmlt.cc{min-width:140px;color:#e0e0e0}
+.crsel{margin-top:12px;border:2px solid #00e676;border-radius:10px;background:#06200f;padding:8px 12px;box-shadow:0 0 10px rgba(0,230,118,.25)}.crselt{color:#00e676;font-weight:bold;font-size:15px;margin-bottom:6px}.crselt small{color:#9e9e9e;font-weight:normal}.crsel .crmn{display:flex;flex-wrap:wrap;gap:6px}.crselh{color:#b0bec5;font-weight:bold;font-size:13px;margin:10px 0 6px;border-top:1px dashed #1b5e20;padding-top:8px}.crselh small{color:#9e9e9e;font-weight:normal}.crmb.hs{background:#90a4ae;color:#111}
 .crsep{border-top:1px dashed #2b4a5c;margin:12px 0 4px}.crst{color:#80deea;font-size:13px;font-weight:bold;margin-top:6px}.crst span{color:#9e9e9e;font-weight:normal;font-size:11px}.crlg2{font-size:11.5px;color:#90a4ae;margin-top:8px;line-height:1.5}.crlg2 b{color:#cfd8dc}.hr1{color:#ce93d8!important}.hr2{color:#ffb74d!important}.hr3{color:#81c784!important}.hr4{color:#64b5f6!important}.hr5{color:#4dd0e1!important}.crleg{width:100%;box-sizing:border-box;font-size:12.5px;color:#cfd8dc;background:#0b1520;border:1px solid #263238;border-radius:8px;padding:8px 12px;line-height:1.7;margin-top:10px}.crleg b{color:#fff}
 .crmb.ec{background:#ff9800;color:#3e2000;text-decoration:line-through}
 .crmb.nv{background:#fff59d;box-shadow:0 0 0 3px #00e676}
@@ -457,6 +458,17 @@ function repFiche(P,E){E=E||[];CRM_H='';
           +b.map(function(o){return '<span class="crmb ec" title="écarté">'+o.num+'</span>';}).join(''):'<span class="z">—</span>')+'</span></div>';});
     gs+='<div class="crlg2"><b>Retard</b> : 2 courses ou plus ces 90 jours sans victoire ni place, alors qu\'il a déjà été placé · <b>Forme</b> : au moins une place (1er à 3e) ces 90 jours · '
       +'<b>Hippodrome</b> : placé au moins une fois sur deux sur cet hippodrome · <b>Jockey / Entraîneur</b> : les 3 qui gagnent le plus souvent dans cette course. Orange barré = écarté.</div>';}
+  var rkS={};ncmNotes(P).forEach(function(t,i){rkS[t.o.num]=i;});
+  var sel=P.filter(function(o){return o.tev!=null&&o.tev===o.tev&&o.tev<23;}).sort(function(a,b){return (a.tev-b.tev)||((rkS[a.num]==null?99:rkS[a.num])-(rkS[b.num]==null?99:rkS[b.num]));});
+  gs+='<div class="crsel"><div class="crselt">🏁 Sélection Carré Magique Turf <small>('+sel.length+')</small></div><div class="crmn">'
+    +(sel.length?sel.map(function(o){return '<span class="crmb" title="Total évol '+(o.tev>0?'+':'')+o.tev+'">'+o.num+'</span>';}).join(''):'<span class="z">—</span>')
+    +'</div>';
+  var hsA=P.filter(function(o){return !(o.tev!=null&&o.tev===o.tev&&o.tev<23);}).sort(function(a,b){var x=a.tev,y=b.tev;if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return x-y;});
+  var hsE=E.slice().sort(function(a,b){var x=a.tev,y=b.tev;if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return x-y;});
+  gs+='<div class="crselh">➖ Hors sélection <small>('+(hsA.length+hsE.length)+')</small></div><div class="crmn">'
+    +(hsA.length||hsE.length?hsA.map(function(o){return '<span class="crmb hs" title="Total évol '+(o.tev==null?'—':(o.tev>0?'+':'')+o.tev)+'">'+o.num+'</span>';}).join('')
+      +hsE.map(function(o){return '<span class="crmb ec" title="écarté · Total évol '+(o.tev==null?'—':(o.tev>0?'+':'')+o.tev)+'">'+o.num+'</span>';}).join(''):'<span class="z">—</span>')
+    +'</div><div class="crlg2">Sélection : chevaux dont l\'évolution totale des cotes est inférieure à +23, de la plus forte baisse à la plus forte hausse. Hors sélection : +23 ou plus (gris), puis écartés (orange barré).</div></div>';
   CRM_H='<div class="crmw"><div class="crm"><div class="crmt">🎯 Conclusion réduite des méthodes</div>'+lg
     +(nE&&cr0.some(function(n){return ecs[String(n)];})?'<div class="crm0">Avant écarts (4) : '+cr0.map(function(n){return '<span class="crms'+(ecs[String(n)]?' ec':'')+'">'+n+'</span>';}).join('')+'</div>':'')
     +'</div><div class="crm crmg"><div class="crmt">🧩 Conclusion Carré Magique Turf</div>'+gs+'</div></div>'+CRLEG+clsHtml(P,E);
