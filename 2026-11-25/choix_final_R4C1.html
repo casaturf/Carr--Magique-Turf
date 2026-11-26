@@ -280,7 +280,7 @@ var PREMZK='tc_premz_'+D.date+'_'+D.code,PREMZ={};try{PREMZ=JSON.parse(localStor
 function noterPremZ(){if(!(zet&&zet.c)||fini)return;var ch=false,h=new Date().toTimeString().slice(0,5);for(var k in zet.c){var v=zet.c[k];if(v&&v.sg!=null&&!PREMZ[k]){PREMZ[k]=[v.sg,h];ch=true;}}if(ch){try{localStorage.setItem(PREMZK,JSON.stringify(PREMZ));}catch(e){}}}
 function M(k){return (D.marches||['pmu','sorec','zeturf']).indexOf(k)>=0;}
 function MZ(){return M('zeturf')||!!D.zaff;}
-var ECK='tc_ec_'+D.date+'_'+D.code,EC={};function lireEC(){try{EC=JSON.parse(localStorage.getItem(ECK)||'{}')||{};}catch(e){EC={};}}lireEC();
+var ECK='fvec_'+D.date+'_'+D.code,EC={};function lireEC(){try{EC=JSON.parse(localStorage.getItem(ECK)||'{}')||{};}catch(e){EC={};}}lireEC();(function(){try{var vk='tc_ec_'+D.date+'_'+D.code,v=JSON.parse(localStorage.getItem(vk)||'null');if(v){Object.keys(v).forEach(function(n){if(v[n])EC[n]=1;});localStorage.setItem(ECK,JSON.stringify(EC));localStorage.removeItem(vk);}}catch(e){}})();
 var CATC={'FAVORI':'#2196F3','BASE':'#4CAF50','OUTSIDER':'#FFC107','SURPRISE':'#FF9800','GROS LOT':'#F44336'},CATO={'FAVORI':0,'BASE':1,'OUTSIDER':2,'SURPRISE':3,'GROS LOT':4};
 function catD(o){return (o&&CATC[o.cat])?'<span class="catd" style="background:'+CATC[o.cat]+'" title="'+o.cat+'"></span>':'';}
 function cb(o){return o.np?catD(o)+String(o.num):'<input type="checkbox" class="cbe" title="Écarter" data-n="'+o.num+'"'+(o.ec?' checked':'')+'>'+catD(o)+o.num;}
@@ -369,15 +369,20 @@ function repFiche(P,E){E=E||[];CRM_H='';
     lg+='<div class="crml"><span class="crmlt">'+nb+' premiers <small>('+c.length+')</small></span><span class="crmn'+(nb<4?' pt':'')+'">'
       +(c.length?c.map(function(n){cur[n]=1;var nv=nb>2&&!prec[n];return '<span class="crmb'+(nv?' nv':'')+'"'+(nv?' title="ajouté par rapport à la ligne du dessus"':'')+'>'+n+'</span>';}).join(''):'<span class="z">—</span>')
       +'</span></div>';prec=cur;});
-  var tousO=P.concat(E),gs='',pris={};
+  var tousO=P.concat(E),gs='',pris={},vus={};
   [['Base','🎯 Base'],['1ere','⭐ 1ère chance'],['Couvrir','💥 À couvrir']].forEach(function(g){
     var set={};tousO.forEach(function(o){if(o.groupe===g[0])set[String(o.num)]=1;});
-    var c=Object.keys(set).length?concl(set,4):[];c.forEach(function(n){pris[String(n)]=1;});
+    var setR={};Object.keys(set).forEach(function(n){if(!ecs[n])setR[n]=1;});
+    var c=Object.keys(setR).length?concl(setR,4):[];c.forEach(function(n){pris[String(n)]=1;});
+    var cx=(Object.keys(set).length?concl(set,4):[]).filter(function(n){return ecs[String(n)];});cx.forEach(function(n){vus[String(n)]=1;});
     gs+='<div class="crml"><span class="crmlt cg">'+g[1]+' <small>('+c.length+')</small></span><span class="crmn pt">'
-      +(c.length?c.map(function(n){return '<span class="crmb'+(ecs[String(n)]?' ec':'')+'"'+(ecs[String(n)]?' title="écarté"':'')+'>'+n+'</span>';}).join(''):'<span class="z">—</span>')+'</span></div>';});
-  var gl=tousO.filter(function(o){return !pris[String(o.num)];}).map(function(o){return o.num;}).sort(function(a,b){return a-b;});
+      +(c.length||cx.length?c.map(function(n){return '<span class="crmb">'+n+'</span>';}).join('')
+        +cx.map(function(n){return '<span class="crmb ec" title="écarté">'+n+'</span>';}).join(''):'<span class="z">—</span>')+'</span></div>';});
+  var gl=P.filter(function(o){return !pris[String(o.num)];}).map(function(o){return o.num;}).sort(function(a,b){return a-b;});
+  var glx=E.filter(function(o){return !vus[String(o.num)];}).map(function(o){return o.num;}).sort(function(a,b){return a-b;});
   gs+='<div class="crml"><span class="crmlt cg">💰 Gros lot <small>('+gl.length+')</small></span><span class="crmn pt">'
-    +(gl.length?gl.map(function(n){return '<span class="crmb gl'+(ecs[String(n)]?' ec':'')+'">'+n+'</span>';}).join(''):'<span class="z">—</span>')+'</span></div>';
+    +(gl.length||glx.length?gl.map(function(n){return '<span class="crmb gl">'+n+'</span>';}).join('')
+      +glx.map(function(n){return '<span class="crmb gl ec" title="écarté">'+n+'</span>';}).join(''):'<span class="z">—</span>')+'</span></div>';
   CRM_H='<div class="crmw"><div class="crm"><div class="crmt">🎯 Conclusion réduite des méthodes</div>'+lg
     +(nE&&cr0.some(function(n){return ecs[String(n)];})?'<div class="crm0">Avant écarts (4) : '+cr0.map(function(n){return '<span class="crms'+(ecs[String(n)]?' ec':'')+'">'+n+'</span>';}).join('')+'</div>':'')
     +'</div><div class="crm crmg"><div class="crmt">🧩 Conclusion Carré Magique Turf</div>'+gs+'</div></div>';
