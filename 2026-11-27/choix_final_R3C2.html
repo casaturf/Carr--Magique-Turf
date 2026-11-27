@@ -116,7 +116,7 @@ h1.titre{color:#00bcd4;font-size:25px;margin:8px 0 2px}
 #CRM{padding:4px 14px 14px 14px}#CRM .crmw{flex-wrap:nowrap}#CRM .crm{flex:1 1 0;min-width:0}
 @media (max-width:900px){#CRM .crmw{flex-wrap:wrap}#CRM .crm{flex:1 1 100%}}
 .crmw{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start}.crmg{border-color:#4fc3f7;background:#071a24;box-shadow:0 0 10px rgba(79,195,247,.25)}
-.crmg .crmt{color:#4fc3f7}.crmlt.cg{min-width:128px;color:#e0e0e0}.crmb.gl{background:#ce93d8;color:#2a0033}.crmb.rg,.crm .crmn .crmb.rg,.crm .crmn .crmb.t3.rg,.crm .crmn .crmb.nv.rg,.crm .crmn .crmb.gl.rg{background:#e53935;color:#fff}.crm .crmn .crmb.t3.rg{box-shadow:0 0 0 3px #00c853}.crm .crmn .crmb.nv.rg{box-shadow:0 0 0 3px #fff}
+.crmg .crmt{color:#4fc3f7}.crmlt.cg{min-width:128px;color:#e0e0e0}.crmb.gl{background:#ce93d8;color:#2a0033}.crmb.rg,.crm .crmn .crmb.rg,.crm .crmn .crmb.t3.rg,.crm .crmn .crmb.nv.rg,.crm .crmn .crmb.gl.rg{background:#e53935;color:#fff}.crm .crmn .crmb.t3.rg{box-shadow:0 0 0 3px #00c853}.crm .crmn .crmb.nv.rg{box-shadow:0 0 0 3px #fff}.crmb.rgh::after,.crmb.rgb::after{position:absolute;top:-5px;left:-5px;width:15px;height:15px;line-height:15px;border-radius:50%;background:#7f0000;color:#fff;font-size:9px;text-align:center;font-weight:bold}.crmb.rgh::after{content:'▲'}.crmb.rgb::after{content:'▼'}
 @media (max-width:1100px){.carte.syn .bandeau.bh{margin:14px}}
 @media (max-width:900px){.repflex{flex-direction:column;align-items:stretch}.repflex .bandeau.bh{margin:4px 12px 12px}}
 /* ===== STYLE DU SITE carremagique-turf.com (assets/cmt.954520beab.css) ===== */
@@ -426,8 +426,9 @@ function repFiche(P,E){E=E||[];CRM_H='';
     [['meth',-1],['sig',-1],['vip',-1],['hist',-1],['clh',1],['spr',1]].forEach(function(k){
       B.filter(function(x){return x[k[0]]!=null;}).sort(function(a,b){return (k[1]<0?b[k[0]]-a[k[0]]:a[k[0]]-b[k[0]])||c2(a,b);}).slice(0,nb)
        .forEach(function(x){if(!vu[x.n]){vu[x.n]=1;cr.push(x.n);}});});return cr;}
-  var RG={};P.forEach(function(o){if((o.tev!=null&&o.tev===o.tev&&o.tev>=23)||(o.ez!=null&&o.ez>2))RG[String(o.num)]=1;});
-  function rg(n){return RG[String(n)]?' rg':'';}
+  var RG={};P.forEach(function(o){var t=(o.tev!=null&&o.tev===o.tev)?o.tev:null;
+    if((t!=null&&t>=23)||(o.ez!=null&&o.ez>2))RG[String(o.num)]='h';else if(t!=null&&t<=-20&&o.cp!=null&&o.cp>=40)RG[String(o.num)]='b';});
+  function rg(n){var r=RG[String(n)];return r?(' rg rg'+r):'';}
   var nE=Object.keys(ecs).length,cr0=concl(tous,4),prec={},lg='';
   [2,3,4].forEach(function(nb){var c=concl(ok,nb),cur={};
     lg+='<div class="crml"><span class="crmlt">'+nb+' premiers <small>('+c.length+')</small></span><span class="crmn'+(nb<4?' pt':'')+'">'
@@ -460,7 +461,7 @@ function repFiche(P,E){E=E||[];CRM_H='';
         +(a.length||b.length?a.map(function(o){return '<span class="crmb'+(T3[String(o.num)]?' t3':'')+rg(o.num)+'">'+o.num+'</span>';}).join('')
           +b.map(function(o){return '<span class="crmb ec" title="écarté">'+o.num+'</span>';}).join(''):'<span class="z">—</span>')+'</span></div>';});
     gs+='<div class="crlg2"><b>Retard</b> : 2 courses ou plus ces 90 jours sans victoire ni place, alors qu\'il a déjà été placé · <b>Forme</b> : au moins une place (1er à 3e) ces 90 jours · '
-      +'<b>Hippodrome</b> : placé au moins une fois sur deux sur cet hippodrome · <b>Jockey / Entraîneur</b> : les 3 qui gagnent le plus souvent dans cette course. Orange barré = écarté · <b>Vert</b> = 3 premiers de chaque groupe (repris dans toutes les lignes) · <b style="color:#ff5252">Rouge</b> = cote en forte hausse (total évol ≥ +23 ou ZEturf > +200 %), à garder seulement pour compléter (anneau vert = rouge parmi les 3 premiers d\'un groupe ; anneau blanc dans la Conclusion réduite = rouge ajouté par rapport à la ligne du dessus).</div>';}
+      +'<b>Hippodrome</b> : placé au moins une fois sur deux sur cet hippodrome · <b>Jockey / Entraîneur</b> : les 3 qui gagnent le plus souvent dans cette course. Orange barré = écarté · <b>Vert</b> = 3 premiers de chaque groupe (repris dans toutes les lignes) · <b style="color:#ff5252">Rouge</b> = à garder seulement pour compléter : <b>▲</b> cote en forte hausse (total évol ≥ +23 ou ZEturf > +200 %), <b>▼</b> forte baisse (total évol ≤ −20) mais cote encore à 40 ou plus (anneau vert = rouge parmi les 3 premiers d\'un groupe ; anneau blanc dans la Conclusion réduite = rouge ajouté par rapport à la ligne du dessus).</div>';}
   var rkS={};ncmNotes(P).forEach(function(t,i){rkS[t.o.num]=i;});
   var sel=P.filter(function(o){return o.tev!=null&&o.tev===o.tev&&o.tev<23;}).sort(function(a,b){return (a.tev-b.tev)||((rkS[a.num]==null?99:rkS[a.num])-(rkS[b.num]==null?99:rkS[b.num]));});
   gs+='<div class="crsel"><div class="crselt">🏁 Sélection Carré Magique Turf <small>('+sel.length+')</small></div><div class="crmn">'
@@ -471,7 +472,7 @@ function repFiche(P,E){E=E||[];CRM_H='';
   gs+='<div class="crselh">➖ Hors sélection <small>('+(hsA.length+hsE.length)+')</small></div><div class="crmn">'
     +(hsA.length||hsE.length?hsA.map(function(o){return '<span class="crmb hs'+(T3[String(o.num)]?' t3r':'')+'" title="Total évol '+(o.tev==null?'—':(o.tev>0?'+':'')+o.tev)+'">'+o.num+'</span>';}).join('')
       +hsE.map(function(o){return '<span class="crmb ec" title="écarté · Total évol '+(o.tev==null?'—':(o.tev>0?'+':'')+o.tev)+'">'+o.num+'</span>';}).join(''):'<span class="z">—</span>')
-    +'</div><div class="crlg2">Sélection : chevaux dont l\'évolution totale des cotes est inférieure à +23, de la plus forte baisse à la plus forte hausse. Hors sélection : +23 ou plus (gris, anneau vert = 3 premiers d\'un groupe), puis écartés (orange barré). Vert = 3 premiers de chaque groupe. <b style="color:#ff5252">Rouge</b> = cote ZEturf en hausse de plus de 200 %.</div></div>';
+    +'</div><div class="crlg2">Sélection : chevaux dont l\'évolution totale des cotes est inférieure à +23, de la plus forte baisse à la plus forte hausse. Hors sélection : +23 ou plus (gris, anneau vert = 3 premiers d\'un groupe), puis écartés (orange barré). Vert = 3 premiers de chaque groupe. <b style="color:#ff5252">Rouge ▲</b> = cote ZEturf en hausse de plus de 200 % · <b style="color:#ff5252">Rouge ▼</b> = baisse de −20 ou plus avec une cote encore à 40 ou plus.</div></div>';
   CRM_H='<div class="crmw"><div class="crm"><div class="crmt">🎯 Conclusion réduite des méthodes</div>'+lg
     +(nE&&cr0.some(function(n){return ecs[String(n)];})?'<div class="crm0">Avant écarts (4) : '+cr0.map(function(n){return '<span class="crms'+(ecs[String(n)]?' ec':'')+'">'+n+'</span>';}).join('')+'</div>':'')
     +'</div><div class="crm crmg"><div class="crmt">🧩 Conclusion Carré Magique Turf</div>'+gs+'</div></div>'+CRLEG+clsHtml(P,E);
