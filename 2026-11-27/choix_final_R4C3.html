@@ -144,7 +144,7 @@ h1.titre{font-size:24px;color:#00B4D8;margin:0 0 2px;text-shadow:0 0 20px rgba(0
 .jeu.sg{background:#5E2B97}.jeu.jm{background:#E8651A}.jeu.tr{background:#2E9E3A;color:#fff}.jeu.qa{background:#1565C0}.jeu.mu{background:#1565C0}.jeu.qu{background:#C62828}
 .arrbox{background:linear-gradient(135deg,#0D2D1A 0%,#0A1A0D 100%);border:2px solid #00FF88;border-radius:10px;padding:12px 20px;margin:0 0 10px;text-align:center}
 .arrbox .at{font-size:13px;color:#00FF88;font-weight:bold;margin-bottom:4px;letter-spacing:0}
-.arrbox .an{font-size:22px;font-weight:bold;color:#fff;letter-spacing:2px;margin-top:0}
+.arrbox .an{font-size:22px;font-weight:bold;color:#fff;letter-spacing:2px;margin-top:0}.arrbox.prov{border-color:#ffa726;background:#2a1a00}.arrbox.prov .at{color:#ffb74d}
 .centre{text-align:center}
 #etat{display:block;margin:6px 0 10px;padding:6px 10px;border-radius:8px;background:#1a0a0a;border:1px solid #ff4d4d;color:#FFD700;font-size:12px;font-weight:bold;text-align:center}
 .carte{background:linear-gradient(135deg,#1A1A1A 0%,#0D0D0D 100%);border:2px solid #00B4D8;border-radius:10px}
@@ -203,7 +203,7 @@ tr:hover td{background:rgba(0,180,216,.1)}
     <a class="nav-btn active" href="choix_final_R4C3.html" style="background:linear-gradient(135deg,#00B4D8,#7B2FBE);color:#fff;border-color:#FFD700;font-weight:bold;box-shadow:0 0 10px #FFD70088;">🎯 💎 Choix Final VIP</a>
     <a class="nav-btn" href="fiche_R4C3.html" style="background:linear-gradient(135deg,#FFD700,#B8860B);color:#000;border-color:#FFD700;font-weight:bold;box-shadow:0 0 10px #FFD70088;">💎 Fiche VIP</a>
 </div>
-<div class="arrbox"><div class="at">🏆 ARRIVÉE OFFICIELLE</div><div class="an">1 - 14 - 4 - 11 - 6 - 8</div></div>
+<div id="ARRL"><div class="arrbox"><div class="at">🏆 ARRIVÉE OFFICIELLE</div><div class="an">1 - 14 - 4 - 11 - 6 - 8</div></div></div>
 <div id="chrono"></div>
 <div id="cloture"></div>
 <div class="centre"><div id="etat"></div></div>
@@ -657,6 +657,13 @@ function charger(){if(fini||D.verrou||CH_EC)return;CH_EC=true;var avS=!!sorec,av
   if(D.site){if(r[2])zet=r[2];else if(!zet&&D.zdep)zet=D.zdep;}
   CH_OK=!!r[0]&&(!avS||!!r[1])&&(!D.site||!avZ||!!r[2]);
   CH_EC=false;afficher();planifier();}).catch(function(){CH_EC=false;planifier();});}
+var ARR0=(D.arrivee&&D.arrivee.length)?1:0,ARR_T=null,ARR_OFF=null;
+function arrPlan(){if(ARR_T)clearTimeout(ARR_T);var dep=depMs();if(dep&&Date.now()-dep>90*60000)return;ARR_T=setTimeout(arrLive,60000);}
+function arrAff(a,off){var el=gid('ARRL');if(!el)return;el.innerHTML='<div class="arrbox'+(off?'':' prov')+'"><div class="at">🏆 '+(off?'ARRIVÉE OFFICIELLE':'ARRIVÉE PROVISOIRE')+'</div><div class="an">'+a.join(' - ')+'</div></div>';}
+function arrLive(){if(ARR0||D.verrou)return;var dep=depMs();if(dep&&Date.now()<dep-60000){arrPlan();return;}
+  lire('pmu').then(function(p){if(p&&p.arr&&p.arr.length){var a=p.arr.slice(0,6),off=!!p.off;
+    if(String(a)!==String(D.arrivee||[])||off!==ARR_OFF){D.arrivee=a;ARR_OFF=off;arrAff(a,off);try{afficher();}catch(e){}}if(off)return;}
+    arrPlan();});}
 function planifier(){if(fini)return;if(timer)clearTimeout(timer);var dep=depMs(),r=dep?dep-Date.now():null;timer=setTimeout(charger,(r!=null&&r<5*60000&&r>-FIGE)?20000:60000);}
 function nav(){
   var P=D.prog||{},m=D.code.match(/R(\d+)C(\d+)/),r0=m?m[1]:'',c0=m?m[2]:'',hr='',hc='';
@@ -698,7 +705,7 @@ var REPRISE_A=0;
 function reprise(){if(document.hidden||D.verrou||!DEMARRE||fini)return;var t=Date.now();if(t-REPRISE_A<5000)return;REPRISE_A=t;
   if(timer)clearTimeout(timer);charger();majFiche();if(t-(window.CYC_DER||0)>60000){window.CYC_DER=t;majCycle();}}
 document.addEventListener('visibilitychange',reprise);window.addEventListener('pageshow',reprise);window.addEventListener('focus',reprise);
-function demarrer(){if(DEMARRE)return;DEMARRE=true;setTimeout(majFiche,8000);CYC_T=setTimeout(majCycle,300000);VR={};((D.veille&&D.veille.ordre)||[]).forEach(function(n,i){VR[String(n)]=i+1;});nav();afficher();charger();setInterval(chrono,1000);}
+function demarrer(){if(DEMARRE)return;DEMARRE=true;setTimeout(arrLive,10000);setTimeout(majFiche,8000);CYC_T=setTimeout(majCycle,300000);VR={};((D.veille&&D.veille.ordre)||[]).forEach(function(n,i){VR[String(n)]=i+1;});nav();afficher();charger();setInterval(chrono,1000);}
 window.CF_DEMARRER=function(p){p=p||{};for(var k in p){if(Object.prototype.hasOwnProperty.call(p,k))D[k]=p[k];}D.verrou=false;demarrer();};
 nav();if(!D.verrou)demarrer();
 document.addEventListener('change',function(e){var x=e.target;if(!x.classList||!x.classList.contains('cbe'))return;var n=x.getAttribute('data-n');if(x.checked)EC[n]=1;else delete EC[n];try{localStorage.setItem(ECK,JSON.stringify(EC));}catch(err){}afficher();});
