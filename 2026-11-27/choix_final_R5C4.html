@@ -116,7 +116,7 @@ h1.titre{color:#00bcd4;font-size:25px;margin:8px 0 2px}
 #CRM{padding:4px 14px 14px 14px}#CRM .crmw{flex-wrap:nowrap}#CRM .crm{flex:1 1 0;min-width:0}
 @media (max-width:900px){#CRM .crmw{flex-wrap:wrap}#CRM .crm{flex:1 1 100%}}
 .crmw{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start}.crmg{border-color:#4fc3f7;background:#071a24;box-shadow:0 0 10px rgba(79,195,247,.25)}
-.crmg .crmt{color:#4fc3f7}.crmlt.cg{min-width:128px;color:#e0e0e0}.crmb.gl{background:#ce93d8;color:#2a0033}.crmb.rg,.crm .crmn .crmb.rg,.crm .crmn .crmb.t3.rg,.crm .crmn .crmb.nv.rg,.crm .crmn .crmb.gl.rg{background:#e53935;color:#fff}.crm .crmn .crmb.t3.rg{box-shadow:0 0 0 3px #00c853}.crm .crmn .crmb.nv.rg{box-shadow:0 0 0 3px #fff}.crmb.rgh::after,.crmb.rgb::after{position:absolute;top:-5px;left:-5px;width:15px;height:15px;line-height:15px;border-radius:50%;background:#7f0000;color:#fff;font-size:9px;text-align:center;font-weight:bold}.crmb.rgh::after{content:'▲'}.crmb.rgb::after{content:'▼'}
+.crmg .crmt{color:#4fc3f7}.crmlt.cg{min-width:128px;color:#e0e0e0}.crmb.gl{background:#ce93d8;color:#2a0033}.crmb.rg,.crm .crmn .crmb.rg,.crm .crmn .crmb.t3.rg,.crm .crmn .crmb.nv.rg,.crm .crmn .crmb.gl.rg{background:#e53935;color:#fff}.crm .crmn .crmb.t3.rg{box-shadow:0 0 0 3px #00c853}.crm .crmn .crmb.nv.rg{box-shadow:0 0 0 3px #fff}.crm .crmn .crmb.sx{box-shadow:0 0 0 3px #29b6f6}.crmu{margin-top:8px;padding-top:8px;border-top:1px dashed #6b5a1e}.crmlt.cu{color:#4fc3f7}.crlgu{font-size:11.5px;color:#c9b97a;margin-top:4px}.crmb.rgh::after,.crmb.rgb::after{position:absolute;top:-5px;left:-5px;width:15px;height:15px;line-height:15px;border-radius:50%;background:#7f0000;color:#fff;font-size:9px;text-align:center;font-weight:bold}.crmb.rgh::after{content:'▲'}.crmb.rgb::after{content:'▼'}
 @media (max-width:1100px){.carte.syn .bandeau.bh{margin:14px}}
 @media (max-width:900px){.repflex{flex-direction:column;align-items:stretch}.repflex .bandeau.bh{margin:4px 12px 12px}}
 /* ===== STYLE DU SITE carremagique-turf.com (assets/cmt.954520beab.css) ===== */
@@ -500,6 +500,13 @@ function repFiche(P,E){E=E||[];CRM_H='';
     lg+='<div class="crml"><span class="crmlt">'+nb+' premiers <small>('+c.length+')</small></span><span class="crmn'+(nb<4?' pt':'')+'">'
       +(c.length?c.map(function(n){cur[n]=1;var nv=nb>2&&!prec[n];return '<span class="crmb'+(nv?' nv':'')+rg(n)+'"'+(nv?' title="ajouté par rapport à la ligne du dessus"':'')+'>'+n+sg(n)+'</span>';}).join(''):'<span class="z">—</span>')
       +'</span></div>';prec=cur;});
+  var c4=concl(ok,4),rkU={};ncmNotes(P).forEach(function(t,i){rkU[t.o.num]=i;});
+  var selU=P.filter(function(o){return o.tev!=null&&o.tev===o.tev&&o.tev<23;}).sort(function(a,b){return (a.tev-b.tev)||((rkU[a.num]==null?99:rkU[a.num])-(rkU[b.num]==null?99:rkU[b.num]));}).map(function(o){return o.num;});
+  var xU=selU.filter(function(n){return c4.indexOf(n)<0;});
+  lg+='<div class="crml crmu"><span class="crmlt cu">➕ 4 premiers + Sélection <small>('+(c4.length+xU.length)+')</small></span><span class="crmn">'
+    +(c4.length||xU.length?c4.map(function(n){return '<span class="crmb'+rg(n)+'">'+n+sg(n)+'</span>';}).join('')
+      +xU.map(function(n){return '<span class="crmb sx'+rg(n)+'" title="Sélection Carré Magique Turf, absent des 4 premiers">'+n+sg(n)+'</span>';}).join(''):'<span class="z">—</span>')
+    +'</span></div><div class="crlgu">Anneau bleu = cheval de la Sélection Carré Magique Turf absent des 4 premiers, ajouté pour compléter. Rouge = à garder seulement pour compléter.</div>';
   var tousO=P.concat(E),gs='',pris={},vus={},T3={};
   [['Base','🎯 Base'],['1ere','⭐ 1ère chance'],['Couvrir','💥 À couvrir']].forEach(function(g){
     var set={};tousO.forEach(function(o){if(o.groupe===g[0])set[String(o.num)]=1;});
