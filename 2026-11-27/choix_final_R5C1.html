@@ -344,7 +344,7 @@ document.getElementById('cfcode').addEventListener('keydown',function(e){if(e.ke
   <div class="footer-copy">© 2026 Carré Magique Turf - Tous droits réservés</div>
 </footer>
 <script>
-var D={"date": "2026-11-27", "code": "R5C1", "chevaux": [], "infos": {"heure": "15:55", "discipline": "ATTELE", "distance": "2650m", "allocation": "19500€", "partants": "12 partants"}, "marches": ["pmu", "sorec"], "veille": null, "zaff": true, "prog": {"1": [1], "2": [1], "3": [1], "4": [1], "5": [1, 3, 5, 6], "6": [1]}, "variante": "site", "zdep": null, "site": true, "alertes": [], "fiche": [], "sorecOnly": [["R31", "🌍", "san isidro"], ["R30", "🌍", "SAN"], ["R9", "🇲🇦", "Anfa"]], "arrivee": [], "verrou": true};
+var D={"date": "2026-11-27", "code": "R5C1", "chevaux": [], "infos": {"heure": "15:55", "discipline": "ATTELE", "distance": "2650m", "allocation": "19500€", "partants": "12 partants"}, "marches": ["pmu", "sorec"], "veille": null, "zaff": true, "prog": {"1": [1], "2": [1], "3": [1], "4": [1], "5": [1, 2, 3, 4, 5, 6, 7], "6": [1]}, "variante": "site", "zdep": null, "site": true, "alertes": [], "fiche": [], "sorecOnly": [["R31", "🌍", "san isidro"], ["R30", "🌍", "SAN"], ["R9", "🇲🇦", "Anfa"]], "arrivee": [], "verrou": true};
 var LIVE="https://cmt-live.casaturf007.workers.dev/live/",FIGE=30*60000,CLOTURE_AVANT=2*60000,SEUIL=0.05,timer=null,fini=false,partiA=null,pmu=null,sorec=null,zet=null,zetOk=null,ZURL="";
 function f1(x){return (Math.round(x*10)/10).toFixed(1);}
 function fc(x){if(x==null)return'—';var r=Math.round(x*100)/100;return r%1===0?String(r):(r>=100?r.toFixed(1):r.toFixed(2).replace(/0$/,''));}
