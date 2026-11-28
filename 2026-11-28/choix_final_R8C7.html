@@ -757,7 +757,7 @@ function arrLive(){if(ARR0||D.verrou)return;var dep=depMs();if(dep&&Date.now()<d
   lire('pmu').then(function(p){if(p&&p.arr&&p.arr.length){var a=p.arr.slice(0,6),off=!!p.off;
     if(String(a)!==String(D.arrivee||[])||off!==ARR_OFF){D.arrivee=a;ARR_OFF=off;arrAff(a,off);try{afficher();}catch(e){}}if(off)return;}
     arrPlan();});}
-function planifier(){if(fini)return;if(timer)clearTimeout(timer);var dep=depMs(),r=dep?dep-Date.now():null;timer=setTimeout(charger,(r!=null&&r<5*60000&&r>-FIGE)?20000:60000);}
+function planifier(){if(fini)return;if(timer)clearTimeout(timer);var dep=depMs(),r=dep?dep-Date.now():null;timer=setTimeout(charger,(r!=null&&r<10*60000&&r>-FIGE)?10000:60000);}
 function nav(){
   var P=D.prog||{},m=D.code.match(/R(\d+)C(\d+)/),r0=m?m[1]:'',c0=m?m[2]:'',hr='',hc='';
   if(D.site){
